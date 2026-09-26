@@ -70,10 +70,10 @@
   }
 
   function days() {
-    var html = '<div class="top"><span class="spacer"></span><h1>Alpha-male Voca 시험</h1><span class="spacer"></span></div>' +
-      '<div class="sheet"><div class="hero"><h2>Day별 어휘 시험</h2>' +
-      '<p>Day를 골라 시험을 풀어 보세요. 끝까지 풀고 제출하면 자동 채점과 해설을 볼 수 있어요.</p></div>' +
-      '<h3 class="sec">Day 선택</h3><div class="daygrid">';
+    var html = '<div class="top"><span class="spacer"></span><h1>Alpha-male Voca</h1><span class="spacer"></span></div>' +
+      '<div class="sheet"><div class="hero"><h2>어휘 실력을 점검해 보세요</h2>' +
+      '<p>아래에서 학습한 범위를 선택하세요. 끝까지 풀고 제출하면 자동으로 채점하고 해설도 보여 드려요.</p></div>' +
+      '<h3 class="sec">학습 범위</h3><div class="daygrid">';
     for (var n = 1; n <= MAX_DAY; n++) {
       var ex = AVAILABLE.indexOf(n) >= 0;
       if (ex) {
