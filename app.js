@@ -1,7 +1,17 @@
 (function () {
   "use strict";
-  var EXAMS = window.EXAMS || {};
+  window.EXAMS = window.EXAMS || {};
+  var EXAMS = window.EXAMS;
   var MAX_DAY = 30;
+  var AVAILABLE = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+  function loadDay(n, cb) {
+    if (EXAMS[n]) return cb(true);
+    var s = document.createElement("script");
+    s.src = "data/day" + (n < 10 ? "0" : "") + n + ".js";
+    s.onload = function () { cb(!!EXAMS[n]); };
+    s.onerror = function () { cb(false); };
+    document.head.appendChild(s);
+  }
   var app = document.getElementById("app");
   var EXAM = null, flat = [], total = 0, KEY = "";
 
@@ -65,10 +75,10 @@
       '<p>Day를 골라 시험을 풀어 보세요. 끝까지 풀고 제출하면 자동 채점과 해설을 볼 수 있어요.</p></div>' +
       '<h3 class="sec">Day 선택</h3><div class="daygrid">';
     for (var n = 1; n <= MAX_DAY; n++) {
-      var ex = EXAMS[n];
+      var ex = AVAILABLE.indexOf(n) >= 0;
       if (ex) {
         var p = dayProgress(n);
-        html += '<button class="daycard" data-day="' + n + '"><b>Day ' + n + '</b><span>' + ex.total + '문항' + (p ? " · " + p + " 풀이" : "") + '</span></button>';
+        html += '<button class="daycard" data-day="' + n + '"><b>Day ' + n + '</b><span>' + '100문항' + (p ? " · " + p + " 풀이" : "") + '</span></button>';
       } else {
         html += '<div class="daycard off"><b>Day ' + n + '</b><span>준비 중</span></div>';
       }
@@ -80,9 +90,13 @@
     });
   }
   function openDay(n) {
-    selectDay(n);
-    try { history.replaceState(null, "", "#day" + n); } catch (e) {}
-    go("home");
+    app.innerHTML = '<div class="top"><span class="spacer"></span><h1>Day ' + n + '</h1><span class="spacer"></span></div><div class="sheet"><p class="note">불러오는 중…</p></div>';
+    loadDay(n, function (ok) {
+      if (!ok) { alert("시험 데이터를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요."); return closeDay(); }
+      selectDay(n);
+      try { history.replaceState(null, "", "#day" + n); } catch (e) {}
+      go("home");
+    });
   }
   function closeDay() {
     try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
@@ -138,7 +152,7 @@
       '<div class="progress"><div style="width:' + pct + '%"></div></div>' +
       '<div class="sheet"><div class="qcard">' +
       '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="k">답안 ' + answeredCount() + '/' + total + '</span></div>' +
-      '<div class="inst">' + esc(f.s.instruction) + '</div>' +
+      '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
       '<div class="stem">' + stem(q.q) + '</div>';
     q.opts.forEach(function (o, i) {
       var p = optParts(o);
@@ -230,7 +244,9 @@
         if (k + 1 === q.ans && my === q.ans) mark = "정답 · 내 답";
         html += '<div class="' + cls + '"><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + '</div>';
       });
-      html += '<div class="exp">' + (q.kr ? '<b>해석</b> ' + esc(q.kr) + '<br>' : '') + '<b>해설</b> ' + esc(q.why) + '</div></div>';
+      html += (q.kr || q.why)
+        ? '<div class="exp">' + (q.kr ? '<b>해석</b> ' + esc(q.kr) + (q.why ? '<br>' : '') : '') + (q.why ? '<b>해설</b> ' + esc(q.why) : '') + '</div></div>'
+        : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div></div>';
     });
     if (!shown) html += '<p class="note">틀린 문항이 없어요. 완벽합니다!</p>';
     html += '<button class="btn btn-ghost btn-block" id="back2" style="margin-top:6px">결과로 돌아가기</button></div>';
@@ -243,6 +259,5 @@
   }
 
   var m = /^#day(\d+)$/.exec(location.hash);
-  if (m && EXAMS[+m[1]]) { selectDay(+m[1]); state.view = "home"; }
-  render();
+  if (m && AVAILABLE.indexOf(+m[1]) >= 0) openDay(+m[1]); else render();
 })();

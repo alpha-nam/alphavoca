@@ -111,3 +111,4 @@ h3.sec{font-size:15px;margin:22px 2px 10px;color:var(--plum)}
 .daycard span{font-size:13px;color:var(--muted)}
 button.daycard:hover{border-color:var(--primary)}
 .daycard.off{background:transparent;box-shadow:none;border:1.5px dashed var(--line);opacity:.7}
+.exp.soft{color:var(--muted);background:transparent;padding:6px 2px;font-size:13px}
