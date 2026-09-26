@@ -941,8 +941,8 @@ window.EXAMS[14] = {
                          "questions":  [
                                            {
                                                "n":  71,
-                                               "q":  "be endowed with ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "be endowed with ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① possess",
                                                             "② enroll",
@@ -954,8 +954,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  72,
-                                               "q":  "resign oneself to A",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "resign oneself to A [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① enroll",
                                                             "② dwell",
@@ -967,8 +967,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  73,
-                                               "q":  "ban A from v-ing",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "ban A from v-ing [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① dwell",
                                                             "② forbid",
@@ -980,8 +980,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  74,
-                                               "q":  "apply for ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "apply for ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① vanish",
                                                             "② prevail",
@@ -993,8 +993,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  75,
-                                               "q":  "apply A to B",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "apply A to B [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① prevail",
                                                             "② implement",
@@ -1006,8 +1006,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  76,
-                                               "q":  "rob A of B",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "rob A of B [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① perish",
                                                             "② deprive",
@@ -1019,8 +1019,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  77,
-                                               "q":  "commit A to memory",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "commit A to memory [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① mourn",
                                                             "② refuse",
@@ -1032,8 +1032,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  78,
-                                               "q":  "attribute A to B",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "attribute A to B [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① credit",
                                                             "② ignore",
@@ -1045,8 +1045,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  79,
-                                               "q":  "take command of ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "take command of ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① lead",
                                                             "② ignore",
@@ -1058,8 +1058,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  80,
-                                               "q":  "be associated with ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "be associated with ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① terminate",
                                                             "② boast",
@@ -1084,8 +1084,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  82,
-                                               "q":  "static",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "static [반의어]",
+                                               "inst":  "다음 단어(구)의 반의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① flexible",
                                                             "② sustained",
@@ -1097,8 +1097,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  83,
-                                               "q":  "intrinsic",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "intrinsic [반의어]",
+                                               "inst":  "다음 단어(구)의 반의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① flexible",
                                                             "② daunting",
@@ -1110,8 +1110,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  84,
-                                               "q":  "dwindle",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "dwindle [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① digest",
                                                             "② diminish",
@@ -1123,8 +1123,8 @@ window.EXAMS[14] = {
                                            },
                                            {
                                                "n":  85,
-                                               "q":  "magnitude",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "magnitude [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① hallmark",
                                                             "② scale",

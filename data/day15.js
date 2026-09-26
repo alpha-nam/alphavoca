@@ -941,8 +941,8 @@ window.EXAMS[15] = {
                          "questions":  [
                                            {
                                                "n":  71,
-                                               "q":  "pay attention to ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "pay attention to ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① launch",
                                                             "② heed",
@@ -954,8 +954,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  72,
-                                               "q":  "be descended from ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "be descended from ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① stem",
                                                             "② relocate",
@@ -967,8 +967,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  73,
-                                               "q":  "take revenge on ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "take revenge on ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① mourn",
                                                             "② launch",
@@ -980,8 +980,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  74,
-                                               "q":  "persevere with ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "persevere with ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① overturn",
                                                             "② enroll",
@@ -993,8 +993,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  75,
-                                               "q":  "regard A as B",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "regard A as B [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① convene",
                                                             "② overturn",
@@ -1006,8 +1006,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  76,
-                                               "q":  "be weary of ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "be weary of ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① overturn",
                                                             "② mingle",
@@ -1019,8 +1019,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  77,
-                                               "q":  "be alert to ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "be alert to ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① donate",
                                                             "② linger",
@@ -1032,8 +1032,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  78,
-                                               "q":  "on the verge of ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "on the verge of ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① linger",
                                                             "② donate",
@@ -1045,8 +1045,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  79,
-                                               "q":  "be bound for ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "be bound for ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① endure",
                                                             "② head",
@@ -1058,8 +1058,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  80,
-                                               "q":  "in awe of ~",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "in awe of ~ [유의어]",
+                                               "inst":  "다음 단어(구)의 유의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① refuse",
                                                             "② distribute",
@@ -1071,8 +1071,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  81,
-                                               "q":  "abundant",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "abundant [반의어]",
+                                               "inst":  "다음 단어(구)의 반의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① vulnerable",
                                                             "② misguided",
@@ -1097,8 +1097,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  83,
-                                               "q":  "secondary",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "secondary [반의어]",
+                                               "inst":  "다음 단어(구)의 반의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① persistent",
                                                             "② vulnerable",
@@ -1123,8 +1123,8 @@ window.EXAMS[15] = {
                                            },
                                            {
                                                "n":  85,
-                                               "q":  "conceal",
-                                               "inst":  "다음 단어(구)와 의미가 가장 가까운(또는 반대인) 것은?",
+                                               "q":  "conceal [반의어]",
+                                               "inst":  "다음 단어(구)의 반의어로 가장 적절한 것은?",
                                                "opts":  [
                                                             "① probe",
                                                             "② reveal",
