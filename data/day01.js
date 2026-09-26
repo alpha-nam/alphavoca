@@ -1236,14 +1236,14 @@ window.EXAMS[1] = {
                                                "q":  "variability [반의어]",
                                                "inst":  "다음 단어(구)의 반의어로 가장 적절한 것은?",
                                                "opts":  [
-                                                            "① durability",
+                                                            "① flexibility",
                                                             "② uniformity",
                                                             "③ diversity",
-                                                            "④ stability",
-                                                            "⑤ consistency"
+                                                            "④ complexity",
+                                                            "⑤ sensitivity"
                                                         ],
                                                "ans":  2,
-                                               "why":  "variability(변동성)의 반의어는 uniformity(균일성)다. 값이 자꾸 달라지는 성질과 늘 똑같은 성질이 대비된다. ④stability, ⑤consistency는 비슷해 보이지만 \u0027안정성·일관성\u0027으로 완전한 대립어로 보기 어렵다."
+                                               "why":  "variability(변동성)의 반의어는 uniformity(균일성)다. 값이 자꾸 달라지는 성질과 늘 똑같은 성질이 대비된다. ①flexibility(유연성)와 ③diversity(다양성)는 오히려 뜻이 가까운 쪽이고, ④complexity(복잡성), ⑤sensitivity(민감성)는 관련이 없다."
                                            },
                                            {
                                                "n":  85,
