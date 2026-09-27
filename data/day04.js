@@ -19,7 +19,8 @@ window.EXAMS[4] = {
                                                             "④ 매달다; 중단ㆍ정학시키다",
                                                             "⑤ 제약하다, 제한하다"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "suspend = 매달다; 중단ㆍ정학시키다. sus(아래)+pend(매달다)에서 나와 \u0027허공에 매달아두다\u0027가 \u0027일시 중단하다, 정학시키다\u0027로 확장됐다. 명사는 suspension이다."
                                            },
                                            {
                                                "n":  2,
@@ -32,7 +33,8 @@ window.EXAMS[4] = {
                                                             "④ 모순",
                                                             "⑤ 달성, 성취"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "attainment = 달성, 성취. 동사 attain(달성하다)의 명사형이다."
                                            },
                                            {
                                                "n":  3,
@@ -45,7 +47,8 @@ window.EXAMS[4] = {
                                                             "④ 달성하다, 얻다",
                                                             "⑤ 분리하다, 격리하다"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "constrain = 제약하다, 제한하다. 명사는 constraint(제약)이며, 반의어는 liberate(자유롭게 하다)다."
                                            },
                                            {
                                                "n":  4,
@@ -58,7 +61,8 @@ window.EXAMS[4] = {
                                                             "④ 헛됨, 무의미함",
                                                             "⑤ 기소, 검찰"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "contradiction = 모순. contra(반대로)+dict(말하다)에서 나와 서로 반대되는 말을 한다는 뜻이며, 동사는 contradict다."
                                            },
                                            {
                                                "n":  5,
@@ -71,7 +75,8 @@ window.EXAMS[4] = {
                                                             "④ 주변적인, 지엽적인",
                                                             "⑤ 분별있는, 합리적인"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "feasible = 실현 가능한. 명사는 feasibility이며, 반대말은 infeasible(실현 불가능한)이다."
                                            },
                                            {
                                                "n":  6,
@@ -84,7 +89,8 @@ window.EXAMS[4] = {
                                                             "④ 연속성",
                                                             "⑤ 편재성"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "ubiquity = 편재성, 어디에나 있음. 형용사는 ubiquitous(어디에나 있는)다."
                                            },
                                            {
                                                "n":  7,
@@ -97,7 +103,8 @@ window.EXAMS[4] = {
                                                             "④ 주변적인, 지엽적인",
                                                             "⑤ 헛된, 소용없는"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "exceptional = 예외적인, 뛰어난. exception(예외)의 형용사형으로, 여기서는 \u0027평범하지 않을 만큼 뛰어난\u0027이라는 좋은 뜻으로도 쓰인다."
                                            },
                                            {
                                                "n":  8,
@@ -110,7 +117,8 @@ window.EXAMS[4] = {
                                                             "④ 기소, 검찰",
                                                             "⑤ 분리, 차별"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "subtlety = 미묘함. subtle(미묘한)의 명사형이다."
                                            },
                                            {
                                                "n":  9,
@@ -123,7 +131,8 @@ window.EXAMS[4] = {
                                                             "④ 토착의, 원산의",
                                                             "⑤ 눈에 띄는"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "conspicuous = 눈에 띄는. 반대말은 inconspicuous(눈에 띄지 않는)다."
                                            },
                                            {
                                                "n":  10,
@@ -136,7 +145,8 @@ window.EXAMS[4] = {
                                                             "④ 어디에나 있는, 편재하는",
                                                             "⑤ 경제적인, 절약하는"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "infeasible = 실현 불가능한. in(부정)+feasible(실현 가능한)로, feasible의 반대 개념이다."
                                            },
                                            {
                                                "n":  11,
@@ -149,7 +159,8 @@ window.EXAMS[4] = {
                                                             "④ 악명 높은",
                                                             "⑤ 실현 불가능한"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "notorious = 악명 높은. 명사는 notoriety(악명)이며, 부정적인 의미로 유명하다는 뜻이다."
                                            },
                                            {
                                                "n":  12,
@@ -162,7 +173,8 @@ window.EXAMS[4] = {
                                                             "④ 저명함, 명성",
                                                             "⑤ 악명"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "exception = 예외. 형용사는 exceptional(예외적인, 뛰어난)이다."
                                            },
                                            {
                                                "n":  13,
@@ -175,7 +187,8 @@ window.EXAMS[4] = {
                                                             "④ 제약하다, 제한하다",
                                                             "⑤ 이끌어내다, 유도하다"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "attain = 달성하다, 얻다. 목표를 이뤄낸다는 뜻이며 명사는 attainment다."
                                            },
                                            {
                                                "n":  14,
@@ -188,7 +201,8 @@ window.EXAMS[4] = {
                                                             "④ 불충분한",
                                                             "⑤ 필수적인, 없어서는 안 될"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "inadequate = 불충분한. in(부정)+adequate(충분한)로, adequate의 반대 개념이다."
                                            },
                                            {
                                                "n":  15,
@@ -201,7 +215,8 @@ window.EXAMS[4] = {
                                                             "④ 실현 불가능한",
                                                             "⑤ 금욕적인, 소박한, 엄격한"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "subtle = 미묘한, 감지하기 어려운. 명사는 subtlety다."
                                            },
                                            {
                                                "n":  16,
@@ -214,7 +229,8 @@ window.EXAMS[4] = {
                                                             "④ 악명",
                                                             "⑤ 저명함, 명성"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "deterioration = 악화. 동사는 deteriorate(악화되다)다."
                                            },
                                            {
                                                "n":  17,
@@ -227,7 +243,8 @@ window.EXAMS[4] = {
                                                             "④ 중요한",
                                                             "⑤ 악명 높은"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "futile = 헛된, 소용없는. 명사는 futility(헛됨)이다."
                                            },
                                            {
                                                "n":  18,
@@ -240,7 +257,8 @@ window.EXAMS[4] = {
                                                             "④ 중단; 정학, 정직",
                                                             "⑤ 악명"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "suspension = 중단; 정학, 정직. 동사 suspend(중단시키다)의 명사형이다."
                                            },
                                            {
                                                "n":  19,
@@ -253,7 +271,8 @@ window.EXAMS[4] = {
                                                             "④ 충분한, 적절한",
                                                             "⑤ 눈에 띄는"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "adequate = 충분한, 적절한. 반대말은 inadequate(불충분한)다."
                                            },
                                            {
                                                "n":  20,
@@ -266,7 +285,8 @@ window.EXAMS[4] = {
                                                             "④ 독특한, 특유의",
                                                             "⑤ 중요한"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "inconspicuous = 눈에 띄지 않는. in(부정)+conspicuous(눈에 띄는)로, conspicuous의 반대 개념이다."
                                            },
                                            {
                                                "n":  21,
@@ -279,7 +299,8 @@ window.EXAMS[4] = {
                                                             "④ 독특한, 특유의",
                                                             "⑤ 예외적인, 뛰어난"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "ubiquitous = 어디에나 있는, 편재하는. 명사는 ubiquity다."
                                            },
                                            {
                                                "n":  22,
@@ -292,7 +313,8 @@ window.EXAMS[4] = {
                                                             "④ 관리, 행정",
                                                             "⑤ 자격"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "administration = 관리, 행정. 동사는 administer(관리하다)다."
                                            },
                                            {
                                                "n":  23,
@@ -305,7 +327,8 @@ window.EXAMS[4] = {
                                                             "④ 주장하다",
                                                             "⑤ 달성하다, 얻다"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "contradict = 모순되다, 반박하다. 명사는 contradiction이다."
                                            },
                                            {
                                                "n":  24,
@@ -318,7 +341,8 @@ window.EXAMS[4] = {
                                                             "④ 제약, 제한 요소",
                                                             "⑤ 중단; 정학, 정직"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "futility = 헛됨, 무의미함. 형용사는 futile(헛된)이다."
                                            },
                                            {
                                                "n":  25,
@@ -331,7 +355,8 @@ window.EXAMS[4] = {
                                                             "④ 달성하다, 얻다",
                                                             "⑤ 주장하다"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "segregate = 분리하다, 격리하다. 명사는 segregation(분리, 차별)이며, 인종 분리 정책을 가리킬 때 자주 쓴다."
                                            },
                                            {
                                                "n":  26,
@@ -344,7 +369,8 @@ window.EXAMS[4] = {
                                                             "④ 중단; 정학, 정직",
                                                             "⑤ 제약, 제한 요소"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "notoriety = 악명. 형용사는 notorious(악명 높은)다."
                                            },
                                            {
                                                "n":  27,
@@ -357,7 +383,8 @@ window.EXAMS[4] = {
                                                             "④ 양육하다, 육성하다",
                                                             "⑤ 미루다, 꾸물거리다"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "deteriorate = 악화되다. 명사는 deterioration이다."
                                            },
                                            {
                                                "n":  28,
@@ -370,7 +397,8 @@ window.EXAMS[4] = {
                                                             "④ 신중함",
                                                             "⑤ 제약, 제한 요소"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "constraint = 제약, 제한 요소. 동사는 constrain(제약하다)이다."
                                            },
                                            {
                                                "n":  29,
@@ -383,7 +411,8 @@ window.EXAMS[4] = {
                                                             "④ 관리하다, 집행하다",
                                                             "⑤ 모순되다, 반박하다"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "administer = 관리하다, 집행하다. 명사는 administration이며, 시험을 \u0027실시하다\u0027라는 뜻으로도 쓴다."
                                            },
                                            {
                                                "n":  30,
@@ -396,7 +425,8 @@ window.EXAMS[4] = {
                                                             "④ 신중함",
                                                             "⑤ 분리, 차별"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "segregation = 분리, 차별. 동사는 segregate다."
                                            }
                                        ]
                      },
@@ -416,7 +446,9 @@ window.EXAMS[4] = {
                                                             "④ reaction",
                                                             "⑤ incentive"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "고고학자들은 새로 발굴된 유적지가 엄청난 역사적 중요성을 지니고 있음을 확인했다.",
+                                               "why":  "significance = 중요성. holds enormous historical ________(엄청난 역사적 ___을 지니다)와 어울리는 명사다."
                                            },
                                            {
                                                "n":  32,
@@ -429,7 +461,9 @@ window.EXAMS[4] = {
                                                             "④ indigenous",
                                                             "⑤ significant"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "한 나라의 경제 정책은 한 가정의 지출 선택보다 훨씬 더 중대하다.",
+                                               "why":  "significant = 중대한, 중요한. far more ________ than(~보다 훨씬 더 ___한)의 비교 대상이 국가 경제 정책이라는 점이 단서다."
                                            },
                                            {
                                                "n":  33,
@@ -442,7 +476,9 @@ window.EXAMS[4] = {
                                                             "④ test",
                                                             "⑤ reaction"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "노동 인권 단체들은 오랫동안 세계 의류 산업 내의 노동 환경을 비판해 왔다.",
+                                               "why":  "garment industry = 의류 산업. working conditions(노동 환경)와 함께 쓰이는 산업명이다."
                                            },
                                            {
                                                "n":  34,
@@ -455,7 +491,9 @@ window.EXAMS[4] = {
                                                             "④ incentive",
                                                             "⑤ attainment"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "그 저자는 개인의 자유와 공동체의 책임 사이의 그릇된 이분법에 이의를 제기한다.",
+                                               "why":  "dichotomy = 이분법. false dichotomy(그릇된 이분법)는 두 선택지만 있다고 잘못 전제하는 논리적 오류를 가리킨다."
                                            },
                                            {
                                                "n":  35,
@@ -468,7 +506,9 @@ window.EXAMS[4] = {
                                                             "④ distinctive",
                                                             "⑤ exemplary"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "연구자들은 그 신약의 최적 투여량을 알아내려 하고 있다.",
+                                               "why":  "optimal = 최적의. dosage(투여량)를 수식하는 형용사로 \u0027가장 알맞은\u0027을 뜻한다."
                                            },
                                            {
                                                "n":  36,
@@ -481,7 +521,9 @@ window.EXAMS[4] = {
                                                             "④ distinctive",
                                                             "⑤ austere"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "늘어나는 국가 부채에 직면하여, 정부는 일련의 긴축 예산 삭감을 도입했다.",
+                                               "why":  "austere = 긴축의, 검소한. mounting national debt(늘어나는 국가 부채)에 대응하는 조치라는 문맥이다."
                                            },
                                            {
                                                "n":  37,
@@ -494,7 +536,9 @@ window.EXAMS[4] = {
                                                             "④ vulnerable",
                                                             "⑤ inadequate"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "금융 전문가들은 은퇴 저축에 신중한 접근을 권한다.",
+                                               "why":  "prudent = 신중한. 미래를 대비해 조심스럽게 판단한다는 뜻이다."
                                            },
                                            {
                                                "n":  38,
@@ -507,7 +551,9 @@ window.EXAMS[4] = {
                                                             "④ significant",
                                                             "⑤ feasible"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "일부 비평가들은 그 영화의 끊임없는 도덕적 설교가 마치 어떤 논란의 낌새도 두려워하는 것처럼 거의 지나치게 고루하다고 느꼈다.",
+                                               "why":  "prudish = 지나치게 고상한 척하는, 고루한. afraid of any hint of controversy(어떤 논란의 낌새도 두려워하는)가 단서다."
                                            },
                                            {
                                                "n":  39,
@@ -520,7 +566,9 @@ window.EXAMS[4] = {
                                                             "④ depleted",
                                                             "⑤ facilitated"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "수년간의 남용이 토양의 영양분을 고갈시켜 농사를 점점 더 어렵게 만들었다.",
+                                               "why":  "deplete = 고갈시키다. Years of overuse(수년간의 남용)가 원인, 영양분 고갈이 결과다."
                                            },
                                            {
                                                "n":  40,
@@ -533,7 +581,9 @@ window.EXAMS[4] = {
                                                             "④ adequately",
                                                             "⑤ occasionally"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "연구에 따르면 아침을 거르는 것은 예외 없이 오전 늦게 집중력 저하로 이어진다고 한다.",
+                                               "why":  "invariably = 예외 없이, 변함없이. leads to(~로 이어진다)와 어울려 항상 그렇다는 뜻을 강조한다."
                                            },
                                            {
                                                "n":  41,
@@ -546,7 +596,9 @@ window.EXAMS[4] = {
                                                             "④ enforced",
                                                             "⑤ concealed"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "그 교수의 주장은 방대한 역사적 증거에 잘 근거하고 있다.",
+                                               "why":  "grounded in = ~에 근거하다. extensive historical evidence(방대한 역사적 증거)와 함께 쓰인다."
                                            },
                                            {
                                                "n":  42,
@@ -559,7 +611,9 @@ window.EXAMS[4] = {
                                                             "④ formidable",
                                                             "⑤ reluctant"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "그 스타트업은 업계의 여러 기존 대기업들로부터 만만찮은 경쟁에 직면해 있다.",
+                                               "why":  "formidable = 만만찮은, 강력한. well-established companies(기존 대기업들)와의 경쟁이 벅차다는 뜻이다."
                                            },
                                            {
                                                "n":  43,
@@ -572,7 +626,9 @@ window.EXAMS[4] = {
                                                             "④ invariable",
                                                             "⑤ indigenous"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "그 다큐멘터리는 기후 변화가 북극 토착민들의 전통적인 생활 방식을 어떻게 위협하는지 조명한다.",
+                                               "why":  "indigenous = 토착의, 원산의. peoples in the Arctic(북극의 사람들)을 수식하는 형용사다."
                                            },
                                            {
                                                "n":  44,
@@ -585,7 +641,9 @@ window.EXAMS[4] = {
                                                             "④ indispensable",
                                                             "⑤ invariable"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "안정적인 전기 공급은 현대 생활의 거의 모든 측면에 없어서는 안 될 것이 되었다.",
+                                               "why":  "indispensable = 필수적인, 없어서는 안 될. nearly every aspect of modern life(현대 생활의 거의 모든 측면)와 연결된다."
                                            },
                                            {
                                                "n":  45,
@@ -598,7 +656,9 @@ window.EXAMS[4] = {
                                                             "④ comprehensive",
                                                             "⑤ reluctant"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "복사가 흔해지자, 전임 사무 필경사라는 직책은 점점 더 없어도 되는 것이 되었다.",
+                                               "why":  "dispensable = 없어도 되는, 불필요한. Once photocopying became common(복사가 흔해지자)이 원인이다."
                                            },
                                            {
                                                "n":  46,
@@ -611,7 +671,9 @@ window.EXAMS[4] = {
                                                             "④ difference",
                                                             "⑤ attainment"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "위기를 모범적으로 처리한 그녀는 몇 달 만에 승진을 얻었다.",
+                                               "why":  "promotion = 승진. exemplary handling(모범적인 처리)에 대한 보상으로 자연스럽다."
                                            },
                                            {
                                                "n":  47,
@@ -624,7 +686,9 @@ window.EXAMS[4] = {
                                                             "④ deplete",
                                                             "⑤ discourage"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "그 프로그램은 어린아이들의 창의성을 길러주도록 설계되었다.",
+                                               "why":  "nurture = 기르다, 육성하다. creativity in young children(어린아이들의 창의성)을 목적어로 받는다."
                                            },
                                            {
                                                "n":  48,
@@ -637,7 +701,9 @@ window.EXAMS[4] = {
                                                             "④ allude",
                                                             "⑤ clarify"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "그 약이 승인되기 전에, 임상시험으로 그것의 안전성과 효과를 입증해야 했다.",
+                                               "why":  "validate = 입증하다, 검증하다. safety and effectiveness(안전성과 효과)를 목적어로 받는다."
                                            },
                                            {
                                                "n":  49,
@@ -650,7 +716,9 @@ window.EXAMS[4] = {
                                                             "④ insignificant",
                                                             "⑤ comprehensive"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "가장 평범한 집안일도 사랑하는 사람과 함께하면 의미 있게 느껴질 수 있다.",
+                                               "why":  "mundane = 평범한, 일상적인. chores(집안일)를 수식하며 \u0027특별할 것 없는\u0027이라는 뜻이다."
                                            },
                                            {
                                                "n":  50,
@@ -663,7 +731,9 @@ window.EXAMS[4] = {
                                                             "④ insignificant",
                                                             "⑤ notorious"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "공개적인 이미지와 달리, 그 상원의원은 자신의 당 내에서는 타협을 모르는 성격으로 악명이 높았다.",
+                                               "why":  "notorious = 악명 높은. Despite his public image(공개적인 이미지와 달리)가 부정적 평판과 대비된다."
                                            },
                                            {
                                                "n":  51,
@@ -676,7 +746,9 @@ window.EXAMS[4] = {
                                                             "④ difference",
                                                             "⑤ evidence"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "그 시장이 주택 사업을 공개적으로 칭찬한 것은 그것의 재원 마련을 막으려는 그녀의 은밀한 노력과 극명한 모순을 이루었다.",
+                                               "why":  "contradiction = 모순. stood in stark ________ to(~와 극명한 모순을 이루다)가 단서다."
                                            },
                                            {
                                                "n":  52,
@@ -689,7 +761,9 @@ window.EXAMS[4] = {
                                                             "④ garment",
                                                             "⑤ administration"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "임시 의회가 영구적인 지도부가 선출될 때까지 그 지역의 행정을 넘겨받았다.",
+                                               "why":  "administration = 관리, 행정. took over ________ of the region(그 지역의 ___을 넘겨받다)과 어울린다."
                                            },
                                            {
                                                "n":  53,
@@ -702,7 +776,9 @@ window.EXAMS[4] = {
                                                             "④ coincidence",
                                                             "⑤ futility"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "휴전을 협상하려는 그들의 거듭된 시도는 완전한 무산으로 끝났다.",
+                                               "why":  "futility = 헛됨, 무산. ended in complete ________(완전한 ___으로 끝났다)가 단서다."
                                            },
                                            {
                                                "n":  54,
@@ -715,7 +791,9 @@ window.EXAMS[4] = {
                                                             "④ aligned",
                                                             "⑤ segregated"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "합병 후에도, 두 부서는 서로 대체로 분리된 채로 남아 있었다.",
+                                               "why":  "segregated = 분리된. remained largely ________ from one another(서로 대체로 ___된 채로 남다)가 단서다."
                                            },
                                            {
                                                "n":  55,
@@ -728,7 +806,9 @@ window.EXAMS[4] = {
                                                             "④ decision",
                                                             "⑤ attempt"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "그 엔지니어링 팀의 가장 큰 미해결 의문은 일정의 실현 가능성이다.",
+                                               "why":  "feasibility = 실현 가능성. timeline\u0027s ________(일정의 ___)와 어울리는 명사다."
                                            }
                                        ]
                      },
@@ -748,7 +828,8 @@ window.EXAMS[4] = {
                                                             "④ of",
                                                             "⑤ with"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "be notorious for tax evasion = 탈세로 악명이 높다. notorious 뒤에는 이유를 나타내는 전치사 for가 온다."
                                            },
                                            {
                                                "n":  57,
@@ -761,7 +842,8 @@ window.EXAMS[4] = {
                                                             "④ attempt",
                                                             "⑤ decision"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "of great significance = 매우 중요한. of + 추상명사는 형용사 역할을 하는 관용 표현이다."
                                            },
                                            {
                                                "n":  58,
@@ -774,7 +856,8 @@ window.EXAMS[4] = {
                                                             "④ conditions",
                                                             "⑤ agony"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "deteriorating health/conditions = 악화되는 건강/상황. deteriorate(악화되다)의 분사형이 명사를 수식한다."
                                            },
                                            {
                                                "n":  59,
@@ -787,7 +870,8 @@ window.EXAMS[4] = {
                                                             "④ allusion",
                                                             "⑤ promotion"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "the garment industry = 의류 산업. garment(의류)와 잘 어울리는 명사는 industry다."
                                            },
                                            {
                                                "n":  60,
@@ -800,7 +884,8 @@ window.EXAMS[4] = {
                                                             "④ ubiquitous",
                                                             "⑤ successive"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "become ubiquitous = 어디에나 있게 되다. ubiquitous(편재하는)는 become과 자주 쓰인다."
                                            },
                                            {
                                                "n":  61,
@@ -813,7 +898,8 @@ window.EXAMS[4] = {
                                                             "④ contradict",
                                                             "⑤ allude"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "contradict a claim/belief = 주장ㆍ통념과 모순되다. contradict는 뒤에 목적어를 바로 받는 타동사다."
                                            },
                                            {
                                                "n":  62,
@@ -826,7 +912,8 @@ window.EXAMS[4] = {
                                                             "④ test",
                                                             "⑤ consensus"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "administer a test = 시험을 실시하다. administer는 여기서 \u0027관리하다\u0027가 아니라 \u0027(시험을) 실시하다\u0027라는 뜻이다."
                                            },
                                            {
                                                "n":  63,
@@ -839,7 +926,8 @@ window.EXAMS[4] = {
                                                             "④ questionable",
                                                             "⑤ peripheral"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "a futile attempt = 헛된 시도. futile(헛된)과 잘 어울리는 명사는 attempt다."
                                            },
                                            {
                                                "n":  64,
@@ -852,7 +940,8 @@ window.EXAMS[4] = {
                                                             "④ with",
                                                             "⑤ for"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "conspicuous by its absence = 없어서 오히려 눈에 띄는. conspicuous 뒤에 이유를 나타내는 전치사 by가 오는 관용 표현이다."
                                            },
                                            {
                                                "n":  65,
@@ -865,7 +954,8 @@ window.EXAMS[4] = {
                                                             "④ segregate",
                                                             "⑤ disclose"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "racially segregate = 인종적으로 분리하다. segregate(분리하다)를 수식하는 부사가 racially다."
                                            },
                                            {
                                                "n":  66,
@@ -878,7 +968,8 @@ window.EXAMS[4] = {
                                                             "④ successive",
                                                             "⑤ feasible"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "a feasible solution = 실현 가능한 해결책. feasible(실현 가능한)과 잘 어울리는 명사는 solution이다."
                                            },
                                            {
                                                "n":  67,
@@ -891,7 +982,8 @@ window.EXAMS[4] = {
                                                             "④ conditions",
                                                             "⑤ sequence"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "a false dichotomy = 그릇된 이분법. dichotomy(이분법)를 수식하는 형용사로 false가 자주 쓰인다."
                                            },
                                            {
                                                "n":  68,
@@ -904,7 +996,8 @@ window.EXAMS[4] = {
                                                             "④ sequence",
                                                             "⑤ consensus"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "a subtle difference = 미묘한 차이. subtle(미묘한)과 잘 어울리는 명사는 difference다."
                                            },
                                            {
                                                "n":  69,
@@ -917,7 +1010,8 @@ window.EXAMS[4] = {
                                                             "④ questionable",
                                                             "⑤ adequate"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "adequate funding = 충분한 자금. adequate(충분한)와 잘 어울리는 명사는 funding이다."
                                            },
                                            {
                                                "n":  70,
@@ -930,7 +1024,8 @@ window.EXAMS[4] = {
                                                             "④ austere",
                                                             "⑤ contentious"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "the optimal solution = 최적의 해결책. optimal(최적의)과 잘 어울리는 명사는 solution이다."
                                            }
                                        ]
                      },
@@ -950,7 +1045,8 @@ window.EXAMS[4] = {
                                                             "④ trigger",
                                                             "⑤ collapse"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "break in = 침입하다, 끼어들다. 허락 없이 들어간다는 뜻이라 intrude와 유의어다."
                                            },
                                            {
                                                "n":  72,
@@ -963,7 +1059,8 @@ window.EXAMS[4] = {
                                                             "④ introduce",
                                                             "⑤ resume"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "bring in = 도입하다, 들여오다. 새로운 것을 가져온다는 뜻이라 introduce와 같다."
                                            },
                                            {
                                                "n":  73,
@@ -976,7 +1073,8 @@ window.EXAMS[4] = {
                                                             "④ include",
                                                             "⑤ resume"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "count in = 포함시키다. 계산ㆍ목록에 넣는다는 뜻이라 include와 같다."
                                            },
                                            {
                                                "n":  74,
@@ -989,7 +1087,8 @@ window.EXAMS[4] = {
                                                             "④ release",
                                                             "⑤ fade"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "fill in = (양식 등을) 채우다, 완성하다. 빈칸을 채워 끝낸다는 뜻이라 complete와 유의어다."
                                            },
                                            {
                                                "n":  75,
@@ -1002,7 +1101,8 @@ window.EXAMS[4] = {
                                                             "④ fade",
                                                             "⑤ terminate"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "fit in (with) = 어우러지다, 조화를 이루다. 주변과 잘 섞인다는 뜻이라 blend와 같다."
                                            },
                                            {
                                                "n":  76,
@@ -1015,7 +1115,8 @@ window.EXAMS[4] = {
                                                             "④ release",
                                                             "⑤ fade"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "give in = 굴복하다, 항복하다. 저항을 멈추고 따른다는 뜻이라 yield와 유의어다."
                                            },
                                            {
                                                "n":  77,
@@ -1028,7 +1129,8 @@ window.EXAMS[4] = {
                                                             "④ reject",
                                                             "⑤ submit"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "hand in = 제출하다. 문서를 낸다는 뜻이라 submit과 같다."
                                            },
                                            {
                                                "n":  78,
@@ -1041,7 +1143,8 @@ window.EXAMS[4] = {
                                                             "④ stagnate",
                                                             "⑤ launch"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "put in = 투입하다, 들이다. 시간ㆍ노력을 쏟는다는 뜻이라 invest와 유의어다."
                                            },
                                            {
                                                "n":  79,
@@ -1054,7 +1157,8 @@ window.EXAMS[4] = {
                                                             "④ reject",
                                                             "⑤ stagnate"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "take in(이해하다) = 이해하다, 받아들이다. 정보를 흡수하듯 이해한다는 뜻이라 absorb와 유의어다."
                                            },
                                            {
                                                "n":  80,
@@ -1067,7 +1171,8 @@ window.EXAMS[4] = {
                                                             "④ investigate",
                                                             "⑤ disperse"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "look into = 조사하다. 자세히 들여다본다는 뜻이라 investigate와 같다."
                                            },
                                            {
                                                "n":  81,
@@ -1080,7 +1185,8 @@ window.EXAMS[4] = {
                                                             "④ exhaust",
                                                             "⑤ justify"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "deplete = 고갈시키다. 자원을 다 써버린다는 뜻이라 exhaust와 유의어다."
                                            },
                                            {
                                                "n":  82,
@@ -1093,7 +1199,8 @@ window.EXAMS[4] = {
                                                             "④ justify",
                                                             "⑤ achieve"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "attain = 달성하다, 얻다. 목표를 이뤄낸다는 뜻이라 achieve와 같다."
                                            },
                                            {
                                                "n":  83,
@@ -1106,7 +1213,8 @@ window.EXAMS[4] = {
                                                             "④ deteriorate",
                                                             "⑤ deter"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "nurture = 기르다, 육성하다. 잘 자라도록 돌본다는 뜻이라 foster와 유의어다."
                                            },
                                            {
                                                "n":  84,
@@ -1119,7 +1227,8 @@ window.EXAMS[4] = {
                                                             "④ deteriorate",
                                                             "⑤ deter"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "validate = 입증하다, 검증하다. 사실임을 확인해 준다는 뜻이라 confirm과 같다."
                                            },
                                            {
                                                "n":  85,
@@ -1132,7 +1241,8 @@ window.EXAMS[4] = {
                                                             "④ deteriorate",
                                                             "⑤ redirect"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "constrain(제약하다)의 반의어는 liberate(자유롭게 하다)다. 뿌리가 전혀 다른 단어로 반대 개념을 나타내는 깨끗한 반의어 쌍이다."
                                            }
                                        ]
                      },
@@ -1152,7 +1262,9 @@ window.EXAMS[4] = {
                                                             "④ mundane",
                                                             "⑤ rigid"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "특정한 잘못이나 범죄로 나쁜 평판을 가진",
+                                               "why":  "notorious = 악명 높은. having a bad reputation for a particular fault or crime(특정 잘못ㆍ범죄로 나쁜 평판을 가진)이 정의다."
                                            },
                                            {
                                                "n":  87,
@@ -1165,7 +1277,9 @@ window.EXAMS[4] = {
                                                             "④ exceptional",
                                                             "⑤ formidable"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "비정상적으로 뛰어난; 일반적이지 않은",
+                                               "why":  "exceptional = 예외적인, 뛰어난. unusually good; not typical(비정상적으로 뛰어나며 일반적이지 않은)이 정의다."
                                            },
                                            {
                                                "n":  88,
@@ -1178,7 +1292,9 @@ window.EXAMS[4] = {
                                                             "④ exceptionable",
                                                             "⑤ conspicuous"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "쉽게 또는 실질적으로 할 수 있는",
+                                               "why":  "feasible = 실현 가능한. possible to do easily or practically(쉽게ㆍ실질적으로 할 수 있는)가 정의다."
                                            },
                                            {
                                                "n":  89,
@@ -1191,7 +1307,9 @@ window.EXAMS[4] = {
                                                             "④ exceptionable",
                                                             "⑤ ambiguous"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "다른 곳에서 온 것이 아니라 특정 장소에서 자연적으로 유래한",
+                                               "why":  "indigenous = 토착의, 원산의. originating naturally in a particular place(특정 장소에서 자연적으로 유래한)가 정의다."
                                            },
                                            {
                                                "n":  90,
@@ -1204,7 +1322,9 @@ window.EXAMS[4] = {
                                                             "④ conspicuous",
                                                             "⑤ indispensable"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "절대적으로 필요한; 없이는 지낼 수 없을 만큼 중요한",
+                                               "why":  "indispensable = 필수적인, 없어서는 안 될. absolutely necessary; too important to be without(절대적으로 필요하고 없어서는 안 될 만큼 중요한)가 정의다."
                                            },
                                            {
                                                "n":  91,
@@ -1217,7 +1337,9 @@ window.EXAMS[4] = {
                                                             "④ prudent",
                                                             "⑤ coherent"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "인상적으로 크거나 강력하거나 유능해서 두려움이나 존경심을 불러일으키는",
+                                               "why":  "formidable = 만만찮은, 강력한. inspiring fear or respect through being impressively large, powerful, or capable(인상적인 크기ㆍ힘ㆍ능력으로 두려움이나 존경을 불러일으키는)가 정의다."
                                            },
                                            {
                                                "n":  92,
@@ -1230,7 +1352,9 @@ window.EXAMS[4] = {
                                                             "④ coherent",
                                                             "⑤ mundane"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "흥미나 흥분이 부족한; 지루하고 평범한",
+                                               "why":  "mundane = 평범한, 일상적인. lacking interest or excitement; dull and ordinary(흥미가 부족하고 지루하며 평범한)가 정의다."
                                            },
                                            {
                                                "n":  93,
@@ -1243,7 +1367,9 @@ window.EXAMS[4] = {
                                                             "④ flexible",
                                                             "⑤ inconspicuous"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "미래를 위한 배려와 생각을 가지고 행동하는",
+                                               "why":  "prudent = 신중한. acting with or showing care and thought for the future(미래를 위한 배려와 생각을 가지고 행동하는)가 정의다."
                                            },
                                            {
                                                "n":  94,
@@ -1256,7 +1382,9 @@ window.EXAMS[4] = {
                                                             "④ inconspicuous",
                                                             "⑤ futile"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "사치나 장식이 없이 단순하고 소박한",
+                                               "why":  "austere = 검소한, 소박한. simple and plain, without any luxury or decoration(사치나 장식 없이 단순하고 소박한)이 정의다."
                                            },
                                            {
                                                "n":  95,
@@ -1269,7 +1397,9 @@ window.EXAMS[4] = {
                                                             "④ flexible",
                                                             "⑤ exemplary"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "바람직한 모범이 되는; 본받을 만한",
+                                               "why":  "exemplary = 모범적인. serving as a desirable model; deserving imitation(바람직한 모범이 되며 본받을 만한)이 정의다."
                                            }
                                        ]
                      },
@@ -1289,7 +1419,9 @@ window.EXAMS[4] = {
                                                             "④ 세계 패션 시장을 독점하다",
                                                             "⑤ 세계 패션 시장에서 완전히 철수하다"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "수년간의 고전 끝에, 그 작은 브랜드는 마침내 세계 패션 시장에 진출하는 데 성공했다.",
+                                               "why":  "break into = (시장 등에) 진출하다. After years of struggling(수년간의 고전 끝에)가 배경이다."
                                            },
                                            {
                                                "n":  97,
@@ -1302,7 +1434,9 @@ window.EXAMS[4] = {
                                                             "④ 재검토될 것이다",
                                                             "⑤ 자동으로 소멸될 것이다"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "새로운 환경 규제는 내년 초부터 효력이 발생할 것이다.",
+                                               "why":  "come into effect = 효력이 발생하다. at the beginning of next year(내년 초부터)가 시점을 나타낸다."
                                            },
                                            {
                                                "n":  98,
@@ -1315,7 +1449,9 @@ window.EXAMS[4] = {
                                                             "④ 모든 역사적 사건을 간략히 언급하는 것도 거부했다",
                                                             "⑤ 역사적 사건을 지나치게 자세히 설명했다"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "시간 제약 때문에, 그 강사는 모든 역사적 사건을 상세히 다룰 수 없었다.",
+                                               "why":  "could not go into detail = 상세히 다룰 수 없었다. Due to time constraints(시간 제약 때문에)가 원인이다."
                                            },
                                            {
                                                "n":  99,
@@ -1328,7 +1464,9 @@ window.EXAMS[4] = {
                                                             "④ 백신 개발 연구 결과를 은폐했다",
                                                             "⑤ 백신 개발에 수개월간의 연구를 쏟았다"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "그 팀은 수많은 생명을 구할 수 있는 백신을 개발하는 데 수개월간의 연구를 쏟았다.",
+                                               "why":  "put A into B = A를 B에 쏟아붓다. months of research(수개월간의 연구)를 백신 개발에 투입했다는 뜻이다."
                                            },
                                            {
                                                "n":  100,
@@ -1341,7 +1479,9 @@ window.EXAMS[4] = {
                                                             "④ 몇몇 옛 친구들에게 불쑥 들르다",
                                                             "⑤ 몇몇 옛 친구들과 연락을 끊다"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "고향으로의 여행 중, 그는 수년간 보지 못했던 몇몇 옛 친구들에게 불쑥 들르기로 했다.",
+                                               "why":  "drop in on = ~에게 불쑥 들르다. 미리 약속하지 않고 갑자기 방문한다는 뜻이다."
                                            }
                                        ]
                      }
