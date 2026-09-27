@@ -19,7 +19,8 @@ window.EXAMS[9] = {
                                                             "④ 무관심한",
                                                             "⑤ 의도적인"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "vacant = 비어 있는, 공석의. 명사는 vacancy(공석, 빈자리)다."
                                            },
                                            {
                                                "n":  2,
@@ -32,7 +33,8 @@ window.EXAMS[9] = {
                                                             "④ 다재다능함",
                                                             "⑤ 묵인"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "versatility = 다재다능함. 형용사는 versatile(다재다능한)이다."
                                            },
                                            {
                                                "n":  3,
@@ -45,7 +47,8 @@ window.EXAMS[9] = {
                                                             "④ 비난",
                                                             "⑤ 혼란"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "prophet = 예언자. 형용사는 prophetic(예언적인)이다."
                                            },
                                            {
                                                "n":  4,
@@ -58,7 +61,8 @@ window.EXAMS[9] = {
                                                             "④ 신중한",
                                                             "⑤ 무관심한"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "discreet = 신중한. 명사는 discretion(재량, 신중함)이다."
                                            },
                                            {
                                                "n":  5,
@@ -71,7 +75,8 @@ window.EXAMS[9] = {
                                                             "④ 격려하다, 북돋우다",
                                                             "⑤ 헌신하다, 바치다"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "devote = 헌신하다, 바치다. 명사는 devotion(헌신)이다."
                                            },
                                            {
                                                "n":  6,
@@ -84,7 +89,8 @@ window.EXAMS[9] = {
                                                             "④ 임명, 약속",
                                                             "⑤ 혼란"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "appointment = 임명, 약속. 동사는 appoint(임명하다)다."
                                            },
                                            {
                                                "n":  7,
@@ -97,7 +103,8 @@ window.EXAMS[9] = {
                                                             "④ 타협적인",
                                                             "⑤ 냉소적인"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "obstinate = 고집스러운, 완고한. 명사는 obstinacy(완고함)다."
                                            },
                                            {
                                                "n":  8,
@@ -110,7 +117,8 @@ window.EXAMS[9] = {
                                                             "④ 포기",
                                                             "⑤ 쇠퇴"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "vanity = 허영심. 형용사는 vain(허영심 많은; 헛된)이다."
                                            },
                                            {
                                                "n":  9,
@@ -123,7 +131,8 @@ window.EXAMS[9] = {
                                                             "④ 격려하다, 북돋우다",
                                                             "⑤ 방해하다, 훼방놓다"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "stagnate = 침체되다, 정체되다. 형용사는 stagnant(침체된, 고여 있는)다."
                                            },
                                            {
                                                "n":  10,
@@ -136,7 +145,8 @@ window.EXAMS[9] = {
                                                             "④ 단호한",
                                                             "⑤ 일관된"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "prophetic = 예언적인. 명사는 prophet(예언자)이다."
                                            },
                                            {
                                                "n":  11,
@@ -149,7 +159,8 @@ window.EXAMS[9] = {
                                                             "④ 열정적인",
                                                             "⑤ 단호한"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "versatile = 다재다능한, 다용도의. 명사는 versatility다."
                                            },
                                            {
                                                "n":  12,
@@ -162,7 +173,8 @@ window.EXAMS[9] = {
                                                             "④ 보완",
                                                             "⑤ 쇠퇴"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "vacancy = 공석, 빈자리. 형용사는 vacant(비어 있는)다."
                                            },
                                            {
                                                "n":  13,
@@ -175,7 +187,8 @@ window.EXAMS[9] = {
                                                             "④ 증명하다",
                                                             "⑤ 방해하다, 훼방놓다"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "dilute = 희석하다, 약화시키다. 명사는 dilution이다."
                                            },
                                            {
                                                "n":  14,
@@ -188,7 +201,8 @@ window.EXAMS[9] = {
                                                             "④ 단호한",
                                                             "⑤ 믿을 만한"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "credible = 믿을 만한. 명사는 credence(신빙성, 신뢰)다."
                                            },
                                            {
                                                "n":  15,
@@ -201,7 +215,8 @@ window.EXAMS[9] = {
                                                             "④ 순진한, 세상 물정 모르는",
                                                             "⑤ 막연한"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "naive = 순진한, 세상 물정 모르는. 명사는 naivety(순진함)다."
                                            },
                                            {
                                                "n":  16,
@@ -214,7 +229,8 @@ window.EXAMS[9] = {
                                                             "④ 번영",
                                                             "⑤ 보완"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "devotion = 헌신. 동사는 devote(헌신하다)다."
                                            },
                                            {
                                                "n":  17,
@@ -227,7 +243,8 @@ window.EXAMS[9] = {
                                                             "④ 타협하다",
                                                             "⑤ 억제하다"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "regress = 퇴행하다, 후퇴하다. 명사는 regression이다."
                                            },
                                            {
                                                "n":  18,
@@ -240,7 +257,8 @@ window.EXAMS[9] = {
                                                             "④ 강요",
                                                             "⑤ 실망"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "obstinacy = 완고함. 형용사는 obstinate(고집스러운)다."
                                            },
                                            {
                                                "n":  19,
@@ -253,7 +271,8 @@ window.EXAMS[9] = {
                                                             "④ 칭찬",
                                                             "⑤ 철회"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "discretion = 재량(권), 신중함. 형용사는 discreet(신중한)다."
                                            },
                                            {
                                                "n":  20,
@@ -266,7 +285,8 @@ window.EXAMS[9] = {
                                                             "④ 칭찬",
                                                             "⑤ 강요"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "liberation = 해방. 동사는 liberate(해방시키다)다."
                                            },
                                            {
                                                "n":  21,
@@ -279,7 +299,8 @@ window.EXAMS[9] = {
                                                             "④ 확고한",
                                                             "⑤ 막연한"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "punctual = 시간을 잘 지키는. 명사는 punctuality(시간 엄수)다."
                                            },
                                            {
                                                "n":  22,
@@ -292,7 +313,8 @@ window.EXAMS[9] = {
                                                             "④ 촉진",
                                                             "⑤ 격려"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "regression = 퇴행; (통계) 회귀. 동사는 regress(퇴행하다)다."
                                            },
                                            {
                                                "n":  23,
@@ -305,7 +327,8 @@ window.EXAMS[9] = {
                                                             "④ 불신",
                                                             "⑤ 촉진"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "credence = 신빙성, 신뢰. 형용사는 credible(믿을 만한)이다."
                                            },
                                            {
                                                "n":  24,
@@ -318,7 +341,8 @@ window.EXAMS[9] = {
                                                             "④ 위조",
                                                             "⑤ 희석, 약화"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "dilution = 희석, 약화. 동사는 dilute(희석하다)다."
                                            },
                                            {
                                                "n":  25,
@@ -331,7 +355,8 @@ window.EXAMS[9] = {
                                                             "④ 억제하다",
                                                             "⑤ 묵인하다"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "liberate = 해방시키다. 명사는 liberation(해방)이다."
                                            },
                                            {
                                                "n":  26,
@@ -344,7 +369,8 @@ window.EXAMS[9] = {
                                                             "④ 타협",
                                                             "⑤ 시간 엄수"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "punctuality = 시간 엄수. 형용사는 punctual(시간을 잘 지키는)이다."
                                            },
                                            {
                                                "n":  27,
@@ -357,7 +383,8 @@ window.EXAMS[9] = {
                                                             "④ 철회하다",
                                                             "⑤ 억제하다"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "appoint = 임명하다, 지정하다. 명사는 appointment다."
                                            },
                                            {
                                                "n":  28,
@@ -370,7 +397,8 @@ window.EXAMS[9] = {
                                                             "④ 타협",
                                                             "⑤ 순진함"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "naivety = 순진함. 형용사는 naive(순진한)다."
                                            },
                                            {
                                                "n":  29,
@@ -383,7 +411,8 @@ window.EXAMS[9] = {
                                                             "④ 즉흥적인",
                                                             "⑤ 막연한"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "vain = 헛된; 허영심 많은. 명사는 vanity(허영심)다."
                                            },
                                            {
                                                "n":  30,
@@ -396,7 +425,8 @@ window.EXAMS[9] = {
                                                             "④ 산만한",
                                                             "⑤ 관대한"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "stagnant = 침체된, 고여 있는. 동사는 stagnate(침체되다)다."
                                            }
                                        ]
                      },
@@ -416,7 +446,9 @@ window.EXAMS[9] = {
                                                             "④ resume",
                                                             "⑤ commit"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "기술적 문제로 잠시 중단된 후, 회의는 정확히 중단됐던 지점에서 재개될 수 있었다.",
+                                               "why":  "resume = 재개하다. exactly where it had left off(정확히 중단됐던 지점에서)가 단서다."
                                            },
                                            {
                                                "n":  32,
@@ -429,7 +461,9 @@ window.EXAMS[9] = {
                                                             "④ discharge",
                                                             "⑤ efficacy"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "저녁 러시아워 동안 도시의 주요 간선도로에서 교통이 완전히 멈춰 섰다.",
+                                               "why":  "artery = 간선도로, 주요 도로. main ________(주요 ___)와 어울리는 명사다."
                                            },
                                            {
                                                "n":  33,
@@ -442,7 +476,9 @@ window.EXAMS[9] = {
                                                             "④ premise",
                                                             "⑤ discharge"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "그 논거 전체는 모든 소비자가 합리적으로 행동한다는 전제에 근거하는데, 저자는 이를 전혀 증명하지 않는다.",
+                                               "why":  "premise = 전제. which the author never proves(저자가 전혀 증명하지 않는)가 단서다."
                                            },
                                            {
                                                "n":  34,
@@ -455,7 +491,9 @@ window.EXAMS[9] = {
                                                             "④ garment",
                                                             "⑤ efficacy"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "그 비극적인 사건은 수십 년이 지난 지금도 여전히 눈에 보이는 지속적인 흔적을 공동체 전체에 남겼다.",
+                                               "why":  "imprint = 흔적, 자국. that is still visible decades later(수십 년 후에도 여전히 보이는)가 단서다."
                                            },
                                            {
                                                "n":  35,
@@ -468,7 +506,9 @@ window.EXAMS[9] = {
                                                             "④ stable",
                                                             "⑤ vulnerable"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "헌법은 권력 남용을 막기 위해 행정권을 사법권과 신중하게 분리한다.",
+                                               "why":  "executive = 행정의. ________ power from judicial power(사법권으로부터 ___권을)가 단서다."
                                            },
                                            {
                                                "n":  36,
@@ -481,7 +521,9 @@ window.EXAMS[9] = {
                                                             "④ commit",
                                                             "⑤ dispose"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "그 스타트업 창립자는 다음 주 투자자들이 가득한 방에서 자신의 아이디어를 발표할 것이다.",
+                                               "why":  "pitch = (아이디어 등을) 발표하다, 제안하다. to a room full of investors(투자자들이 가득한 방에서)가 발표 대상이다."
                                            },
                                            {
                                                "n":  37,
@@ -494,7 +536,9 @@ window.EXAMS[9] = {
                                                             "④ coherence",
                                                             "⑤ adherence"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "어두운 빛 속에서, 동공은 망막에 더 많은 빛이 도달하도록 자연스럽게 넓어진다.",
+                                               "why":  "pupil = 동공. widens to let more light reach the retina(망막에 더 많은 빛이 도달하도록 넓어짐)가 단서다."
                                            },
                                            {
                                                "n":  38,
@@ -507,7 +551,9 @@ window.EXAMS[9] = {
                                                             "④ colony",
                                                             "⑤ prosecution"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "생물학자들은 개미 군집이 어떻게 채집 행동을 조정하는지 연구했다.",
+                                               "why":  "colony = 군집, 집단. of ants(개미의)와 어울리는 명사다."
                                            },
                                            {
                                                "n":  39,
@@ -520,7 +566,9 @@ window.EXAMS[9] = {
                                                             "④ adherence",
                                                             "⑤ prosecution"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "그 투자자는 그 기술 스타트업 지분의 상당 부분을 보유하고 있으며, 주식의 거의 3분의 1을 소유하고 있다.",
+                                               "why":  "stake = 지분. owning nearly a third of its shares(주식의 거의 3분의 1을 소유함)가 단서다."
                                            },
                                            {
                                                "n":  40,
@@ -533,7 +581,9 @@ window.EXAMS[9] = {
                                                             "④ conduct",
                                                             "⑤ sequence"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "그 회사는 계약 위반을 이유로 전 사업 파트너를 상대로 소송을 제기했다.",
+                                               "why":  "suit = 소송. filed a(n) ________ against(~을 상대로 ___을 제기했다)가 단서다."
                                            },
                                            {
                                                "n":  41,
@@ -546,7 +596,9 @@ window.EXAMS[9] = {
                                                             "④ seal",
                                                             "⑤ commit"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "두 지도자는 공개적인 악수가 마침내 그 역사적인 협정을 확정지어 주기를 바랐다.",
+                                               "why":  "seal = (거래·협정을) 확정짓다. the historic agreement(그 역사적인 협정)를 목적어로 받는다."
                                            },
                                            {
                                                "n":  42,
@@ -559,7 +611,9 @@ window.EXAMS[9] = {
                                                             "④ credit",
                                                             "⑤ substitute"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "그 과학자는 몇 년 전 이룬 획기적인 발견에 대해 마침내 공로를 인정받았다.",
+                                               "why":  "credit = 공로, 인정. was finally given ________(마침내 ___을 받았다)가 단서다."
                                            },
                                            {
                                                "n":  43,
@@ -572,7 +626,9 @@ window.EXAMS[9] = {
                                                             "④ conduct",
                                                             "⑤ sequence"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "세입자는 입주 전에 보증금을 내야 하며, 퇴거 시 환불받는다.",
+                                               "why":  "deposit = 보증금. refundable when they leave(퇴거 시 환불 가능한)가 단서다."
                                            },
                                            {
                                                "n":  44,
@@ -585,7 +641,9 @@ window.EXAMS[9] = {
                                                             "④ stable",
                                                             "⑤ vulnerable"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "그 늙은 등대지기는 외딴섬에서 몇 달간 아무도 만나지 못한 채 고독한 삶을 살았다.",
+                                               "why":  "solitary = 고독한, 홀로 하는. seeing no one for months(몇 달간 아무도 만나지 못한)가 단서다."
                                            },
                                            {
                                                "n":  45,
@@ -598,7 +656,9 @@ window.EXAMS[9] = {
                                                             "④ compulsory",
                                                             "⑤ compelling"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "광산이 폐쇄된 후, 한때 번영했던 마을은 거리가 텅 빈 황량한 유령 도시가 되었다.",
+                                               "why":  "desolate = 황량한. ghost town with empty streets(거리가 텅 빈 유령 도시)가 단서다."
                                            },
                                            {
                                                "n":  46,
@@ -611,7 +671,9 @@ window.EXAMS[9] = {
                                                             "④ synthesis",
                                                             "⑤ contention"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "정부는 국내 제조업체를 보호하기 위해 수입 철강에 관세를 부과했다.",
+                                               "why":  "tariff = 관세. imposed a(n) ________ on imported steel(수입 철강에 ___을 부과했다)가 단서다."
                                            },
                                            {
                                                "n":  47,
@@ -624,7 +686,9 @@ window.EXAMS[9] = {
                                                             "④ disclosure",
                                                             "⑤ deterrent"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "농부들은 상승하는 생산 비용을 상쇄하는 데 도움이 되도록 정부 보조금을 받는다.",
+                                               "why":  "subsidy = 보조금. to help offset rising production costs(상승하는 생산 비용을 상쇄하는 데 도움이 되도록)가 목적이다."
                                            },
                                            {
                                                "n":  48,
@@ -637,7 +701,9 @@ window.EXAMS[9] = {
                                                             "④ correspond",
                                                             "⑤ recede"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "배가 계속 항해하면서, 해안선은 점차 멀리 사라져 갔다.",
+                                               "why":  "recede = (시야에서) 멀어지다, 물러나다. into the distance(멀리로)가 단서다."
                                            },
                                            {
                                                "n":  49,
@@ -650,7 +716,9 @@ window.EXAMS[9] = {
                                                             "④ marginal",
                                                             "⑤ absurd"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "막대한 투자에도 불구하고, 그 캠페인은 매출에서 미미한 증가만을 만들어냈다.",
+                                               "why":  "marginal = 미미한, 미세한. Despite the massive investment(막대한 투자에도 불구하고)와 대비된다."
                                            },
                                            {
                                                "n":  50,
@@ -663,7 +731,9 @@ window.EXAMS[9] = {
                                                             "④ contention",
                                                             "⑤ deterrent"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "교사들은 경계선에 있는 에세이를 채점할 때 자신의 재량을 사용할 수 있다.",
+                                               "why":  "discretion = 재량. their own ________(자신의 ___)가 단서다."
                                            },
                                            {
                                                "n":  51,
@@ -676,7 +746,9 @@ window.EXAMS[9] = {
                                                             "④ credence",
                                                             "⑤ sentence"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "그 고대 문서의 발견은 한때 의심받던 역사학자의 이론에 신빙성을 더해주었다.",
+                                               "why":  "credence = 신빙성, 신뢰. lent ________ to(~에 ___을 더해주었다)가 단서다."
                                            },
                                            {
                                                "n":  52,
@@ -689,7 +761,9 @@ window.EXAMS[9] = {
                                                             "④ vacant",
                                                             "⑤ inert"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "많은 지원자에도 불구하고, 그 관리자 직책은 거의 석 달 동안 공석으로 남아 있었다.",
+                                               "why":  "vacant = 공석의, 비어 있는. despite many applicants(많은 지원자에도 불구하고)와 대비된다."
                                            },
                                            {
                                                "n":  53,
@@ -702,7 +776,9 @@ window.EXAMS[9] = {
                                                             "④ wary",
                                                             "⑤ versatile"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "대나무는 가구부터 건축까지 모든 곳에 쓰이는 다용도 소재로 높이 평가받는다.",
+                                               "why":  "versatile = 다재다능한, 다용도의. used in everything from furniture to construction(가구부터 건축까지 모든 곳에 쓰이는)이 단서다."
                                            },
                                            {
                                                "n":  54,
@@ -715,7 +791,9 @@ window.EXAMS[9] = {
                                                             "④ questionable",
                                                             "⑤ composite"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "늘어나는 증거에도 불구하고, 그는 원래의 의견을 재고하기를 거부하며 완고하게 고수했다.",
+                                               "why":  "obstinate = 고집스러운, 완고한. refusing to reconsider it(재고하기를 거부하는)이 단서다."
                                            },
                                            {
                                                "n":  55,
@@ -728,7 +806,9 @@ window.EXAMS[9] = {
                                                             "④ abrupt",
                                                             "⑤ impartial"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "새 정책이 하룻밤 사이에 모든 문제를 해결할 것이라고 생각하는 것은 순진한 일일 것이다.",
+                                               "why":  "naive = 순진한, 세상 물정 모르는. to think that the new policy will solve every problem overnight(새 정책이 하룻밤 사이에 모든 문제를 해결할 것이라 생각하는 것)이 순진함의 내용이다."
                                            }
                                        ]
                      },
@@ -748,7 +828,8 @@ window.EXAMS[9] = {
                                                             "④ enforce",
                                                             "⑤ comply"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "regress to an earlier stage = 이전 단계로 퇴행하다. regress 뒤에는 방향을 나타내는 전치사 to가 온다."
                                            },
                                            {
                                                "n":  57,
@@ -761,7 +842,8 @@ window.EXAMS[9] = {
                                                             "④ doctrine",
                                                             "⑤ sentence"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "submit a resume = 이력서를 제출하다. resume(이력서)과 잘 어울리는 동사는 submit이다."
                                            },
                                            {
                                                "n":  58,
@@ -774,7 +856,8 @@ window.EXAMS[9] = {
                                                             "④ correspond",
                                                             "⑤ liberate"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "liberate a country = 나라를 해방시키다. liberate(해방시키다)는 목적어를 바로 받는 타동사다."
                                            },
                                            {
                                                "n":  59,
@@ -787,7 +870,8 @@ window.EXAMS[9] = {
                                                             "④ imprint",
                                                             "⑤ sentence"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "leave an imprint = 흔적을 남기다. imprint(흔적)와 잘 어울리는 동사는 leave다."
                                            },
                                            {
                                                "n":  60,
@@ -800,7 +884,8 @@ window.EXAMS[9] = {
                                                             "④ executive",
                                                             "⑤ framework"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "a chief executive = 최고 경영자. executive(경영진, 경영의)와 잘 어울리는 형용사는 chief(최고의)다."
                                            },
                                            {
                                                "n":  61,
@@ -813,7 +898,8 @@ window.EXAMS[9] = {
                                                             "④ reserve",
                                                             "⑤ debt"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "at stake = 위태로운, 걸려 있는. stake(지분, 판돈)가 전치사구로 굳어진 관용 표현이다."
                                            },
                                            {
                                                "n":  62,
@@ -826,7 +912,8 @@ window.EXAMS[9] = {
                                                             "④ obscure",
                                                             "⑤ reconcile"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "devote oneself to = ~에 헌신하다. devote 뒤에는 재귀대명사와 전치사 to가 온다."
                                            },
                                            {
                                                "n":  63,
@@ -839,7 +926,8 @@ window.EXAMS[9] = {
                                                             "④ reconcile",
                                                             "⑤ cultivate"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "appoint someone as = ~을 …로 임명하다. appoint 뒤에는 직책을 나타내는 전치사 as가 온다."
                                            },
                                            {
                                                "n":  64,
@@ -852,7 +940,8 @@ window.EXAMS[9] = {
                                                             "④ obscure",
                                                             "⑤ reconcile"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "seal the deal = 거래를 확정짓다. seal(확정짓다)과 잘 어울리는 명사는 deal이다."
                                            },
                                            {
                                                "n":  65,
@@ -865,7 +954,8 @@ window.EXAMS[9] = {
                                                             "④ simultaneous",
                                                             "⑤ questionable"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "in vain = 헛되이. vain(헛된)이 전치사구로 굳어진 관용 표현이다."
                                            },
                                            {
                                                "n":  66,
@@ -878,7 +968,8 @@ window.EXAMS[9] = {
                                                             "④ dilute",
                                                             "⑤ circumvent"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "dilute the impact = 영향력을 약화시키다. dilute(희석하다, 약화시키다)와 잘 어울리는 명사는 impact다."
                                            },
                                            {
                                                "n":  67,
@@ -891,7 +982,8 @@ window.EXAMS[9] = {
                                                             "④ patron",
                                                             "⑤ pupil"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "a bright pupil = 똑똑한 학생. 여기서 pupil은 \u0027학생\u0027을 뜻하며, 눈의 \u0027동공\u0027을 뜻하는 Q37의 pupil과 다른 의미로 쓰였다."
                                            },
                                            {
                                                "n":  68,
@@ -904,7 +996,8 @@ window.EXAMS[9] = {
                                                             "④ dichotomy",
                                                             "⑤ consensus"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "a former colony = 과거 식민지였던 국가. colony(식민지)와 잘 어울리는 형용사는 former(과거의)다."
                                            },
                                            {
                                                "n":  69,
@@ -917,7 +1010,8 @@ window.EXAMS[9] = {
                                                             "④ composite",
                                                             "⑤ stagnant"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "stagnant water = 고인 물. stagnant(고여 있는)와 잘 어울리는 명사는 water다."
                                            },
                                            {
                                                "n":  70,
@@ -930,7 +1024,8 @@ window.EXAMS[9] = {
                                                             "④ marginal",
                                                             "⑤ volatile"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "a marginal improvement = 미미한 개선. marginal(미미한)과 잘 어울리는 명사는 improvement다."
                                            }
                                        ]
                      },
@@ -950,7 +1045,8 @@ window.EXAMS[9] = {
                                                             "④ dismantle",
                                                             "⑤ fade"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "go for = 추구하다, 얻으려 하다. 목표를 향해 나아간다는 뜻이라 pursue와 유의어다."
                                            },
                                            {
                                                "n":  72,
@@ -963,7 +1059,8 @@ window.EXAMS[9] = {
                                                             "④ overturn",
                                                             "⑤ seek"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "look for = 찾다. 원하는 것을 구한다는 뜻이라 seek과 같다."
                                            },
                                            {
                                                "n":  73,
@@ -976,7 +1073,8 @@ window.EXAMS[9] = {
                                                             "④ extend",
                                                             "⑤ represent"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "stand for = 상징하다, 나타내다. 무언가를 대표한다는 뜻이라 represent와 유의어다."
                                            },
                                            {
                                                "n":  74,
@@ -989,7 +1087,8 @@ window.EXAMS[9] = {
                                                             "④ demand",
                                                             "⑤ exclude"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "call for = 요구하다. 필요하다고 촉구한다는 뜻이라 demand와 같다."
                                            },
                                            {
                                                "n":  75,
@@ -1002,7 +1101,8 @@ window.EXAMS[9] = {
                                                             "④ vanish",
                                                             "⑤ mediate"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "come through = 살아남다, 이겨내다. 어려움을 뚫고 나온다는 뜻이라 survive와 유의어다."
                                            },
                                            {
                                                "n":  76,
@@ -1015,7 +1115,8 @@ window.EXAMS[9] = {
                                                             "④ abandon",
                                                             "⑤ mediate"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "get through = 견뎌내다. 힘든 시기를 버텨낸다는 뜻이라 endure와 같다."
                                            },
                                            {
                                                "n":  77,
@@ -1028,7 +1129,8 @@ window.EXAMS[9] = {
                                                             "④ diminish",
                                                             "⑤ release"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "why":  "go through = 겪다, 경험하다. 어려운 과정을 지난다는 뜻이라 undergo와 유의어다."
                                            },
                                            {
                                                "n":  78,
@@ -1041,7 +1143,8 @@ window.EXAMS[9] = {
                                                             "④ withdraw",
                                                             "⑤ release"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "look through = 훑어보다, 검토하다. 자세히 살펴본다는 뜻이라 examine과 같다."
                                            },
                                            {
                                                "n":  79,
@@ -1054,7 +1157,8 @@ window.EXAMS[9] = {
                                                             "④ evoke",
                                                             "⑤ withdraw"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "why":  "bring back = (기억을) 되살리다, 불러일으키다. 지난 일을 다시 떠오르게 한다는 뜻이라 evoke와 유의어다."
                                            },
                                            {
                                                "n":  80,
@@ -1067,7 +1171,8 @@ window.EXAMS[9] = {
                                                             "④ repay",
                                                             "⑤ inherit"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "put forward = (의견을) 제시하다. 생각을 내놓는다는 뜻이라 propose와 같다."
                                            },
                                            {
                                                "n":  81,
@@ -1080,7 +1185,8 @@ window.EXAMS[9] = {
                                                             "④ volatile",
                                                             "⑤ eligible"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "why":  "obstinate = 고집스러운, 완고한. 뜻을 굽히지 않는다는 뜻이라 stubborn과 유의어다."
                                            },
                                            {
                                                "n":  82,
@@ -1093,7 +1199,8 @@ window.EXAMS[9] = {
                                                             "④ extravagant",
                                                             "⑤ contentious"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "why":  "vain = 헛된. 결과 없이 소용없다는 뜻이라 futile과 같다."
                                            },
                                            {
                                                "n":  83,
@@ -1106,7 +1213,8 @@ window.EXAMS[9] = {
                                                             "④ contentious",
                                                             "⑤ gullible"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "naive = 순진한. 쉽게 속아 넘어간다는 뜻이라 gullible과 유의어다."
                                            },
                                            {
                                                "n":  84,
@@ -1119,7 +1227,8 @@ window.EXAMS[9] = {
                                                             "④ sustain",
                                                             "⑤ retreat"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "recede = 물러나다, 멀어지다. 뒤로 물러난다는 뜻이라 retreat와 같다."
                                            },
                                            {
                                                "n":  85,
@@ -1132,7 +1241,8 @@ window.EXAMS[9] = {
                                                             "④ voluntary",
                                                             "⑤ negligible"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "why":  "marginal = 미미한. 무시해도 될 만큼 작다는 뜻이라 negligible과 유의어다."
                                            }
                                        ]
                      },
@@ -1152,7 +1262,9 @@ window.EXAMS[9] = {
                                                             "④ sustain",
                                                             "⑤ constitute"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "더 나쁘거나 이전의 상태로 뒷걸음질 치다",
+                                               "why":  "regress = 퇴행하다. to move backward into a worse or earlier condition(더 나쁘거나 이전의 상태로 뒷걸음질 치다)이 정의다."
                                            },
                                            {
                                                "n":  87,
@@ -1165,7 +1277,9 @@ window.EXAMS[9] = {
                                                             "④ consensus",
                                                             "⑤ administration"
                                                         ],
-                                               "ans":  3
+                                               "ans":  3,
+                                               "kr":  "특정 상황에서 무엇을 해야 할지 결정할 자유",
+                                               "why":  "discretion = 재량(권). the freedom to decide what should be done in a particular situation(특정 상황에서 무엇을 해야 할지 결정할 자유)이 정의다."
                                            },
                                            {
                                                "n":  88,
@@ -1178,7 +1292,9 @@ window.EXAMS[9] = {
                                                             "④ dichotomy",
                                                             "⑤ premise"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "참으로 가정되어 논거의 근거로 쓰이는 진술",
+                                               "why":  "premise = 전제. a statement assumed to be true and used as the basis for an argument(참으로 가정되어 논거의 근거로 쓰이는 진술)가 정의다."
                                            },
                                            {
                                                "n":  89,
@@ -1191,7 +1307,9 @@ window.EXAMS[9] = {
                                                             "④ index",
                                                             "⑤ coincidence"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "무언가를 참되거나 믿을 만하다고 받아들이는 것",
+                                               "why":  "credence = 신빙성. acceptance of something as true or believable(무언가를 참되거나 믿을 만하다고 받아들이는 것)이 정의다."
                                            },
                                            {
                                                "n":  90,
@@ -1204,7 +1322,9 @@ window.EXAMS[9] = {
                                                             "④ voluntary",
                                                             "⑤ vacant"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "채워지거나 점유되지 않은; 차지할 수 있는",
+                                               "why":  "vacant = 비어 있는, 공석의. not filled or occupied; available to be taken(채워지거나 점유되지 않았고 차지할 수 있는)이 정의다."
                                            },
                                            {
                                                "n":  91,
@@ -1217,7 +1337,9 @@ window.EXAMS[9] = {
                                                             "④ intricate",
                                                             "⑤ versatile"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "다양한 다른 기능이나 활동에 적응할 수 있는",
+                                               "why":  "versatile = 다재다능한, 다용도의. able to adapt to many different functions or activities(다양한 다른 기능·활동에 적응할 수 있는)가 정의다."
                                            },
                                            {
                                                "n":  92,
@@ -1230,7 +1352,9 @@ window.EXAMS[9] = {
                                                             "④ shatter",
                                                             "⑤ integrate"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "물을 더해 액체를 약하게 만들거나, 효과를 약화시키다",
+                                               "why":  "dilute = 희석하다, 약화시키다. to make a liquid weaker by adding water, or to weaken an effect(물을 더해 액체를 약하게 만들거나 효과를 약화시키다)가 정의다."
                                            },
                                            {
                                                "n":  93,
@@ -1243,7 +1367,9 @@ window.EXAMS[9] = {
                                                             "④ punctual",
                                                             "⑤ sensible"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "정확히 예상된 시간에 도착하거나 무언가를 하는",
+                                               "why":  "punctual = 시간을 잘 지키는. arriving or doing something at exactly the expected time(정확히 예상된 시간에 도착하거나 무언가를 하는)이 정의다."
                                            },
                                            {
                                                "n":  94,
@@ -1256,7 +1382,9 @@ window.EXAMS[9] = {
                                                             "④ index",
                                                             "⑤ tariff"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "한 나라로 들어오는 상품에 부과되는 세금",
+                                               "why":  "tariff = 관세. a tax placed on goods coming into a country(한 나라로 들어오는 상품에 부과되는 세금)가 정의다."
                                            },
                                            {
                                                "n":  95,
@@ -1269,7 +1397,9 @@ window.EXAMS[9] = {
                                                             "④ coincidence",
                                                             "⑤ subsidy"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "산업을 지원하거나 가격을 낮게 유지하기 위해 정부가 지급하는 돈",
+                                               "why":  "subsidy = 보조금. money paid by a government to support an industry or keep prices low(산업을 지원하거나 가격을 낮게 유지하기 위해 정부가 지급하는 돈)가 정의다."
                                            }
                                        ]
                      },
@@ -1289,7 +1419,9 @@ window.EXAMS[9] = {
                                                             "④ 끊임없이 갈등을 겪었다",
                                                             "⑤ 자주 오해를 겪었다"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "매우 다른 성격에도 불구하고, 두 동료는 놀라울 정도로 잘 지낼 수 있었다.",
+                                               "why":  "get along = 잘 지내다. remarkably well(놀라울 정도로 잘)이 단서다."
                                            },
                                            {
                                                "n":  97,
@@ -1302,7 +1434,9 @@ window.EXAMS[9] = {
                                                             "④ 위원회 자체를 해체했다",
                                                             "⑤ 위원회의 권고에 따르기로 했다"
                                                         ],
-                                               "ans":  5
+                                               "ans":  5,
+                                               "kr":  "그녀는 심각한 의구심이 있었음에도, 결국 위원회의 권고에 따르기로 했다.",
+                                               "why":  "go along with = ~에 따르다, 동의하다. Although she had serious doubts(심각한 의구심이 있었음에도)와 대비된다."
                                            },
                                            {
                                                "n":  98,
@@ -1315,7 +1449,9 @@ window.EXAMS[9] = {
                                                             "④ 일단은 요구에 맞춰주는 척했다",
                                                             "⑤ 즉시 경찰에 신고했다"
                                                         ],
-                                               "ans":  4
+                                               "ans":  4,
+                                               "kr":  "상황의 위험을 감지하고, 그녀는 당분간 낯선 사람의 요구에 일단 맞춰주는 척하기로 했다.",
+                                               "why":  "play along with = (속으로는 아니지만) 맞춰주는 척하다. for the time being(당분간)이 임시적인 태도임을 보여준다."
                                            },
                                            {
                                                "n":  99,
@@ -1328,7 +1464,9 @@ window.EXAMS[9] = {
                                                             "④ 그 참사와 무관하다고 인정받는다",
                                                             "⑤ 참사 조사를 지휘하게 된다"
                                                         ],
-                                               "ans":  1
+                                               "ans":  1,
+                                               "kr":  "반복된 안전 경고를 무시한 경영진은 결국 그 참사에 대해 책임져야 할 것이다.",
+                                               "why":  "answer for = ~에 대해 책임지다. ultimately have to ________(결국 ___해야 할 것이다)가 단서다."
                                            },
                                            {
                                                "n":  100,
@@ -1341,7 +1479,9 @@ window.EXAMS[9] = {
                                                             "④ 전혀 기억하지 못한다",
                                                             "⑤ 교직 복귀를 계획하고 있다"
                                                         ],
-                                               "ans":  2
+                                               "ans":  2,
+                                               "kr":  "이제 은퇴한 그 교사는 자신의 교직 40년을 깊은 만족감을 가지고 자주 회고한다.",
+                                               "why":  "look back on = ~을 회고하다, 돌아보다. with deep satisfaction(깊은 만족감을 가지고)이 회고의 태도다."
                                            }
                                        ]
                      }
