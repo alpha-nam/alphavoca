@@ -235,8 +235,7 @@
       '<div class="hd-main"><div><h2>' + esc(EXAM.title) + '</h2><p>6가지 유형 · 총 ' + total + '문항</p></div>' +
       '<div class="ring" style="--p:' + donePct + '"><i>' + donePct + '%</i></div></div>' +
       '<button class="pillbtn" id="start">' + (n ? '이어서 풀기 (' + n + '/' + total + ')' : '시작하기') + '</button></div>' +
-      '<div class="sheet"><div class="sec"><b>유형별 보기</b><span>' + EXAM.sections.length + '가지</span></div>' +
-      '<div class="tiles">';
+      '<div class="sheet"><div class="tiles">';
     EXAM.sections.forEach(function (s, si) {
       var done = 0;
       flat.forEach(function (f, i) { if (f.si === si && state.answers[i] !== undefined) done++; });
