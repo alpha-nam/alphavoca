@@ -178,7 +178,7 @@
     var maxOpen = Math.max.apply(null, AVAILABLE);
     var last = lastDay(), lp = last ? dayProgress(last) : 0;
     var favN = Object.keys(getBookmarks()).length;
-    var html = '<div class="hd hd-home"><span class="logo">ALPHA-MALE VOCA</span><h2>Check your vocab</h2><p>How far will you go today?</p>' +
+    var html = '<div class="hd hd-home"><span class="logo">Alpha Male VOCA</span><h2>Check your vocab</h2><p>How far will you go today?</p>' +
       '<div class="hd-art"><img class="hd-ill" src="assets/sticker.png" alt=""></div>' +
       '<div class="chips"><span class="chip">Day 1–' + maxOpen + ' open</span><span class="chip">' + favN + (favN === 1 ? ' favorite' : ' favorites') + '</span></div></div>' +
       '<div class="sheet">';
