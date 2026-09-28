@@ -79,7 +79,7 @@
 
   var ICON_HOME = '<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>';
   var ICON_STAR = '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
-  var HERO_SVG = '<svg class="hd-ill" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCEFE6"/></linearGradient></defs>' +
+  var HERO_SVG = '<svg class="hd-ill" viewBox="4 8 112 108" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCEFE6"/></linearGradient></defs>' +
     '<ellipse cx="60" cy="108" rx="38" ry="5" fill="rgba(0,0,0,.2)"/>' +
     '<path d="M22 16H98A14 14 0 0 1 112 30V66A14 14 0 0 1 98 80H62L40 100V80H22A14 14 0 0 1 8 66V30A14 14 0 0 1 22 16Z" fill="url(#hg)"/>' +
     '<rect x="18" y="20" width="84" height="7" rx="3.5" fill="#fff" opacity=".7"/>' +
