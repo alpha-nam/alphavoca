@@ -15,7 +15,7 @@
   var app = document.getElementById("app");
   var EXAM = null, flat = [], total = 0, KEY = "";
 
-  var state = { view: "days", day: 0, cur: 0, answers: {}, filter: "all" };
+  var state = { view: "days", day: 0, cur: 0, answers: {}, filter: "all", mode: "study" };
 
   function selectDay(n) {
     state.day = n;
@@ -26,17 +26,17 @@
     });
     total = flat.length;
     KEY = "vocab-exam-day" + n + "-v1";
-    state.cur = 0; state.answers = {}; state.filter = "all";
+    state.cur = 0; state.answers = {}; state.filter = "all"; state.mode = "study";
     try {
       var raw = localStorage.getItem(KEY);
       if (raw) {
         var d = JSON.parse(raw);
-        if (d && d.answers) { state.answers = d.answers; state.cur = d.cur || 0; }
+        if (d && d.answers) { state.answers = d.answers; state.cur = d.cur || 0; state.mode = d.mode || "study"; }
       }
     } catch (e) {}
   }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify({ answers: state.answers, cur: state.cur })); } catch (e) {}
+    try { localStorage.setItem(KEY, JSON.stringify({ answers: state.answers, cur: state.cur, mode: state.mode })); } catch (e) {}
   }
   function dayProgress(n) {
     try {
@@ -115,11 +115,23 @@
   /* ---------- home ---------- */
   function home() {
     var n = answeredCount();
+    var startBlock;
+    if (n) {
+      startBlock = '<button class="btn btn-light btn-block" id="start">이어서 풀기 (' + n + '/' + total + ')</button>';
+    } else {
+      var mStudy = state.mode !== "exam";
+      startBlock =
+        '<div class="modesel">' +
+          '<label class="moderadio' + (mStudy ? " on" : "") + '"><input type="radio" name="mode" value="study"' + (mStudy ? " checked" : "") + '><b>학습 모드</b><span>문제마다 바로 정답·해설 확인</span></label>' +
+          '<label class="moderadio' + (!mStudy ? " on" : "") + '"><input type="radio" name="mode" value="exam"' + (!mStudy ? " checked" : "") + '><b>시험 모드</b><span>100문항 다 풀고 한번에 채점</span></label>' +
+        '</div>' +
+        '<button class="btn btn-light btn-block" id="start">시작하기</button>';
+    }
     var html = '<div class="top"><button class="icon" id="days" aria-label="Day 선택">←</button><h1>Day ' + state.day + '</h1><span class="spacer"></span></div>' +
       '<div class="sheet">' +
       '<div class="hero"><h2>' + esc(EXAM.title) + '</h2>' +
-      '<p>6가지 유형 · 총 ' + total + '문항. 끝까지 풀고 제출하면 자동 채점과 해설을 볼 수 있어요.</p>' +
-      '<button class="btn btn-light" id="start">' + (n ? "이어서 풀기 (" + n + "/" + total + ")" : "시험 시작") + '</button></div>' +
+      '<p>6가지 유형 · 총 ' + total + '문항. 학습 모드는 문제마다 바로 확인, 시험 모드는 끝까지 풀고 한번에 채점해요.</p>' +
+      startBlock + '</div>' +
       '<h3 class="sec">유형별 보기</h3>';
     EXAM.sections.forEach(function (s, si) {
       var done = 0;
@@ -134,7 +146,20 @@
       '<p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>';
     app.innerHTML = html;
     document.getElementById("days").onclick = closeDay;
-    document.getElementById("start").onclick = function () { state.cur = n ? state.cur : 0; go("quiz"); };
+    document.getElementById("start").onclick = function () {
+      if (!n) {
+        var checked = app.querySelector('input[name="mode"]:checked');
+        state.mode = checked ? checked.value : "study";
+        save();
+      }
+      state.cur = n ? state.cur : 0; go("quiz");
+    };
+    Array.prototype.forEach.call(app.querySelectorAll(".moderadio"), function (lab) {
+      lab.onclick = function () {
+        Array.prototype.forEach.call(app.querySelectorAll(".moderadio"), function (l) { l.classList.remove("on"); });
+        lab.classList.add("on");
+      };
+    });
     var r = document.getElementById("reset");
     if (r) r.onclick = function () { if (confirm("지금까지의 답안을 모두 지우고 처음부터 시작할까요?")) { state.answers = {}; state.cur = 0; save(); render(); } };
     Array.prototype.forEach.call(app.querySelectorAll("[data-sec]"), function (b) {
@@ -145,7 +170,7 @@
   /* ---------- quiz ---------- */
   function quiz() {
     var f = flat[state.cur], q = f.q, sel = state.answers[state.cur];
-    var isFirstOfSec = state.cur === 0 || flat[state.cur - 1].si !== f.si;
+    var revealed = state.mode === "study" && sel !== undefined;
     var pct = Math.round(answeredCount() / total * 100);
     var html = '<div class="top"><button class="icon" id="back" aria-label="홈">←</button>' +
       '<h1>' + esc(f.s.id) + '. ' + esc(f.s.title) + '</h1><span class="spacer"></span></div>' +
@@ -155,9 +180,20 @@
       '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
       '<div class="stem">' + stem(q.q) + '</div>';
     q.opts.forEach(function (o, i) {
-      var p = optParts(o);
-      html += '<button class="opt' + (sel === i + 1 ? " sel" : "") + '" data-i="' + (i + 1) + '"><span class="no">' + (i + 1) + '</span><span>' + esc(p.text) + '</span></button>';
+      var p = optParts(o), cls = "opt", mark = "";
+      if (revealed) {
+        if (i + 1 === q.ans) { cls += " correct"; mark = "정답"; }
+        else if (i + 1 === sel) { cls += " wrong"; mark = "내 답"; }
+      } else if (sel === i + 1) { cls += " sel"; }
+      html += '<button class="' + cls + '"' + (revealed ? " disabled" : "") + ' data-i="' + (i + 1) + '"><span class="no">' + (i + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + '</button>';
     });
+    if (revealed) {
+      var isCorrect = sel === q.ans;
+      html += '<div class="feedback ' + (isCorrect ? "ok" : "bad") + '">' + (isCorrect ? "정답이에요!" : "오답이에요.") + '</div>';
+      html += (q.kr || q.why)
+        ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div>'
+        : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div>';
+    }
     var last = state.cur === total - 1;
     html += '</div><div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>이전</button>' +
       (last ? '<button class="next" id="submit">제출</button>' : '<button class="next" id="next">다음</button>') + '</div>' +
@@ -167,7 +203,9 @@
     Array.prototype.forEach.call(app.querySelectorAll(".opt"), function (b) {
       b.onclick = function () {
         var v = +b.getAttribute("data-i");
-        if (state.answers[state.cur] === v) delete state.answers[state.cur]; else state.answers[state.cur] = v;
+        if (state.mode === "study") { state.answers[state.cur] = v; }
+        else if (state.answers[state.cur] === v) { delete state.answers[state.cur]; }
+        else { state.answers[state.cur] = v; }
         save(); quiz();
       };
     });
