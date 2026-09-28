@@ -77,6 +77,22 @@
     });
   }
 
+  var ICON_HOME = '<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>';
+  var ICON_STAR = '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
+  function tabbar(active) {
+    return '<nav class="tabs"><button class="tab' + (active === "home" ? " on" : "") + '" data-tab="home">' + ICON_HOME + '홈</button>' +
+      '<button class="tab' + (active === "bm" ? " on" : "") + '" data-tab="bm">' + ICON_STAR + '즐겨찾기</button></nav>';
+  }
+  function wireTabs() {
+    Array.prototype.forEach.call(app.querySelectorAll(".tab"), function (t) {
+      t.onclick = function () { if (t.getAttribute("data-tab") === "bm") go("bookmarks"); else closeDay(); };
+    });
+  }
+  var LAST_KEY = "vocab-exam-last";
+  function lastDay() {
+    try { var n = +localStorage.getItem(LAST_KEY); return AVAILABLE.indexOf(n) >= 0 ? n : 0; } catch (e) { return 0; }
+  }
+
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
@@ -159,34 +175,41 @@
   }
 
   function days() {
-    var html = '<div class="top"><span class="spacer"></span><h1>Alpha-male Voca</h1><span class="spacer"></span></div>' +
-      '<div class="sheet"><div class="hero hero-icon"><img class="hero-ill" src="assets/icons/calendar.png" alt=""><h2>어휘 실력을 점검해 보세요</h2>' +
-      '<p>아래에서 학습한 범위를 선택하세요. 끝까지 풀고 제출하면 자동으로 채점하고 해설도 보여 드려요.</p></div>' +
-      '<h3 class="sec">학습 범위</h3><div class="daygrid">';
+    var maxOpen = Math.max.apply(null, AVAILABLE);
+    var last = lastDay(), lp = last ? dayProgress(last) : 0;
+    var html = '<div class="hd"><span class="logo">ALPHA-MALE VOCA</span><h2>어휘 실력을 점검해 보세요</h2><p>오늘은 어디까지 볼까요?</p>' +
+      '<img class="hd-ill" src="assets/icons/calendar.png" alt="">' +
+      '<div class="chips"><span class="chip">Day 1~' + maxOpen + ' 열림</span><span class="chip">즐겨찾기 ' + Object.keys(getBookmarks()).length + '개</span></div></div>' +
+      '<div class="sheet">';
+    if (lp) {
+      html += '<button class="resume" id="resume"><small>이어서 풀기</small><h4>Day ' + last + ' · ' + lp + '/100</h4>' +
+        '<span class="pb"><i style="width:' + lp + '%"></i></span><span class="go">→</span></button>';
+    }
+    html += '<div class="sec"><b>학습 범위</b><span>Day를 골라요</span></div><div class="sub">풀이 중인 Day는 색으로 표시돼요</div><div class="days">';
     for (var n = 1; n <= MAX_DAY; n++) {
-      var ex = AVAILABLE.indexOf(n) >= 0;
-      if (ex) {
+      if (AVAILABLE.indexOf(n) >= 0) {
         var p = dayProgress(n);
-        html += '<button class="daycard" data-day="' + n + '"><b>Day ' + n + '</b><span>' + '100문항' + (p ? " · " + p + " 풀이" : "") + '</span></button>';
+        html += '<button class="d' + (p ? " on" : "") + '" data-day="' + n + '"><b>' + n + '</b>' + (p ? p + "풀이" : "100문항") + '</button>';
       } else {
-        html += '<div class="daycard off"><img src="assets/icons/lock.png" alt=""><b>Day ' + n + '</b><span>준비 중</span></div>';
+        html += '<div class="d off"><img src="assets/icons/lock.png" alt=""><b>' + n + '</b></div>';
       }
     }
-    html += '</div><button class="btn btn-ghost btn-block" id="gobm" style="margin-top:14px">☆ 즐겨찾기 모아보기</button>' +
-      '<p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>';
+    html += '</div><p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
     app.innerHTML = html;
     Array.prototype.forEach.call(app.querySelectorAll("[data-day]"), function (b) {
       b.onclick = function () { openDay(+b.getAttribute("data-day")); };
     });
-    document.getElementById("gobm").onclick = function () { go("bookmarks"); };
+    var rs = document.getElementById("resume");
+    if (rs) rs.onclick = function () { openDay(last, true); };
+    wireTabs();
   }
-  function openDay(n) {
+  function openDay(n, toQuiz) {
     app.innerHTML = '<div class="top"><span class="spacer"></span><h1>Day ' + n + '</h1><span class="spacer"></span></div><div class="sheet"><p class="note">불러오는 중…</p></div>';
     loadDay(n, function (ok) {
       if (!ok) { alert("시험 데이터를 불러오지 못했어요. 새로고침 후 다시 시도해 주세요."); return closeDay(); }
       selectDay(n);
-      try { history.replaceState(null, "", "#day" + n); } catch (e) {}
-      go("home");
+      try { history.replaceState(null, "", "#day" + n); localStorage.setItem(LAST_KEY, n); } catch (e) {}
+      go(toQuiz ? "quiz" : "home");
     });
   }
   function closeDay() {
@@ -206,28 +229,25 @@
 
   /* ---------- home ---------- */
   function home() {
-    var n = answeredCount();
-    var startBlock = n
-      ? '<button class="btn btn-light btn-block" id="start">이어서 풀기 (' + n + '/' + total + ')</button>'
-      : '<button class="btn btn-light btn-block" id="start">시작하기</button>';
-    var html = '<div class="top"><button class="icon" id="days" aria-label="Day 선택">←</button><h1>Day ' + state.day + '</h1><span class="spacer"></span></div>' +
-      '<div class="sheet">' +
-      '<div class="hero"><h2>' + esc(EXAM.title) + '</h2>' +
-      '<p>6가지 유형 · 총 ' + total + '문항. 문제마다 바로 정답과 해설을 확인할 수 있어요.</p>' +
-      startBlock + '</div>' +
-      '<h3 class="sec">유형별 보기</h3>';
+    var n = answeredCount(), donePct = Math.round(n / total * 100);
+    var html = '<div class="hd hd-sm"><div class="row"><button class="back" id="days" aria-label="Day 선택">←</button><span class="logo">DAY ' + state.day + '</span></div>' +
+      '<div class="hd-main"><div><h2>' + esc(EXAM.title) + '</h2><p>6가지 유형 · 총 ' + total + '문항</p></div>' +
+      '<div class="ring" style="--p:' + donePct + '"><i>' + donePct + '%</i></div></div>' +
+      '<button class="pillbtn" id="start">' + (n ? '이어서 풀기 (' + n + '/' + total + ')' : '시작하기') + '</button></div>' +
+      '<div class="sheet"><div class="sec"><b>유형별 보기</b><span>' + EXAM.sections.length + '가지</span></div>' +
+      '<div class="sub">카드를 누르면 그 유형부터 시작해요</div><div class="tiles">';
     EXAM.sections.forEach(function (s, si) {
       var done = 0;
       flat.forEach(function (f, i) { if (f.si === si && state.answers[i] !== undefined) done++; });
       var pct = Math.round(done / s.questions.length * 100);
-      html += '<button class="type-card" data-sec="' + si + '"><span class="type-badge">' + esc(s.id) + '</span>' +
-        '<span class="t"><b>' + esc(s.title) + '</b><span>' + s.questions.length + '문항</span></span>' +
-        '<span class="ring" style="--p:' + pct + '"><i>' + done + '/' + s.questions.length + '</i></span></button>';
+      html += '<button class="t c' + (si % 6) + '" data-sec="' + si + '"><span class="n">' + esc(s.id) + '</span>' +
+        '<b>' + esc(s.title) + '</b><span class="cnt">' + s.questions.length + '문항 · ' + done + '/' + s.questions.length + '</span>' +
+        '<span class="m"><i style="width:' + pct + '%"></i></span></button>';
     });
-    html += '<div class="stack" style="margin-top:14px">' +
-      (n ? '<button class="btn btn-ghost btn-block" id="reset">처음부터 다시 풀기</button>' : '') + '</div>' +
-      '<p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>';
+    html += '</div>' + (n ? '<button class="btn btn-ghost btn-block" id="reset" style="margin-top:16px">처음부터 다시 풀기</button>' : '') +
+      '<p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
     app.innerHTML = html;
+    wireTabs();
     document.getElementById("days").onclick = closeDay;
     document.getElementById("start").onclick = function () {
       state.cur = n ? state.cur : 0; go("quiz");
@@ -262,8 +282,8 @@
       html += '</div>';
     }
     var last = state.cur === total - 1;
-    html += '<div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>이전 문제</button>' +
-      (last ? '<button class="next" id="submit">제출</button>' : '<button class="next" id="next">다음 문제</button>') + '</div>' +
+    html += '<div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>← 이전 문제</button>' +
+      (last ? '<button class="next" id="submit">제출</button>' : '<button class="next" id="next">다음 문제 →</button>') + '</div>' +
       '<button class="gridbtn" id="grid">문항 목록 · 제출하기</button></div>';
     app.innerHTML = html;
     document.getElementById("back").onclick = function () { save(); go("home"); };
@@ -358,14 +378,16 @@
     var keys = Object.keys(getBookmarks());
     var html = '<div class="top"><button class="icon" id="days" aria-label="Day 선택">←</button><h1>즐겨찾기</h1><span class="spacer"></span></div><div class="sheet">';
     if (!keys.length) {
-      html += '<p class="note" style="margin-top:24px">아직 즐겨찾기한 문제가 없어요.<br>문제 화면의 별표(☆)를 눌러 저장해 보세요.</p></div>';
+      html += '<p class="note" style="margin-top:24px">아직 즐겨찾기한 문제가 없어요.<br>틀린 문제는 자동으로 여기에 모이고, 별표(☆)를 눌러 직접 담을 수도 있어요.</p></div>' + tabbar("bm");
       app.innerHTML = html;
       document.getElementById("days").onclick = closeDay;
+      wireTabs();
       return;
     }
-    html += '<p class="note" style="margin:4px 0 14px">Day와 상관없이 즐겨찾기한 문제만 모아 봤어요. 총 ' + keys.length + '문항.</p><div id="bmlist"><p class="note">불러오는 중…</p></div></div>';
+    html += '<p class="note" style="margin:4px 0 14px">Day와 상관없이 즐겨찾기한 문제만 모아 봤어요. 총 ' + keys.length + '문항.</p><div id="bmlist"><p class="note">불러오는 중…</p></div></div>' + tabbar("bm");
     app.innerHTML = html;
     document.getElementById("days").onclick = closeDay;
+    wireTabs();
     var days = {};
     keys.forEach(function (k) { days[k.split(":")[0]] = 1; });
     var dayList = Object.keys(days).map(Number);
