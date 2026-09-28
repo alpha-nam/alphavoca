@@ -77,8 +77,19 @@
     });
   }
 
-  var ICON_HOME = '<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>';
-  var ICON_STAR = '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
+  var ICON_HOME = '<svg viewBox="0 0 24 24" aria-hidden="true"><defs>' +
+    '<linearGradient id="tHr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF9A72"/><stop offset="1" stop-color="#EE5F2F"/></linearGradient>' +
+    '<linearGradient id="tHb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6EE"/><stop offset="1" stop-color="#FFD7BE"/></linearGradient>' +
+    '<linearGradient id="tHd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C86F0"/><stop offset="1" stop-color="#4E58D2"/></linearGradient></defs>' +
+    '<rect x="4.6" y="10.5" width="14.8" height="10.4" rx="2.2" fill="url(#tHb)"/>' +
+    '<path d="M12 2.6L22.4 11.6H1.6Z" fill="url(#tHr)" stroke="url(#tHr)" stroke-width="1.6" stroke-linejoin="round"/>' +
+    '<rect x="9.8" y="14.4" width="4.4" height="6.5" rx="1.3" fill="url(#tHd)"/>' +
+    '<rect x="14.6" y="4.2" width="2.6" height="4.2" rx=".8" fill="#E2522A"/>' +
+    '<path d="M6.5 12.2H10" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".7"/></svg>';
+  var ICON_STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><defs>' +
+    '<linearGradient id="tS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE68A"/><stop offset="1" stop-color="#F5A81C"/></linearGradient></defs>' +
+    '<path d="M12 2.6l2.8 5.8 6.3.9-4.6 4.5 1.1 6.3L12 17.1l-5.6 3 1.1-6.3L2.9 9.3l6.3-.9z" fill="url(#tS)" stroke="#F0A010" stroke-width="1" stroke-linejoin="round"/>' +
+    '<path d="M9.4 8.6l2.6-3.4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".75"/></svg>';
   function tabbar(active) {
     return '<nav class="tabs"><button class="tab' + (active === "home" ? " on" : "") + '" data-tab="home">' + ICON_HOME + '홈</button>' +
       '<button class="tab' + (active === "bm" ? " on" : "") + '" data-tab="bm">' + ICON_STAR + '즐겨찾기</button></nav>';

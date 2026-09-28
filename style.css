@@ -100,7 +100,7 @@ button.d:active{transform:translateY(2px);border-bottom-width:2px}
 /* tab bar */
 .tabs{position:sticky;bottom:0;z-index:5;flex:none;height:calc(64px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center}
 .tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:800;color:var(--muted);position:relative;padding:6px 26px}
-.tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tab svg{width:26px;height:26px;display:block}
 .tab.on{color:var(--accent)}
 .tab.on:after{content:"";position:absolute;bottom:-3px;width:4px;height:4px;border-radius:50%;background:var(--accent)}
 
