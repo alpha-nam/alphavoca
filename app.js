@@ -15,7 +15,7 @@
   var app = document.getElementById("app");
   var EXAM = null, flat = [], total = 0, KEY = "";
 
-  var state = { view: "days", day: 0, cur: 0, answers: {}, filter: "all", mode: "study" };
+  var state = { view: "days", day: 0, cur: 0, answers: {}, filter: "all" };
 
   function selectDay(n) {
     state.day = n;
@@ -26,17 +26,17 @@
     });
     total = flat.length;
     KEY = "vocab-exam-day" + n + "-v1";
-    state.cur = 0; state.answers = {}; state.filter = "all"; state.mode = "study";
+    state.cur = 0; state.answers = {}; state.filter = "all";
     try {
       var raw = localStorage.getItem(KEY);
       if (raw) {
         var d = JSON.parse(raw);
-        if (d && d.answers) { state.answers = d.answers; state.cur = d.cur || 0; state.mode = d.mode || "study"; }
+        if (d && d.answers) { state.answers = d.answers; state.cur = d.cur || 0; }
       }
     } catch (e) {}
   }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify({ answers: state.answers, cur: state.cur, mode: state.mode })); } catch (e) {}
+    try { localStorage.setItem(KEY, JSON.stringify({ answers: state.answers, cur: state.cur })); } catch (e) {}
   }
   function dayProgress(n) {
     try {
@@ -53,6 +53,12 @@
   function toggleBookmark(day, qn) {
     var b = getBookmarks(), k = day + ":" + qn;
     if (b[k]) delete b[k]; else b[k] = true;
+    try { localStorage.setItem(BM_KEY, JSON.stringify(b)); } catch (e) {}
+  }
+  function bookmarkOnWrong(day, qn) {
+    var b = getBookmarks(), k = day + ":" + qn;
+    if (b[k]) return;
+    b[k] = true;
     try { localStorage.setItem(BM_KEY, JSON.stringify(b)); } catch (e) {}
   }
   function starBtnHtml(day, qn) {
@@ -201,22 +207,13 @@
   /* ---------- home ---------- */
   function home() {
     var n = answeredCount();
-    var startBlock;
-    if (n) {
-      startBlock = '<button class="btn btn-light btn-block" id="start">이어서 풀기 (' + n + '/' + total + ')</button>';
-    } else {
-      var mStudy = state.mode !== "exam";
-      startBlock =
-        '<div class="modesel">' +
-          '<label class="moderadio' + (mStudy ? " on" : "") + '"><input type="radio" name="mode" value="study"' + (mStudy ? " checked" : "") + '><img src="assets/icons/flash.png" alt=""><b>학습 모드</b><span>문제마다 바로 정답·해설 확인</span></label>' +
-          '<label class="moderadio' + (!mStudy ? " on" : "") + '"><input type="radio" name="mode" value="exam"' + (!mStudy ? " checked" : "") + '><img src="assets/icons/clock.png" alt=""><b>시험 모드</b><span>100문항 다 풀고 한번에 채점</span></label>' +
-        '</div>' +
-        '<button class="btn btn-light btn-block" id="start">시작하기</button>';
-    }
+    var startBlock = n
+      ? '<button class="btn btn-light btn-block" id="start">이어서 풀기 (' + n + '/' + total + ')</button>'
+      : '<button class="btn btn-light btn-block" id="start">시작하기</button>';
     var html = '<div class="top"><button class="icon" id="days" aria-label="Day 선택">←</button><h1>Day ' + state.day + '</h1><span class="spacer"></span></div>' +
       '<div class="sheet">' +
       '<div class="hero"><h2>' + esc(EXAM.title) + '</h2>' +
-      '<p>6가지 유형 · 총 ' + total + '문항. 학습 모드는 문제마다 바로 확인, 시험 모드는 끝까지 풀고 한번에 채점해요.</p>' +
+      '<p>6가지 유형 · 총 ' + total + '문항. 문제마다 바로 정답과 해설을 확인할 수 있어요.</p>' +
       startBlock + '</div>' +
       '<h3 class="sec">유형별 보기</h3>';
     EXAM.sections.forEach(function (s, si) {
@@ -233,19 +230,8 @@
     app.innerHTML = html;
     document.getElementById("days").onclick = closeDay;
     document.getElementById("start").onclick = function () {
-      if (!n) {
-        var checked = app.querySelector('input[name="mode"]:checked');
-        state.mode = checked ? checked.value : "study";
-        save();
-      }
       state.cur = n ? state.cur : 0; go("quiz");
     };
-    Array.prototype.forEach.call(app.querySelectorAll(".moderadio"), function (lab) {
-      lab.onclick = function () {
-        Array.prototype.forEach.call(app.querySelectorAll(".moderadio"), function (l) { l.classList.remove("on"); });
-        lab.classList.add("on");
-      };
-    });
     var r = document.getElementById("reset");
     if (r) r.onclick = function () { if (confirm("지금까지의 답안을 모두 지우고 처음부터 시작할까요?")) { state.answers = {}; state.cur = 0; save(); render(); } };
     Array.prototype.forEach.call(app.querySelectorAll("[data-sec]"), function (b) {
@@ -256,7 +242,7 @@
   /* ---------- quiz ---------- */
   function quiz() {
     var f = flat[state.cur], q = f.q, sel = state.answers[state.cur];
-    var revealed = state.mode === "study" && sel !== undefined;
+    var revealed = sel !== undefined;
     var pct = Math.round(answeredCount() / total * 100);
     var html = '<div class="top"><button class="icon" id="back" aria-label="홈">←</button>' +
       '<h1>' + esc(f.s.id) + '. ' + esc(f.s.title) + '</h1><span class="spacer"></span></div>' +
@@ -284,9 +270,8 @@
     Array.prototype.forEach.call(app.querySelectorAll(".opt"), function (b) {
       b.onclick = function () {
         var v = +b.getAttribute("data-i");
-        if (state.mode === "study") { state.answers[state.cur] = v; }
-        else if (state.answers[state.cur] === v) { delete state.answers[state.cur]; }
-        else { state.answers[state.cur] = v; }
+        state.answers[state.cur] = v;
+        if (v !== q.ans) bookmarkOnWrong(state.day, q.n);
         save(); quiz();
       };
     });
