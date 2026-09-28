@@ -45,6 +45,32 @@
     } catch (e) { return 0; }
   }
 
+  var BM_KEY = "vocab-exam-bookmarks";
+  function getBookmarks() {
+    try { return JSON.parse(localStorage.getItem(BM_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function isBookmarked(day, qn) { return !!getBookmarks()[day + ":" + qn]; }
+  function toggleBookmark(day, qn) {
+    var b = getBookmarks(), k = day + ":" + qn;
+    if (b[k]) delete b[k]; else b[k] = true;
+    try { localStorage.setItem(BM_KEY, JSON.stringify(b)); } catch (e) {}
+  }
+  function starBtnHtml(day, qn) {
+    var on = isBookmarked(day, qn);
+    return '<button class="star' + (on ? " on" : "") + '" data-bm-day="' + day + '" data-bm-q="' + qn + '" aria-label="즐겨찾기">' + (on ? "★" : "☆") + '</button>';
+  }
+  function wireStars(container) {
+    Array.prototype.forEach.call((container || app).querySelectorAll(".star"), function (b) {
+      b.onclick = function (e) {
+        e.stopPropagation();
+        var day = +b.getAttribute("data-bm-day"), qn = +b.getAttribute("data-bm-q");
+        toggleBookmark(day, qn);
+        var on = b.classList.toggle("on");
+        b.textContent = on ? "★" : "☆";
+      };
+    });
+  }
+
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
@@ -60,25 +86,60 @@
     for (var i = 0; i < flat.length; i++) if (flat[i].si === si) return i;
     return 0;
   }
-  function cardHtml(i, clickable) {
-    var f = flat[i], q = f.q, my = state.answers[i], ok = my === q.ans;
-    var label = clickable ? (q.n + "번") : (q.n + "번 · " + esc(f.s.id) + ". " + esc(f.s.title));
-    var html = '<div class="rv' + (clickable ? " rv-live" : "") + '"><div class="h"><span>' + label + '</span>' +
-      '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></div>' +
-      '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
-      '<div class="stem">' + stem(q.q) + '</div>';
-    var tag = clickable ? "button" : "div";
+  function optsHtml(q, my, clickable) {
+    var tag = clickable ? "button" : "div", out = "";
     q.opts.forEach(function (o, k) {
       var p = optParts(o), cls = "opt", mark = "";
       if (k + 1 === q.ans) { cls += " correct"; mark = "정답"; }
       else if (k + 1 === my) { cls += " wrong"; mark = "내 답"; }
       if (k + 1 === q.ans && my === q.ans) mark = "정답 · 내 답";
-      html += "<" + tag + ' class="' + cls + '"' + (clickable ? ' data-i="' + (k + 1) + '"' : "") + '><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + "</" + tag + ">";
+      out += "<" + tag + ' class="' + cls + '"' + (clickable ? ' data-i="' + (k + 1) + '"' : "") + '><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + "</" + tag + ">";
     });
-    html += (q.kr || q.why)
-      ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div></div>'
-      : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div></div>';
-    return html;
+    return out;
+  }
+  function expHtml(q) {
+    return (q.kr || q.why)
+      ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div>'
+      : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div>';
+  }
+  function cardHtml(i, clickable) {
+    var f = flat[i], q = f.q, my = state.answers[i], ok = my === q.ans;
+    var label = clickable ? (q.n + "번") : (q.n + "번 · " + esc(f.s.id) + ". " + esc(f.s.title));
+    return '<div class="rv' + (clickable ? " rv-live" : "") + '"><div class="h"><span>' + label + '</span>' +
+      '<span class="hactions">' + starBtnHtml(state.day, q.n) +
+      '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></span></div>' +
+      '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
+      '<div class="stem">' + stem(q.q) + '</div>' +
+      optsHtml(q, my, clickable) + expHtml(q) + '</div>';
+  }
+  function findInDay(day, qn) {
+    var ex = EXAMS[day];
+    if (!ex) return null;
+    var idx = 0;
+    for (var si = 0; si < ex.sections.length; si++) {
+      var s = ex.sections[si];
+      for (var k = 0; k < s.questions.length; k++) {
+        idx++;
+        if (idx === qn) return { q: s.questions[k], s: s };
+      }
+    }
+    return null;
+  }
+  function bookmarkCardHtml(day, qn) {
+    var found = findInDay(day, qn);
+    if (!found) return "";
+    var q = found.q, s = found.s, my;
+    try {
+      var raw = localStorage.getItem("vocab-exam-day" + day + "-v1");
+      if (raw) { var d = JSON.parse(raw); my = d.answers ? d.answers[qn - 1] : undefined; }
+    } catch (e) {}
+    var ok = my === q.ans;
+    return '<div class="rv"><div class="h"><span>Day' + day + ' · ' + qn + '번 · ' + esc(s.id) + '. ' + esc(s.title) + '</span>' +
+      '<span class="hactions">' + starBtnHtml(day, qn) +
+      '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></span></div>' +
+      '<div class="inst">' + esc(q.inst || s.instruction) + '</div>' +
+      '<div class="stem">' + stem(q.q) + '</div>' +
+      optsHtml(q, my, false) + expHtml(q) + '</div>';
   }
   function score() {
     var r = { total: 0, bySec: EXAM.sections.map(function () { return { c: 0, n: 0 }; }) };
@@ -103,11 +164,13 @@
         html += '<div class="daycard off"><b>Day ' + n + '</b><span>준비 중</span></div>';
       }
     }
-    html += '</div><p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>';
+    html += '</div><button class="btn btn-ghost btn-block" id="gobm" style="margin-top:14px">☆ 즐겨찾기 모아보기</button>' +
+      '<p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>';
     app.innerHTML = html;
     Array.prototype.forEach.call(app.querySelectorAll("[data-day]"), function (b) {
       b.onclick = function () { openDay(+b.getAttribute("data-day")); };
     });
+    document.getElementById("gobm").onclick = function () { go("bookmarks"); };
   }
   function openDay(n) {
     app.innerHTML = '<div class="top"><span class="spacer"></span><h1>Day ' + n + '</h1><span class="spacer"></span></div><div class="sheet"><p class="note">불러오는 중…</p></div>';
@@ -129,6 +192,7 @@
     if (state.view === "quiz") return quiz();
     if (state.view === "result") return result();
     if (state.view === "review") return review();
+    if (state.view === "bookmarks") return bookmarksView();
   }
   function go(v) { state.view = v; window.scrollTo(0, 0); render(); }
 
@@ -200,7 +264,7 @@
       html += cardHtml(state.cur, true);
     } else {
       html += '<div class="qcard">' +
-        '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="k">답안 ' + answeredCount() + '/' + total + '</span></div>' +
+        '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="hactions">' + starBtnHtml(state.day, q.n) + '<span class="k">답안 ' + answeredCount() + '/' + total + '</span></span></div>' +
         '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
         '<div class="stem">' + stem(q.q) + '</div>';
       q.opts.forEach(function (o, i) {
@@ -228,6 +292,7 @@
     var nx = document.getElementById("next"); if (nx) nx.onclick = function () { state.cur++; save(); go("quiz"); };
     var sb = document.getElementById("submit"); if (sb) sb.onclick = submit;
     document.getElementById("grid").onclick = openGrid;
+    wireStars();
   }
 
   function openGrid() {
@@ -297,6 +362,47 @@
     Array.prototype.forEach.call(app.querySelectorAll("[data-f]"), function (b) {
       b.onclick = function () { state.filter = b.getAttribute("data-f"); review(); };
     });
+    wireStars();
+  }
+
+  /* ---------- bookmarks ---------- */
+  function bookmarksView() {
+    var keys = Object.keys(getBookmarks());
+    var html = '<div class="top"><button class="icon" id="days" aria-label="Day 선택">←</button><h1>즐겨찾기</h1><span class="spacer"></span></div><div class="sheet">';
+    if (!keys.length) {
+      html += '<p class="note" style="margin-top:24px">아직 즐겨찾기한 문제가 없어요.<br>문제 화면의 별표(☆)를 눌러 저장해 보세요.</p></div>';
+      app.innerHTML = html;
+      document.getElementById("days").onclick = closeDay;
+      return;
+    }
+    html += '<p class="note" style="margin:4px 0 14px">Day와 상관없이 즐겨찾기한 문제만 모아 봤어요. 총 ' + keys.length + '문항.</p><div id="bmlist"><p class="note">불러오는 중…</p></div></div>';
+    app.innerHTML = html;
+    document.getElementById("days").onclick = closeDay;
+    var days = {};
+    keys.forEach(function (k) { days[k.split(":")[0]] = 1; });
+    var dayList = Object.keys(days).map(Number);
+    var pending = dayList.length;
+    function renderList() {
+      var out = "";
+      keys.sort(function (a, b) {
+        var da = +a.split(":")[0], qa = +a.split(":")[1], db = +b.split(":")[0], qb = +b.split(":")[1];
+        return da - db || qa - qb;
+      }).forEach(function (k) {
+        var parts = k.split(":"), d = +parts[0], qn = +parts[1];
+        if (EXAMS[d]) out += bookmarkCardHtml(d, qn);
+      });
+      var list = document.getElementById("bmlist");
+      if (!list) return;
+      list.innerHTML = out || '<p class="note">불러오지 못한 문제가 있어요.</p>';
+      Array.prototype.forEach.call(list.querySelectorAll(".star"), function (b) {
+        b.onclick = function () {
+          toggleBookmark(+b.getAttribute("data-bm-day"), +b.getAttribute("data-bm-q"));
+          go("bookmarks");
+        };
+      });
+    }
+    if (!pending) return renderList();
+    dayList.forEach(function (d) { loadDay(d, function () { pending--; if (pending <= 0) renderList(); }); });
   }
 
   var m = /^#day(\d+)$/.exec(location.hash);
