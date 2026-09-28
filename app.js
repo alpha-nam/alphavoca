@@ -79,6 +79,12 @@
 
   var ICON_HOME = '<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>';
   var ICON_STAR = '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
+  var HERO_SVG = '<svg class="hd-ill" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCEFE6"/></linearGradient></defs>' +
+    '<ellipse cx="60" cy="108" rx="38" ry="5" fill="rgba(0,0,0,.2)"/>' +
+    '<path d="M22 16H98A14 14 0 0 1 112 30V66A14 14 0 0 1 98 80H62L40 100V80H22A14 14 0 0 1 8 66V30A14 14 0 0 1 22 16Z" fill="url(#hg)"/>' +
+    '<rect x="18" y="20" width="84" height="7" rx="3.5" fill="#fff" opacity=".7"/>' +
+    '<text x="60" y="63" text-anchor="middle" font-family="Pretendard,Noto Sans KR,Arial,sans-serif" font-weight="800" font-size="40" fill="#0B5D46">A<tspan fill="#F5703F">a</tspan></text>' +
+    '<circle cx="102" cy="22" r="9" fill="#F5703F"/><circle cx="99.5" cy="19.5" r="3" fill="#fff" opacity=".55"/></svg>';
   function tabbar(active) {
     return '<nav class="tabs"><button class="tab' + (active === "home" ? " on" : "") + '" data-tab="home">' + ICON_HOME + '홈</button>' +
       '<button class="tab' + (active === "bm" ? " on" : "") + '" data-tab="bm">' + ICON_STAR + '즐겨찾기</button></nav>';
@@ -179,7 +185,7 @@
     var last = lastDay(), lp = last ? dayProgress(last) : 0;
     var html = '<div class="hd hd-home"><div class="hd-txt"><span class="logo">ALPHA-MALE VOCA</span><h2>Check your vocab</h2><p>How far will you go today?</p>' +
       '<div class="chips"><span class="chip">Day 1–' + maxOpen + ' open</span><span class="chip">' + Object.keys(getBookmarks()).length + (Object.keys(getBookmarks()).length === 1 ? ' favorite' : ' favorites') + '</span></div></div>' +
-      '<div class="hd-art"><img class="hd-ill" src="assets/icons/calendar.png" alt=""></div></div>' +
+      '<div class="hd-art">' + HERO_SVG + '</div></div>' +
       '<div class="sheet">';
     if (lp) {
       html += '<button class="resume" id="resume"><small>이어서 풀기</small><h4>Day ' + last + ' · ' + lp + '/100</h4>' +

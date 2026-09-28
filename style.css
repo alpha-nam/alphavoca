@@ -23,8 +23,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .hd-home{display:flex;align-items:flex-start;padding-right:0}
 .hd-txt{flex:none}
 .hd-txt h2{font-size:25px;max-width:none;white-space:nowrap}
-.hd-art{flex:1;display:flex;justify-content:center;margin-top:2px;min-width:0}
-.hd-ill{width:100px;height:100px;max-width:100%;filter:drop-shadow(0 8px 12px rgba(0,0,0,.28))}
+.hd-art{flex:1;display:flex;justify-content:center;min-width:0}
+.hd-ill{width:104px;height:104px;max-width:100%;filter:drop-shadow(0 8px 12px rgba(0,0,0,.28))}
 @media(max-width:350px){.hd-txt h2{font-size:21px}}
 .hd p{font-size:13px;opacity:.85;margin-top:6px}
 .chips{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
