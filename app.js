@@ -429,4 +429,8 @@
 
   var m = /^#day(\d+)$/.exec(location.hash);
   if (m && AVAILABLE.indexOf(+m[1]) >= 0) openDay(+m[1]); else render();
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+  }
 })();
