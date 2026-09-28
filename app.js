@@ -209,8 +209,8 @@
       html += '</div>';
     }
     var last = state.cur === total - 1;
-    html += '<div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>이전</button>' +
-      (last ? '<button class="next" id="submit">제출</button>' : '<button class="next" id="next">다음</button>') + '</div>' +
+    html += '<div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>이전 문제</button>' +
+      (last ? '<button class="next" id="submit">제출</button>' : '<button class="next" id="next">다음 문제</button>') + '</div>' +
       '<button class="gridbtn" id="grid">문항 목록 · 제출하기</button></div>';
     app.innerHTML = html;
     document.getElementById("back").onclick = function () { save(); go("home"); };
