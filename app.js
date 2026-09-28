@@ -177,9 +177,9 @@
   function days() {
     var maxOpen = Math.max.apply(null, AVAILABLE);
     var last = lastDay(), lp = last ? dayProgress(last) : 0;
-    var html = '<div class="hd"><span class="logo">ALPHA-MALE VOCA</span><h2>Check your vocab</h2><p>How far will you go today?</p>' +
-      '<img class="hd-ill" src="assets/icons/calendar.png" alt="">' +
+    var html = '<div class="hd hd-home"><div class="hd-txt"><span class="logo">ALPHA-MALE VOCA</span><h2>Check your vocab</h2><p>How far will you go today?</p>' +
       '<div class="chips"><span class="chip">Day 1–' + maxOpen + ' open</span><span class="chip">' + Object.keys(getBookmarks()).length + (Object.keys(getBookmarks()).length === 1 ? ' favorite' : ' favorites') + '</span></div></div>' +
+      '<div class="hd-art"><img class="hd-ill" src="assets/icons/calendar.png" alt=""></div></div>' +
       '<div class="sheet">';
     if (lp) {
       html += '<button class="resume" id="resume"><small>이어서 풀기</small><h4>Day ' + last + ' · ' + lp + '/100</h4>' +
