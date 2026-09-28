@@ -51,6 +51,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .top-float{position:absolute;left:0;top:0;z-index:3}
 .sheet-result{padding-top:18px}
 .note{font-size:13px;color:var(--muted);text-align:center;margin-top:18px;line-height:1.6}
+.note.nw{font-size:clamp(11.5px,3.75vw,14px);white-space:nowrap}
 
 /* buttons */
 .btn{display:inline-block;padding:12px 20px;border-radius:99px;font-weight:800;font-size:14px}
@@ -68,8 +69,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .resume .pb i{display:block;height:100%;background:#fff;border-radius:9px}
 .resume .go{position:absolute;right:16px;bottom:16px;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--accent);display:grid;place-items:center;font-size:18px;font-weight:800;z-index:1}
 .days{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-.d{background:#fff;border-radius:16px;text-align:center;padding:10px 0 9px;font-size:12px;color:var(--muted);border:1.5px solid #D3E4DB;border-bottom:4px solid #C4D9CF}
-.d b{display:block;font-size:14px;color:var(--text);margin-bottom:2px}
+.d{background:#fff;border-radius:16px;text-align:center;padding:10px 0 9px;font-size:clamp(12px,3.6vw,13.5px);white-space:nowrap;color:var(--muted);border:1.5px solid #D3E4DB;border-bottom:4px solid #C4D9CF}
+.d b{display:block;font-size:clamp(14px,4.2vw,16px);color:var(--text);margin-bottom:2px}
 .d .pb{display:block;height:4px;border-radius:9px;background:rgba(11,93,70,.14);margin:5px 12px 4px;overflow:hidden}
 .d .pb i{display:block;height:100%;background:var(--primary)}
 button.d:active{transform:translateY(2px);border-bottom-width:2px}
@@ -81,7 +82,7 @@ button.d:active{transform:translateY(2px);border-bottom-width:2px}
 .d.done .pb i{background:#fff}
 .d.off{background:#fff;border:1.5px dashed #D3E4DB;padding:7px 0 5px}
 .d.off img{width:24px;height:24px;display:block;margin:0 auto}
-.d.off b{font-size:13px;color:var(--muted)}
+.d.off b{font-size:clamp(13px,3.9vw,15px);color:var(--muted)}
 
 /* day home tiles */
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:11px}
@@ -98,7 +99,7 @@ button.d:active{transform:translateY(2px);border-bottom-width:2px}
 
 /* tab bar */
 .tabs{position:sticky;bottom:0;z-index:5;flex:none;height:calc(64px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center}
-.tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:800;color:var(--muted);position:relative;padding:6px 26px}
+.tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:800;color:var(--muted);position:relative;padding:6px 26px}
 .tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tab.on{color:var(--accent)}
 .tab.on:after{content:"";position:absolute;bottom:-3px;width:4px;height:4px;border-radius:50%;background:var(--accent)}

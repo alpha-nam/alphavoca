@@ -196,7 +196,7 @@
         html += '<div class="d off"><img src="assets/icons/lock.png" alt=""><b>Day ' + n + '</b></div>';
       }
     }
-    html += '</div><p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
+    html += '</div><p class="note nw">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
     app.innerHTML = html;
     Array.prototype.forEach.call(app.querySelectorAll("[data-day]"), function (b) {
       b.onclick = function () { openDay(+b.getAttribute("data-day")); };
@@ -246,7 +246,7 @@
         '<span class="m"><i style="width:' + pct + '%"></i></span></button>';
     });
     html += '</div>' + (n ? '<button class="btn btn-ghost btn-block" id="reset" style="margin-top:16px">처음부터 다시 풀기</button>' : '') +
-      '<p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
+      '<p class="note nw">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
     app.innerHTML = html;
     wireTabs();
     document.getElementById("days").onclick = closeDay;
