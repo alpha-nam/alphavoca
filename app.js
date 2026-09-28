@@ -188,10 +188,11 @@
     html += '<div class="sec"><b>학습 범위</b></div><div class="days">';
     for (var n = 1; n <= MAX_DAY; n++) {
       if (AVAILABLE.indexOf(n) >= 0) {
-        var p = dayProgress(n);
-        html += '<button class="d' + (p ? " on" : "") + '" data-day="' + n + '"><b>' + n + '</b>' + (p ? p + "풀이" : "100문항") + '</button>';
+        var p = Math.min(100, dayProgress(n));
+        html += '<button class="d' + (p >= 100 ? " done" : p ? " on" : "") + '" data-day="' + n + '"><b>Day ' + n + '</b>' +
+          '<span class="pb"><i style="width:' + p + '%"></i></span>' + (p >= 100 ? "완료 ✓" : p + "%") + '</button>';
       } else {
-        html += '<div class="d off"><img src="assets/icons/lock.png" alt=""><b>' + n + '</b></div>';
+        html += '<div class="d off"><img src="assets/icons/lock.png" alt=""><b>Day ' + n + '</b></div>';
       }
     }
     html += '</div><p class="note">진행 상황은 이 기기 브라우저에만 저장돼요.<br>학습용 자가 채점이며 점수는 서버에 저장되지 않습니다.</p></div>' + tabbar("home");
