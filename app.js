@@ -60,17 +60,18 @@
     for (var i = 0; i < flat.length; i++) if (flat[i].si === si) return i;
     return 0;
   }
-  function cardHtml(i) {
+  function cardHtml(i, clickable) {
     var f = flat[i], q = f.q, my = state.answers[i], ok = my === q.ans;
-    var html = '<div class="rv"><div class="h"><span>' + q.n + '번 · ' + esc(f.s.id) + '. ' + esc(f.s.title) + '</span>' +
+    var html = '<div class="rv' + (clickable ? " rv-live" : "") + '"><div class="h"><span>' + q.n + '번 · ' + esc(f.s.id) + '. ' + esc(f.s.title) + '</span>' +
       '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></div>' +
       '<div class="stem">' + stem(q.q) + '</div>';
+    var tag = clickable ? "button" : "div";
     q.opts.forEach(function (o, k) {
       var p = optParts(o), cls = "opt", mark = "";
       if (k + 1 === q.ans) { cls += " correct"; mark = "정답"; }
       else if (k + 1 === my) { cls += " wrong"; mark = "내 답"; }
       if (k + 1 === q.ans && my === q.ans) mark = "정답 · 내 답";
-      html += '<div class="' + cls + '"><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + '</div>';
+      html += "<" + tag + ' class="' + cls + '"' + (clickable ? ' data-i="' + (k + 1) + '"' : "") + '><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + "</" + tag + ">";
     });
     html += (q.kr || q.why)
       ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div></div>'
@@ -194,7 +195,7 @@
       '<div class="progress"><div style="width:' + pct + '%"></div></div>' +
       '<div class="sheet">';
     if (revealed) {
-      html += cardHtml(state.cur);
+      html += cardHtml(state.cur, true);
     } else {
       html += '<div class="qcard">' +
         '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="k">답안 ' + answeredCount() + '/' + total + '</span></div>' +

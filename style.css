@@ -121,3 +121,4 @@ button.daycard:hover{border-color:var(--primary)}
 .moderadio span{font-size:11px;opacity:.85;line-height:1.4}
 .moderadio.on{background:#fff;border-color:#fff;color:var(--primary-dark)}
 .moderadio.on span{color:var(--muted);opacity:1}
+.rv-live .opt{cursor:pointer}
