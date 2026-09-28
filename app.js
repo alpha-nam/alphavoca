@@ -243,7 +243,7 @@
   function quiz() {
     var f = flat[state.cur], q = f.q, sel = state.answers[state.cur];
     var revealed = sel !== undefined;
-    var pct = Math.round(answeredCount() / total * 100);
+    var pct = Math.round((state.cur + 1) / total * 100);
     var html = '<div class="top"><button class="icon" id="back" aria-label="홈">←</button>' +
       '<h1>' + esc(f.s.id) + '. ' + esc(f.s.title) + '</h1><span class="spacer"></span></div>' +
       '<div class="progress"><div style="width:' + pct + '%"></div></div>' +
@@ -252,7 +252,7 @@
       html += cardHtml(state.cur, true);
     } else {
       html += '<div class="qcard">' +
-        '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="hactions">' + starBtnHtml(state.day, q.n) + '<span class="k">답안 ' + answeredCount() + '/' + total + '</span></span></div>' +
+        '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="hactions">' + starBtnHtml(state.day, q.n) + '</span></div>' +
         '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
         '<div class="stem">' + stem(q.q) + '</div>';
       q.opts.forEach(function (o, i) {
