@@ -3,7 +3,7 @@
   window.EXAMS = window.EXAMS || {};
   var EXAMS = window.EXAMS;
   var MAX_DAY = 30;
-  var AVAILABLE = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+  var AVAILABLE = [1,2,3,4,5,6,7,8,9,10,11,12];
   function loadDay(n, cb) {
     if (EXAMS[n]) return cb(true);
     var s = document.createElement("script");
