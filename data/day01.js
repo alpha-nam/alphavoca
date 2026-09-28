@@ -20,7 +20,7 @@ window.EXAMS[1] = {
                                                             "⑤ 이동, 실향"
                                                         ],
                                                "ans":  2,
-                                               "why":  "attribution = 귀인, (인과 관계의) 귀속. attribute A to B(A를 B의 탓·결과로 돌리다)의 명사형으로, 어떤 결과의 원인을 무언가에 돌리는 일을 뜻한다. ①추진력은 propulsion, ③변동성은 variability, ⑤이동·실향은 displacement로 각각 다른 어휘다."
+                                               "why":  "attribution = 귀인, (인과 관계의) 귀속. attribute A to B(A를 B의 탓·결과로 돌리다)의 명사형으로, 어떤 결과의 원인을 무언가에 돌리는 일을 뜻한다. ①추진력은 propulsion, ③변동성은 variability, ⑤이동·실향은 displacement라 이 단어와는 뜻이 전혀 다르다."
                                            },
                                            {
                                                "n":  2,
@@ -314,7 +314,7 @@ window.EXAMS[1] = {
                                                             "⑤ 가장 중요한"
                                                         ],
                                                "ans":  4,
-                                               "why":  "constructive = 건설적인. construct(건설하다)의 형용사형으로 constructive criticism(건설적인 비판)처럼 쓴다. ①우세한, ②정착한, ③고향을 잃은, ⑤가장 중요한은 각각 다른 어휘다."
+                                               "why":  "constructive = 건설적인. construct(건설하다)의 형용사형으로 constructive criticism(건설적인 비판)처럼 쓴다. ①우세한, ②정착한, ③고향을 잃은, ⑤가장 중요한은 전혀 다른 뜻이니 헷갈리지 않도록 하자."
                                            },
                                            {
                                                "n":  23,

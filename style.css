@@ -113,7 +113,7 @@ button.daycard:hover{border-color:var(--primary)}
 .daycard.off{background:transparent;box-shadow:none;border:1.5px dashed var(--line);opacity:.7}
 .exp.soft{color:var(--muted);background:transparent;padding:6px 2px;font-size:13px}
 
-/* mode selector + inline feedback */
+/* mode selector */
 .modesel{display:flex;gap:10px;margin:14px 0 12px}
 .moderadio{flex:1;display:flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.35);border-radius:12px;padding:10px 12px;cursor:pointer;color:#fff}
 .moderadio input{display:none}
@@ -121,10 +121,3 @@ button.daycard:hover{border-color:var(--primary)}
 .moderadio span{font-size:11px;opacity:.85;line-height:1.4}
 .moderadio.on{background:#fff;border-color:#fff;color:var(--primary-dark)}
 .moderadio.on span{color:var(--muted);opacity:1}
-.opt.correct{background:var(--ok-soft);border-color:var(--ok)}
-.opt.wrong{background:var(--bad-soft);border-color:var(--bad)}
-.opt .mark{margin-left:auto;font-size:11px;font-weight:800;white-space:nowrap;align-self:center}
-.opt:disabled{cursor:default}
-.feedback{margin:2px 0 12px;padding:10px 12px;border-radius:12px;font-weight:700;font-size:14px}
-.feedback.ok{background:var(--ok-soft);color:var(--ok)}
-.feedback.bad{background:var(--bad-soft);color:var(--bad)}

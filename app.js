@@ -60,6 +60,23 @@
     for (var i = 0; i < flat.length; i++) if (flat[i].si === si) return i;
     return 0;
   }
+  function cardHtml(i) {
+    var f = flat[i], q = f.q, my = state.answers[i], ok = my === q.ans;
+    var html = '<div class="rv"><div class="h"><span>' + q.n + '번 · ' + esc(f.s.id) + '. ' + esc(f.s.title) + '</span>' +
+      '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></div>' +
+      '<div class="stem">' + stem(q.q) + '</div>';
+    q.opts.forEach(function (o, k) {
+      var p = optParts(o), cls = "opt", mark = "";
+      if (k + 1 === q.ans) { cls += " correct"; mark = "정답"; }
+      else if (k + 1 === my) { cls += " wrong"; mark = "내 답"; }
+      if (k + 1 === q.ans && my === q.ans) mark = "정답 · 내 답";
+      html += '<div class="' + cls + '"><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + '</div>';
+    });
+    html += (q.kr || q.why)
+      ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div></div>'
+      : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div></div>';
+    return html;
+  }
   function score() {
     var r = { total: 0, bySec: EXAM.sections.map(function () { return { c: 0, n: 0 }; }) };
     flat.forEach(function (f, i) {
@@ -175,27 +192,22 @@
     var html = '<div class="top"><button class="icon" id="back" aria-label="홈">←</button>' +
       '<h1>' + esc(f.s.id) + '. ' + esc(f.s.title) + '</h1><span class="spacer"></span></div>' +
       '<div class="progress"><div style="width:' + pct + '%"></div></div>' +
-      '<div class="sheet"><div class="qcard">' +
-      '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="k">답안 ' + answeredCount() + '/' + total + '</span></div>' +
-      '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
-      '<div class="stem">' + stem(q.q) + '</div>';
-    q.opts.forEach(function (o, i) {
-      var p = optParts(o), cls = "opt", mark = "";
-      if (revealed) {
-        if (i + 1 === q.ans) { cls += " correct"; mark = "정답"; }
-        else if (i + 1 === sel) { cls += " wrong"; mark = "내 답"; }
-      } else if (sel === i + 1) { cls += " sel"; }
-      html += '<button class="' + cls + '"' + (revealed ? " disabled" : "") + ' data-i="' + (i + 1) + '"><span class="no">' + (i + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + '</button>';
-    });
+      '<div class="sheet">';
     if (revealed) {
-      var isCorrect = sel === q.ans;
-      html += '<div class="feedback ' + (isCorrect ? "ok" : "bad") + '">' + (isCorrect ? "정답이에요!" : "오답이에요.") + '</div>';
-      html += (q.kr || q.why)
-        ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div>'
-        : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div>';
+      html += cardHtml(state.cur);
+    } else {
+      html += '<div class="qcard">' +
+        '<div class="qmeta"><span class="n">Question: ' + q.n + '/' + total + '</span><span class="k">답안 ' + answeredCount() + '/' + total + '</span></div>' +
+        '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
+        '<div class="stem">' + stem(q.q) + '</div>';
+      q.opts.forEach(function (o, i) {
+        var p = optParts(o), cls = "opt" + (sel === i + 1 ? " sel" : "");
+        html += '<button class="' + cls + '" data-i="' + (i + 1) + '"><span class="no">' + (i + 1) + '</span><span>' + esc(p.text) + '</span></button>';
+      });
+      html += '</div>';
     }
     var last = state.cur === total - 1;
-    html += '</div><div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>이전</button>' +
+    html += '<div class="nav"><button class="prev" id="prev"' + (state.cur === 0 ? " disabled" : "") + '>이전</button>' +
       (last ? '<button class="next" id="submit">제출</button>' : '<button class="next" id="next">다음</button>') + '</div>' +
       '<button class="gridbtn" id="grid">문항 목록 · 제출하기</button></div>';
     app.innerHTML = html;
@@ -269,22 +281,10 @@
       '<button data-f="all" class="' + (state.filter === "all" ? "on" : "") + '">전체</button></div>';
     var shown = 0;
     flat.forEach(function (f, i) {
-      var q = f.q, my = state.answers[i], ok = my === q.ans;
+      var ok = state.answers[i] === f.q.ans;
       if (state.filter === "wrong" && ok) return;
       shown++;
-      html += '<div class="rv"><div class="h"><span>' + q.n + '번 · ' + esc(f.s.id) + '. ' + esc(f.s.title) + '</span>' +
-        '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></div>' +
-        '<div class="stem">' + stem(q.q) + '</div>';
-      q.opts.forEach(function (o, k) {
-        var p = optParts(o), cls = "opt", mark = "";
-        if (k + 1 === q.ans) { cls += " correct"; mark = "정답"; }
-        else if (k + 1 === my) { cls += " wrong"; mark = "내 답"; }
-        if (k + 1 === q.ans && my === q.ans) mark = "정답 · 내 답";
-        html += '<div class="' + cls + '"><span class="no">' + (k + 1) + '</span><span>' + esc(p.text) + '</span>' + (mark ? '<span class="mark">' + mark + '</span>' : '') + '</div>';
-      });
-      html += (q.kr || q.why)
-        ? '<div class="exp">' + (q.kr ? '<b>해석</b> ' + esc(q.kr) + (q.why ? '<br>' : '') : '') + (q.why ? '<b>해설</b> ' + esc(q.why) : '') + '</div></div>'
-        : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div></div>';
+      html += cardHtml(i);
     });
     if (!shown) html += '<p class="note">틀린 문항이 없어요. 완벽합니다!</p>';
     html += '<button class="btn btn-ghost btn-block" id="back2" style="margin-top:6px">결과로 돌아가기</button></div>';
