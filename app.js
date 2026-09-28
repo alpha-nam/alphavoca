@@ -185,7 +185,7 @@
       html += '<button class="resume" id="resume"><small>이어서 풀기</small><h4>Day ' + last + ' · ' + lp + '/100</h4>' +
         '<span class="pb"><i style="width:' + lp + '%"></i></span><span class="go">→</span></button>';
     }
-    html += '<div class="sec"><b>학습 범위</b></div><div class="days">';
+    html += '<div class="days">';
     for (var n = 1; n <= MAX_DAY; n++) {
       if (AVAILABLE.indexOf(n) >= 0) {
         var p = Math.min(100, dayProgress(n));
