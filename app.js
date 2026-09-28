@@ -185,7 +185,7 @@
       html += '<button class="resume" id="resume"><small>이어서 풀기</small><h4>Day ' + last + ' · ' + lp + '/100</h4>' +
         '<span class="pb"><i style="width:' + lp + '%"></i></span><span class="go">→</span></button>';
     }
-    html += '<div class="sec"><b>학습 범위</b><span>Day를 골라요</span></div><div class="sub">풀이 중인 Day는 색으로 표시돼요</div><div class="days">';
+    html += '<div class="sec"><b>학습 범위</b></div><div class="days">';
     for (var n = 1; n <= MAX_DAY; n++) {
       if (AVAILABLE.indexOf(n) >= 0) {
         var p = dayProgress(n);
@@ -235,7 +235,7 @@
       '<div class="ring" style="--p:' + donePct + '"><i>' + donePct + '%</i></div></div>' +
       '<button class="pillbtn" id="start">' + (n ? '이어서 풀기 (' + n + '/' + total + ')' : '시작하기') + '</button></div>' +
       '<div class="sheet"><div class="sec"><b>유형별 보기</b><span>' + EXAM.sections.length + '가지</span></div>' +
-      '<div class="sub">카드를 누르면 그 유형부터 시작해요</div><div class="tiles">';
+      '<div class="tiles">';
     EXAM.sections.forEach(function (s, si) {
       var done = 0;
       flat.forEach(function (f, i) { if (f.si === si && state.answers[i] !== undefined) done++; });
@@ -332,8 +332,8 @@
     var pct = Math.round(r.total / total * 100);
     var msg = pct >= 90 ? "Excellent!" : pct >= 70 ? "Great job!" : pct >= 50 ? "Good try!" : "Keep going!";
     var sub = pct >= 90 ? "아주 훌륭해요" : pct >= 70 ? "잘했어요" : pct >= 50 ? "조금만 더 다듬어 봐요" : "해설을 보며 다시 도전해요";
-    var html = '<div class="top"><button class="icon" id="home" aria-label="홈">←</button><h1>결과</h1><span class="spacer"></span></div>' +
-      '<div class="sheet"><div class="scorewrap"><img class="trophy-ill" src="assets/icons/trophy.png" alt=""><div class="circle"><small>Your Score</small><b>' + r.total + '/' + total + '</b></div>' +
+    var html = '<div class="top top-float"><button class="icon" id="home" aria-label="홈">←</button></div>' +
+      '<div class="sheet sheet-result"><div class="scorewrap"><img class="trophy-ill" src="assets/icons/trophy.png" alt=""><div class="circle"><small>Your Score</small><b>' + r.total + '/' + total + '</b></div>' +
       '<h2>' + msg + '</h2><p>' + sub + ' · 정답률 ' + pct + '%</p></div>' +
       '<div class="barshead"><img src="assets/icons/chart.png" alt=""><b>유형별 결과</b></div><div class="bars">';
     EXAM.sections.forEach(function (s, i) {
