@@ -97,17 +97,21 @@
     });
     return out;
   }
+  function tagHtml(my, ans) {
+    var cls = my === undefined ? "skip" : my === ans ? "ok" : "bad";
+    var label = my === undefined ? "미응답" : my === ans ? "✓ 정답" : "✕ 오답";
+    return '<span class="tag ' + cls + '">' + label + '</span>';
+  }
   function expHtml(q) {
     return (q.kr || q.why)
       ? '<div class="exp">' + (q.kr ? "<b>해석</b> " + esc(q.kr) + (q.why ? "<br>" : "") : "") + (q.why ? "<b>해설</b> " + esc(q.why) : "") + '</div>'
       : '<div class="exp soft">이 Day는 아직 해설이 준비되지 않았어요. 정답만 확인할 수 있습니다.</div>';
   }
   function cardHtml(i, clickable) {
-    var f = flat[i], q = f.q, my = state.answers[i], ok = my === q.ans;
+    var f = flat[i], q = f.q, my = state.answers[i];
     var label = clickable ? (q.n + "번") : (q.n + "번 · " + esc(f.s.id) + ". " + esc(f.s.title));
     return '<div class="rv' + (clickable ? " rv-live" : "") + '"><div class="h"><span>' + label + '</span>' +
-      '<span class="hactions">' + starBtnHtml(state.day, q.n) +
-      '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></span></div>' +
+      '<span class="hactions">' + starBtnHtml(state.day, q.n) + tagHtml(my, q.ans) + '</span></div>' +
       '<div class="inst">' + esc(q.inst || f.s.instruction) + '</div>' +
       '<div class="stem">' + stem(q.q) + '</div>' +
       optsHtml(q, my, clickable) + expHtml(q) + '</div>';
@@ -133,10 +137,8 @@
       var raw = localStorage.getItem("vocab-exam-day" + day + "-v1");
       if (raw) { var d = JSON.parse(raw); my = d.answers ? d.answers[qn - 1] : undefined; }
     } catch (e) {}
-    var ok = my === q.ans;
     return '<div class="rv"><div class="h"><span>Day' + day + ' · ' + qn + '번 · ' + esc(s.id) + '. ' + esc(s.title) + '</span>' +
-      '<span class="hactions">' + starBtnHtml(day, qn) +
-      '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></span></div>' +
+      '<span class="hactions">' + starBtnHtml(day, qn) + tagHtml(my, q.ans) + '</span></div>' +
       '<div class="inst">' + esc(q.inst || s.instruction) + '</div>' +
       '<div class="stem">' + stem(q.q) + '</div>' +
       optsHtml(q, my, false) + expHtml(q) + '</div>';
@@ -152,7 +154,7 @@
 
   function days() {
     var html = '<div class="top"><span class="spacer"></span><h1>Alpha-male Voca</h1><span class="spacer"></span></div>' +
-      '<div class="sheet"><div class="hero"><h2>어휘 실력을 점검해 보세요</h2>' +
+      '<div class="sheet"><div class="hero hero-icon"><img class="hero-ill" src="assets/icons/calendar.png" alt=""><h2>어휘 실력을 점검해 보세요</h2>' +
       '<p>아래에서 학습한 범위를 선택하세요. 끝까지 풀고 제출하면 자동으로 채점하고 해설도 보여 드려요.</p></div>' +
       '<h3 class="sec">학습 범위</h3><div class="daygrid">';
     for (var n = 1; n <= MAX_DAY; n++) {
@@ -161,7 +163,7 @@
         var p = dayProgress(n);
         html += '<button class="daycard" data-day="' + n + '"><b>Day ' + n + '</b><span>' + '100문항' + (p ? " · " + p + " 풀이" : "") + '</span></button>';
       } else {
-        html += '<div class="daycard off"><b>Day ' + n + '</b><span>준비 중</span></div>';
+        html += '<div class="daycard off"><img src="assets/icons/lock.png" alt=""><b>Day ' + n + '</b><span>준비 중</span></div>';
       }
     }
     html += '</div><button class="btn btn-ghost btn-block" id="gobm" style="margin-top:14px">☆ 즐겨찾기 모아보기</button>' +
@@ -206,8 +208,8 @@
       var mStudy = state.mode !== "exam";
       startBlock =
         '<div class="modesel">' +
-          '<label class="moderadio' + (mStudy ? " on" : "") + '"><input type="radio" name="mode" value="study"' + (mStudy ? " checked" : "") + '><b>학습 모드</b><span>문제마다 바로 정답·해설 확인</span></label>' +
-          '<label class="moderadio' + (!mStudy ? " on" : "") + '"><input type="radio" name="mode" value="exam"' + (!mStudy ? " checked" : "") + '><b>시험 모드</b><span>100문항 다 풀고 한번에 채점</span></label>' +
+          '<label class="moderadio' + (mStudy ? " on" : "") + '"><input type="radio" name="mode" value="study"' + (mStudy ? " checked" : "") + '><img src="assets/icons/flash.png" alt=""><b>학습 모드</b><span>문제마다 바로 정답·해설 확인</span></label>' +
+          '<label class="moderadio' + (!mStudy ? " on" : "") + '"><input type="radio" name="mode" value="exam"' + (!mStudy ? " checked" : "") + '><img src="assets/icons/clock.png" alt=""><b>시험 모드</b><span>100문항 다 풀고 한번에 채점</span></label>' +
         '</div>' +
         '<button class="btn btn-light btn-block" id="start">시작하기</button>';
     }
@@ -326,8 +328,9 @@
     var msg = pct >= 90 ? "Excellent!" : pct >= 70 ? "Great job!" : pct >= 50 ? "Good try!" : "Keep going!";
     var sub = pct >= 90 ? "아주 훌륭해요" : pct >= 70 ? "잘했어요" : pct >= 50 ? "조금만 더 다듬어 봐요" : "해설을 보며 다시 도전해요";
     var html = '<div class="top"><button class="icon" id="home" aria-label="홈">←</button><h1>결과</h1><span class="spacer"></span></div>' +
-      '<div class="sheet"><div class="scorewrap"><div class="circle"><small>Your Score</small><b>' + r.total + '/' + total + '</b></div>' +
-      '<h2>' + msg + '</h2><p>' + sub + ' · 정답률 ' + pct + '%</p></div><div class="bars">';
+      '<div class="sheet"><div class="scorewrap"><img class="trophy-ill" src="assets/icons/trophy.png" alt=""><div class="circle"><small>Your Score</small><b>' + r.total + '/' + total + '</b></div>' +
+      '<h2>' + msg + '</h2><p>' + sub + ' · 정답률 ' + pct + '%</p></div>' +
+      '<div class="barshead"><img src="assets/icons/chart.png" alt=""><b>유형별 결과</b></div><div class="bars">';
     EXAM.sections.forEach(function (s, i) {
       var b = r.bySec[i], w = Math.round(b.c / b.n * 100);
       html += '<div class="bar-row"><div class="l"><b>' + esc(s.id) + '. ' + esc(s.title) + '</b><span>' + b.c + '/' + b.n + '</span></div><div class="bar"><div style="width:' + w + '%"></div></div></div>';

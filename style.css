@@ -125,3 +125,12 @@ button.daycard:hover{border-color:var(--primary)}
 .moderadio.on{background:#fff;border-color:#fff;color:var(--primary-dark)}
 .moderadio.on span{color:var(--muted);opacity:1}
 .rv-live .opt{cursor:pointer}
+
+/* icon accents */
+.hero-icon .hero-ill{position:absolute;top:14px;right:16px;width:56px;height:56px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
+.daycard.off img{width:26px;height:26px;margin:0 auto 2px;opacity:.8}
+.moderadio img{width:26px;height:26px;margin-bottom:2px}
+.trophy-ill{width:72px;height:72px;margin-bottom:2px;filter:drop-shadow(0 6px 12px rgba(15,74,156,.25))}
+.barshead{display:flex;align-items:center;gap:8px;margin:18px 2px 8px}
+.barshead img{width:22px;height:22px}
+.barshead b{font-size:14px;color:var(--plum)}
