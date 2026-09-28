@@ -62,7 +62,8 @@
   }
   function cardHtml(i, clickable) {
     var f = flat[i], q = f.q, my = state.answers[i], ok = my === q.ans;
-    var html = '<div class="rv' + (clickable ? " rv-live" : "") + '"><div class="h"><span>' + q.n + '번 · ' + esc(f.s.id) + '. ' + esc(f.s.title) + '</span>' +
+    var label = clickable ? (q.n + "번") : (q.n + "번 · " + esc(f.s.id) + ". " + esc(f.s.title));
+    var html = '<div class="rv' + (clickable ? " rv-live" : "") + '"><div class="h"><span>' + label + '</span>' +
       '<span class="tag ' + (my === undefined ? "skip" : ok ? "ok" : "bad") + '">' + (my === undefined ? "미응답" : ok ? "정답" : "오답") + '</span></div>' +
       '<div class="stem">' + stem(q.q) + '</div>';
     var tag = clickable ? "button" : "div";
