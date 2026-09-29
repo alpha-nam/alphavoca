@@ -48,6 +48,12 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .sheet{flex:1;background:#fff;padding:14px 18px 32px;position:relative}
 .hd+.sheet{margin-top:-30px;border-radius:28px 28px 0 0;padding-top:20px;z-index:2}
 
+.installbar{display:flex;align-items:center;gap:10px;background:var(--primary-soft);border-radius:16px;padding:12px 12px 12px 14px;margin-bottom:14px}
+.installbar .ib-tx{flex:1;min-width:0}
+.installbar b{display:block;font-size:13.5px;color:var(--primary-dark)}
+.installbar span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.installbar .ib-go{background:var(--primary);color:#fff;border-radius:99px;padding:9px 14px;font-size:13px;font-weight:800;white-space:nowrap;flex:none}
+.installbar .ib-x{color:var(--muted);font-size:15px;padding:4px;flex:none}
 .top-float{position:absolute;left:0;top:0;z-index:3}
 .sheet-result{padding-top:18px}
 .note{font-size:13px;color:var(--muted);text-align:center;margin-top:18px;line-height:1.6}

@@ -104,6 +104,52 @@
     try { var n = +localStorage.getItem(LAST_KEY); return AVAILABLE.indexOf(n) >= 0 ? n : 0; } catch (e) { return 0; }
   }
 
+  var INSTALL_DISMISS_KEY = "vocab-exam-install-dismissed";
+  var deferredInstallPrompt = null;
+  var isIOSDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  function isStandaloneApp() {
+    return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+  }
+  function installDismissed() {
+    try { return localStorage.getItem(INSTALL_DISMISS_KEY) === "1"; } catch (e) { return false; }
+  }
+  function installBarHtml() {
+    if (isStandaloneApp() || installDismissed()) return "";
+    if (deferredInstallPrompt) {
+      return '<div class="installbar" id="installbar"><div class="ib-tx"><b>앱처럼 설치해서 써보세요</b><span>홈 화면에 아이콘이 생겨요</span></div>' +
+        '<button class="ib-go" id="installBtn">설치하기</button><button class="ib-x" id="installX" aria-label="닫기">✕</button></div>';
+    }
+    if (isIOSDevice) {
+      return '<div class="installbar" id="installbar"><div class="ib-tx"><b>앱처럼 설치해서 써보세요</b><span>공유 버튼 → "홈 화면에 추가"를 눌러주세요</span></div>' +
+        '<button class="ib-x" id="installX" aria-label="닫기">✕</button></div>';
+    }
+    return "";
+  }
+  function wireInstallBar() {
+    var b = document.getElementById("installBtn");
+    if (b) b.onclick = function () {
+      if (!deferredInstallPrompt) return;
+      var p = deferredInstallPrompt;
+      deferredInstallPrompt = null;
+      p.prompt();
+      p.userChoice.then(function () { if (state.view === "days") render(); });
+    };
+    var x = document.getElementById("installX");
+    if (x) x.onclick = function () {
+      try { localStorage.setItem(INSTALL_DISMISS_KEY, "1"); } catch (e) {}
+      if (state.view === "days") render();
+    };
+  }
+  window.addEventListener("beforeinstallprompt", function (e) {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    if (state.view === "days") render();
+  });
+  window.addEventListener("appinstalled", function () {
+    deferredInstallPrompt = null;
+    if (state.view === "days") render();
+  });
+
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
@@ -192,7 +238,7 @@
     var html = '<div class="hd hd-home"><span class="logo">Alpha Male VOCA</span><h2>Check your vocab</h2><p>How far will you go today?</p>' +
       '<div class="hd-art"><img class="hd-ill" src="assets/sticker.png" alt=""></div>' +
       '<div class="chips"><span class="chip">Day 1–' + maxOpen + ' open</span><span class="chip">' + favN + (favN === 1 ? ' favorite' : ' favorites') + '</span></div></div>' +
-      '<div class="sheet">';
+      '<div class="sheet">' + installBarHtml();
     if (lp) {
       html += '<button class="resume" id="resume"><small>이어서 풀기</small><h4>Day ' + last + ' · ' + lp + '/100</h4>' +
         '<span class="pb"><i style="width:' + lp + '%"></i></span><span class="go">→</span></button>';
@@ -215,6 +261,7 @@
     var rs = document.getElementById("resume");
     if (rs) rs.onclick = function () { openDay(last, true); };
     wireTabs();
+    wireInstallBar();
   }
   function openDay(n, toQuiz) {
     app.innerHTML = '<div class="top"><span class="spacer"></span><h1>Day ' + n + '</h1><span class="spacer"></span></div><div class="sheet"><p class="note">불러오는 중…</p></div>';
