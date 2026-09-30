@@ -107,6 +107,18 @@
   var INSTALL_DISMISS_KEY = "vocab-exam-install-dismissed";
   var deferredInstallPrompt = null;
   var isIOSDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var IN_APP_BROWSERS = [
+    { re: /NAVER\(/i, name: "네이버 앱" },
+    { re: /KAKAOTALK/i, name: "카카오톡" },
+    { re: /FBAN|FBAV/i, name: "페이스북 앱" },
+    { re: /Instagram/i, name: "인스타그램 앱" },
+    { re: /Line\//i, name: "라인 앱" }
+  ];
+  function inAppBrowserName() {
+    var ua = navigator.userAgent;
+    for (var i = 0; i < IN_APP_BROWSERS.length; i++) if (IN_APP_BROWSERS[i].re.test(ua)) return IN_APP_BROWSERS[i].name;
+    return null;
+  }
   function isStandaloneApp() {
     return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
   }
@@ -115,6 +127,11 @@
   }
   function installBarHtml() {
     if (isStandaloneApp() || installDismissed()) return "";
+    var inApp = inAppBrowserName();
+    if (inApp) {
+      return '<div class="installbar" id="installbar"><div class="ib-tx"><b>' + esc(inApp) + '에서는 설치할 수 없어요</b><span>오른쪽 위 메뉴에서 "다른 브라우저로 열기"를 눌러주세요</span></div>' +
+        '<button class="ib-x" id="installX" aria-label="닫기">✕</button></div>';
+    }
     if (deferredInstallPrompt) {
       return '<div class="installbar" id="installbar"><div class="ib-tx"><b>앱처럼 설치해서 써보세요</b><span>홈 화면에 아이콘이 생겨요</span></div>' +
         '<button class="ib-go" id="installBtn">설치하기</button><button class="ib-x" id="installX" aria-label="닫기">✕</button></div>';
