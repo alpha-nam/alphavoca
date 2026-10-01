@@ -1,0 +1,169 @@
+{
+  "title": "실패는 끝이 아니라 정보다",
+  "source_ref": "요지 파악형 · 예시 지문",
+  "topic": "실패가 주는 정보의 가치",
+  "main_idea": "실패는 성공이 줄 수 없는 정보를 주므로, 실패에서 배우는 사람이 피하는 사람보다 더 잘 해낸다.",
+  "eli5": "시험에서 틀린 문제는 '어디를 모르는지' 알려 주는 지도예요. 그 지도를 보는 사람이 다음엔 더 높은 점수를 받아요.",
+  "concept_sketch": {
+    "title": "같은 실패, 다른 해석",
+    "svg": "<svg viewBox='0 0 760 350' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='실패에 대한 통념과 이 글의 주장 비교'><rect x='20' y='20' width='330' height='250' rx='18' fill='var(--amber-soft)' stroke='var(--amber)' stroke-width='3'/><text x='185' y='58' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='20' font-weight='800' fill='var(--amber)'>통념</text><rect x='45' y='100' width='110' height='56' rx='12' fill='var(--sheet)' stroke='var(--amber)' stroke-width='2.5'/><text x='100' y='136' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='20' font-weight='700' fill='var(--fg)'>실패</text><line x1='160' y1='128' x2='215' y2='128' stroke='var(--amber)' stroke-width='4'/><polygon points='215,116 235,128 215,140' fill='var(--amber)'/><rect x='240' y='100' width='80' height='56' rx='12' fill='var(--sheet)' stroke='var(--amber)' stroke-width='2.5'/><text x='280' y='136' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='20' font-weight='700' fill='var(--fg)'>끝</text><text x='185' y='225' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='16' font-weight='500' fill='var(--muted)'>피하고 싶은 것</text><text x='380' y='150' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='18' font-weight='800' fill='var(--muted)'>vs</text><rect x='410' y='20' width='330' height='250' rx='18' fill='var(--teal-soft)' stroke='var(--teal)' stroke-width='3'/><text x='575' y='58' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='20' font-weight='800' fill='var(--teal)'>이 글의 주장</text><rect x='490' y='80' width='170' height='40' rx='10' fill='var(--sheet)' stroke='var(--teal)' stroke-width='2.5'/><text x='575' y='108' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='18' font-weight='700' fill='var(--fg)'>실패</text><line x1='575' y1='124' x2='575' y2='136' stroke='var(--teal)' stroke-width='4'/><polygon points='563,136 575,152 587,136' fill='var(--teal)'/><rect x='490' y='156' width='170' height='40' rx='10' fill='var(--sheet)' stroke='var(--teal)' stroke-width='2.5'/><text x='575' y='184' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='16' font-weight='700' fill='var(--fg)'>정보: 약점 발견</text><line x1='575' y1='200' x2='575' y2='212' stroke='var(--teal)' stroke-width='4'/><polygon points='563,212 575,228 587,212' fill='var(--teal)'/><rect x='490' y='230' width='170' height='34' rx='10' fill='var(--teal)' stroke='var(--teal)' stroke-width='2.5'/><text x='575' y='253' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='16' font-weight='800' fill='#fff'>개선 → 성장</text><text x='380' y='318' text-anchor='middle' font-family='Noto Sans KR, sans-serif' font-size='18' font-weight='700' fill='var(--accent-ink)'>실패를 '끝'이 아닌 '정보'로 읽는 사람이 앞선다</text></svg>",
+    "caption": "통념(실패 = 끝)을 뒤집는 것이 이 글의 논리 구조예요."
+  },
+  "sentences": [
+    {
+      "no": 1,
+      "english": "Many people see failure as **the opposite of success**.",
+      "translation": "많은 사람들은 실패를 **성공의 반대**로 본다.",
+      "easy_explanation": "사람들이 보통 가지고 있는 생각(통념)을 먼저 보여 주는 문장이에요.",
+      "content_note": "글의 첫 문장은 '통념'을 제시하고, 이어질 However로 그것을 뒤집는 구조예요.",
+      "grammar_points": [
+        "`see A as B`: A를 B로 보다(여기기)",
+        "`the opposite of ~`: ~의 반대"
+      ]
+    },
+    {
+      "no": 2,
+      "english": "However, every failure carries **information that success cannot offer**.",
+      "translation": "하지만 모든 실패는 **성공이 줄 수 없는 정보**를 담고 있다.",
+      "easy_explanation": "여기서 글의 방향이 바뀌어요. 실패에는 성공에 없는 '정보'가 있다는 거예요.",
+      "content_note": "However가 통념을 뒤집는 신호이고, 이 문장이 글 전체의 핵심 주장이에요.",
+      "grammar_points": [
+        "`information that success cannot offer`: that절이 information을 꾸미는 관계대명사절",
+        "`every + 단수명사`: 단수 취급 → carries"
+      ]
+    },
+    {
+      "no": 3,
+      "english": "When we fail, we discover **exactly which part of our plan was weak**.",
+      "translation": "우리가 실패할 때, 우리는 **계획의 정확히 어느 부분이 약했는지** 알게 된다.",
+      "easy_explanation": "실패하면 어디가 약했는지 정확히 알 수 있다는, 앞 문장의 구체적인 설명이에요.",
+      "content_note": "'정보'가 구체적으로 무엇인지(약점의 위치) 풀어 주는 예시 문장이에요.",
+      "grammar_points": [
+        "`discover + 의문사절`: which part ~ was weak는 간접의문문(명사절)이라 어순이 '의문사 + 주어 + 동사'",
+        "`exactly`: which part를 강조하는 부사"
+      ]
+    },
+    {
+      "no": 4,
+      "english": "Therefore, those who learn from failure often **outperform** those who avoid it.",
+      "translation": "그러므로 실패에서 배우는 사람들이 실패를 피하는 사람들보다 종종 **더 뛰어난 성과를 낸다**.",
+      "easy_explanation": "Therefore는 결론 신호예요. 실패에서 배우는 쪽이 이긴다는 마무리예요.",
+      "content_note": "요지가 이 문장에 압축되어 있어요. 요지 문제에서는 마지막 문장이 정답 근거가 되는 경우가 많아요.",
+      "grammar_points": [
+        "`those who ~`: ~하는 사람들",
+        "`outperform A`: A보다 더 나은 성과를 내다 (타동사, 전치사 불필요)"
+      ]
+    }
+  ],
+  "summary": {
+    "logic_stages": [
+      {
+        "stage": "통념",
+        "description": "실패는 성공의 반대라고 여긴다. (1문장)"
+      },
+      {
+        "stage": "반론",
+        "description": "그러나 실패에는 성공이 줄 수 없는 정보가 있다. (2문장)"
+      },
+      {
+        "stage": "근거",
+        "description": "실패하면 계획의 약한 부분을 정확히 알게 된다. (3문장)"
+      },
+      {
+        "stage": "결론",
+        "description": "실패에서 배우는 사람이 더 뛰어난 성과를 낸다. (4문장)"
+      }
+    ],
+    "analogy": {
+      "title": "티칭 포인트: 틀린 문제는 지도다",
+      "setup": "학생에게 오답노트를 떠올리게 하면 이 글의 논리가 바로 이해돼요.",
+      "misconception": "틀렸다 = 실력이 없다는 증거, 빨리 잊고 싶은 것",
+      "truth": "틀렸다 = 어디를 보완해야 하는지 알려 주는 정보",
+      "conclusion": "틀린 문제를 분석하는 학생이 점수를 올린다."
+    },
+    "distractors": [
+      {
+        "choice": "① 실패는 성공의 반대이다",
+        "reason": "1문장의 통념을 그대로 고른 오답이에요. 글쓴이는 이 통념을 However로 뒤집어요."
+      },
+      {
+        "choice": "③ 계획 없이 도전해야 한다",
+        "reason": "3문장에 '계획의 약한 부분'이 나올 뿐, 계획이 필요 없다는 말은 없어요. 본문에 없는 내용이에요."
+      },
+      {
+        "choice": "④ 성공은 운에 크게 좌우된다",
+        "reason": "성공의 원인은 글에서 다루지 않아요. 글감과 무관한 선지예요."
+      }
+    ],
+    "correct_answer": {
+      "choice": "② 실패는 성장에 필요한 정보를 준다",
+      "reason": "2~3문장의 '실패의 정보'와 4문장의 '배우는 사람의 성과'를 모두 담은 요지예요."
+    },
+    "vocabulary": [
+      {
+        "word": "failure",
+        "meaning": "실패",
+        "pos": "n.",
+        "synonym": "setback"
+      },
+      {
+        "word": "carry",
+        "meaning": "담고 있다, 지니다",
+        "pos": "v.",
+        "synonym": "contain"
+      },
+      {
+        "word": "discover",
+        "meaning": "알아내다, 발견하다",
+        "pos": "v.",
+        "synonym": "find out"
+      },
+      {
+        "word": "weak",
+        "meaning": "약한, 부족한",
+        "pos": "adj.",
+        "synonym": "flawed"
+      },
+      {
+        "word": "outperform",
+        "meaning": "~보다 뛰어난 성과를 내다",
+        "pos": "v.",
+        "synonym": "surpass"
+      }
+    ],
+    "tips": [
+      "However / Therefore 같은 연결어로 글의 '통념 → 반론 → 결론' 뼈대를 먼저 잡게 하세요.",
+      "요지 문제의 오답은 대개 첫 문장의 통념이나 본문에 없는 일반론이에요. 선지를 본문 문장에 대응시켜 보게 하세요."
+    ]
+  },
+  "variant_questions": {
+    "multiple_choice": [
+      {
+        "type": "요지 파악",
+        "stem": "다음 글의 요지로 가장 적절한 것은?",
+        "note": "정답: 실패는 성장에 필요한 정보를 준다. 오답 설계: 1문장의 통념을 선지로 변형."
+      },
+      {
+        "type": "빈칸 추론",
+        "stem": "Every failure carries ______ that success cannot offer.",
+        "note": "정답: information. 오답 후보로 reward, advantage 등을 넣어 문맥 판단을 요구."
+      },
+      {
+        "type": "어휘 교정",
+        "stem": "밑줄 친 outperform이 문맥상 적절한지 판단하시오. (예: underperform으로 바꿔 오류 유도)",
+        "note": "Therefore 앞뒤의 논리 방향(배우는 사람이 앞선다)에 근거해 오류를 찾게 함."
+      }
+    ],
+    "written": [
+      {
+        "type": "조건 영작",
+        "stem": "본문의 표현 learn from, outperform을 사용하여 '실패에서 배우는 학생이 더 좋은 성적을 낸다'를 영작하시오.",
+        "note": "채점: learn from failure 사용, outperform 올바른 타동사 용법, 주어-동사 일치."
+      }
+    ]
+  },
+  "reel_sketch": {
+    "left": "통념: 실패 = 끝",
+    "right": "진실: 실패 = 정보"
+  }
+}

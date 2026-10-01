@@ -1,34 +1,54 @@
 {
-  "title": "Practice Passage",
-  "topic": "실패의 가치",
-  "main_idea": "실패는 끝이 아니라, 성장을 위한 가장 정직한 피드백이다.",
   "passage": "Many people see failure as the opposite of success. However, every failure carries information that success cannot offer. When we fail, we discover exactly which part of our plan was weak. Therefore, those who learn from failure often outperform those who avoid it.",
+  "topic": "실패가 주는 정보의 가치",
+  "main_idea": "실패는 성공이 줄 수 없는 정보를 주므로, 실패에서 배우는 사람이 피하는 사람보다 더 잘 해낸다.",
   "sentences": [
     {
       "no": 1,
       "english": "Many people see failure as **the opposite of success**.",
-      "translation": "많은 사람이 실패를 성공의 반대로 본다."
+      "translation": "많은 사람들은 실패를 성공의 반대로 본다."
     },
     {
       "no": 2,
       "english": "However, every failure carries **information that success cannot offer**.",
-      "translation": "하지만 모든 실패에는 성공이 줄 수 없는 정보가 담겨 있다."
+      "translation": "하지만 모든 실패는 성공이 줄 수 없는 정보를 담고 있다."
     },
     {
       "no": 3,
+      "english": "When we fail, we discover **exactly which part of our plan was weak**.",
+      "translation": "우리가 실패할 때, 우리는 계획의 정확히 어느 부분이 약했는지 알게 된다."
+    },
+    {
+      "no": 4,
       "english": "Therefore, those who learn from failure often **outperform** those who avoid it.",
-      "translation": "그러므로 실패에서 배우는 사람이 피하는 사람보다 더 낫다."
+      "translation": "그러므로 실패에서 배우는 사람들이 실패를 피하는 사람들보다 종종 더 뛰어난 성과를 낸다."
     }
   ],
   "sketch": {
-    "caption": "통념 vs 진실",
-    "left": "통념: 실패 → 끝",
-    "right": "진실: 실패 → 정보 → 성장"
+    "caption": "같은 실패, 다른 해석",
+    "left": "통념: 실패 = 끝",
+    "right": "진실: 실패 = 정보"
   },
   "choices": [
-    { "label": "①", "text": "실패는 성공의 반대다", "correct": false },
-    { "label": "②", "text": "실패는 성장의 정보다", "correct": true },
-    { "label": "③", "text": "계획은 필요 없다", "correct": false },
-    { "label": "④", "text": "성공은 운이 좌우한다", "correct": false }
+    {
+      "label": "①",
+      "text": "실패는 성공의 반대이다",
+      "correct": false
+    },
+    {
+      "label": "②",
+      "text": "실패는 성장에 필요한 정보를 준다",
+      "correct": true
+    },
+    {
+      "label": "③",
+      "text": "계획 없이 도전해야 한다",
+      "correct": false
+    },
+    {
+      "label": "④",
+      "text": "성공은 운에 크게 좌우된다",
+      "correct": false
+    }
   ]
 }
