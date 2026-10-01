@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render Reel out/reel.mp4",
-    "still": "remotion still Reel"
+    "capture": "for v in blue dark green; do node scripts/capture_card.mjs data/skill-card.html public/card/$v $v; done",
+    "render": "remotion render ReelBlue out/reel-blue.mp4 && remotion render ReelDark out/reel-dark.mp4 && remotion render ReelGreen out/reel-green.mp4"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.531",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
+    "playwright-core": "^1.63.0",
     "typescript": "^7.0.2"
   }
 }

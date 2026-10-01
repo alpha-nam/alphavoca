@@ -1,31 +1,25 @@
 # alphavoca Reel (Remotion)
 
-지문 분석 스킬(`csat-passage-card`)로 수업을 준비하는 과정을 보여주는 30초 릴스 (1080×1920, 30fps).
+`csat-passage-card` 스킬이 만든 **실제 HTML 카드**를 캡처해 연출하는 약 32초 릴스 (1080×1920, 30fps).
+디자인 시안 3종: `ReelBlue`(스킬 카드 원본) / `ReelDark`(스킬 카드 다크) / `ReelGreen`(alphavoca 팔레트).
 
 ```bash
 npm install
+npm run capture    # 카드 HTML → public/card/<시안>/*.png
 npm run studio     # 미리보기
-npm run render     # out/reel.mp4
+npm run render     # out/reel-{blue,dark,green}.mp4
 ```
 
-## 스킬 결과 → 영상 (파이프라인)
-1. `csat-passage-card` 스킬로 지문을 분석한 JSON을 `data/skill-output.json`에 저장한다. (영상용 짧은 스케치 라벨은 `reel_sketch: {left, right}`로 추가)
-2. 릴스용 데이터로 변환한다.
-   ```bash
-   python3 scripts/from_skill.py data/skill-output.json src/data/passage.json "<원문 지문>"
-   ```
+## 스킬 결과 → 영상
+1. 스킬이 만든 카드 HTML을 `data/skill-card.html`로 저장하고 `npm run capture`로 섹션별 PNG를 만든다.
+2. 지문 붙여넣기 장면용 원문은 `src/data/passage.json`의 `passage`를 쓴다.
+   (스킬 JSON → `python3 scripts/from_skill.py data/skill-output.json src/data/passage.json "<원문>"`)
 3. `npm run render`
 
-## 다른 지문으로 만들기
-`src/data/passage.json`과 같은 형태(`src/types.ts`의 `Passage`)의 JSON을 `{ "data": {...}, "bgm": "" }`로 감싸 넘긴다.
-
-```bash
-npx remotion render Reel out/reel.mp4 --props=my-props.json
-```
-
 ## BGM
-`public/audio/bgm.mp3` 같은 파일을 넣고 props의 `"bgm": "audio/bgm.mp3"`로 지정한다. 비우면 무음.
+`public/audio/bgm.mp3`를 넣고 `Root.tsx`의 props에서 `bgm: "audio/bgm.mp3"`로 지정. 비우면 무음.
 
 ## 참고
 - 한글 폰트는 `public/fonts/NotoSansKR.ttf`를 로컬로 로드한다 (오프라인 렌더용).
-- 장면 길이는 `src/Reel.tsx`의 `SCENES`, 색상은 `src/theme.ts`에서 바꾼다.
+- 카드 캡처 폭은 600px(모바일 카드 크기)로 맞춰 글자가 크게 보이게 했다. `scripts/capture_card.mjs`에서 조정.
+- 장면 길이는 `src/Reel.tsx`의 `SCENES`, 시안 색상은 `src/theme.tsx`에서 바꾼다.

@@ -2,9 +2,10 @@ import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../components/Frame";
 import { Pop } from "../components/Card";
-import { theme } from "../theme";
+import { useTheme } from "../theme";
 
 export const Hook: React.FC = () => {
+  const theme = useTheme();
   const frame = useCurrentFrame();
   const shake = Math.sin(frame * 1.2) * interpolate(frame, [30, 90], [0, 10], { extrapolateRight: "clamp" });
   const secs = Math.min(3 * 3600, Math.floor(frame * 120));
@@ -25,7 +26,7 @@ export const Hook: React.FC = () => {
             fontSize: 150,
             fontWeight: 900,
             textAlign: "center",
-            color: theme.dark,
+            color: theme.primary,
             transform: `translateX(${shake}px)`,
           }}
         >

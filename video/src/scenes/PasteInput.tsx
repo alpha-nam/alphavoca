@@ -2,11 +2,12 @@ import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../components/Frame";
 import { Card, Pop } from "../components/Card";
-import { theme } from "../theme";
+import { useTheme } from "../theme";
 import { useData } from "../data/context";
 
 export const PasteInput: React.FC = () => {
   const data = useData();
+  const theme = useTheme();
   const frame = useCurrentFrame();
   const chars = Math.floor(interpolate(frame, [10, 100], [0, data.passage.length], { extrapolateRight: "clamp" }));
   const analyzing = frame > 105;
