@@ -24,6 +24,9 @@ export type Theme = {
   line: string;
   surface: string; // 타이핑 카드 배경
   caption: string;
+  fill: string; // 외곽선 자막 글자색
+  stroke: string; // 외곽선 색
+  hi: string; // 자막 강조색
   radius: number;
   font: string;
 };
@@ -35,17 +38,17 @@ export const THEMES: Record<Variant, Theme> = {
   blue: {
     variant: "blue", bg: "#F2F6FD", glow: "#D9E6FF", text: "#131A2B", muted: "#5F6B85",
     primary: "#1F6BFF", accent: "#F59E0B", soft: "#E6EFFF", line: "#E1E8F5", surface: "#FFFFFF",
-    caption: "#0B4FCC", radius: 32, font,
+    caption: "#0B4FCC", fill: "#FFFFFF", stroke: "#0A1A3F", hi: "#FFD43B", radius: 32, font,
   },
   dark: {
     variant: "dark", bg: "#0B1222", glow: "#14336E", text: "#EEF3FF", muted: "#9AA8C7",
     primary: "#6FA2FF", accent: "#FBBF24", soft: "#182E5C", line: "#25325A", surface: "#131B33",
-    caption: "#B8D0FF", radius: 32, font,
+    caption: "#B8D0FF", fill: "#FFFFFF", stroke: "#050A18", hi: "#FBBF24", radius: 32, font,
   },
   green: {
     variant: "green", bg: "#F3F7F5", glow: "#CFEBDD", text: "#1D2B26", muted: "#6E8079",
     primary: "#34A877", accent: "#F5703F", soft: "#E4F5EC", line: "#E3ECE7", surface: "#FFFFFF",
-    caption: "#0B5D46", radius: 32, font,
+    caption: "#0B5D46", fill: "#FFFFFF", stroke: "#0B3D2E", hi: "#FFE066", radius: 32, font,
   },
 };
 

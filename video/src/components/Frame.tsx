@@ -1,8 +1,14 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { SAFE, useTheme } from "../theme";
+import { CenterCaption } from "./Caption";
 
-export const Frame: React.FC<{ children: React.ReactNode; caption?: string }> = ({ children, caption }) => {
+export const Frame: React.FC<{
+  children: React.ReactNode;
+  lines?: string[]; // 중앙→하단 외곽선 자막 (줄 단위, [[강조]] 지원)
+  burst?: boolean;
+  hold?: number;
+}> = ({ children, lines, burst, hold }) => {
   const theme = useTheme();
   return (
     <AbsoluteFill
@@ -17,22 +23,7 @@ export const Frame: React.FC<{ children: React.ReactNode; caption?: string }> = 
       >
         {children}
       </AbsoluteFill>
-      {caption ? (
-        <div
-          style={{
-            position: "absolute",
-            left: SAFE.side,
-            right: SAFE.side,
-            bottom: SAFE.bottom,
-            textAlign: "center",
-            fontSize: 46,
-            fontWeight: 800,
-            color: theme.caption,
-          }}
-        >
-          {caption}
-        </div>
-      ) : null}
+      {lines ? <CenterCaption lines={lines} burst={burst} hold={hold} /> : null}
     </AbsoluteFill>
   );
 };

@@ -9,10 +9,10 @@ export const PasteInput: React.FC = () => {
   const data = useData();
   const theme = useTheme();
   const frame = useCurrentFrame();
-  const chars = Math.floor(interpolate(frame, [10, 100], [0, data.passage.length], { extrapolateRight: "clamp" }));
-  const analyzing = frame > 105;
+  const chars = Math.floor(interpolate(frame, [8, 80], [0, data.passage.length], { extrapolateRight: "clamp" }));
+  const analyzing = frame > 84;
   return (
-    <Frame caption="지문을 붙여넣기만 하세요">
+    <Frame lines={["지문만 붙여넣으면", "[[끝]]!"]} hold={30}>
       <Card>
         <div style={{ fontSize: 40, lineHeight: 1.6, minHeight: 520 }}>
           {data.passage.slice(0, chars)}

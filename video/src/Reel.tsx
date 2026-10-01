@@ -15,17 +15,17 @@ import { Cta } from "./scenes/Cta";
 const TRANSITION = 10;
 
 export const SCENES = [
-  { C: Hook, frames: 90 },
-  { C: PasteInput, frames: 150 },
-  { C: CardHero, frames: 100 },
-  { C: CardSketch, frames: 110 },
-  { C: CardSent2, frames: 110 },
-  { C: CardSent4, frames: 100 },
-  { C: CardLogic, frames: 100 },
-  { C: CardAnswer, frames: 110 },
-  { C: CardVocab, frames: 90 },
-  { C: CardVariant, frames: 110 },
-  { C: Cta, frames: 90 },
+  { C: Hook, frames: 130 },
+  { C: PasteInput, frames: 110 },
+  { C: CardHero, frames: 90 },
+  { C: CardSketch, frames: 100 },
+  { C: CardSent2, frames: 100 },
+  { C: CardSent4, frames: 90 },
+  { C: CardLogic, frames: 90 },
+  { C: CardAnswer, frames: 100 },
+  { C: CardVocab, frames: 80 },
+  { C: CardVariant, frames: 100 },
+  { C: Cta, frames: 80 },
 ];
 // 전환 구간은 앞뒤 장면이 겹치므로 총 길이에서 뺀다
 export const TOTAL_FRAMES = SCENES.reduce((a, s) => a + s.frames, 0) - TRANSITION * (SCENES.length - 1);
