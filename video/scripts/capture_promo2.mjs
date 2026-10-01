@@ -1,12 +1,15 @@
 // data/skill-card2.html(최신 스킬 카드)을 섹션/문장 카드 단위로 캡처한다.
 // → public/promo/<name>.png, src/data/promo-manifest.json (question 항목은 유지)
 import { chromium } from "playwright-core";
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 const EXE = process.env.CHROMIUM_PATH || "/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell";
 const fontUrl = pathToFileURL(resolve("public/fonts/NotoSansKR.ttf")).href;
+const DARK = process.argv.includes("--dark"); // 다크 테마 카드는 public/promo-dark 에 저장(매니페스트는 그대로)
+const OUT = DARK ? "public/promo-dark" : "public/promo";
+mkdirSync(OUT, { recursive: true });
 const manifestPath = "src/data/promo-manifest.json";
 const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
 for (const k of Object.keys(manifest)) if (k !== "question") delete manifest[k];
@@ -20,6 +23,7 @@ await page.addStyleTag({
 .bar{display:none!important}html,body{background:transparent!important}section.card{box-shadow:none!important}`,
 });
 await page.evaluate(() => document.fonts.ready);
+if (DARK) await page.evaluate(() => document.getElementById("t-dark").click());
 await page.waitForTimeout(500);
 
 const res = await page.evaluate(() => {
@@ -57,11 +61,11 @@ const res = await page.evaluate(() => {
 const PAD = 8;
 for (const [name, b] of Object.entries(res.boxes)) {
   const clip = { x: Math.max(0, b.x - PAD), y: Math.max(0, b.y - PAD), width: b.w + PAD * 2, height: b.h + PAD * 2 };
-  await page.screenshot({ path: `public/promo/${name}.png`, fullPage: true, clip, omitBackground: true });
+  await page.screenshot({ path: `${OUT}/${name}.png`, fullPage: true, clip, omitBackground: true });
   manifest[name] = { w: Math.round(clip.width), h: Math.round(clip.height) };
   const m = res.marks[name];
   if (m) manifest[name].mark = { x: (m.x - clip.x) / clip.width, y: (m.y - clip.y) / clip.height, w: m.w / clip.width, h: m.h / clip.height };
 }
 await browser.close();
-writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+if (!DARK) writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 console.log(Object.entries(manifest).map(([k, v]) => `${k}:${v.w}x${v.h}`).join("  "));

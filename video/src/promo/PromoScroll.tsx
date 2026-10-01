@@ -16,6 +16,7 @@ const BAR = 56;
 const VIEW_H = 1540;
 const AREA_H = VIEW_H - BAR;
 const CENTER_Y = VIEW_TOP + VIEW_H / 2;
+const CENTER_Y_FULL = 960;
 
 const heights = ORDER.map((n) => (W * M_[n].h) / M_[n].w);
 const tops = heights.reduce<number[]>((acc, h, i) => [...acc, i === 0 ? 0 : acc[i - 1] + heights[i - 1] + GAP], []);
@@ -112,6 +113,7 @@ const FlashCaption: React.FC<{ lines: string[]; start: number; end: number }> = 
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   if (f < start || f > end) return null;
+  const cy = theme.fullBleed ? CENTER_Y_FULL : CENTER_Y;
   const t = f - start;
   const pop = spring({ frame: t, fps, config: { damping: 8, stiffness: 230, mass: 0.8 } });
   const band = spring({ frame: t - 6, fps, config: { damping: 18, stiffness: 140 } });
@@ -122,7 +124,7 @@ const FlashCaption: React.FC<{ lines: string[]; start: number; end: number }> = 
   const glow = 22 + Math.sin(t * 0.45) * 10;
   const burstP = clamp(t / 20, 0, 1);
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: CENTER_Y, transform: "translateY(-50%)", pointerEvents: "none", opacity: out }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: cy, transform: "translateY(-50%)", pointerEvents: "none", opacity: out }}>
       {/* 뒤에서 터지는 별 */}
       <div
         style={{
@@ -157,35 +159,51 @@ const FlashCaption: React.FC<{ lines: string[]; start: number; end: number }> = 
 };
 
 export const PromoScroll: React.FC = () => {
+  const theme = useTheme();
   const f = useCurrentFrame();
   const y = scrollAt(f);
-  const thumbH = (AREA_H * AREA_H) / TOTAL_H;
-  const thumbY = (y / Math.max(1, TOTAL_H - AREA_H)) * (AREA_H - thumbH);
+  const fb = !!theme.fullBleed;
+  const dir = theme.promoDir ?? "promo";
+  const areaH = fb ? 1920 : AREA_H;
+  const thumbH = (areaH * areaH) / TOTAL_H;
+  const thumbY = (y / Math.max(1, TOTAL_H - areaH)) * (areaH - thumbH);
+  const winStyle: React.CSSProperties = fb
+    ? { left: 0, top: 0, width: 1080, height: 1920, borderRadius: 0, boxShadow: "none" }
+    : { left: SAFE.side, top: VIEW_TOP, width: W, height: VIEW_H, borderRadius: 28, boxShadow: theme.winShadow ?? "0 18px 40px rgba(20,60,160,.18)" };
 
   return (
     <Frame>
-      <div style={{ position: "absolute", left: SAFE.side, top: VIEW_TOP, width: W, height: VIEW_H, borderRadius: 28, overflow: "hidden", background: "#F4F7FC", boxShadow: "0 18px 40px rgba(20,60,160,.18)" }}>
-        <div style={{ height: BAR, background: "#EEF1F6", display: "flex", alignItems: "center", gap: 12, padding: "0 22px", borderBottom: "2px solid #DDE3EC" }}>
-          {["#FF6B6B", "#FFC53D", "#3DD68C"].map((c) => (
-            <div key={c} style={{ width: 18, height: 18, borderRadius: 9, background: c }} />
-          ))}
-          <div style={{ marginLeft: 14, fontSize: 24, fontWeight: 700, color: "#5B6678" }}>지문 분석 결과</div>
-        </div>
-        <div style={{ position: "absolute", top: BAR, left: 0, width: W, height: AREA_H, overflow: "hidden" }}>
-          <div style={{ position: "absolute", left: 0, top: 0, width: W, height: TOTAL_H, transform: `translateY(${-y}px)` }}>
+      <div style={{ position: "absolute", overflow: "hidden", background: theme.winBg ?? "#F4F7FC", ...winStyle }}>
+        {!fb ? (
+          <div style={{ height: BAR, background: theme.bar ?? "#EEF1F6", display: "flex", alignItems: "center", gap: 12, padding: "0 22px", borderBottom: `2px solid ${theme.barLine ?? "#DDE3EC"}` }}>
+            {["#FF6B6B", "#FFC53D", "#3DD68C"].map((c) => (
+              <div key={c} style={{ width: 18, height: 18, borderRadius: 9, background: c }} />
+            ))}
+            <div style={{ marginLeft: 14, fontSize: 24, fontWeight: 700, color: theme.barText ?? "#5B6678" }}>지문 분석 결과</div>
+          </div>
+        ) : null}
+        <div style={fb ? { position: "absolute", top: 0, left: 0, width: 1080, height: 1920, overflow: "hidden" } : { position: "absolute", top: BAR, left: 0, width: W, height: AREA_H, overflow: "hidden" }}>
+          <div style={{ position: "absolute", left: fb ? 60 : 0, top: 0, width: W, height: TOTAL_H, transform: `translateY(${-y}px)` }}>
             {ORDER.map((n, i) => (
-              <Img key={n} src={staticFile(`promo/${n}.png`)} style={{ position: "absolute", left: 0, top: tops[i], width: W }} />
+              <Img key={n} src={staticFile(`${dir}/${n}.png`)} style={{ position: "absolute", left: 0, top: tops[i], width: W }} />
             ))}
             {timeline.filter((s) => s.mark).map((s) => (
               <Mark key={s.name} name={s.name} start={s.arrive + 8} />
             ))}
           </div>
-          {/* 스크롤바 */}
-          <div style={{ position: "absolute", right: 8, top: 8, width: 8, height: AREA_H - 16, borderRadius: 4, background: "rgba(0,0,0,.06)" }}>
-            <div style={{ position: "absolute", top: (thumbY * (AREA_H - 16)) / AREA_H, width: 8, height: Math.max(60, (thumbH * (AREA_H - 16)) / AREA_H), borderRadius: 4, background: "rgba(0,0,0,.25)" }} />
-          </div>
+          {!fb ? (
+            <div style={{ position: "absolute", right: 8, top: 8, width: 8, height: areaH - 16, borderRadius: 4, background: "rgba(0,0,0,.06)" }}>
+              <div style={{ position: "absolute", top: (thumbY * (areaH - 16)) / areaH, width: 8, height: Math.max(60, (thumbH * (areaH - 16)) / areaH), borderRadius: 4, background: "rgba(0,0,0,.25)" }} />
+            </div>
+          ) : null}
         </div>
       </div>
+      {theme.decor === "notebook" ? (
+        <>
+          <div style={{ position: "absolute", left: 20, top: 118, width: 200, height: 56, background: "rgba(255,212,59,.82)", transform: "rotate(-9deg)", boxShadow: "0 4px 10px rgba(0,0,0,.25)" }} />
+          <div style={{ position: "absolute", left: 860, top: 1650, width: 200, height: 56, background: "rgba(255,212,59,.82)", transform: "rotate(-9deg)", boxShadow: "0 4px 10px rgba(0,0,0,.25)" }} />
+        </>
+      ) : null}
       {captions.map((c, i) => (
         <FlashCaption key={i} lines={c.lines} start={c.start} end={c.end} />
       ))}
