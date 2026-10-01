@@ -2,9 +2,11 @@ import React from "react";
 import { Frame } from "../components/Frame";
 import { Card, Pop } from "../components/Card";
 import { theme } from "../theme";
-import data from "../data/passage.json";
+import { useData } from "../data/context";
 
-export const MainIdea: React.FC = () => (
+export const MainIdea: React.FC = () => {
+  const data = useData();
+  return (
   <Frame caption="핵심 주제를 먼저 잡아줘요">
     <Pop>
       <div style={{ fontSize: 44, fontWeight: 700, color: theme.primary }}>TOPIC</div>
@@ -18,3 +20,4 @@ export const MainIdea: React.FC = () => (
     </Pop>
   </Frame>
 );
+};

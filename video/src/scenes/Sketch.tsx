@@ -2,10 +2,11 @@ import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../components/Frame";
 import { theme } from "../theme";
-import data from "../data/passage.json";
+import { useData } from "../data/context";
 
 // 개념 스케치: 선이 그려지듯 등장하는 통념 vs 진실 다이어그램
 export const Sketch: React.FC = () => {
+  const data = useData();
   const frame = useCurrentFrame();
   const draw = (from: number, len: number) =>
     interpolate(frame, [from, from + 30], [len, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });

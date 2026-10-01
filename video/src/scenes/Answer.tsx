@@ -3,9 +3,10 @@ import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../components/Frame";
 import { Card, Pop } from "../components/Card";
 import { theme } from "../theme";
-import data from "../data/passage.json";
+import { useData } from "../data/context";
 
 export const Answer: React.FC = () => {
+  const data = useData();
   const frame = useCurrentFrame();
   return (
     <Frame caption="오답 소거까지 자동으로">
