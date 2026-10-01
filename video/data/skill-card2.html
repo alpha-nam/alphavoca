@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Why Handwriting Helps You Learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}
+img{max-width:100%}
+[hidden]:not([hidden=until-found i]){display:none!important}
+</style>
+<style>
+:root{
+  --bg:#F2F6FD; --bg-glow:#D9E6FF; --sheet:#FFFFFF; --sheet-2:#F8FAFF;
+  --fg:#131A2B; --muted:#5F6B85; --line:#E1E8F5;
+  --accent:#1F6BFF; --accent-soft:#E6EFFF; --accent-ink:#0B4FCC;
+  --amber:#F59E0B; --amber-soft:#FFF5DC;
+  --teal:#0EA5A4; --teal-soft:#DFF6F5;
+  --rose:#E5484D; --rose-soft:#FFE9EA;
+  --green:#12A150; --green-soft:#DFF7E8;
+  --violet:#7C5CFC; --violet-soft:#EEE9FF;
+  --code-bg:#E6EFFF; --code-fg:#0B4FCC;
+  --shadow:0 1px 2px rgba(20,60,160,.06),0 8px 24px rgba(20,60,160,.07);
+  --font-display:"Plus Jakarta Sans","Noto Sans KR",system-ui,sans-serif;
+  --font-body:"Noto Sans KR","Plus Jakarta Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1222; --bg-glow:#14336E; --sheet:#131B33; --sheet-2:#19233F;
+  --fg:#EEF3FF; --muted:#9AA8C7; --line:#25325A;
+  --accent:#6FA2FF; --accent-soft:#182E5C; --accent-ink:#B8D0FF;
+  --amber:#FBBF24; --amber-soft:#3A2F14;
+  --teal:#2DD4BF; --teal-soft:#123A3A;
+  --rose:#FF7A80; --rose-soft:#3C1B22;
+  --green:#4ADE80; --green-soft:#16391F;
+  --violet:#A78BFA; --violet-soft:#2C2154;
+  --code-bg:#182E5C; --code-fg:#CFE0FF;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1222; --bg-glow:#14336E; --sheet:#131B33; --sheet-2:#19233F;
+  --fg:#EEF3FF; --muted:#9AA8C7; --line:#25325A;
+  --accent:#6FA2FF; --accent-soft:#182E5C; --accent-ink:#B8D0FF;
+  --amber:#FBBF24; --amber-soft:#3A2F14;
+  --teal:#2DD4BF; --teal-soft:#123A3A;
+  --rose:#FF7A80; --rose-soft:#3C1B22;
+  --green:#4ADE80; --green-soft:#16391F;
+  --violet:#A78BFA; --violet-soft:#2C2154;
+  --code-bg:#182E5C; --code-fg:#CFE0FF;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:14px;line-height:1.7;
+  background-image:radial-gradient(900px 420px at 15% -10%,var(--bg-glow),transparent 70%),radial-gradient(700px 380px at 100% 0%,var(--accent-soft),transparent 70%);
+  background-repeat:no-repeat;
+  word-break:keep-all;overflow-wrap:break-word;line-break:strict}
+.wrap{max-width:850px;margin-inline:auto;padding-inline:16px;padding-block:20px 32px;display:flex;flex-direction:column;gap:16px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.bar b{color:var(--fg);font-weight:700}
+.toggle{display:inline-flex;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.toggle button{font:inherit;font-weight:700;font-size:12.5px;border:0;background:none;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.toggle button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.head{display:flex;flex-direction:column;gap:12px;padding:28px 24px}
+.kicker{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.04em;color:var(--accent-ink);background:var(--accent-soft);padding:5px 12px;border-radius:999px}
+h1{font-family:var(--font-display);font-size:clamp(24px,5vw,32px);line-height:1.25;margin:0;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.intro{margin:0;color:var(--muted);max-width:62ch}
+
+.chip{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:14px}
+.ico{width:24px;height:24px;display:block}
+.c-accent{background:var(--accent-soft);color:var(--accent-ink)}
+.c-amber{background:var(--amber-soft);color:var(--amber)}
+.c-teal{background:var(--teal-soft);color:var(--teal)}
+.c-rose{background:var(--rose-soft);color:var(--rose)}
+.c-green{background:var(--green-soft);color:var(--green)}
+.c-violet{background:var(--violet-soft);color:var(--violet)}
+.chip.c-accent,.chip.c-amber,.chip.c-teal,.chip.c-rose,.chip.c-green,.chip.c-violet{background:transparent;border-radius:0}
+.label{font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}
+.mini{display:flex;gap:14px;align-items:flex-start}
+.mini > div{min-width:0}
+.mini p{margin:4px 0 0;font-weight:700;font-size:15px;line-height:1.55}
+.mini.wide{width:100%}
+
+h2{font-family:var(--font-display);font-size:18px;margin:0 0 14px;font-weight:800;display:flex;gap:10px;align-items:center}
+code{font-family:var(--font-display);font-weight:700;font-size:.92em;background:var(--code-bg);color:var(--code-fg);padding:1px 7px;border-radius:6px}
+
+.sent{display:flex;flex-direction:column;gap:14px}
+.sent-top{display:flex;gap:14px;align-items:flex-start}
+.no{flex:none;width:28px;height:28px;padding:0;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:12.5px;margin-top:2px;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.15);box-shadow:0 2px 5px rgba(15,40,120,.28),inset 0 1px 1px rgba(255,255,255,.5),inset 0 -2px 3px rgba(0,0,0,.12)}
+.no.c-accent{background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 65%,white) 0%,var(--accent) 55%,color-mix(in srgb,var(--accent) 78%,black) 100%)}
+.no.c-amber{background:linear-gradient(155deg,color-mix(in srgb,var(--amber) 65%,white) 0%,var(--amber) 55%,color-mix(in srgb,var(--amber) 78%,black) 100%)}
+.no.c-teal{background:linear-gradient(155deg,color-mix(in srgb,var(--teal) 65%,white) 0%,var(--teal) 55%,color-mix(in srgb,var(--teal) 78%,black) 100%)}
+.choice-mark{display:inline-block;font-weight:800;color:var(--accent-ink);margin-right:2px}
+.en{font-family:var(--font-display);font-weight:500;font-size:16px;line-height:1.6;margin:0;min-width:0}
+.tr{margin:0;padding:12px 14px;background:var(--sheet-2);border:1px solid var(--line);border-radius:12px;font-weight:500}
+.given-en{font-weight:700;font-style:italic;margin:0 0 10px;font-size:16px;color:var(--fg)}
+.fields{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.field .chip{width:28px;height:28px;border-radius:8px;font-size:12px}
+.field ul{margin:0;padding-left:1.1em}
+.field p{margin:0}
+.field .label{display:inline-block;margin-bottom:2px}
+.field > div{min-width:0}
+.card.given{border-color:var(--amber)}
+
+.flow{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.pill{font-family:var(--font-display);font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.step p{margin:0;min-width:0}
+.flow-connector{display:flex;flex-direction:column;align-items:center;gap:2px;padding:2px 0}
+.flow-connector .arrow{color:var(--muted);font-size:14px;line-height:1}
+.flow-connector .lbl{font-size:11px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);padding:2px 10px;border-radius:999px}
+
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin-block:12px}
+.vs > div{border-radius:16px;padding:16px}
+.vs .a{background:var(--amber-soft)} .vs .b{background:var(--teal-soft)}
+.vs .label{color:inherit;margin-bottom:6px;display:inline-block}
+.vs .a .label{color:var(--amber)} .vs .b .label{color:var(--teal)}
+.vs p{margin:0;font-weight:500}
+.closing{margin:0;font-weight:800;color:var(--accent-ink)}
+.sub{margin:0 0 4px;color:var(--muted)}
+
+.ans{display:grid;gap:10px}
+.opt{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--sheet-2)}
+.opt.ok{background:var(--green-soft);border-color:transparent}
+.opt strong{display:block;font-weight:700}
+.opt span{color:var(--muted)}
+.opt.ok span{color:var(--fg)}
+
+.vocab{display:flex;flex-wrap:wrap;gap:10px}
+.word{padding:10px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line);min-width:0}
+.word b{font-family:var(--font-display);font-weight:800}
+.word i{font-style:normal;font-size:11px;color:var(--accent-ink);background:var(--accent-soft);border-radius:6px;padding:1px 6px;margin-left:6px;font-weight:700}
+.word div{color:var(--muted);font-size:13px}
+
+.sketch-title{font-weight:700;color:var(--fg);margin:0 0 10px;font-size:15px}
+.sketch-svg{display:flex;justify-content:center;margin:4px 0}
+.sketch-svg svg{width:100%;max-width:100%;height:auto;display:block}
+.sketch-caption{margin:10px 0 0;color:var(--muted);font-size:12.5px;text-align:center}
+
+.trace-list{display:grid;gap:10px}
+.trace-item{display:grid;gap:4px;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.trace-item .src{font-size:11px;color:var(--muted)}
+.trace-item p{margin:0}
+mark.a{background:var(--accent-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+mark.b{background:var(--amber-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+mark.c{background:var(--teal-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+
+.blank-marker{text-align:center;font-size:12.5px;font-weight:700;color:var(--muted);padding:4px 0}
+.blank-marker.target{color:var(--rose);border:2px dashed var(--rose);background:var(--rose-soft);border-radius:12px;padding:8px;margin:2px 0}
+
+.tip-list{display:grid;gap:10px}
+.tip-list .chip{width:28px;height:28px;border-radius:8px;font-size:12px}
+
+.vgroup{display:grid;gap:10px;margin-bottom:14px}
+.vgroup:last-child{margin-bottom:0}
+.vgroup-title{font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
+.vitem{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.vitem p.stem{margin:0;font-weight:600;font-style:italic}
+.vitem p.note{margin:4px 0 0;color:var(--muted);font-size:12.5px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="bar">
+    <span><b>Why Handwriting Helps You Learn</b></span>
+    <div class="toggle" role="group" aria-label="테마">
+      <button type="button" id="t-light" aria-pressed="true">Light</button>
+      <button type="button" id="t-dark" aria-pressed="false">Dark</button>
+    </div>
+  </div>
+
+  <section class="card head">
+    <span class="kicker">05번 · 샘플 문항 · 무관한 문장 찾기</span>
+    <h1>Why Handwriting Helps You Learn</h1>
+  </section>
+
+  <div class="two"><section class="card mini"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5 28C21.8513 28 27 22.8513 27 16.5C27 10.1487 21.8513 5 15.5 5C9.14873 5 4 10.1487 4 16.5C4 22.8513 9.14873 28 15.5 28Z" fill="#F4F4F4"/>
+<path d="M25.7663 7.73298C26.1431 7.9044 26.5609 8 27 8C28.65 8 30 6.65 30 5C30 3.35 28.65 2 27 2C25.35 2 24 3.35 24 5C24 5.43909 24.0956 5.85693 24.267 6.23373C21.9083 4.21752 18.8463 3 15.5 3C8.04416 3 2 9.04416 2 16.5C2 23.9558 8.04416 30 15.5 30C22.9558 30 29 23.9558 29 16.5C29 13.1537 27.7825 10.0917 25.7663 7.73298ZM25.39 4.99C25.39 4.1 26.11 3.38 27 3.38C27.88 3.38 28.61 4.1 28.61 4.99C28.61 5.88 27.89 6.6 27 6.6C26.11 6.6 25.39 5.88 25.39 4.99ZM26 16.5C26 22.299 21.299 27 15.5 27C9.70101 27 5 22.299 5 16.5C5 10.701 9.70101 6 15.5 6C21.299 6 26 10.701 26 16.5Z" fill="#F9C23C"/>
+<path d="M25.35 7.99994L23.99 6.63994L25.35 5.27994C25.72 4.90994 26.33 4.90994 26.71 5.27994C27.08 5.64994 27.08 6.25994 26.71 6.63994L25.35 7.99994Z" fill="#FFB02E"/>
+<path d="M13.2234 17.724L11.4099 20.21C11.2299 20.45 11.5299 20.75 11.7799 20.58L14.2735 18.7609L15.2099 24.7499C15.2599 25.0799 15.7399 25.0799 15.7899 24.7499L16.8663 17.8663L23.7499 16.7899C24.0799 16.7399 24.0799 16.2599 23.7499 16.2099L17.7609 15.2735L19.5799 12.78C19.7599 12.54 19.4599 12.24 19.2099 12.41L16.724 14.2234L15.7899 8.24994C15.7399 7.91994 15.2599 7.91994 15.2099 8.24994L14.1336 15.1336L7.24994 16.2099C6.91994 16.2599 6.91994 16.7399 7.24994 16.7899L13.2234 17.724Z" fill="#9B9B9B"/>
+<path d="M17.3382 15L20.9393 21.3271C21.1631 21.7255 20.7252 22.1629 20.3261 21.9394L14 18.3336L17.3382 15Z" fill="#9B9B9B"/>
+<path d="M13.6756 18L10.0605 11.672C9.83756 11.2741 10.2737 10.8373 10.6711 11.0606L17 14.671L13.6756 18Z" fill="#E5336D"/>
+<path d="M15.5 19C16.8807 19 18 17.8807 18 16.5C18 15.1193 16.8807 14 15.5 14C14.1193 14 13 15.1193 13 16.5C13 17.8807 14.1193 19 15.5 19Z" fill="#D3D3D3"/>
+</svg>
+</span><div><span class="label">주제 Topic</span><p>손으로 필기할 때 학습 효과가 더 큰 이유</p></div></section><section class="card mini"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.93 29.92C15.37 29.92 14.92 29.47 14.92 28.91V15.94H16.95V28.9C16.94 29.47 16.49 29.92 15.93 29.92Z" fill="#D3D3D3"/>
+<path d="M15.93 17.86C20.3096 17.86 23.86 14.3096 23.86 9.93C23.86 5.55038 20.3096 2 15.93 2C11.5504 2 8 5.55038 8 9.93C8 14.3096 11.5504 17.86 15.93 17.86Z" fill="#F70A8D"/>
+<path d="M16.5 5.41001C15.46 6.45001 15.41 8.07001 16.38 9.04001C17.35 10.01 18.98 9.96001 20.01 8.92001C21.05 7.88001 21.1 6.26001 20.13 5.29001C19.16 4.32001 17.53 4.37001 16.5 5.41001Z" fill="white"/>
+</svg>
+</span><div><span class="label">요지 Main idea</span><p>손필기는 속도가 느린 탓에 핵심을 골라 자기 말로 바꾸게 만들어, 타자로 그대로 받아 적는 것보다 이해를 깊게 한다.</p></div></section></div>
+  <section class="card mini wide"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>선생님 말씀을 전부 받아 적을 수는 없으니까, 손으로 쓸 땐 '뭐가 중요하지?' 하고 고르게 돼요. 그 고르는 과정에서 머리가 일해서 더 잘 이해해요! 그런데 ④번 문장만 노트북이 가볍고 배터리가 오래간다는 이야기라서, 필기 방법의 효과와는 상관이 없어요.</p></div></section>
+  <section class="card">
+  <h2><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5194 7.0517C10.2265 6.93064 9.99626 6.69861 9.88117 6.41614L8.929 4.25725C8.75112 3.91425 8.23842 3.91425 8.071 4.25725L7.11883 6.41614C6.99327 6.69861 6.76308 6.92055 6.48057 7.0517L5.26682 7.57629C4.91106 7.74779 4.91106 8.24212 5.26682 8.41362L6.48057 8.93821C6.77354 9.05927 7.00374 9.2913 7.11883 9.57377L8.071 11.7427C8.24888 12.0858 8.76158 12.0858 8.929 11.7427L9.88117 9.57377C10.0067 9.2913 10.2369 9.06936 10.5194 8.93821L11.7332 8.41362C12.0889 8.24212 12.0889 7.74779 11.7332 7.57629L10.5194 7.0517Z" fill="#F9C23C"/>
+<path d="M25.5744 13.5546C24.7045 13.1673 24.0166 12.4539 23.6525 11.5775L20.7897 4.81023C20.2637 3.72992 18.7363 3.72992 18.2103 4.81023L15.3475 11.5775C14.9733 12.4539 14.2854 13.1673 13.4256 13.5546L9.80419 15.1955C8.73194 15.7254 8.73194 17.2746 9.80419 17.8045L13.4256 19.4454C14.2955 19.8327 14.9834 20.5461 15.3475 21.4225L18.2103 28.1898C18.7363 29.2701 20.2637 29.2701 20.7897 28.1898L23.6525 21.4225C24.0267 20.5461 24.7146 19.8327 25.5744 19.4454L29.1958 17.8045C30.2681 17.2746 30.2681 15.7254 29.1958 15.1955L25.5744 13.5546Z" fill="#F9C23C"/>
+<path d="M8.2811 20.3304C8.44173 20.7222 8.73465 21.0258 9.10315 21.2021L10.6528 21.927C11.1157 22.1621 11.1157 22.8379 10.6528 23.073L9.10315 23.7979C8.73465 23.9742 8.44173 24.2876 8.2811 24.6696L7.05276 27.6474C6.82598 28.1175 6.17402 28.1175 5.94724 27.6474L4.7189 24.6696C4.55827 24.2778 4.26535 23.9742 3.89685 23.7979L2.34724 23.073C1.88425 22.8379 1.88425 22.1621 2.34724 21.927L3.89685 21.2021C4.26535 21.0258 4.55827 20.7124 4.7189 20.3304L5.94724 17.3526C6.17402 16.8825 6.82598 16.8825 7.05276 17.3526L8.2811 20.3304Z" fill="#F9C23C"/>
+</svg>
+</span>개념 스케치</h2>
+  <p class="sketch-title">손필기 vs 타이핑 — 정보는 어떻게 머리에 남을까?</p>
+  <div class="sketch-svg"><svg viewBox='0 0 760 300' xmlns='http://www.w3.org/2000/svg'><defs><marker id='ah' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'><path d='M0,0 L0,6 L9,3 z' fill='#374151'/></marker></defs><rect x='20' y='15' width='340' height='270' rx='14' fill='#dcfce7' stroke='#16a34a' stroke-width='3'/><text x='190' y='52' text-anchor='middle' font-size='24' font-weight='800' fill='#14532d' font-family='Noto Sans KR, sans-serif'>손필기</text><rect x='60' y='75' width='260' height='46' rx='10' fill='#fff' stroke='#16a34a' stroke-width='2'/><text x='190' y='106' text-anchor='middle' font-size='19' font-weight='700' fill='#14532d' font-family='Noto Sans KR, sans-serif'>핵심만 고르기</text><path d='M190 124 L190 147' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='60' y='150' width='260' height='46' rx='10' fill='#fff' stroke='#16a34a' stroke-width='2'/><text x='190' y='181' text-anchor='middle' font-size='19' font-weight='700' fill='#14532d' font-family='Noto Sans KR, sans-serif'>내 말로 바꾸기</text><path d='M190 199 L190 222' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='60' y='225' width='260' height='46' rx='10' fill='#16a34a'/><text x='190' y='256' text-anchor='middle' font-size='19' font-weight='800' fill='#fff' font-family='Noto Sans KR, sans-serif'>이해가 깊어짐</text><rect x='400' y='15' width='340' height='270' rx='14' fill='#fef3c7' stroke='#d97706' stroke-width='3'/><text x='570' y='52' text-anchor='middle' font-size='24' font-weight='800' fill='#78350f' font-family='Noto Sans KR, sans-serif'>타이핑</text><rect x='440' y='75' width='260' height='46' rx='10' fill='#fff' stroke='#d97706' stroke-width='2'/><text x='570' y='106' text-anchor='middle' font-size='19' font-weight='700' fill='#78350f' font-family='Noto Sans KR, sans-serif'>들리는 대로 받아쓰기</text><path d='M570 124 L570 147' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='440' y='150' width='260' height='46' rx='10' fill='#fff' stroke='#d97706' stroke-width='2'/><text x='570' y='181' text-anchor='middle' font-size='19' font-weight='700' fill='#78350f' font-family='Noto Sans KR, sans-serif'>처리 없이 통과</text><path d='M570 199 L570 222' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='440' y='225' width='260' height='46' rx='10' fill='#d97706'/><text x='570' y='256' text-anchor='middle' font-size='19' font-weight='800' fill='#fff' font-family='Noto Sans KR, sans-serif'>기억에 덜 남음</text><text x='380' y='155' text-anchor='middle' font-size='17' font-weight='800' fill='#374151' font-family='Noto Sans KR, sans-serif'>vs</text></svg></div>
+  <p class="sketch-caption">손필기는 '고르고 바꿔 쓰는' 거름 과정을 거치지만, 타이핑은 정보가 처리 없이 그대로 지나간다.</p>
+</section>
+  <section class="card">
+  <h2><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 8.05051C16.6353 7.40223 17.5207 7 18.5 7H26.5C27.2428 7 27.8892 7.40449 28.234 8.00326C28.3036 8.12402 28.3296 8.26363 28.3296 8.40297V10.6972L29 25.5C29 26.8807 27.8807 28 26.5 28H5.5C4.11929 28 3 26.8807 3 25.5L3.67038 10.6972V8.40298C3.67038 8.26363 3.69643 8.12402 3.76597 8.00327C4.11082 7.40451 4.75724 7 5.5 7H13.5C14.4793 7 15.3647 7.40223 16 8.05051Z" fill="#B4ACBC"/>
+<path d="M17.7324 30H28.4989C29.3295 30 30 29.3221 30 28.4948V27.4414C30 26.614 29.3295 25 28.4989 25H3.50107C2.67048 25 2 26.614 2 27.4414V28.5047C2 29.3321 2.67048 30 3.50107 30H14.2676C14.6134 30.5978 15.2597 31 16 31C16.7403 31 17.3866 30.5978 17.7324 30Z" fill="#0074BA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.50107 10H14V11H18V10H28.4989C29.3295 10 30 10.6679 30 11.4953V27.4948C30 28.3221 29.3295 29 28.4989 29H17.7324C17.3866 29.5978 16.7403 30 16 30C15.2597 30 14.6134 29.5978 14.2676 29H3.50107C2.67048 29 2 28.3321 2 27.5047V11.4953C2 10.6679 2.67048 10 3.50107 10ZM17.5 27.5C17.5 28.3284 16.8284 29 16 29C15.1716 29 14.5 28.3284 14.5 27.5C14.5 26.6716 15.1716 26 16 26C16.8284 26 17.5 26.6716 17.5 27.5Z" fill="#00A6ED"/>
+<path d="M13 8H5.80278C5.30125 8 4.8329 8.25065 4.5547 8.66795L3 11V25.5C3 26.3284 3.67157 27 4.5 27H27.5C28.3284 27 29 26.3284 29 25.5V11L27.4453 8.66795C27.1671 8.25065 26.6988 8 26.1972 8H19V11H13V8Z" fill="#B4ACBC"/>
+<path d="M5.5 8H13.5C14.8807 8 16 9.11929 16 10.5V27L15.5528 26.1056C15.214 25.428 14.5215 25 13.7639 25H5.5C4.94772 25 4.5 24.5523 4.5 24V9C4.5 8.44772 4.94772 8 5.5 8Z" fill="#F3EEF8"/>
+<path d="M18.5 8H26.5C27.0523 8 27.5 8.44772 27.5 9V24C27.5 24.5523 27.0523 25 26.5 25H18.2361C17.516 25 16.8546 25.3867 16.5 26.007V8.99976C16.9561 8.39267 17.6822 8 18.5 8Z" fill="#F3EEF8"/>
+</svg>
+</span>핵심 어휘</h2>
+  <div class="vocab"><div class="word"><b>conceptual</b><i>adj.</i><div>개념적인</div></div><div class="word"><b>transcription</b><i>n.</i><div>받아쓰기, 필사</div></div><div class="word"><b>rephrase</b><i>v.</i><div>다른 말로 바꿔 말하다</div></div><div class="word"><b>passive</b><i>adj.</i><div>수동적인</div></div><div class="word"><b>filter</b><i>n.</i><div>걸러 내는 장치</div></div><div class="word"><b>lecturer</b><i>n.</i><div>강연자, 강사</div></div></div>
+</section>
+  
+  
+
+  <h2><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29 13C29 18.5228 24.5228 23 19 23C13.4772 23 9 18.5228 9 13C9 7.47715 13.4772 3 19 3C24.5228 3 29 7.47715 29 13Z" fill="#00A6ED"/>
+<path d="M24.3481 7.73205C24.9004 8.68864 24.7665 9.79989 24.049 10.2141C23.3316 10.6283 22.3023 10.1886 21.75 9.23205C21.1977 8.27547 21.3316 7.16421 22.049 6.75C22.7665 6.33579 23.7958 6.77547 24.3481 7.73205Z" fill="white"/>
+<path d="M30 13C30 19.0751 25.0752 24 19 24C16.7048 24 14.5738 23.2971 12.8106 22.0947C13.0854 23.3086 12.7502 24.6327 11.8051 25.5779L8.62309 28.7599C7.15862 30.2243 4.78425 30.2243 3.31979 28.7599C1.85532 27.2954 1.85532 24.921 3.31979 23.4566L6.50177 20.2746C7.43928 19.3371 8.7497 18.9997 9.95558 19.2626C8.72259 17.4852 8.00003 15.327 8.00003 13C8.00003 6.92487 12.9249 2 19 2C25.0752 2 30 6.92487 30 13ZM28 13C28 8.02944 23.9706 4 19 4C14.0295 4 10 8.02944 10 13C10 17.9706 14.0295 22 19 22C23.9706 22 28 17.9706 28 13Z" fill="#533566"/>
+</svg>
+</span>문장별 분석</h2>
+  <section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">1</span>
+      <p class="en">Taking notes by hand slows you down, and that is exactly why it works.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>손으로 필기하는 것은 속도를 늦추는데, 바로 그 점 때문에 효과가 있다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>손으로 쓰면 느려져요. 그런데 바로 그 느림 때문에 공부가 잘 돼요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>글 전체의 주제를 던지는 첫 문장입니다. '느림'이 단점이 아니라 장점이라는 역설로 시작합니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>Taking notes by hand: 동명사구가 문장의 주어(단수 취급 → slows)</li><li>that is exactly why it works: why 앞에 the reason이 생략된 형태('바로 그 이유로')</li></ul></div></div></div>
+  </div>
+</section><section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">2</span>
+      <p class="en">Because you cannot write down every word a lecturer says, you are forced to decide which ideas matter and to put them into your own words.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>강연자가 하는 말을 한 마디도 빠짐없이 적을 수는 없기 때문에, 어떤 생각이 중요한지 결정하고 그것을 자신의 말로 옮기게 된다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>전부 받아 적을 수 없으니까, 중요한 걸 고르고 내 말로 바꿔 쓰게 돼요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>첫 문장의 '느림'이 어떻게 효과로 이어지는지 설명하는 원인 문장입니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>be forced to + 동사원형: ~하도록 강요받다 (to decide와 to put이 and로 병렬)</li><li>which ideas matter: decide의 목적어인 간접의문절(의문사 + 주어 + 동사)</li></ul></div></div></div>
+  </div>
+</section><section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">①</span>
+      <p class="en">This quiet act of selecting and rephrasing turns passive listening into active thinking.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>이처럼 조용히 선택하고 바꿔 말하는 행위는 수동적인 듣기를 능동적인 사고로 바꾼다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>고르고 바꿔 쓰는 동안, 그냥 듣던 사람이 스스로 생각하는 사람이 돼요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>앞 문장의 '선택·바꿔 쓰기'를 This quiet act로 받아 그 결과(능동적 사고)를 제시합니다. 흐름에 맞습니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>selecting and rephrasing: of의 목적어인 동명사 병렬</li><li>turn A into B: A를 B로 바꾸다</li></ul></div></div></div>
+  </div>
+</section><section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">②</span>
+      <p class="en">Studies comparing students who wrote by hand with those who typed found that the handwriters often did better on conceptual questions, even though the typists produced longer notes.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>손으로 쓴 학생들과 타자를 친 학생들을 비교한 연구들은, 타자를 친 학생들이 더 긴 필기를 만들어 냈음에도 손으로 쓴 학생들이 개념 문제에서 종종 더 좋은 성적을 냈다는 것을 발견했다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>연구를 해 보니, 타자로 더 길게 적은 학생보다 손으로 쓴 학생이 개념 문제를 더 잘 풀 때가 많았대요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>주장을 뒷받침하는 연구 근거입니다. 필기 분량보다 이해의 깊이가 중요하다는 점을 보여 줍니다. 흐름에 맞습니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>Studies comparing A with B: comparing이 Studies를 수식하는 현재분사구</li><li>those who typed: those = students</li><li>even though ~: 양보의 부사절</li></ul></div></div></div>
+  </div>
+</section><section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">③</span>
+      <p class="en">Typing tends to encourage word-for-word transcription, which lets information pass from the ears to the fingers without ever being processed.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>타자는 한 글자 한 글자 그대로 받아 적기를 부추기는 경향이 있으며, 이는 정보가 처리되는 과정 없이 귀에서 손가락으로 지나가게 만든다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>타자를 치면 들리는 대로 받아쓰기 쉬워서, 생각 없이 귀에서 손가락으로 지나가 버려요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>대조 대상인 타이핑이 왜 효과가 떨어지는지 설명합니다. 흐름에 맞습니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>tend to + 동사원형: ~하는 경향이 있다</li><li>which lets information pass ~: which는 앞 절 전체를 받는 계속적 용법, let + 목적어 + 동사원형</li><li>without ever being processed: without + 동명사의 수동형(being p.p.)</li></ul></div></div></div>
+  </div>
+</section><section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">④</span>
+      <p class="en">Modern laptops have longer battery lives and lighter bodies than they did a decade ago, making them easier to carry between classes.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>현대의 노트북은 10년 전보다 배터리 수명이 더 길고 본체도 더 가벼워서, 수업 사이에 들고 다니기가 더 쉽다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>요즘 노트북은 배터리도 오래가고 가벼워서 들고 다니기 편하대요. 그런데 이건 '필기가 공부에 미치는 효과' 이야기와는 상관이 없어요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>노트북의 휴대성은 '필기 방식이 이해에 미치는 영향'이라는 글의 논점과 무관합니다. 앞뒤 문장은 모두 '생각하며 쓰는가, 그대로 옮기는가'를 다루는데 ④만 기기의 사양 이야기로 흐름이 끊깁니다. ④를 빼면 ③(타이핑의 문제)에서 ⑤(손필기의 한계는 곧 거름망)로 자연스럽게 이어집니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>longer ... and lighter ... than they did a decade ago: 비교급 병렬, did는 have의 대동사</li><li>making them easier to carry ~: 결과를 나타내는 분사구문, make + 목적어 + 형용사</li></ul></div></div></div>
+  </div>
+</section><section class="card">
+  <div class="sent">
+    <div class="sent-top"><span class="no c-accent">⑤</span>
+      <p class="en">In other words, the limits of handwriting are not a flaw but a built-in filter that rewards understanding over copying.</p></div>
+    <div class="fields"><div class="field"><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 16C2 8.28 8.28 2 16 2C23.72 2 30 8.28 30 16C30 23.72 23.72 30 16 30C8.28 30 2 23.72 2 16ZM4.04121 15H8.03076C8.13807 13.2596 8.52434 11.5753 9.1599 10H5.60892C4.74358 11.4936 4.191 13.1903 4.04121 15ZM10.0353 15H15V10H11.3456C10.6097 11.5521 10.1595 13.2429 10.0353 15ZM15 17H10.0353C10.1595 18.7571 10.6097 20.4479 11.3456 22H15V17ZM15 24H12.506C13.2065 25.0055 14.0427 25.9242 15 26.73V24ZM19.0053 27.6195C21.3304 27.0184 23.3836 25.7366 24.9392 24H21.8647C21.0976 25.3284 20.1372 26.548 19.0053 27.6195ZM22.8399 22H26.39V22.0019C27.256 20.5078 27.8089 18.8105 27.9588 17H23.9692C23.8619 18.7406 23.4756 20.4251 22.8399 22ZM21.9647 17H17V22H20.6544C21.3903 20.4479 21.8405 18.7571 21.9647 17ZM23.9692 15H27.9588C27.8089 13.1895 27.256 11.4922 26.39 9.99813V10H22.8401C23.4757 11.5753 23.8619 13.2596 23.9692 15ZM20.6544 10H17V15H21.9647C21.8405 13.2429 21.3903 11.5521 20.6544 10ZM21.8655 8H24.9392C23.3853 6.26532 21.3348 4.98441 19.0129 4.38249C20.1418 5.45442 21.0999 6.67328 21.8655 8ZM17 5.27004V8H19.494C18.7934 6.99455 17.9573 6.07585 17 5.27004ZM15 5.27001C14.0427 6.07583 13.2065 6.99454 12.506 8H15V5.27001ZM17 24V26.73C17.9573 25.9242 18.7935 25.0055 19.494 24H17ZM5.60892 22H9.16297C8.52579 20.4243 8.1385 18.7398 8.03086 17H4.04121C4.191 18.8097 4.74358 20.5064 5.60892 22ZM13.0014 27.6212C11.8688 26.5485 10.9075 25.3282 10.1396 24H7.0608C8.61787 25.7382 10.6736 27.0208 13.0014 27.6212ZM10.1345 8C10.9 6.67329 11.8581 5.45443 12.987 4.3825C10.6651 4.98443 8.61466 6.26533 7.0608 8H10.1345Z" fill="#83CBFF"/>
+</svg>
+</span><div><span class="label">해석</span><p>다시 말해, 손글씨의 한계는 결함이 아니라 베끼기보다 이해를 보상하는 내장된 거름망이다.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9989 29.9978C25.3333 29.9978 29.9978 23.7303 29.9978 15.9989C29.9978 8.26751 25.3333 2 15.9989 2C6.66443 2 2 8.26751 2 15.9989C2 23.7303 6.66443 29.9978 15.9989 29.9978Z" fill="#FFB02E"/>
+<path d="M10.4191 16.2244C12.742 16.2244 14.6251 14.3414 14.6251 12.0185C14.6251 9.69557 12.742 7.8125 10.4191 7.8125C8.09621 7.8125 6.21313 9.69557 6.21313 12.0185C6.21313 14.3414 8.09621 16.2244 10.4191 16.2244Z" fill="white"/>
+<path d="M21.5683 16.3011C23.9123 16.3011 25.8126 14.4009 25.8126 12.0568C25.8126 9.71274 23.9123 7.8125 21.5683 7.8125C19.2242 7.8125 17.324 9.71274 17.324 12.0568C17.324 14.4009 19.2242 16.3011 21.5683 16.3011Z" fill="white"/>
+<path d="M11 15C12.6569 15 14 13.6569 14 12C14 10.3431 12.6569 9 11 9C9.34315 9 8 10.3431 8 12C8 13.6569 9.34315 15 11 15Z" fill="#402A32"/>
+<path d="M21 15C22.6569 15 24 13.6569 24 12C24 10.3431 22.6569 9 21 9C19.3431 9 18 10.3431 18 12C18 13.6569 19.3431 15 21 15Z" fill="#402A32"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4001 18.2001C10.8419 17.8687 11.4687 17.9582 11.8001 18.4001C12.1094 18.8125 13.5118 20.0001 16.0001 20.0001C18.4883 20.0001 19.8907 18.8125 20.2001 18.4001C20.5314 17.9582 21.1582 17.8687 21.6001 18.2001C22.0419 18.5314 22.1314 19.1582 21.8001 19.6001C21.1094 20.5209 19.1118 22.0001 16.0001 22.0001C12.8883 22.0001 10.8907 20.5209 10.2001 19.6001C9.86869 19.1582 9.95823 18.5314 10.4001 18.2001Z" fill="#402A32"/>
+</svg>
+</span><div><span class="label">쉬운 설명</span><p>그러니까 손으로 쓰는 게 느리다는 약점은, 사실 '이해한 것만 남기는 거름망'이에요.</p></div></div><div class="field"><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25.0642 23.4047L23.9155 20.598L22.2011 21.2996L23.3511 24.1097L23.3525 24.113C23.5183 24.5137 23.3281 24.9545 22.9426 25.1096L18.0368 27.1219L18.0342 27.123C17.6335 27.2888 17.1927 27.0987 17.0376 26.7132L15.8855 23.898L14.1711 24.5997L15.3202 27.4074C15.8659 28.7594 17.403 29.3881 18.741 28.8353L18.7425 28.8347L23.6372 26.8268C24.9889 26.281 25.6173 24.7444 25.065 23.4066L25.0642 23.4047ZM8 23.5L9.70824 26.7789C10.3282 27.4289 10.2982 28.4589 9.63824 29.0689C8.98824 29.6789 7.95824 29.6489 7.34824 28.9989L2.43824 23.7889C1.82824 23.1389 1.85824 22.1089 2.50824 21.4989C3.15824 20.8889 4.18824 20.9189 4.79824 21.5689L8 23.5Z" fill="#FFB02E"/>
+<path d="M29.2283 15.0788L17.6783 2.82884C16.4083 1.47884 14.1783 1.82887 13.3883 3.50887L4.79834 21.5689L9.76834 26.8389L28.3083 19.3288C30.0183 18.6388 30.4983 16.4288 29.2283 15.0788Z" fill="#F9C23C"/>
+</svg>
+</span><div><span class="label">내용 해설</span><p>첫 문장의 주장을 다시 정리하는 결론 문장입니다.</p></div></div><div class="field"><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span><div><span class="label">문법·구문</span><ul><li>not A but B: A가 아니라 B</li><li>that rewards understanding over copying: that은 filter를 꾸미는 주격 관계대명사</li></ul></div></div></div>
+  </div>
+</section>
+
+  <section class="card">
+  <h2><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.6231 21.4249L24.6179 22.4209C25.1551 22.9587 26.0206 22.9587 26.5578 22.4209L29.7015 19.2737C30.0995 18.8753 30.0995 18.2379 29.7015 17.8395L23.8718 12.0033C23.6927 11.824 23.6927 11.5452 23.8718 11.3659C23.9812 11.2564 24.1304 11.2165 24.2697 11.2464C25.2148 11.4058 26.2196 11.1269 26.9458 10.3999C28.1496 9.19476 28.1396 7.23276 26.916 6.03762L26.0604 5.17115L25.6724 5.30063C24.6975 5.0118 23.6032 5.22095 22.7973 5.91811C21.9617 6.64515 21.6234 7.71081 21.7826 8.70675C21.8025 8.85614 21.7627 8.99557 21.6533 9.10513L21.6334 9.12505C21.4543 9.30432 21.1758 9.30432 20.9967 9.12505L15.1669 3.29878C14.769 2.90041 14.1323 2.90041 13.7343 3.29878L10.6205 6.41608C10.5409 6.49576 10.4812 6.58539 10.4215 6.67503L10.2126 6.46588L9.47642 7.20288L10.6205 8.34821L10.6404 8.36813C10.9189 8.64699 11.297 8.79638 11.685 8.77647C12.5803 8.73663 13.4956 9.08521 14.1422 9.83216C15.1271 10.9675 15.1371 12.6905 14.1422 13.8359C12.9683 15.1903 10.9189 15.2501 9.66544 14.0052C9.01879 13.3578 8.72034 12.5013 8.78003 11.6547C8.79993 11.2663 8.66065 10.8879 8.38209 10.609C8.37214 10.5891 8.3622 10.5791 8.35225 10.5692L7.3773 9.59314L6.94952 10.0314L7.13854 10.2206C6.87988 10.2704 6.64112 10.3999 6.44215 10.599L3.29845 13.7462C2.90052 14.1446 2.90052 14.782 3.29845 15.1804L9.13817 21.0266C9.31724 21.2058 9.31724 21.4847 9.13817 21.664C9.02874 21.7735 8.87951 21.8134 8.74024 21.7835C7.73545 21.6142 6.66102 21.9428 5.92483 22.7794C4.92999 23.9148 4.92004 25.6477 5.91489 26.7931C7.0888 28.1475 9.13817 28.2073 10.3917 26.9524C11.108 26.2353 11.3965 25.2394 11.2472 24.3132C11.2273 24.1638 11.2671 24.0243 11.3766 23.9148L11.3965 23.8949C11.5755 23.7156 11.8541 23.7156 12.0332 23.8949L17.8331 29.7012C18.231 30.0996 18.8677 30.0996 19.2657 29.7012L22.3795 26.5839C22.9167 26.0461 22.9167 25.1796 22.3795 24.6418L22.3596 24.6219L21.4742 23.7355L21.0862 24.1239L21.1957 24.2335C20.3401 24.2335 19.4845 23.8849 18.8677 23.1778C17.8828 22.0424 17.8729 20.3194 18.8677 19.1741C20.0416 17.8196 22.091 17.7599 23.3445 19.0048C23.8618 19.5227 24.1603 20.19 24.22 20.8672L24.2001 20.8473L23.6231 21.4249Z" fill="#D3D3D3"/>
+<path d="M21.7702 4.90923C20.9348 5.63653 20.5967 6.70258 20.7558 7.69889C20.7757 7.84834 20.7359 7.98782 20.6265 8.09742L20.6066 8.11734C20.4276 8.29668 20.1492 8.29668 19.9702 8.11734L14.1525 2.29889C13.7547 1.90037 13.1182 1.90037 12.7204 2.29889L9.60773 5.41734C9.07072 5.95535 9.07072 6.82214 9.60773 7.36015L9.63757 7.38007C9.90608 7.64908 10.284 7.79852 10.6718 7.7786C11.5669 7.73875 12.4818 8.08745 13.1282 8.83469C14.1127 9.97048 14.1227 11.6941 13.1282 12.8399C11.9547 14.1948 9.90608 14.2546 8.65304 13.0092C8.01657 12.3517 7.71823 11.4948 7.76796 10.648C7.79779 10.2594 7.64862 9.87085 7.37017 9.60185C6.83315 9.06384 5.96796 9.06384 5.43094 9.60185L2.29834 12.7402C1.90055 13.1387 1.90055 13.7764 2.29834 14.1749L8.13591 20.0232C8.31492 20.2026 8.31492 20.4815 8.13591 20.6609C8.02652 20.7705 7.87735 20.8103 7.73812 20.7804C6.7337 20.6111 5.65967 20.9399 4.92376 21.7768C3.92928 22.9125 3.91934 24.6461 4.91381 25.7919C6.08729 27.1469 8.13591 27.2066 9.38895 25.9513C10.105 25.2339 10.3934 24.2376 10.2442 23.3111C10.2243 23.1616 10.2641 23.0221 10.3735 22.9125L10.3934 22.8926C10.5724 22.7133 10.8508 22.7133 11.0298 22.8926L16.8276 28.7011C17.2254 29.0996 17.8619 29.0996 18.2597 28.7011L21.3724 25.5827C21.9094 25.0447 21.9094 24.1779 21.3724 23.6399L21.3525 23.6199C21.084 23.3509 20.7061 23.2015 20.3182 23.2214C19.4232 23.2613 18.5083 22.9125 17.8619 22.1653C16.8773 21.0295 16.8674 19.3059 17.8619 18.1601C19.0354 16.8052 21.084 16.7454 22.337 17.9908C22.9834 18.6384 23.2818 19.4952 23.2221 20.3421C23.2022 20.7306 23.3414 21.1092 23.6199 21.3882C24.1569 21.9262 25.0221 21.9262 25.5591 21.3882L28.7017 18.2399C29.0994 17.8413 29.0994 17.2037 28.7017 16.8052L22.874 10.9668C22.695 10.7875 22.695 10.5085 22.874 10.3292C22.9834 10.2196 23.1326 10.1797 23.2718 10.2096C24.2166 10.369 25.221 10.09 25.947 9.36273C27.1901 8.11734 27.1403 6.05498 25.7779 4.87934C24.6243 3.92288 22.9039 3.92288 21.7702 4.90923Z" fill="#C3EF3C"/>
+</svg>
+</span>논리 흐름</h2>
+  <div class="flow"><div class="step"><span class="pill c-accent">도입</span><p>손필기는 느리기 때문에 효과가 있다 (1~2문장)</p></div><div class="step"><span class="pill c-amber">① ② 근거</span><p>선택하고 바꿔 쓰며 능동적 사고가 일어나고, 연구에서도 개념 문제 성적이 더 좋았다</p></div><div class="step"><span class="pill c-teal">③ 대조</span><p>타이핑은 받아쓰기를 부추겨 정보가 처리되지 않고 지나간다</p></div><div class="step"><span class="pill c-accent">⑤ 결론</span><p>느림은 결함이 아니라 이해를 보상하는 거름망이다</p></div></div>
+</section>
+  <section class="card">
+  <h2><span class="chip c-amber"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.949 11.75H23.969C24.389 11.75 24.719 11.41 24.719 11C24.719 10.59 24.379 10.25 23.969 10.25H19.949C19.569 10.25 19.219 10.07 18.999 9.76999L16.629 6.51999C16.4584 6.2948 16.1854 6.19068 15.9243 6.22353C15.6985 6.22945 15.4794 6.33695 15.339 6.52999L12.969 9.76999C12.749 10.07 12.389 10.25 12.019 10.25H7.99902C7.58902 10.25 7.24902 10.59 7.24902 11C7.24902 11.41 7.58902 11.75 7.99902 11.75H12.019C12.869 11.75 13.679 11.34 14.179 10.66L15.9877 8.1874L17.789 10.65C18.289 11.34 19.099 11.75 19.949 11.75Z" fill="#9B9B9B"/>
+<path d="M15.249 4H16.749V28H15.249V4ZM13.0391 20.73C13.1291 20.88 13.2991 20.96 13.4591 20.96C13.5491 20.96 13.6391 20.94 13.6991 20.88C13.9291 20.73 13.9991 20.42 13.8491 20.19L8.47739 11.8516C8.41545 11.646 8.22717 11.5 7.99907 11.5C7.83813 11.5 7.54907 11.77 7.54907 11.77L2.15907 20.15C2.08907 20.23 2.04907 20.34 2.04907 20.46C2.04907 20.74 2.26907 20.96 2.54907 20.96C2.71907 20.96 2.87907 20.87 2.96907 20.73L7.49902 13.6964V20.8C7.49902 21.08 7.71902 21.3 7.99902 21.3C8.27902 21.3 8.49902 21.08 8.49902 20.8V13.6947L13.0391 20.73ZM29.0391 20.73C29.1291 20.88 29.2991 20.96 29.4591 20.96C29.5491 20.96 29.6391 20.94 29.6991 20.88C29.9291 20.73 29.9991 20.42 29.8491 20.19L24.4774 11.8516C24.4154 11.646 24.2272 11.5 23.9991 11.5C23.8381 11.5 23.64 11.655 23.5491 11.77L18.1591 20.15C18.0891 20.23 18.0491 20.34 18.0491 20.46C18.0491 20.74 18.2691 20.96 18.5491 20.96C18.7191 20.96 18.8791 20.87 18.9691 20.73L23.499 13.6964V20.8C23.499 21.08 23.719 21.3 23.999 21.3C24.279 21.3 24.499 21.08 24.499 20.8V13.6947L29.0391 20.73Z" fill="#D3D3D3"/>
+<path d="M17.5891 3.59C17.5891 4.46813 16.8772 5.18 15.9991 5.18C15.1209 5.18 14.4091 4.46813 14.4091 3.59C14.4091 2.71187 15.1209 2 15.9991 2C16.8772 2 17.5891 2.71187 17.5891 3.59Z" fill="#F9C23C"/>
+<path d="M9.58906 11C9.58906 11.8781 8.87719 12.59 7.99906 12.59C7.12092 12.59 6.40906 11.8781 6.40906 11C6.40906 10.1219 7.12092 9.41 7.99906 9.41C8.87719 9.41 9.58906 10.1219 9.58906 11Z" fill="#F9C23C"/>
+<path d="M2.01904 20.64C1.92904 20.32 2.16904 20 2.50904 20H13.489C13.829 20 14.069 20.32 13.979 20.64C13.239 23.2 10.849 25 7.99904 25C5.14904 25 2.75904 23.2 2.01904 20.64Z" fill="#F9C23C"/>
+<path d="M18.019 20.64C17.929 20.32 18.169 20 18.509 20H29.489C29.829 20 30.069 20.32 29.979 20.64C29.239 23.2 26.849 25 23.999 25C21.149 25 18.759 23.2 18.019 20.64Z" fill="#F9C23C"/>
+<path d="M23.3991 30C23.8791 30 24.1091 29.42 23.7591 29.09C21.7391 27.17 19.0091 26 15.9991 26C12.9891 26 10.2591 27.17 8.23908 29.09C7.88908 29.42 8.11908 30 8.59908 30H23.3991Z" fill="#F9C23C"/>
+<path d="M23.9991 12.59C24.8772 12.59 25.5891 11.8781 25.5891 11C25.5891 10.1219 24.8772 9.41 23.9991 9.41C23.1209 9.41 22.4091 10.1219 22.4091 11C22.4091 11.8781 23.1209 12.59 23.9991 12.59Z" fill="#F9C23C"/>
+</svg>
+</span>체에 거르는 필기 vs 컨베이어 벨트 필기</h2>
+  <p class="sub">수업 내용을 쏟아지는 물이라고 생각해 보자.</p>
+  <div class="vs">
+  <div class="a"><span class="label">통념</span><p>많이 적을수록 많이 배운다고 생각하기 쉽다.</p></div>
+  <div class="b"><span class="label">이 글의 주장(진실)</span><p>손으로 쓰면 체가 걸러 낸 핵심만 남아 이해가 깊어지고, 타이핑은 물을 그대로 통과시켜 남는 게 적다.</p></div>
+</div>
+  <p class="closing">필기의 양이 아니라 '걸러 내는 과정'이 이해를 만든다.</p>
+</section>
+  
+  <section class="card">
+  <h2><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.9125 29.37L2.6525 10.11C1.7825 9.23997 1.7825 7.83997 2.6525 6.97997L6.9625 2.67997C7.73082 1.91164 8.9125 1.82185 9.77055 2.41058L9.6602 3.16424L10.4643 3.05179L12.1359 4.72332V5.41499H12.8275L14.574 7.16146L14.4615 7.97711L15.2599 7.84737L16.9487 9.5362L16.8219 10.3374L17.6058 10.1933L19.358 11.9455L19.2398 12.7554L20.0324 12.6199L21.6924 14.2799L21.6117 15.0235L22.3553 14.9428L24.1306 16.718L24.0585 17.4703L24.8107 17.3982L26.488 19.0755L26.4015 19.8133L27.1393 19.7268L28.9723 21.5597V22.238H29.6002C30.2018 23.1043 30.1159 24.2955 29.3425 25.06L25.0425 29.36C24.1825 30.23 22.7725 30.23 21.9125 29.37Z" fill="#BEBEBE"/>
+<path d="M28.9291 21.5165L29.3426 21.9301C29.443 22.0305 29.5318 22.1379 29.609 22.2508L27.7062 24.1536C27.5109 24.3489 27.1943 24.3489 26.9991 24.1536C26.8038 23.9584 26.8038 23.6418 26.9991 23.4465L28.9291 21.5165Z" fill="#8D65C5"/>
+<path d="M26.4494 19.0368L27.1566 19.744L25.9819 20.9578C25.7899 21.1562 25.4734 21.1614 25.2749 20.9694C25.0765 20.7773 25.0713 20.4608 25.2633 20.2624L26.4494 19.0368Z" fill="#8D65C5"/>
+<path d="M24.1091 16.6965L24.8162 17.4036L22.8862 19.3336C22.6909 19.5289 22.3743 19.5289 22.1791 19.3336C21.9838 19.1384 21.9838 18.8218 22.1791 18.6265L24.1091 16.6965Z" fill="#8D65C5"/>
+<path d="M21.6694 14.2568L22.3766 14.964L21.2019 16.1778C21.0099 16.3762 20.6934 16.3814 20.4949 16.1894C20.2965 15.9973 20.2913 15.6808 20.4833 15.4824L21.6694 14.2568Z" fill="#8D65C5"/>
+<path d="M19.3291 11.9165L20.0362 12.6236L18.1062 14.5536C17.9109 14.7489 17.5943 14.7489 17.3991 14.5536C17.2038 14.3584 17.2038 14.0418 17.3991 13.8465L19.3291 11.9165Z" fill="#8D65C5"/>
+<path d="M16.9092 9.49667L17.6164 10.2038L16.4291 11.4107C16.2354 11.6076 15.9188 11.6102 15.722 11.4165C15.5251 11.2229 15.5225 10.9063 15.7162 10.7094L16.9092 9.49667Z" fill="#8D65C5"/>
+<path d="M14.5591 7.14652L15.2662 7.85363L13.3362 9.78362C13.1409 9.97889 12.8243 9.97889 12.6291 9.78362C12.4338 9.58836 12.4338 9.27178 12.6291 9.07652L14.5591 7.14652Z" fill="#8D65C5"/>
+<path d="M12.1293 4.71674L12.8365 5.4239L11.6605 6.62923C11.4677 6.82689 11.1511 6.8308 10.9535 6.63796C10.7558 6.44512 10.7519 6.12857 10.9447 5.93091L12.1293 4.71674Z" fill="#8D65C5"/>
+<path d="M10.4862 3.07363L8.55619 5.00362C8.36093 5.19888 8.04435 5.19888 7.84908 5.00362C7.65382 4.80836 7.65382 4.49178 7.84908 4.29652L9.74936 2.39624C9.87074 2.47744 9.98584 2.57205 10.0926 2.68007L10.4862 3.07363Z" fill="#8D65C5"/>
+</svg>
+</span>정답과 오답 분석</h2>
+  <div class="ans"><div class="opt"><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.8787 2.87868C26.0503 1.70711 27.9497 1.70711 29.1213 2.87868C30.2929 4.05025 30.2929 5.94975 29.1213 7.12132L20.331 15.9116C20.2822 15.9604 20.2822 16.0396 20.331 16.0884L29.1213 24.8787C30.2929 26.0503 30.2929 27.9497 29.1213 29.1213C27.9497 30.2929 26.0503 30.2929 24.8787 29.1213L16.0884 20.331C16.0396 20.2822 15.9604 20.2822 15.9116 20.331L7.12132 29.1213C5.94975 30.2929 4.05025 30.2929 2.87868 29.1213C1.70711 27.9497 1.70711 26.0503 2.87868 24.8787L11.669 16.0884C11.7178 16.0396 11.7178 15.9604 11.669 15.9116L2.87868 7.12132C1.70711 5.94975 1.70711 4.05025 2.87868 2.87868C4.05025 1.70711 5.94975 1.70711 7.12132 2.87868L15.9116 11.669C15.9604 11.7178 16.0396 11.7178 16.0884 11.669L24.8787 2.87868Z" fill="#F92F60"/>
+</svg>
+</span><div><strong>① 흐름에 맞는 문장</strong><span>앞 문장의 '선택하고 바꿔 쓰기'를 받아 능동적 사고로 이어지는 결과 문장으로 흐름에 맞습니다.</span></div></div><div class="opt"><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.8787 2.87868C26.0503 1.70711 27.9497 1.70711 29.1213 2.87868C30.2929 4.05025 30.2929 5.94975 29.1213 7.12132L20.331 15.9116C20.2822 15.9604 20.2822 16.0396 20.331 16.0884L29.1213 24.8787C30.2929 26.0503 30.2929 27.9497 29.1213 29.1213C27.9497 30.2929 26.0503 30.2929 24.8787 29.1213L16.0884 20.331C16.0396 20.2822 15.9604 20.2822 15.9116 20.331L7.12132 29.1213C5.94975 30.2929 4.05025 30.2929 2.87868 29.1213C1.70711 27.9497 1.70711 26.0503 2.87868 24.8787L11.669 16.0884C11.7178 16.0396 11.7178 15.9604 11.669 15.9116L2.87868 7.12132C1.70711 5.94975 1.70711 4.05025 2.87868 2.87868C4.05025 1.70711 5.94975 1.70711 7.12132 2.87868L15.9116 11.669C15.9604 11.7178 16.0396 11.7178 16.0884 11.669L24.8787 2.87868Z" fill="#F92F60"/>
+</svg>
+</span><div><strong>② 흐름에 맞는 문장</strong><span>손필기가 개념 문제에 더 유리하다는 연구 근거를 제시하는 문장입니다.</span></div></div><div class="opt"><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.8787 2.87868C26.0503 1.70711 27.9497 1.70711 29.1213 2.87868C30.2929 4.05025 30.2929 5.94975 29.1213 7.12132L20.331 15.9116C20.2822 15.9604 20.2822 16.0396 20.331 16.0884L29.1213 24.8787C30.2929 26.0503 30.2929 27.9497 29.1213 29.1213C27.9497 30.2929 26.0503 30.2929 24.8787 29.1213L16.0884 20.331C16.0396 20.2822 15.9604 20.2822 15.9116 20.331L7.12132 29.1213C5.94975 30.2929 4.05025 30.2929 2.87868 29.1213C1.70711 27.9497 1.70711 26.0503 2.87868 24.8787L11.669 16.0884C11.7178 16.0396 11.7178 15.9604 11.669 15.9116L2.87868 7.12132C1.70711 5.94975 1.70711 4.05025 2.87868 2.87868C4.05025 1.70711 5.94975 1.70711 7.12132 2.87868L15.9116 11.669C15.9604 11.7178 16.0396 11.7178 16.0884 11.669L24.8787 2.87868Z" fill="#F92F60"/>
+</svg>
+</span><div><strong>③ 흐름에 맞는 문장</strong><span>타이핑이 정보를 처리하지 못하게 하는 이유를 설명하는 대조 문장입니다.</span></div></div><div class="opt"><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.8787 2.87868C26.0503 1.70711 27.9497 1.70711 29.1213 2.87868C30.2929 4.05025 30.2929 5.94975 29.1213 7.12132L20.331 15.9116C20.2822 15.9604 20.2822 16.0396 20.331 16.0884L29.1213 24.8787C30.2929 26.0503 30.2929 27.9497 29.1213 29.1213C27.9497 30.2929 26.0503 30.2929 24.8787 29.1213L16.0884 20.331C16.0396 20.2822 15.9604 20.2822 15.9116 20.331L7.12132 29.1213C5.94975 30.2929 4.05025 30.2929 2.87868 29.1213C1.70711 27.9497 1.70711 26.0503 2.87868 24.8787L11.669 16.0884C11.7178 16.0396 11.7178 15.9604 11.669 15.9116L2.87868 7.12132C1.70711 5.94975 1.70711 4.05025 2.87868 2.87868C4.05025 1.70711 5.94975 1.70711 7.12132 2.87868L15.9116 11.669C15.9604 11.7178 16.0396 11.7178 16.0884 11.669L24.8787 2.87868Z" fill="#F92F60"/>
+</svg>
+</span><div><strong>⑤ 흐름에 맞는 문장</strong><span>첫 문장의 역설을 정리하는 결론 문장입니다.</span></div></div><div class="opt ok"><span class="chip c-violet"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28.9278 10.3004C30.1588 11.6067 30.0977 13.6636 28.7914 14.8946L13.9394 28.8901C12.6481 30.107 10.6193 30.0632 9.38167 28.7917L3.11793 22.3567C1.86596 21.0705 1.89371 19.0129 3.17992 17.7609C4.46612 16.509 6.52372 16.5367 7.77569 17.8229L11.809 21.9665L24.3336 10.164C25.6399 8.93304 27.6968 8.99411 28.9278 10.3004Z" fill="#785DC8"/>
+</svg>
+</span><div><strong>④ 관계없는 문장 (정답)</strong><span>이 글은 필기 방식(손필기 vs 타이핑)이 이해에 미치는 영향을 일관되게 설명한다. ④는 노트북의 배터리와 무게라는 기기 사양을 이야기해, 필기가 학습에 주는 효과라는 논점과 무관하다. ④를 빼면 ③(타이핑의 문제)에서 ⑤(손필기의 한계는 곧 거름망)로 자연스럽게 이어진다.</span></div></div></div>
+</section>
+  <section class="card">
+  <h2><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.6512 22.27H13.7612C12.9712 22.27 12.3212 22.91 12.3312 23.7V27.59C12.3312 28.38 12.9712 29.02 13.7612 29.02H14.0093C14.3418 29.6109 14.9749 30.01 15.7012 30.01C16.4275 30.01 17.0605 29.6109 17.393 29.02H17.6512C18.4412 29.02 19.0812 28.38 19.0812 27.59V23.7C19.0812 22.91 18.4412 22.27 17.6512 22.27Z" fill="#9B9B9B"/>
+<path d="M18.1611 23.13C18.4011 23.13 18.5911 22.95 18.6111 22.72C18.6811 21.86 19.0511 19.77 21.0711 17.53C22.9611 16.04 24.2111 13.78 24.3611 11.22C24.3811 10.98 24.3911 10.82 24.3911 10.72V10.71V10.7C24.3911 10.65 24.3911 10.62 24.3911 10.62C24.3311 5.84 20.4611 2 15.6911 2C10.9211 2 7.05111 5.84 7.00111 10.6C7.00111 10.6 6.99111 10.84 7.03111 11.24C7.19111 13.78 8.43111 16.03 10.3211 17.52C12.3411 19.77 12.7411 21.86 12.8111 22.72C12.8311 22.95 13.0211 23.13 13.2611 23.13H18.1611Z" fill="#FCD53F"/>
+<path d="M15.7011 10.7C17.3211 10.7 18.6411 12.01 18.6611 13.63V13.71C18.6611 13.74 18.6611 13.78 18.6511 13.84C18.6011 14.68 18.1911 15.47 17.5311 15.99L17.4611 16.04L17.4011 16.1C16.3011 17.32 16.0711 20.42 16.0311 22.12H15.3811C15.3311 20.42 15.0911 17.32 13.9911 16.1L13.9311 16.04L13.8611 15.99C13.2011 15.47 12.7911 14.69 12.7411 13.82C12.7411 13.78 12.7311 13.75 12.7311 13.73V13.64C12.7611 12.02 14.0911 10.7 15.7011 10.7ZM15.7011 9.69995C13.5311 9.69995 11.7611 11.45 11.7411 13.62C11.7411 13.62 11.7411 13.73 11.7511 13.91C11.8211 15.07 12.3911 16.09 13.2511 16.77C14.4511 18.11 14.3911 23.13 14.3911 23.13H17.0311C17.0311 23.13 16.9511 18.11 18.1611 16.78C19.0211 16.1 19.5911 15.07 19.6611 13.9C19.6711 13.79 19.6711 13.72 19.6711 13.67C19.6711 13.65 19.6711 13.63 19.6711 13.63C19.6411 11.45 17.8811 9.69995 15.7011 9.69995Z" fill="#FFB02E"/>
+<path d="M19.1674 25.0525C19.4394 25.0049 19.6213 24.7458 19.5737 24.4738C19.526 24.2018 19.2669 24.0199 18.9949 24.0675L12.2549 25.2475C11.9829 25.2951 11.801 25.5542 11.8486 25.8262C11.8963 26.0983 12.1554 26.2801 12.4274 26.2325L19.1674 25.0525ZM19.1178 27.2025C19.3897 27.1546 19.5714 26.8954 19.5236 26.6234C19.4757 26.3514 19.2165 26.1698 18.9445 26.2176L12.2945 27.3876C12.0225 27.4355 11.8408 27.6947 11.8887 27.9667C11.9365 28.2386 12.1958 28.4203 12.4678 28.3725L19.1178 27.2025Z" fill="#D3D3D3"/>
+<path d="M13.7912 5.43997C12.6812 7.35997 13.2412 9.75997 15.0412 10.79C16.8412 11.82 19.1912 11.11 20.3012 9.18997C21.4112 7.26997 20.8512 4.86997 19.0512 3.83997C17.2512 2.80997 14.9012 3.51997 13.7912 5.43997Z" fill="#FFF478"/>
+</svg>
+</span>수업 팁</h2>
+  <div class="tip-list"><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.6512 22.27H13.7612C12.9712 22.27 12.3212 22.91 12.3312 23.7V27.59C12.3312 28.38 12.9712 29.02 13.7612 29.02H14.0093C14.3418 29.6109 14.9749 30.01 15.7012 30.01C16.4275 30.01 17.0605 29.6109 17.393 29.02H17.6512C18.4412 29.02 19.0812 28.38 19.0812 27.59V23.7C19.0812 22.91 18.4412 22.27 17.6512 22.27Z" fill="#9B9B9B"/>
+<path d="M18.1611 23.13C18.4011 23.13 18.5911 22.95 18.6111 22.72C18.6811 21.86 19.0511 19.77 21.0711 17.53C22.9611 16.04 24.2111 13.78 24.3611 11.22C24.3811 10.98 24.3911 10.82 24.3911 10.72V10.71V10.7C24.3911 10.65 24.3911 10.62 24.3911 10.62C24.3311 5.84 20.4611 2 15.6911 2C10.9211 2 7.05111 5.84 7.00111 10.6C7.00111 10.6 6.99111 10.84 7.03111 11.24C7.19111 13.78 8.43111 16.03 10.3211 17.52C12.3411 19.77 12.7411 21.86 12.8111 22.72C12.8311 22.95 13.0211 23.13 13.2611 23.13H18.1611Z" fill="#FCD53F"/>
+<path d="M15.7011 10.7C17.3211 10.7 18.6411 12.01 18.6611 13.63V13.71C18.6611 13.74 18.6611 13.78 18.6511 13.84C18.6011 14.68 18.1911 15.47 17.5311 15.99L17.4611 16.04L17.4011 16.1C16.3011 17.32 16.0711 20.42 16.0311 22.12H15.3811C15.3311 20.42 15.0911 17.32 13.9911 16.1L13.9311 16.04L13.8611 15.99C13.2011 15.47 12.7911 14.69 12.7411 13.82C12.7411 13.78 12.7311 13.75 12.7311 13.73V13.64C12.7611 12.02 14.0911 10.7 15.7011 10.7ZM15.7011 9.69995C13.5311 9.69995 11.7611 11.45 11.7411 13.62C11.7411 13.62 11.7411 13.73 11.7511 13.91C11.8211 15.07 12.3911 16.09 13.2511 16.77C14.4511 18.11 14.3911 23.13 14.3911 23.13H17.0311C17.0311 23.13 16.9511 18.11 18.1611 16.78C19.0211 16.1 19.5911 15.07 19.6611 13.9C19.6711 13.79 19.6711 13.72 19.6711 13.67C19.6711 13.65 19.6711 13.63 19.6711 13.63C19.6411 11.45 17.8811 9.69995 15.7011 9.69995Z" fill="#FFB02E"/>
+<path d="M19.1674 25.0525C19.4394 25.0049 19.6213 24.7458 19.5737 24.4738C19.526 24.2018 19.2669 24.0199 18.9949 24.0675L12.2549 25.2475C11.9829 25.2951 11.801 25.5542 11.8486 25.8262C11.8963 26.0983 12.1554 26.2801 12.4274 26.2325L19.1674 25.0525ZM19.1178 27.2025C19.3897 27.1546 19.5714 26.8954 19.5236 26.6234C19.4757 26.3514 19.2165 26.1698 18.9445 26.2176L12.2945 27.3876C12.0225 27.4355 11.8408 27.6947 11.8887 27.9667C11.9365 28.2386 12.1958 28.4203 12.4678 28.3725L19.1178 27.2025Z" fill="#D3D3D3"/>
+<path d="M13.7912 5.43997C12.6812 7.35997 13.2412 9.75997 15.0412 10.79C16.8412 11.82 19.1912 11.11 20.3012 9.18997C21.4112 7.26997 20.8512 4.86997 19.0512 3.83997C17.2512 2.80997 14.9012 3.51997 13.7912 5.43997Z" fill="#FFF478"/>
+</svg>
+</span><div><p>무관한 문장 찾기에서는 '글의 중심 소재(필기 방식과 이해)'를 한 줄로 먼저 쓰게 한 뒤, 그 줄과 어긋나는 문장을 찾게 하세요.</p></div></div><div class="field"><span class="chip c-green"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.6512 22.27H13.7612C12.9712 22.27 12.3212 22.91 12.3312 23.7V27.59C12.3312 28.38 12.9712 29.02 13.7612 29.02H14.0093C14.3418 29.6109 14.9749 30.01 15.7012 30.01C16.4275 30.01 17.0605 29.6109 17.393 29.02H17.6512C18.4412 29.02 19.0812 28.38 19.0812 27.59V23.7C19.0812 22.91 18.4412 22.27 17.6512 22.27Z" fill="#9B9B9B"/>
+<path d="M18.1611 23.13C18.4011 23.13 18.5911 22.95 18.6111 22.72C18.6811 21.86 19.0511 19.77 21.0711 17.53C22.9611 16.04 24.2111 13.78 24.3611 11.22C24.3811 10.98 24.3911 10.82 24.3911 10.72V10.71V10.7C24.3911 10.65 24.3911 10.62 24.3911 10.62C24.3311 5.84 20.4611 2 15.6911 2C10.9211 2 7.05111 5.84 7.00111 10.6C7.00111 10.6 6.99111 10.84 7.03111 11.24C7.19111 13.78 8.43111 16.03 10.3211 17.52C12.3411 19.77 12.7411 21.86 12.8111 22.72C12.8311 22.95 13.0211 23.13 13.2611 23.13H18.1611Z" fill="#FCD53F"/>
+<path d="M15.7011 10.7C17.3211 10.7 18.6411 12.01 18.6611 13.63V13.71C18.6611 13.74 18.6611 13.78 18.6511 13.84C18.6011 14.68 18.1911 15.47 17.5311 15.99L17.4611 16.04L17.4011 16.1C16.3011 17.32 16.0711 20.42 16.0311 22.12H15.3811C15.3311 20.42 15.0911 17.32 13.9911 16.1L13.9311 16.04L13.8611 15.99C13.2011 15.47 12.7911 14.69 12.7411 13.82C12.7411 13.78 12.7311 13.75 12.7311 13.73V13.64C12.7611 12.02 14.0911 10.7 15.7011 10.7ZM15.7011 9.69995C13.5311 9.69995 11.7611 11.45 11.7411 13.62C11.7411 13.62 11.7411 13.73 11.7511 13.91C11.8211 15.07 12.3911 16.09 13.2511 16.77C14.4511 18.11 14.3911 23.13 14.3911 23.13H17.0311C17.0311 23.13 16.9511 18.11 18.1611 16.78C19.0211 16.1 19.5911 15.07 19.6611 13.9C19.6711 13.79 19.6711 13.72 19.6711 13.67C19.6711 13.65 19.6711 13.63 19.6711 13.63C19.6411 11.45 17.8811 9.69995 15.7011 9.69995Z" fill="#FFB02E"/>
+<path d="M19.1674 25.0525C19.4394 25.0049 19.6213 24.7458 19.5737 24.4738C19.526 24.2018 19.2669 24.0199 18.9949 24.0675L12.2549 25.2475C11.9829 25.2951 11.801 25.5542 11.8486 25.8262C11.8963 26.0983 12.1554 26.2801 12.4274 26.2325L19.1674 25.0525ZM19.1178 27.2025C19.3897 27.1546 19.5714 26.8954 19.5236 26.6234C19.4757 26.3514 19.2165 26.1698 18.9445 26.2176L12.2945 27.3876C12.0225 27.4355 11.8408 27.6947 11.8887 27.9667C11.9365 28.2386 12.1958 28.4203 12.4678 28.3725L19.1178 27.2025Z" fill="#D3D3D3"/>
+<path d="M13.7912 5.43997C12.6812 7.35997 13.2412 9.75997 15.0412 10.79C16.8412 11.82 19.1912 11.11 20.3012 9.18997C21.4112 7.26997 20.8512 4.86997 19.0512 3.83997C17.2512 2.80997 14.9012 3.51997 13.7912 5.43997Z" fill="#FFF478"/>
+</svg>
+</span><div><p>④처럼 같은 소재(노트북)를 다루지만 논점이 다른 문장은 매력적인 오답 함정입니다. 소재가 같다고 흐름이 맞는 것은 아닙니다.</p></div></div></div>
+</section>
+  <section class="card">
+  <h2><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 6C2 3.79086 3.79086 2 6 2H26C28.2091 2 30 3.79086 30 6V26C30 28.2091 28.2091 30 26 30H6C3.79086 30 2 28.2091 2 26V6Z" fill="#00A6ED"/>
+<path d="M25.8352 11.8454C26.0299 11.6502 26.0299 11.3342 25.8352 11.1391L22.8227 8.11954C22.5079 7.80399 21.9688 8.02695 21.9688 8.47268V10H20.3681C20.2041 10 19.9034 10.024 19.6431 10.046C17.6928 10.2108 15.8889 11.2991 14.9511 13.1172C14.8599 13.294 14.7687 13.4719 14.6773 13.6501L14.6766 13.6514C14.0974 14.7812 13.5102 15.9263 12.8715 16.9033C12.0872 18.1029 11.4577 18.6689 11.0302 18.8099C10.7259 18.9102 10.2386 18.9712 9.70636 18.9944C9.31486 19.0114 9.00702 19.006 8.79419 19.0023C8.72395 19.0011 8.66397 19 8.61484 19H6.5C6.22386 19 6 19.2239 6 19.5V21.5C6 21.7762 6.22386 22 6.5 22H8.61481L8.61733 22L8.62534 22.0001L8.65336 22.0005L8.74359 22.0021C8.81631 22.0034 8.9107 22.0049 9.02052 22.0056C9.23965 22.007 9.52332 22.0052 9.83692 21.9915C10.4296 21.9657 11.2576 21.8938 11.9698 21.6589C13.4646 21.1659 14.5792 19.7734 15.3824 18.5449C16.1156 17.4236 16.7836 16.1191 17.3562 15.0011C17.4456 14.8266 17.5326 14.6566 17.6173 14.4925C18.042 13.6691 18.8843 13.1208 19.8956 13.0354C20.0367 13.0235 20.1566 13.014 20.2487 13.0076C20.2948 13.0044 20.3301 13.0023 20.3553 13.001L20.3773 13H21.9688V14.5117C21.9688 14.9575 22.5079 15.1804 22.8227 14.8649L25.8352 11.8454Z" fill="white"/>
+<path d="M19.6431 21.96C19.9034 21.982 20.2041 22.006 20.3681 22.006H21.9688V23.5196C21.9688 23.9653 22.5079 24.1882 22.8227 23.8727L25.8352 20.8532C26.0299 20.658 26.0299 20.3421 25.8352 20.1469L22.8227 17.1274C22.5079 16.8118 21.9688 17.0348 21.9688 17.4805V19.006H20.3773L20.3553 19.005C20.3301 19.0037 20.2948 19.0016 20.2487 18.9984C20.1566 18.992 20.0367 18.9826 19.8956 18.9707C19.0442 18.8987 18.3402 18.5335 17.8855 17.9285C17.7699 17.7748 17.5263 17.7643 17.4221 17.9259L16.0374 20.0747C15.9741 20.1729 15.9869 20.3023 16.0716 20.3827C17.039 21.3006 18.3066 21.8471 19.6431 21.96Z" fill="white"/>
+<path d="M9.63195 10C9.79595 10 10.0966 10.024 10.3569 10.046C11.769 10.1653 12.9634 10.641 13.9282 11.6362C14.0688 11.7813 14.0942 12 14.0018 12.1796C13.745 12.6789 13.2116 13.6986 12.796 14.3771C12.6575 14.6032 12.3403 14.5794 12.2188 14.3438C11.794 13.5204 11.1157 13.1208 10.1044 13.0354C9.96327 13.0235 9.84337 13.014 9.7513 13.0076C9.7052 13.0044 9.66994 13.0023 9.64471 13.001L9.62272 13H6.5C6.22386 13 6 12.7762 6 12.5V10.5C6 10.2239 6.22386 10 6.5 10H9.63195Z" fill="white"/>
+</svg>
+</span>수능형 변형문제 추천</h2>
+  <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">요지 파악</span><div><p class="stem">다음 글의 요지로 가장 적절한 것은?</p><p class="note">정답: 손필기는 내용을 걸러 내는 과정 때문에 이해를 깊게 한다. 오답 설계: '타이핑은 기록량이 많아 학습에 유리하다'를 매력적 오답으로.</p></div></div><div class="vitem"><span class="pill c-accent">빈칸 추론</span><div><p class="stem">Taking notes by hand slows you down, and that is exactly why it ______.</p><p class="note">정답: works. 오답 후보로 fails, hurts 등을 넣어 글의 역설 구조를 파악하게 함.</p></div></div><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">밑줄 친 it이 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답: taking notes by hand. 오답으로 a lecturer, every word를 배치.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem">본문의 표현 'be forced to'와 'put ... into your own words'를 사용하여 '그 학생은 핵심만 골라 자기 말로 바꿔 쓰게 되었다'를 영작하시오.</p><p class="note">채점: be forced to 사용, 시제 일치, 동사구 어순.</p></div></div><div class="vitem"><span class="pill c-amber">요약문 완성</span><div><p class="stem">Handwriting works better because its (A) forces learners to (B) ideas. — (A), (B)에 알맞은 말을 본문에서 찾아 쓰시오.</p><p class="note">정답 예시: (A) slowness (B) select(또는 rephrase). 본문 어휘 인출 능력을 평가.</p></div></div></div>
+</section>
+</main>
+<script>
+(function(){
+  var root=document.documentElement, L=document.getElementById('t-light'), D=document.getElementById('t-dark');
+  function set(t){root.setAttribute('data-theme',t);L.setAttribute('aria-pressed',t==='light');D.setAttribute('aria-pressed',t==='dark');}
+  L.addEventListener('click',function(){set('light')});
+  D.addEventListener('click',function(){set('dark')});
+})();
+</script>
+</body>
+</html>

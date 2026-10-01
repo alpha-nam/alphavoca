@@ -1,0 +1,209 @@
+{
+  "title": "Why Handwriting Helps You Learn",
+  "source_ref": "05번 · 샘플 문항 · 무관한 문장 찾기",
+  "topic": "손으로 필기할 때 학습 효과가 더 큰 이유",
+  "main_idea": "손필기는 속도가 느린 탓에 핵심을 골라 자기 말로 바꾸게 만들어, 타자로 그대로 받아 적는 것보다 이해를 깊게 한다.",
+  "eli5": "선생님 말씀을 전부 받아 적을 수는 없으니까, 손으로 쓸 땐 '뭐가 중요하지?' 하고 고르게 돼요. 그 고르는 과정에서 머리가 일해서 더 잘 이해해요! 그런데 ④번 문장만 노트북이 가볍고 배터리가 오래간다는 이야기라서, 필기 방법의 효과와는 상관이 없어요.",
+  "concept_sketch": {
+    "title": "손필기 vs 타이핑 — 정보는 어떻게 머리에 남을까?",
+    "svg": "<svg viewBox='0 0 760 300' xmlns='http://www.w3.org/2000/svg'><defs><marker id='ah' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'><path d='M0,0 L0,6 L9,3 z' fill='#374151'/></marker></defs><rect x='20' y='15' width='340' height='270' rx='14' fill='#dcfce7' stroke='#16a34a' stroke-width='3'/><text x='190' y='52' text-anchor='middle' font-size='24' font-weight='800' fill='#14532d' font-family='Noto Sans KR, sans-serif'>손필기</text><rect x='60' y='75' width='260' height='46' rx='10' fill='#fff' stroke='#16a34a' stroke-width='2'/><text x='190' y='106' text-anchor='middle' font-size='19' font-weight='700' fill='#14532d' font-family='Noto Sans KR, sans-serif'>핵심만 고르기</text><path d='M190 124 L190 147' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='60' y='150' width='260' height='46' rx='10' fill='#fff' stroke='#16a34a' stroke-width='2'/><text x='190' y='181' text-anchor='middle' font-size='19' font-weight='700' fill='#14532d' font-family='Noto Sans KR, sans-serif'>내 말로 바꾸기</text><path d='M190 199 L190 222' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='60' y='225' width='260' height='46' rx='10' fill='#16a34a'/><text x='190' y='256' text-anchor='middle' font-size='19' font-weight='800' fill='#fff' font-family='Noto Sans KR, sans-serif'>이해가 깊어짐</text><rect x='400' y='15' width='340' height='270' rx='14' fill='#fef3c7' stroke='#d97706' stroke-width='3'/><text x='570' y='52' text-anchor='middle' font-size='24' font-weight='800' fill='#78350f' font-family='Noto Sans KR, sans-serif'>타이핑</text><rect x='440' y='75' width='260' height='46' rx='10' fill='#fff' stroke='#d97706' stroke-width='2'/><text x='570' y='106' text-anchor='middle' font-size='19' font-weight='700' fill='#78350f' font-family='Noto Sans KR, sans-serif'>들리는 대로 받아쓰기</text><path d='M570 124 L570 147' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='440' y='150' width='260' height='46' rx='10' fill='#fff' stroke='#d97706' stroke-width='2'/><text x='570' y='181' text-anchor='middle' font-size='19' font-weight='700' fill='#78350f' font-family='Noto Sans KR, sans-serif'>처리 없이 통과</text><path d='M570 199 L570 222' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='440' y='225' width='260' height='46' rx='10' fill='#d97706'/><text x='570' y='256' text-anchor='middle' font-size='19' font-weight='800' fill='#fff' font-family='Noto Sans KR, sans-serif'>기억에 덜 남음</text><text x='380' y='155' text-anchor='middle' font-size='17' font-weight='800' fill='#374151' font-family='Noto Sans KR, sans-serif'>vs</text></svg>",
+    "caption": "손필기는 '고르고 바꿔 쓰는' 거름 과정을 거치지만, 타이핑은 정보가 처리 없이 그대로 지나간다."
+  },
+  "sentences": [
+    {
+      "no": "1",
+      "english": "Taking notes by hand slows you down, and that is exactly why it works.",
+      "translation": "손으로 필기하는 것은 속도를 늦추는데, 바로 그 점 때문에 효과가 있다.",
+      "easy_explanation": "손으로 쓰면 느려져요. 그런데 바로 그 느림 때문에 공부가 잘 돼요.",
+      "content_note": "글 전체의 주제를 던지는 첫 문장입니다. '느림'이 단점이 아니라 장점이라는 역설로 시작합니다.",
+      "grammar_points": [
+        "Taking notes by hand: 동명사구가 문장의 주어(단수 취급 → slows)",
+        "that is exactly why it works: why 앞에 the reason이 생략된 형태('바로 그 이유로')"
+      ]
+    },
+    {
+      "no": "2",
+      "english": "Because you cannot write down every word a lecturer says, you are forced to decide which ideas matter and to put them into your own words.",
+      "translation": "강연자가 하는 말을 한 마디도 빠짐없이 적을 수는 없기 때문에, 어떤 생각이 중요한지 결정하고 그것을 자신의 말로 옮기게 된다.",
+      "easy_explanation": "전부 받아 적을 수 없으니까, 중요한 걸 고르고 내 말로 바꿔 쓰게 돼요.",
+      "content_note": "첫 문장의 '느림'이 어떻게 효과로 이어지는지 설명하는 원인 문장입니다.",
+      "grammar_points": [
+        "be forced to + 동사원형: ~하도록 강요받다 (to decide와 to put이 and로 병렬)",
+        "which ideas matter: decide의 목적어인 간접의문절(의문사 + 주어 + 동사)"
+      ]
+    },
+    {
+      "no": "①",
+      "english": "This quiet act of selecting and rephrasing turns passive listening into active thinking.",
+      "translation": "이처럼 조용히 선택하고 바꿔 말하는 행위는 수동적인 듣기를 능동적인 사고로 바꾼다.",
+      "easy_explanation": "고르고 바꿔 쓰는 동안, 그냥 듣던 사람이 스스로 생각하는 사람이 돼요.",
+      "content_note": "앞 문장의 '선택·바꿔 쓰기'를 This quiet act로 받아 그 결과(능동적 사고)를 제시합니다. 흐름에 맞습니다.",
+      "grammar_points": [
+        "selecting and rephrasing: of의 목적어인 동명사 병렬",
+        "turn A into B: A를 B로 바꾸다"
+      ]
+    },
+    {
+      "no": "②",
+      "english": "Studies comparing students who wrote by hand with those who typed found that the handwriters often did better on conceptual questions, even though the typists produced longer notes.",
+      "translation": "손으로 쓴 학생들과 타자를 친 학생들을 비교한 연구들은, 타자를 친 학생들이 더 긴 필기를 만들어 냈음에도 손으로 쓴 학생들이 개념 문제에서 종종 더 좋은 성적을 냈다는 것을 발견했다.",
+      "easy_explanation": "연구를 해 보니, 타자로 더 길게 적은 학생보다 손으로 쓴 학생이 개념 문제를 더 잘 풀 때가 많았대요.",
+      "content_note": "주장을 뒷받침하는 연구 근거입니다. 필기 분량보다 이해의 깊이가 중요하다는 점을 보여 줍니다. 흐름에 맞습니다.",
+      "grammar_points": [
+        "Studies comparing A with B: comparing이 Studies를 수식하는 현재분사구",
+        "those who typed: those = students",
+        "even though ~: 양보의 부사절"
+      ]
+    },
+    {
+      "no": "③",
+      "english": "Typing tends to encourage word-for-word transcription, which lets information pass from the ears to the fingers without ever being processed.",
+      "translation": "타자는 한 글자 한 글자 그대로 받아 적기를 부추기는 경향이 있으며, 이는 정보가 처리되는 과정 없이 귀에서 손가락으로 지나가게 만든다.",
+      "easy_explanation": "타자를 치면 들리는 대로 받아쓰기 쉬워서, 생각 없이 귀에서 손가락으로 지나가 버려요.",
+      "content_note": "대조 대상인 타이핑이 왜 효과가 떨어지는지 설명합니다. 흐름에 맞습니다.",
+      "grammar_points": [
+        "tend to + 동사원형: ~하는 경향이 있다",
+        "which lets information pass ~: which는 앞 절 전체를 받는 계속적 용법, let + 목적어 + 동사원형",
+        "without ever being processed: without + 동명사의 수동형(being p.p.)"
+      ]
+    },
+    {
+      "no": "④",
+      "english": "Modern laptops have longer battery lives and lighter bodies than they did a decade ago, making them easier to carry between classes.",
+      "translation": "현대의 노트북은 10년 전보다 배터리 수명이 더 길고 본체도 더 가벼워서, 수업 사이에 들고 다니기가 더 쉽다.",
+      "easy_explanation": "요즘 노트북은 배터리도 오래가고 가벼워서 들고 다니기 편하대요. 그런데 이건 '필기가 공부에 미치는 효과' 이야기와는 상관이 없어요.",
+      "content_note": "노트북의 휴대성은 '필기 방식이 이해에 미치는 영향'이라는 글의 논점과 무관합니다. 앞뒤 문장은 모두 '생각하며 쓰는가, 그대로 옮기는가'를 다루는데 ④만 기기의 사양 이야기로 흐름이 끊깁니다. ④를 빼면 ③(타이핑의 문제)에서 ⑤(손필기의 한계는 곧 거름망)로 자연스럽게 이어집니다.",
+      "grammar_points": [
+        "longer ... and lighter ... than they did a decade ago: 비교급 병렬, did는 have의 대동사",
+        "making them easier to carry ~: 결과를 나타내는 분사구문, make + 목적어 + 형용사"
+      ]
+    },
+    {
+      "no": "⑤",
+      "english": "In other words, the limits of handwriting are not a flaw but a built-in filter that rewards understanding over copying.",
+      "translation": "다시 말해, 손글씨의 한계는 결함이 아니라 베끼기보다 이해를 보상하는 내장된 거름망이다.",
+      "easy_explanation": "그러니까 손으로 쓰는 게 느리다는 약점은, 사실 '이해한 것만 남기는 거름망'이에요.",
+      "content_note": "첫 문장의 주장을 다시 정리하는 결론 문장입니다.",
+      "grammar_points": [
+        "not A but B: A가 아니라 B",
+        "that rewards understanding over copying: that은 filter를 꾸미는 주격 관계대명사"
+      ]
+    }
+  ],
+  "summary": {
+    "logic_stages": [
+      {
+        "stage": "도입",
+        "description": "손필기는 느리기 때문에 효과가 있다 (1~2문장)"
+      },
+      {
+        "stage": "① ② 근거",
+        "description": "선택하고 바꿔 쓰며 능동적 사고가 일어나고, 연구에서도 개념 문제 성적이 더 좋았다"
+      },
+      {
+        "stage": "③ 대조",
+        "description": "타이핑은 받아쓰기를 부추겨 정보가 처리되지 않고 지나간다"
+      },
+      {
+        "stage": "⑤ 결론",
+        "description": "느림은 결함이 아니라 이해를 보상하는 거름망이다"
+      }
+    ],
+    "analogy": {
+      "title": "체에 거르는 필기 vs 컨베이어 벨트 필기",
+      "setup": "수업 내용을 쏟아지는 물이라고 생각해 보자.",
+      "misconception": "많이 적을수록 많이 배운다고 생각하기 쉽다.",
+      "truth": "손으로 쓰면 체가 걸러 낸 핵심만 남아 이해가 깊어지고, 타이핑은 물을 그대로 통과시켜 남는 게 적다.",
+      "conclusion": "필기의 양이 아니라 '걸러 내는 과정'이 이해를 만든다."
+    },
+    "distractors": [
+      {
+        "choice": "① 흐름에 맞는 문장",
+        "reason": "앞 문장의 '선택하고 바꿔 쓰기'를 받아 능동적 사고로 이어지는 결과 문장으로 흐름에 맞습니다."
+      },
+      {
+        "choice": "② 흐름에 맞는 문장",
+        "reason": "손필기가 개념 문제에 더 유리하다는 연구 근거를 제시하는 문장입니다."
+      },
+      {
+        "choice": "③ 흐름에 맞는 문장",
+        "reason": "타이핑이 정보를 처리하지 못하게 하는 이유를 설명하는 대조 문장입니다."
+      },
+      {
+        "choice": "⑤ 흐름에 맞는 문장",
+        "reason": "첫 문장의 역설을 정리하는 결론 문장입니다."
+      }
+    ],
+    "correct_answer": {
+      "choice": "④ 관계없는 문장 (정답)",
+      "reason": "이 글은 필기 방식(손필기 vs 타이핑)이 이해에 미치는 영향을 일관되게 설명한다. ④는 노트북의 배터리와 무게라는 기기 사양을 이야기해, 필기가 학습에 주는 효과라는 논점과 무관하다. ④를 빼면 ③(타이핑의 문제)에서 ⑤(손필기의 한계는 곧 거름망)로 자연스럽게 이어진다."
+    },
+    "vocabulary": [
+      {
+        "word": "conceptual",
+        "meaning": "개념적인",
+        "pos": "adj."
+      },
+      {
+        "word": "transcription",
+        "meaning": "받아쓰기, 필사",
+        "pos": "n."
+      },
+      {
+        "word": "rephrase",
+        "meaning": "다른 말로 바꿔 말하다",
+        "pos": "v."
+      },
+      {
+        "word": "passive",
+        "meaning": "수동적인",
+        "pos": "adj."
+      },
+      {
+        "word": "filter",
+        "meaning": "걸러 내는 장치",
+        "pos": "n."
+      },
+      {
+        "word": "lecturer",
+        "meaning": "강연자, 강사",
+        "pos": "n."
+      }
+    ],
+    "tips": [
+      "무관한 문장 찾기에서는 '글의 중심 소재(필기 방식과 이해)'를 한 줄로 먼저 쓰게 한 뒤, 그 줄과 어긋나는 문장을 찾게 하세요.",
+      "④처럼 같은 소재(노트북)를 다루지만 논점이 다른 문장은 매력적인 오답 함정입니다. 소재가 같다고 흐름이 맞는 것은 아닙니다."
+    ]
+  },
+  "variant_questions": {
+    "multiple_choice": [
+      {
+        "type": "요지 파악",
+        "stem": "다음 글의 요지로 가장 적절한 것은?",
+        "note": "정답: 손필기는 내용을 걸러 내는 과정 때문에 이해를 깊게 한다. 오답 설계: '타이핑은 기록량이 많아 학습에 유리하다'를 매력적 오답으로."
+      },
+      {
+        "type": "빈칸 추론",
+        "stem": "Taking notes by hand slows you down, and that is exactly why it ______.",
+        "note": "정답: works. 오답 후보로 fails, hurts 등을 넣어 글의 역설 구조를 파악하게 함."
+      },
+      {
+        "type": "지칭 추론",
+        "stem": "밑줄 친 it이 가리키는 것으로 가장 적절한 것은?",
+        "note": "정답: taking notes by hand. 오답으로 a lecturer, every word를 배치."
+      }
+    ],
+    "written": [
+      {
+        "type": "조건 영작",
+        "stem": "본문의 표현 'be forced to'와 'put ... into your own words'를 사용하여 '그 학생은 핵심만 골라 자기 말로 바꿔 쓰게 되었다'를 영작하시오.",
+        "note": "채점: be forced to 사용, 시제 일치, 동사구 어순."
+      },
+      {
+        "type": "요약문 완성",
+        "stem": "Handwriting works better because its (A) forces learners to (B) ideas. — (A), (B)에 알맞은 말을 본문에서 찾아 쓰시오.",
+        "note": "정답 예시: (A) slowness (B) select(또는 rephrase). 본문 어휘 인출 능력을 평가."
+      }
+    ]
+  }
+}
