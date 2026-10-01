@@ -11,6 +11,7 @@ face
   .finally(() => continueRender(handle));
 
 export type Variant = "blue" | "dark" | "green";
+export type BgVariant = "light" | "navy" | "royal" | "sun" | "violet";
 
 export type Theme = {
   variant: Variant;
@@ -29,6 +30,7 @@ export type Theme = {
   hi: string; // 자막 강조색
   radius: number;
   font: string;
+  pattern?: string; // 배경 점 패턴 색 (없으면 패턴 없음)
 };
 
 const font = `Pretendard, ${fontFamily}, "Apple SD Gothic Neo", sans-serif`;
@@ -50,6 +52,16 @@ export const THEMES: Record<Variant, Theme> = {
     primary: "#34A877", accent: "#F5703F", soft: "#E4F5EC", line: "#E3ECE7", surface: "#FFFFFF",
     caption: "#0B5D46", fill: "#FFFFFF", stroke: "#0B3D2E", hi: "#FFE066", radius: 32, font,
   },
+};
+
+// 배경 시안: 흰색 기능 화면이 도드라지도록 배경색을 바꾼다 (blue 테마 기반)
+const B = THEMES.blue;
+export const BG_THEMES: Record<BgVariant, Theme> = {
+  light: B,
+  navy: { ...B, bg: "#0B1B4D", glow: "#24459F", text: "#EEF3FF", pattern: "rgba(255,255,255,0.08)" },
+  royal: { ...B, bg: "#1F6BFF", glow: "#79A8FF", text: "#FFFFFF", pattern: "rgba(255,255,255,0.14)" },
+  sun: { ...B, bg: "#FFD43B", glow: "#FFF0A6", text: "#0A1A3F", pattern: "rgba(10,26,63,0.08)" },
+  violet: { ...B, bg: "#5B3DF5", glow: "#9A86FF", text: "#FFFFFF", pattern: "rgba(255,255,255,0.12)" },
 };
 
 const Ctx = createContext<Theme>(THEMES.blue);

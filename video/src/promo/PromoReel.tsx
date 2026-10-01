@@ -2,7 +2,7 @@ import React from "react";
 import { Audio, staticFile } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { slide } from "@remotion/transitions/slide";
-import { THEMES, ThemeProvider } from "../theme";
+import { BG_THEMES, ThemeProvider, type BgVariant } from "../theme";
 import { PromoHook } from "./PromoHook";
 import { PromoScroll, SCROLL_FRAMES } from "./PromoScroll";
 import { PromoCta } from "./PromoCta";
@@ -17,8 +17,8 @@ const SEQ = [
 ];
 export const PROMO_TOTAL = SEQ.reduce((a, s) => a + s.frames, 0) - TRANSITION * (SEQ.length - 1);
 
-export const PromoReel: React.FC<{ bgm?: string }> = ({ bgm }) => (
-  <ThemeProvider value={THEMES.blue}>
+export const PromoReel: React.FC<{ bgm?: string; bg?: BgVariant }> = ({ bgm, bg = "light" }) => (
+  <ThemeProvider value={BG_THEMES[bg]}>
     {bgm ? <Audio src={staticFile(bgm)} volume={0.35} /> : null}
     <TransitionSeries>
       {SEQ.flatMap(({ C, frames }, i) => {

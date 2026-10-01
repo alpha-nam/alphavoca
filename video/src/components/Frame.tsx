@@ -14,6 +14,12 @@ export const Frame: React.FC<{
     <AbsoluteFill
       style={{
         background: `radial-gradient(1200px 700px at 15% -5%, ${theme.glow}, transparent 70%), ${theme.bg}`,
+        ...(theme.pattern
+          ? {
+              backgroundImage: `radial-gradient(${theme.pattern} 3px, transparent 3.5px), radial-gradient(1200px 700px at 15% -5%, ${theme.glow}, transparent 70%)`,
+              backgroundSize: "44px 44px, 100% 100%",
+            }
+          : {}),
         fontFamily: theme.font,
         color: theme.text,
       }}
