@@ -3,10 +3,28 @@ import { Easing, interpolate, random, spring, useCurrentFrame, useVideoConfig } 
 import { useTheme } from "../theme";
 
 // "[[강조]]" 구간은 강조색으로 칠한다
-const renderLine = (line: string, hi: string) =>
+// marker: 강조 구간 뒤에 띠(형광 하이라이트)를 깐다. markerProgress(0~1)로 띠가 쓱 그려진다.
+const renderLine = (line: string, hi: string, band?: string, progress = 1) =>
   line.split(/\[\[(.+?)\]\]/g).map((p, i) =>
     i % 2 === 1 ? (
-      <span key={i} style={{ color: hi }}>
+      <span
+        key={i}
+        style={{
+          color: hi,
+          ...(band
+            ? {
+                padding: "0 0.1em",
+                borderRadius: "0.14em",
+                backgroundImage: `linear-gradient(${band}, ${band})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: `${progress * 100}% 78%`,
+                backgroundPosition: "0 62%",
+                WebkitBoxDecorationBreak: "clone",
+                boxDecorationBreak: "clone",
+              }
+            : {}),
+        }}
+      >
         {p}
       </span>
     ) : (
@@ -14,11 +32,13 @@ const renderLine = (line: string, hi: string) =>
     )
   );
 
-export const OutlinedText: React.FC<{ lines: string[]; size: number; style?: React.CSSProperties }> = ({
-  lines,
-  size,
-  style,
-}) => {
+export const OutlinedText: React.FC<{
+  lines: string[];
+  size: number;
+  style?: React.CSSProperties;
+  marker?: boolean;
+  markerProgress?: number;
+}> = ({ lines, size, style, marker, markerProgress = 1 }) => {
   const theme = useTheme();
   return (
     <div
@@ -36,14 +56,14 @@ export const OutlinedText: React.FC<{ lines: string[]; size: number; style?: Rea
       }}
     >
       {lines.map((l, i) => (
-        <div key={i}>{renderLine(l, theme.hi)}</div>
+        <div key={i}>{renderLine(l, theme.hi, marker ? theme.primary : undefined, markerProgress)}</div>
       ))}
     </div>
   );
 };
 
 // 터지는 모양의 별 그래픽 (자막 뒤)
-const Starburst: React.FC<{ color: string; size: number }> = ({ color, size }) => {
+export const Starburst: React.FC<{ color: string; size: number }> = ({ color, size }) => {
   const spikes = 18;
   const pts = Array.from({ length: spikes * 2 }, (_, i) => {
     const a = (Math.PI * i) / spikes;
