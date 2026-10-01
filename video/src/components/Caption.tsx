@@ -45,7 +45,7 @@ export const OutlinedText: React.FC<{
       style={{
         fontSize: size,
         fontWeight: 900,
-        lineHeight: 1.18,
+        lineHeight: 1.42,
         textAlign: "center",
         color: theme.fill,
         WebkitTextStroke: `${size * 0.17}px ${theme.stroke}`,
