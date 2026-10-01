@@ -64,10 +64,14 @@ export const PromoHook: React.FC = () => {
   const dropActive = f >= 74 && f < 100;
 
   // --- 채팅 창 (top 840, height 640)
-  const CX = 60, CY = 840, CW = 960, CH = 640;
-  const sent = f >= 112;
-  const attached = f >= 100 && f < 112;
-  const typing = f >= 128;
+  const CX = 60, CW = 960;
+  const grow = clampI(f, [100, 122], [0, 1]);
+  const CY = 840 + (170 - 840) * grow;
+  const CH = 640 + (1290 - 640) * grow;
+  const pdfOut = clampI(f, [98, 114], [1, 0]);
+  const sent = f >= 118;
+  const attached = f >= 100 && f < 118;
+  const typing = f >= 142;
   const dots = ".".repeat((Math.floor(f / 6) % 3) + 1);
 
   const cursorX = f < 46 ? sx0 + (sx1 - sx0) * sel : tx + 120;
@@ -77,6 +81,7 @@ export const PromoHook: React.FC = () => {
   return (
     <Frame lines={["교재 문제, 캡처해서", "[[끌어다 놓기만]] 하세요"]} hold={44}>
       {/* PDF 창 */}
+      <div style={{ opacity: pdfOut, display: pdfOut <= 0 ? "none" : "block" }}>
       <Pop style={{ position: "absolute", left: PX, top: PY, width: PW, height: PH }}>
         <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 28, overflow: "hidden", background: "#E7EBF2", boxShadow: "0 18px 40px rgba(20,60,160,.18)" }}>
           <WindowBar title="문제집.pdf" />
@@ -87,6 +92,7 @@ export const PromoHook: React.FC = () => {
         <div style={{ position: "absolute", left: sx0, top: sy0, width: selW, height: selH, border: `5px dashed ${theme.primary}`, background: "rgba(31,107,255,.12)", borderRadius: 10 }} />
       ) : null}
       {flash > 0 ? <div style={{ position: "absolute", left: sx0, top: sy0, width: sx1 - sx0, height: sy1 - sy0, background: `rgba(255,255,255,${flash})` }} /> : null}
+      </div>
 
       {/* 채팅 창 */}
       <Pop delay={6} style={{ position: "absolute", left: CX, top: CY, width: CW, height: CH }}>
@@ -99,10 +105,10 @@ export const PromoHook: React.FC = () => {
             </div>
           ) : null}
           {sent ? (
-            <div style={{ position: "absolute", top: 90, left: 40, right: 40 }}>
-              <div style={{ marginLeft: "auto", width: 470, background: "#EAF1FF", borderRadius: 26, padding: 16 }}>
+            <div style={{ position: "absolute", top: 80, left: 40, right: 40 }}>
+              <div style={{ width: "100%", background: "#EAF1FF", borderRadius: 26, padding: 18, boxSizing: "border-box" }}>
                 <Img src={staticFile("promo/question.png")} style={{ width: "100%", borderRadius: 14, display: "block" }} />
-                <div style={{ fontSize: 34, fontWeight: 700, color: "#1F2937", marginTop: 12 }}>이 문제 분석해줘</div>
+                <div style={{ fontSize: 38, fontWeight: 700, color: "#1F2937", marginTop: 14 }}>이 문제 분석해줘</div>
               </div>
               {typing ? (
                 <div style={{ marginTop: 20, fontSize: 38, fontWeight: 800, color: theme.primary }}>
@@ -112,7 +118,7 @@ export const PromoHook: React.FC = () => {
             </div>
           ) : null}
           {/* 입력창 */}
-          {!sent ? (
+          {true ? (
             <div
               style={{
                 position: "absolute",
@@ -133,7 +139,7 @@ export const PromoHook: React.FC = () => {
               }}
             >
               {attached ? <Img src={staticFile("promo/question.png")} style={{ height: 78, borderRadius: 8 }} /> : null}
-              {dropActive ? "여기에 놓으세요" : attached ? "이 문제 분석해줘" : "메시지를 입력하세요…"}
+              {sent ? "메시지를 입력하세요…" : dropActive ? "여기에 놓으세요" : attached ? "이 문제 분석해줘" : "메시지를 입력하세요…"}
             </div>
           ) : null}
         </div>

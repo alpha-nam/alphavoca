@@ -24,8 +24,19 @@ stages = "".join(
 a = d["analogy"]
 dis = "".join(f'<div class="distractor-row"><div class="distractor-choice">{e(c)}</div><div class="distractor-reason">{e(r)}</div></div>' for c, r in d["distractors"])
 tips = "".join(f"<li>{e(t)}</li>" for t in d["tips"])
+EXTRA_CSS = """
+.vgroup{margin-bottom:16px}.vgroup-title{font-weight:700;color:#2563eb;font-size:14px;margin-bottom:8px}
+.vitem{background:#fff;border:1px solid #e5e7eb;border-left:4px solid #2563eb;border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.vgroup.wr .vitem{border-left-color:#f59e0b}
+.vtype{display:inline-block;background:#eff6ff;color:#2563eb;font-weight:700;font-size:12.5px;padding:2px 10px;border-radius:999px;margin-bottom:6px}
+.vgroup.wr .vtype{background:#fffbeb;color:#b45309}
+.vstem{font-weight:600;color:#111827}.vnote{color:#6b7280;font-size:13.5px;margin-top:4px}
+"""
+def vitems(rows):
+    return "".join(f'<div class="vitem"><span class="vtype">{e(t)}</span><div class="vstem">{e(st)}</div><div class="vnote">{e(n)}</div></div>' for t, st, n in rows)
+variants = f'<div class="vgroup"><div class="vgroup-title">객관식 변형</div>{vitems(d["variants"]["mc"])}</div><div class="vgroup wr"><div class="vgroup-title">서술형 변형</div>{vitems(d["variants"]["wr"])}</div>'
 
-card = f'''<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>{e(d["title"])}</title><style>{css}</style></head><body><div class="container">
+card = f'''<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>{e(d["title"])}</title><style>{css}{EXTRA_CSS}</style></head><body><div class="container">
 <div class="source-ref">{e(d["source_ref"])}</div>
 <h1 class="title">{e(d["title"])}</h1>
 <div class="topic-box"><div class="topic-label">주제 TOPIC</div><div class="topic-text">{e(d["topic"])}</div>
@@ -45,6 +56,7 @@ card = f'''<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>{e(
 <h2 class="section-title">정답 근거</h2>
 <div class="correct-box"><div class="correct-choice">{e(d["correct"]["choice"])}</div><div class="correct-reason">{e(d["correct"]["reason"])}</div></div>{dis}
 <h2 class="section-title">수업 팁</h2><ul class="tips-list">{tips}</ul>
+<h2 class="section-title">수능형 변형문제 추천</h2>{variants}
 </div></body></html>'''
 open("data/sample-card.html", "w", encoding="utf-8").write(card)
 

@@ -43,7 +43,7 @@ const manifest = {};
   const segs = await page.evaluate(() => {
     const kids = [...document.querySelector(".container").children];
     const names = { "개념 스케치": "sketch", "어휘": "vocab", "문장별 분석": "sentHead", "논리 흐름": "logic",
-      "티칭 포인트: 비유": "analogy", "정답 근거": "answer", "수업 팁": "tips" };
+      "티칭 포인트: 비유": "analogy", "정답 근거": "answer", "수업 팁": "tips", "수능형 변형문제 추천": "variants" };
     const groups = { header: [] };
     let cur = "header", n = 0, pendingHead = null;
     for (const k of kids) {

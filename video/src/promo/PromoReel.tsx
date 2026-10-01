@@ -6,12 +6,14 @@ import { THEMES, ThemeProvider } from "../theme";
 import { PromoHook } from "./PromoHook";
 import { PromoScroll, SCROLL_FRAMES } from "./PromoScroll";
 import { PromoCta } from "./PromoCta";
+import { PromoRecap } from "./PromoRecap";
 
 const TRANSITION = 10;
 const SEQ = [
-  { C: PromoHook, frames: 150 },
+  { C: PromoHook, frames: 170 },
   { C: PromoScroll, frames: SCROLL_FRAMES },
-  { C: PromoCta, frames: 90 },
+  { C: PromoRecap, frames: 90 },
+  { C: PromoCta, frames: 80 },
 ];
 export const PROMO_TOTAL = SEQ.reduce((a, s) => a + s.frames, 0) - TRANSITION * (SEQ.length - 1);
 

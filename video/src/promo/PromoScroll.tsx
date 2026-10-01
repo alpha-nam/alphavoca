@@ -8,7 +8,7 @@ import manifest from "../data/promo-manifest.json";
 type M = { w: number; h: number; mark?: { x: number; y: number; w: number; h: number } };
 const M_ = manifest as unknown as Record<string, M>;
 
-const ORDER = ["header", "sketch", "vocab", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "logic", "analogy", "answer", "tips"];
+const ORDER = ["header", "sketch", "vocab", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "logic", "analogy", "answer", "tips", "variants"];
 const W = 960; // 화면에 표시하는 폭
 const GAP = 26;
 const VIEW_TOP = 170;
@@ -33,6 +33,7 @@ const STOPS: Stop[] = [
   { name: "analogy", hold: 28, speed: 40, lines: ["설명용 [[비유]]까지"] },
   { name: "answer", hold: 54, speed: 40, lines: ["정답 근거 · 오답 [[분석]]"], mark: true },
   { name: "tips", hold: 24, speed: 40, lines: ["수업 [[팁]]은 덤"] },
+  { name: "variants", hold: 56, speed: 40, lines: ["변형문제 추천까지 [[자동]]"] },
 ];
 
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
