@@ -1,0 +1,34 @@
+{
+  "title": "Practice Passage",
+  "topic": "실패의 가치",
+  "main_idea": "실패는 끝이 아니라, 성장을 위한 가장 정직한 피드백이다.",
+  "passage": "Many people see failure as the opposite of success. However, every failure carries information that success cannot offer. When we fail, we discover exactly which part of our plan was weak. Therefore, those who learn from failure often outperform those who avoid it.",
+  "sentences": [
+    {
+      "no": 1,
+      "english": "Many people see failure as **the opposite of success**.",
+      "translation": "많은 사람이 실패를 성공의 반대로 본다."
+    },
+    {
+      "no": 2,
+      "english": "However, every failure carries **information that success cannot offer**.",
+      "translation": "하지만 모든 실패에는 성공이 줄 수 없는 정보가 담겨 있다."
+    },
+    {
+      "no": 3,
+      "english": "Therefore, those who learn from failure often **outperform** those who avoid it.",
+      "translation": "그러므로 실패에서 배우는 사람이 피하는 사람보다 더 낫다."
+    }
+  ],
+  "sketch": {
+    "caption": "통념 vs 진실",
+    "left": "통념: 실패 → 끝",
+    "right": "진실: 실패 → 정보 → 성장"
+  },
+  "choices": [
+    { "label": "①", "text": "실패는 성공의 반대다", "correct": false },
+    { "label": "②", "text": "실패는 성장의 정보다", "correct": true },
+    { "label": "③", "text": "계획은 필요 없다", "correct": false },
+    { "label": "④", "text": "성공은 운이 좌우한다", "correct": false }
+  ]
+}
