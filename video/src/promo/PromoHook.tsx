@@ -99,9 +99,8 @@ export const PromoHook: React.FC = () => {
         <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 28, overflow: "hidden", background: "#fff", boxShadow: "0 18px 40px rgba(20,60,160,.18)" }}>
           <WindowBar title="새 대화" />
           {!sent ? (
-            <div style={{ position: "absolute", top: 150, left: 0, right: 0, textAlign: "center" }}>
-              <Img src={staticFile("sticker.png")} style={{ width: 110, borderRadius: 24, display: "inline-block" }} />
-              <div style={{ fontSize: 44, fontWeight: 800, color: "#1F2937", marginTop: 18 }}>무엇을 도와드릴까요?</div>
+            <div style={{ position: "absolute", top: 210, left: 0, right: 0, textAlign: "center" }}>
+              <div style={{ fontSize: 48, fontWeight: 800, color: "#1F2937" }}>무엇을 도와드릴까요?</div>
             </div>
           ) : null}
           {sent ? (
