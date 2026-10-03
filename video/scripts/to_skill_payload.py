@@ -15,10 +15,12 @@ payload = {
     "main_idea": d["main_idea"],
     "eli5": d["eli5"],
     "concept_sketch": {"title": d["sketch_title"], "svg": d["sketch_svg"], "caption": d["sketch_caption"]},
+    "blueprint": d["blueprint"],
     "sentences": [
-        {"no": s["no"], "english": s["en"], "translation": s["ko"], "easy_explanation": s["easy"],
+        {"no": i + 1, **({"block_label": s["no"]} if s["no"] in "①②③④⑤" else {}),
+         "english": s["en"], "translation": s["ko"], "easy_explanation": s["easy"],
          "content_note": s["note"], "grammar_points": s["grammar"]}
-        for s in d["sentences"]
+        for i, s in enumerate(d["sentences"])
     ],
     "summary": {
         "logic_stages": [{"stage": t, "description": x} for t, x in d["logic"]],

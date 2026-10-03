@@ -9,9 +9,80 @@
     "svg": "<svg viewBox='0 0 760 300' xmlns='http://www.w3.org/2000/svg'><defs><marker id='ah' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'><path d='M0,0 L0,6 L9,3 z' fill='#374151'/></marker></defs><rect x='20' y='15' width='340' height='270' rx='14' fill='#dcfce7' stroke='#16a34a' stroke-width='3'/><text x='190' y='52' text-anchor='middle' font-size='24' font-weight='800' fill='#14532d' font-family='Noto Sans KR, sans-serif'>손필기</text><rect x='60' y='75' width='260' height='46' rx='10' fill='#fff' stroke='#16a34a' stroke-width='2'/><text x='190' y='106' text-anchor='middle' font-size='19' font-weight='700' fill='#14532d' font-family='Noto Sans KR, sans-serif'>핵심만 고르기</text><path d='M190 124 L190 147' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='60' y='150' width='260' height='46' rx='10' fill='#fff' stroke='#16a34a' stroke-width='2'/><text x='190' y='181' text-anchor='middle' font-size='19' font-weight='700' fill='#14532d' font-family='Noto Sans KR, sans-serif'>내 말로 바꾸기</text><path d='M190 199 L190 222' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='60' y='225' width='260' height='46' rx='10' fill='#16a34a'/><text x='190' y='256' text-anchor='middle' font-size='19' font-weight='800' fill='#fff' font-family='Noto Sans KR, sans-serif'>이해가 깊어짐</text><rect x='400' y='15' width='340' height='270' rx='14' fill='#fef3c7' stroke='#d97706' stroke-width='3'/><text x='570' y='52' text-anchor='middle' font-size='24' font-weight='800' fill='#78350f' font-family='Noto Sans KR, sans-serif'>타이핑</text><rect x='440' y='75' width='260' height='46' rx='10' fill='#fff' stroke='#d97706' stroke-width='2'/><text x='570' y='106' text-anchor='middle' font-size='19' font-weight='700' fill='#78350f' font-family='Noto Sans KR, sans-serif'>들리는 대로 받아쓰기</text><path d='M570 124 L570 147' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='440' y='150' width='260' height='46' rx='10' fill='#fff' stroke='#d97706' stroke-width='2'/><text x='570' y='181' text-anchor='middle' font-size='19' font-weight='700' fill='#78350f' font-family='Noto Sans KR, sans-serif'>처리 없이 통과</text><path d='M570 199 L570 222' stroke='#374151' stroke-width='3' marker-end='url(#ah)'/><rect x='440' y='225' width='260' height='46' rx='10' fill='#d97706'/><text x='570' y='256' text-anchor='middle' font-size='19' font-weight='800' fill='#fff' font-family='Noto Sans KR, sans-serif'>기억에 덜 남음</text><text x='380' y='155' text-anchor='middle' font-size='17' font-weight='800' fill='#374151' font-family='Noto Sans KR, sans-serif'>vs</text></svg>",
     "caption": "손필기는 '고르고 바꿔 쓰는' 거름 과정을 거치지만, 타이핑은 정보가 처리 없이 그대로 지나간다."
   },
+  "blueprint": {
+    "text_type": {
+      "label": "역설 주장 → 이유·근거 → 대조 → 재진술 (무관한 문장 1개)",
+      "tip": "주제는 '필기 방식과 이해'. 이 소재에서 벗어나 기기 사양을 말하는 문장이 무관한 문장이다."
+    },
+    "signals": [
+      {
+        "word": "Because",
+        "no": 2
+      },
+      {
+        "word": "even though",
+        "no": 4
+      },
+      {
+        "word": "not A but B",
+        "no": 7
+      }
+    ],
+    "structure": [
+      {
+        "part": "서론",
+        "role": "역설 주장",
+        "range": [
+          1,
+          2
+        ],
+        "desc": "손필기는 느리지만 바로 그 때문에 효과가 있다"
+      },
+      {
+        "part": "본론",
+        "role": "이유·근거·대조",
+        "range": [
+          3,
+          5
+        ],
+        "desc": "능동적 사고 → 연구 근거 → 타이핑은 처리 없이 지나감"
+      },
+      {
+        "part": "결론",
+        "role": "재진술",
+        "range": [
+          6,
+          7
+        ],
+        "desc": "느림은 결함이 아니라 거름망 (6번은 흐름에서 이탈)"
+      }
+    ],
+    "key_sentences": [
+      {
+        "no": 1,
+        "label": "주제문",
+        "why": "느림이 효과의 이유라는 글 전체의 주장"
+      },
+      {
+        "no": 7,
+        "label": "재진술",
+        "why": "주제문을 '거름망'으로 바꿔 말한 결론"
+      }
+    ],
+    "tricky": [
+      {
+        "no": 2,
+        "reason": "Because절 뒤 be forced to decide ... and to put ... 병렬 구조"
+      },
+      {
+        "no": 5,
+        "reason": "which가 앞 절 전체를 받고, let이 '목적어 + 동사원형'을 취함"
+      }
+    ]
+  },
   "sentences": [
     {
-      "no": "1",
+      "no": 1,
       "english": "Taking notes by hand slows you down, and that is exactly why it works.",
       "translation": "손으로 필기하는 것은 속도를 늦추는데, 바로 그 점 때문에 효과가 있다.",
       "easy_explanation": "손으로 쓰면 느려져요. 그런데 바로 그 느림 때문에 공부가 잘 돼요.",
@@ -22,7 +93,7 @@
       ]
     },
     {
-      "no": "2",
+      "no": 2,
       "english": "Because you cannot write down every word a lecturer says, you are forced to decide which ideas matter and to put them into your own words.",
       "translation": "강연자가 하는 말을 한 마디도 빠짐없이 적을 수는 없기 때문에, 어떤 생각이 중요한지 결정하고 그것을 자신의 말로 옮기게 된다.",
       "easy_explanation": "전부 받아 적을 수 없으니까, 중요한 걸 고르고 내 말로 바꿔 쓰게 돼요.",
@@ -33,7 +104,8 @@
       ]
     },
     {
-      "no": "①",
+      "no": 3,
+      "block_label": "①",
       "english": "This quiet act of selecting and rephrasing turns passive listening into active thinking.",
       "translation": "이처럼 조용히 선택하고 바꿔 말하는 행위는 수동적인 듣기를 능동적인 사고로 바꾼다.",
       "easy_explanation": "고르고 바꿔 쓰는 동안, 그냥 듣던 사람이 스스로 생각하는 사람이 돼요.",
@@ -44,7 +116,8 @@
       ]
     },
     {
-      "no": "②",
+      "no": 4,
+      "block_label": "②",
       "english": "Studies comparing students who wrote by hand with those who typed found that the handwriters often did better on conceptual questions, even though the typists produced longer notes.",
       "translation": "손으로 쓴 학생들과 타자를 친 학생들을 비교한 연구들은, 타자를 친 학생들이 더 긴 필기를 만들어 냈음에도 손으로 쓴 학생들이 개념 문제에서 종종 더 좋은 성적을 냈다는 것을 발견했다.",
       "easy_explanation": "연구를 해 보니, 타자로 더 길게 적은 학생보다 손으로 쓴 학생이 개념 문제를 더 잘 풀 때가 많았대요.",
@@ -56,7 +129,8 @@
       ]
     },
     {
-      "no": "③",
+      "no": 5,
+      "block_label": "③",
       "english": "Typing tends to encourage word-for-word transcription, which lets information pass from the ears to the fingers without ever being processed.",
       "translation": "타자는 한 글자 한 글자 그대로 받아 적기를 부추기는 경향이 있으며, 이는 정보가 처리되는 과정 없이 귀에서 손가락으로 지나가게 만든다.",
       "easy_explanation": "타자를 치면 들리는 대로 받아쓰기 쉬워서, 생각 없이 귀에서 손가락으로 지나가 버려요.",
@@ -68,7 +142,8 @@
       ]
     },
     {
-      "no": "④",
+      "no": 6,
+      "block_label": "④",
       "english": "Modern laptops have longer battery lives and lighter bodies than they did a decade ago, making them easier to carry between classes.",
       "translation": "현대의 노트북은 10년 전보다 배터리 수명이 더 길고 본체도 더 가벼워서, 수업 사이에 들고 다니기가 더 쉽다.",
       "easy_explanation": "요즘 노트북은 배터리도 오래가고 가벼워서 들고 다니기 편하대요. 그런데 이건 '필기가 공부에 미치는 효과' 이야기와는 상관이 없어요.",
@@ -79,7 +154,8 @@
       ]
     },
     {
-      "no": "⑤",
+      "no": 7,
+      "block_label": "⑤",
       "english": "In other words, the limits of handwriting are not a flaw but a built-in filter that rewards understanding over copying.",
       "translation": "다시 말해, 손글씨의 한계는 결함이 아니라 베끼기보다 이해를 보상하는 내장된 거름망이다.",
       "easy_explanation": "그러니까 손으로 쓰는 게 느리다는 약점은, 사실 '이해한 것만 남기는 거름망'이에요.",

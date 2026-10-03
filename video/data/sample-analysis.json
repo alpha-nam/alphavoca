@@ -195,5 +195,76 @@
         "정답 예시: (A) slowness (B) select(또는 rephrase). 본문 어휘 인출 능력을 평가."
       ]
     ]
+  },
+  "blueprint": {
+    "text_type": {
+      "label": "역설 주장 → 이유·근거 → 대조 → 재진술 (무관한 문장 1개)",
+      "tip": "주제는 '필기 방식과 이해'. 이 소재에서 벗어나 기기 사양을 말하는 문장이 무관한 문장이다."
+    },
+    "signals": [
+      {
+        "word": "Because",
+        "no": 2
+      },
+      {
+        "word": "even though",
+        "no": 4
+      },
+      {
+        "word": "not A but B",
+        "no": 7
+      }
+    ],
+    "structure": [
+      {
+        "part": "서론",
+        "role": "역설 주장",
+        "range": [
+          1,
+          2
+        ],
+        "desc": "손필기는 느리지만 바로 그 때문에 효과가 있다"
+      },
+      {
+        "part": "본론",
+        "role": "이유·근거·대조",
+        "range": [
+          3,
+          5
+        ],
+        "desc": "능동적 사고 → 연구 근거 → 타이핑은 처리 없이 지나감"
+      },
+      {
+        "part": "결론",
+        "role": "재진술",
+        "range": [
+          6,
+          7
+        ],
+        "desc": "느림은 결함이 아니라 거름망 (6번은 흐름에서 이탈)"
+      }
+    ],
+    "key_sentences": [
+      {
+        "no": 1,
+        "label": "주제문",
+        "why": "느림이 효과의 이유라는 글 전체의 주장"
+      },
+      {
+        "no": 7,
+        "label": "재진술",
+        "why": "주제문을 '거름망'으로 바꿔 말한 결론"
+      }
+    ],
+    "tricky": [
+      {
+        "no": 2,
+        "reason": "Because절 뒤 be forced to decide ... and to put ... 병렬 구조"
+      },
+      {
+        "no": 5,
+        "reason": "which가 앞 절 전체를 받고, let이 '목적어 + 동사원형'을 취함"
+      }
+    ]
   }
 }

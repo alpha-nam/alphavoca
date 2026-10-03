@@ -20,18 +20,33 @@ await page.goto(pathToFileURL(resolve("data/skill-card2.html")).href, { waitUnti
 await page.addStyleTag({
   content: `@font-face{font-family:"NotoLocal";src:url("${fontUrl}");font-weight:100 900}
 :root{--font-body:"NotoLocal",system-ui,sans-serif;--font-display:"NotoLocal",system-ui,sans-serif}
-.bar{display:none!important}html,body{background:transparent!important}section.card{box-shadow:none!important}`,
+html,body{background:transparent!important}section.card{box-shadow:none!important}`,
 });
 await page.evaluate(() => document.fonts.ready);
 if (DARK) await page.evaluate(() => document.getElementById("t-dark").click());
 await page.waitForTimeout(500);
 
+// 툴바: 인쇄 / PDF 버튼이 보이도록 먼저 캡처한 뒤 숨긴다
+{
+  const bar = page.locator(".bar").first();
+  const bb = await bar.boundingBox();
+  if (bb && !DARK) {
+    const pad = 8;
+    await page.screenshot({ path: `${OUT}/toolbar.png`, fullPage: true, omitBackground: true,
+      clip: { x: Math.max(0, bb.x - pad), y: Math.max(0, bb.y - pad), width: bb.width + pad * 2, height: bb.height + pad * 2 } });
+    const btn = await page.locator("#t-print").boundingBox();
+    manifest.toolbar = { w: Math.round(bb.width + pad * 2), h: Math.round(bb.height + pad * 2),
+      mark: btn ? { x: (btn.x - (bb.x - pad)) / (bb.width + pad * 2), y: (btn.y - (bb.y - pad)) / (bb.height + pad * 2), w: btn.width / (bb.width + pad * 2), h: btn.height / (bb.height + pad * 2) } : undefined };
+  }
+  await page.addStyleTag({ content: ".bar{display:none!important}" });
+}
 const res = await page.evaluate(() => {
   const r = (el) => { const b = el.getBoundingClientRect(); return { x: b.left + scrollX, y: b.top + scrollY, w: b.width, h: b.height }; };
   const byH2 = (t) => [...document.querySelectorAll("section.card")].find((s) => s.querySelector("h2")?.textContent.includes(t));
   const sents = [...document.querySelectorAll("main > section.card")].filter((s) => s.querySelector(".sent"));
   const groups = {
     header: [document.querySelector(".head"), document.querySelector(".two"), document.querySelector("section.mini.wide")],
+    blueprint: [byH2("글의 설계도")],
     sketch: [byH2("개념 스케치")],
     vocab: [byH2("핵심 어휘")],
     logic: [byH2("논리 흐름")],
@@ -53,6 +68,10 @@ const res = await page.evaluate(() => {
   const s6 = sents[5];
   const note = s6 && [...s6.querySelectorAll(".field")].find((f) => f.querySelector(".label")?.textContent.includes("내용 해설"));
   if (note) marks.s6 = r(note);
+  const bp = document.querySelector(".bp-bar");
+  if (bp) marks.blueprint = r(bp);
+  const tag = sents[0] && sents[0].querySelector(".stag.key");
+  if (tag) marks.s1 = r(tag);
   const ok = document.querySelector(".opt.ok");
   if (ok) marks.answer = r(ok);
   return { boxes, marks };

@@ -7,12 +7,16 @@ import { PromoHook } from "./PromoHook";
 import { PromoScroll, SCROLL_FRAMES } from "./PromoScroll";
 import { PromoCta } from "./PromoCta";
 import { PromoRecap } from "./PromoRecap";
+import { PromoPrint } from "./PromoPrint";
+import { PromoWorksheet, WS_FRAMES } from "./PromoWorksheet";
 
 const TRANSITION = 10;
 const SEQ = [
   { C: PromoHook, frames: 170 },
   { C: PromoScroll, frames: SCROLL_FRAMES },
-  { C: PromoRecap, frames: 90 },
+  { C: PromoPrint, frames: 112 },
+  { C: PromoWorksheet, frames: WS_FRAMES },
+  { C: PromoRecap, frames: 92 },
   { C: PromoCta, frames: 80 },
 ];
 export const PROMO_TOTAL = SEQ.reduce((a, s) => a + s.frames, 0) - TRANSITION * (SEQ.length - 1);

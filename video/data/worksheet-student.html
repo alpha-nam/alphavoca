@@ -1,0 +1,410 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}
+img{max-width:100%}
+[hidden]:not([hidden=until-found i]){display:none!important}
+</style><style>
+:root{
+  --bg:#F2F6FD; --bg-glow:#D9E6FF; --sheet:#FFFFFF; --sheet-2:#F8FAFF;
+  --fg:#131A2B; --muted:#5F6B85; --line:#E1E8F5;
+  --accent:#1F6BFF; --accent-soft:#E6EFFF; --accent-ink:#0B4FCC;
+  --amber:#F59E0B; --amber-soft:#FFF5DC;
+  --teal:#0EA5A4; --teal-soft:#DFF6F5;
+  --rose:#E5484D; --rose-soft:#FFE9EA;
+  --green:#12A150; --green-soft:#DFF7E8;
+  --violet:#7C5CFC; --violet-soft:#EEE9FF;
+  --code-bg:#E6EFFF; --code-fg:#0B4FCC;
+  --shadow:0 1px 2px rgba(20,60,160,.06),0 8px 24px rgba(20,60,160,.07);
+  --font-display:"Plus Jakarta Sans","Noto Sans KR",system-ui,sans-serif;
+  --font-body:"Noto Sans KR","Plus Jakarta Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1222; --bg-glow:#14336E; --sheet:#131B33; --sheet-2:#19233F;
+  --fg:#EEF3FF; --muted:#9AA8C7; --line:#25325A;
+  --accent:#6FA2FF; --accent-soft:#182E5C; --accent-ink:#B8D0FF;
+  --amber:#FBBF24; --amber-soft:#3A2F14;
+  --teal:#2DD4BF; --teal-soft:#123A3A;
+  --rose:#FF7A80; --rose-soft:#3C1B22;
+  --green:#4ADE80; --green-soft:#16391F;
+  --violet:#A78BFA; --violet-soft:#2C2154;
+  --code-bg:#182E5C; --code-fg:#CFE0FF;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1222; --bg-glow:#14336E; --sheet:#131B33; --sheet-2:#19233F;
+  --fg:#EEF3FF; --muted:#9AA8C7; --line:#25325A;
+  --accent:#6FA2FF; --accent-soft:#182E5C; --accent-ink:#B8D0FF;
+  --amber:#FBBF24; --amber-soft:#3A2F14;
+  --teal:#2DD4BF; --teal-soft:#123A3A;
+  --rose:#FF7A80; --rose-soft:#3C1B22;
+  --green:#4ADE80; --green-soft:#16391F;
+  --violet:#A78BFA; --violet-soft:#2C2154;
+  --code-bg:#182E5C; --code-fg:#CFE0FF;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35);
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:14px;line-height:1.7;
+  background-image:radial-gradient(900px 420px at 15% -10%,var(--bg-glow),transparent 70%),radial-gradient(700px 380px at 100% 0%,var(--accent-soft),transparent 70%);
+  background-repeat:no-repeat;
+  word-break:keep-all;overflow-wrap:break-word;line-break:strict}
+.wrap{max-width:850px;margin-inline:auto;padding-inline:16px;padding-block:20px 32px;display:flex;flex-direction:column;gap:16px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.bar b{color:var(--fg);font-weight:700}
+.toggle{display:inline-flex;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.toggle button{font:inherit;font-weight:700;font-size:12.5px;border:0;background:none;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.toggle button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.head{display:flex;flex-direction:column;gap:12px;padding:28px 24px}
+.kicker{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.04em;color:var(--accent-ink);background:var(--accent-soft);padding:5px 12px;border-radius:999px}
+h1{font-family:var(--font-display);font-size:clamp(24px,5vw,32px);line-height:1.25;margin:0;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.intro{margin:0;color:var(--muted);max-width:62ch}
+
+.chip{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:14px}
+.ico{width:24px;height:24px;display:block}
+.c-accent{background:var(--accent-soft);color:var(--accent-ink)}
+.c-amber{background:var(--amber-soft);color:var(--amber)}
+.c-teal{background:var(--teal-soft);color:var(--teal)}
+.c-rose{background:var(--rose-soft);color:var(--rose)}
+.c-green{background:var(--green-soft);color:var(--green)}
+.c-violet{background:var(--violet-soft);color:var(--violet)}
+/* Icon chips render the bare Flat-style icon with no colored square/backdrop
+   behind it (no "chip"), per explicit user request — the color classes above
+   still supply background+color for non-icon uses (.pill tags, .no badges),
+   so this override (two classes beats one on specificity) strips just the
+   chip's own background/radius while leaving those other uses untouched. */
+.chip.c-accent,.chip.c-amber,.chip.c-teal,.chip.c-rose,.chip.c-green,.chip.c-violet{background:transparent;border-radius:0}
+.label{font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}
+.mini{display:flex;gap:14px;align-items:flex-start}
+.mini > div{min-width:0}
+.mini p{margin:4px 0 0;font-weight:700;font-size:15px;line-height:1.55}
+.mini.wide{width:100%}
+
+h2{font-family:var(--font-display);font-size:18px;margin:0 0 14px;font-weight:800;display:flex;gap:10px;align-items:center}
+code{font-family:var(--font-display);font-weight:700;font-size:.92em;background:var(--code-bg);color:var(--code-fg);padding:1px 7px;border-radius:6px}
+
+.sent{display:flex;flex-direction:column;gap:14px}
+.sent-top{display:flex;gap:14px;align-items:flex-start}
+.no{flex:none;width:28px;height:28px;padding:0;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:12.5px;margin-top:2px;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.15);box-shadow:0 2px 5px rgba(15,40,120,.28),inset 0 1px 1px rgba(255,255,255,.5),inset 0 -2px 3px rgba(0,0,0,.12)}
+.no.c-accent{background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 65%,white) 0%,var(--accent) 55%,color-mix(in srgb,var(--accent) 78%,black) 100%)}
+.no.c-amber{background:linear-gradient(155deg,color-mix(in srgb,var(--amber) 65%,white) 0%,var(--amber) 55%,color-mix(in srgb,var(--amber) 78%,black) 100%)}
+.no.c-teal{background:linear-gradient(155deg,color-mix(in srgb,var(--teal) 65%,white) 0%,var(--teal) 55%,color-mix(in srgb,var(--teal) 78%,black) 100%)}
+.choice-mark{display:inline-block;font-weight:800;color:var(--accent-ink);margin-right:2px}
+.en{font-family:var(--font-display);font-weight:500;font-size:16px;line-height:1.6;margin:0;min-width:0}
+.tr{margin:0;padding:12px 14px;background:var(--sheet-2);border:1px solid var(--line);border-radius:12px;font-weight:500}
+.given-en{font-weight:700;font-style:italic;margin:0 0 10px;font-size:16px;color:var(--fg)}
+.fields{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.field .chip{width:28px;height:28px;border-radius:8px;font-size:12px}
+.field ul{margin:0;padding-left:1.1em}
+.field p{margin:0}
+.field .label{display:inline-block;margin-bottom:2px}
+.field > div{min-width:0}
+.card.given{border-color:var(--amber)}
+
+.flow{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.pill{font-family:var(--font-display);font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.step p{margin:0;min-width:0}
+.flow-connector{display:flex;flex-direction:column;align-items:center;gap:2px;padding:2px 0}
+.flow-connector .arrow{color:var(--muted);font-size:14px;line-height:1}
+.flow-connector .lbl{font-size:11px;font-weight:700;color:var(--accent-ink);background:var(--accent-soft);padding:2px 10px;border-radius:999px}
+
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin-block:12px}
+.vs > div{border-radius:16px;padding:16px}
+.vs .a{background:var(--amber-soft)} .vs .b{background:var(--teal-soft)}
+.vs .label{color:inherit;margin-bottom:6px;display:inline-block}
+.vs .a .label{color:var(--amber)} .vs .b .label{color:var(--teal)}
+.vs p{margin:0;font-weight:500}
+.closing{margin:0;font-weight:800;color:var(--accent-ink)}
+.sub{margin:0 0 4px;color:var(--muted)}
+
+.ans{display:grid;gap:10px}
+.opt{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--sheet-2)}
+.opt.ok{background:var(--green-soft);border-color:transparent}
+.opt strong{display:block;font-weight:700}
+.opt span{color:var(--muted)}
+.opt.ok span{color:var(--fg)}
+
+.vocab{display:flex;flex-wrap:wrap;gap:10px}
+.word{padding:10px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line);min-width:0}
+.word b{font-family:var(--font-display);font-weight:800}
+.word i{font-style:normal;font-size:11px;color:var(--accent-ink);background:var(--accent-soft);border-radius:6px;padding:1px 6px;margin-left:6px;font-weight:700}
+.word div{color:var(--muted);font-size:13px}
+
+.sketch-title{font-weight:700;color:var(--fg);margin:0 0 10px;font-size:15px}
+.sketch-svg{display:flex;justify-content:center;margin:4px 0}
+.sketch-svg svg{width:100%;max-width:100%;height:auto;display:block}
+.sketch-caption{margin:10px 0 0;color:var(--muted);font-size:12.5px;text-align:center}
+
+.trace-list{display:grid;gap:10px}
+.trace-item{display:grid;gap:4px;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.trace-item .src{font-size:11px;color:var(--muted)}
+.trace-item p{margin:0}
+mark.a{background:var(--accent-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+mark.b{background:var(--amber-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+mark.c{background:var(--teal-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5px}
+
+.blank-marker{text-align:center;font-size:12.5px;font-weight:700;color:var(--muted);padding:4px 0}
+.blank-marker.target{color:var(--rose);border:2px dashed var(--rose);background:var(--rose-soft);border-radius:12px;padding:8px;margin:2px 0}
+
+.tip-list{display:grid;gap:10px}
+.tip-list .chip{width:28px;height:28px;border-radius:8px;font-size:12px}
+
+.vgroup{display:grid;gap:10px;margin-bottom:14px}
+.vgroup:last-child{margin-bottom:0}
+.vgroup-title{justify-self:start;width:fit-content;font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
+.vitem{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.vitem p.stem{margin:0;font-weight:600;font-style:italic}
+.vitem p.note{margin:4px 0 0;color:var(--muted);font-size:12.5px}
+
+.bp-type{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.bp-pill{font-family:var(--font-display);font-weight:800;font-size:15px;padding:7px 16px;border-radius:999px;background:var(--accent);color:var(--sheet)}
+.bp-tip{margin:0;flex:1 1 260px;color:var(--muted);min-width:0}
+.bp-sigs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.bp-sig-title{font-size:12px;font-weight:800;color:var(--muted);margin-right:2px}
+.bp-sig{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--sheet-2);border:1px solid var(--line)}
+.bp-sig b{font-family:var(--font-display);margin-right:5px;color:var(--accent-ink)}
+.bp-bar{display:flex;gap:8px;margin-top:16px;align-items:stretch}
+.bp-seg{border-radius:16px;padding:12px 14px;border:1.5px solid;min-width:0}
+.bp-seg.seg0{background:var(--accent-soft);border-color:var(--accent)}
+.bp-seg.seg1{background:var(--amber-soft);border-color:var(--amber)}
+.bp-seg.seg2{background:var(--teal-soft);border-color:var(--teal)}
+.bp-seg-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.bp-seg-top b{font-family:var(--font-display);font-size:16px;font-weight:800}
+.bp-seg .rng{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.bp-role{font-weight:700;font-size:13px;margin-top:2px}
+.bp-nums{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.bp-seg p{margin:0;font-size:12.5px;color:var(--fg);line-height:1.5}
+.bp-no{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-family:var(--font-display);font-weight:800;font-size:12.5px;background:var(--sheet);border:1.5px solid var(--line);color:var(--fg);font-style:normal;position:relative}
+.bp-no.key{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
+.bp-no.warn{border-color:var(--rose);color:var(--fg);background:var(--rose-soft)}
+.bp-no.key.warn{background:var(--accent);color:var(--sheet);box-shadow:0 0 0 2.5px var(--rose)}
+.bp-nums .bp-no.key::after{content:"★";position:absolute;top:-9px;right:-7px;font-size:12px;color:var(--amber)}
+.bp-nums .bp-no.warn::before{content:"!";position:absolute;bottom:-7px;right:-6px;width:14px;height:14px;border-radius:50%;background:var(--rose);color:var(--sheet);font-size:10px;line-height:14px;text-align:center}
+.bp-legend{display:flex;gap:16px;margin-top:10px;font-size:12px;color:var(--muted)}
+.bp-legend span{display:inline-flex;gap:6px;align-items:center}
+.bp-legend .bp-no{width:20px;height:20px;font-size:11px}
+.bp-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:16px}
+.bp-col{display:grid;gap:8px;align-content:start}
+.bp-col .label{justify-self:start;width:fit-content}
+.bp-item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.bp-item b{font-size:13px}
+.bp-item p{margin:2px 0 0;font-size:13px;color:var(--muted);line-height:1.55}
+.stags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-4px 0 0 42px}
+.stag{font-family:var(--font-display);font-weight:800;font-size:12px;padding:3px 11px;border-radius:999px}
+.stag.key{background:var(--accent);color:var(--sheet)}
+.stag.warn{background:var(--rose-soft);color:var(--fg);border:1.5px solid var(--rose)}
+.stag-note{font-size:12.5px;color:var(--muted)}
+.print-btn{font:inherit;font-weight:700;font-size:12.5px;border:1px solid var(--line);background:var(--sheet);color:var(--accent-ink);padding:6px 14px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow)}
+.print-btn:hover{background:var(--accent-soft)}
+</style><style>
+@media print{
+  :root{
+    --bg:#FFFFFF;--bg-glow:#FFFFFF;--sheet:#FFFFFF;--sheet-2:#F6F7FA;
+    --fg:#131A2B;--muted:#5F6B85;--line:#D9DEE8;
+    --accent:#1F6BFF;--accent-soft:#E6EFFF;--accent-ink:#0B4FCC;
+    --amber:#B45309;--amber-soft:#FFF5DC;
+    --teal:#0B7A79;--teal-soft:#DFF6F5;
+    --rose:#C3272C;--rose-soft:#FFE9EA;
+    --green:#0F7A3D;--green-soft:#DFF7E8;
+    --violet:#5B3FD6;--violet-soft:#EEE9FF;
+    --code-bg:#E6EFFF;--code-fg:#0B4FCC;
+    --shadow:none;color-scheme:light}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+  body{background:#fff!important;background-image:none!important}
+  .bar{display:none!important}
+  .wrap{max-width:100%;padding:0;gap:8px}
+  .card{box-shadow:none!important;padding:16px}
+  .card,.step,.field,.opt,.vitem,.trace-item,.word,.given-en,.blank-marker,.bp-seg,.bp-item{break-inside:avoid}
+  .card:has(.sent),.card.bp{break-inside:auto}
+  .sent-top{break-inside:avoid;break-after:avoid}
+  h1,h2{break-after:avoid}
+  .sketch-svg svg{max-height:92vh}
+}
+@page{size:A4;margin:8mm 8mm}
+</style><style>@font-face{font-family:NotoLocal;src:url("file:///home/user/alphavoca/video/public/fonts/NotoSansKR.ttf");font-weight:100 900}:root{--font-body:NotoLocal,sans-serif!important;--font-display:NotoLocal,sans-serif!important}body,.card{font-family:NotoLocal,sans-serif}@page{size:A4;margin:7mm 7mm}
+body{background:#fff;font-size:12px;line-height:1.55}
+.wrap{max-width:none;padding:0;gap:7px;display:block}
+.pg{display:flex;flex-direction:column;gap:7px;break-after:page;min-height:282mm}
+.pg:last-child{break-after:auto}
+.card{padding:11px 14px;border-radius:14px;box-shadow:none}
+.pg > .card.fill{flex:1}.pg:last-child .card{padding:8px 14px}.pg:last-child{gap:4px}.pg:last-child h2{margin-bottom:4px}.pg:first-child .card{padding:9px 14px}.pg:first-child{gap:5px}.pg:first-child h2{margin-bottom:5px}.row.s3 .ln{height:23px}
+.hd{display:flex;align-items:center;gap:12px;padding:10px 14px}
+.hd h1{font-size:19px;margin:0;letter-spacing:-.01em;white-space:nowrap}
+.hd .sp{flex:1}
+.hd .who{display:flex;gap:16px;align-items:flex-end;font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap;line-height:1.2}
+.hd .who span.f{display:inline-flex;align-items:flex-end;gap:6px}
+.hd .who u{display:inline-block;width:70px;border-bottom:1.5px solid var(--muted);text-decoration:none;height:1.2em}
+h2{font-size:15px;margin:0 0 7px;gap:8px}
+h2 .ico,.ico{width:22px;height:22px}
+h2 small{margin-left:auto;font-size:11px;font-weight:600;color:var(--muted)}
+.bl{display:inline-block;min-width:74px;border-bottom:1.6px solid var(--accent-ink);height:1.15em;vertical-align:-1px;margin:0 3px}
+.bl.s{min-width:40px}.bl.l{min-width:230px}.bl.m{min-width:150px}.bl.n{min-width:24px}
+.passage{font-size:12.5px;line-height:1.8;font-family:var(--font-display);font-weight:500}
+.passage sup{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800;vertical-align:2px;margin-right:3px}
+.row{display:flex;gap:8px;flex-wrap:nowrap;align-items:center;margin:0 0 7px}.row.s3 .hint{width:30px;flex:none}
+.row p{margin:0;white-space:nowrap}
+.starts{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 12px}
+.st{display:flex;align-items:center;white-space:nowrap;font-size:11.5px;font-family:var(--font-display);font-weight:500}
+.st sup{flex:none;display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800;margin-right:5px}
+.wrow{display:flex;align-items:flex-end;gap:6px;margin:0 0 5px;white-space:nowrap}
+.wrow .wn{font-size:12px}
+.chips{display:flex;gap:4px;flex:none}
+.chips .opt2{font-size:10.5px;padding:0 8px;gap:4px}
+.chips .opt2 i{width:10px;height:10px}.chips .opt2.hit i::after{left:2.5px;top:-0.5px;width:2.5px;height:5.5px}
+.opt2.hit{border-color:#c3272c;color:#c3272c;background:#ffe9ea}.opt2.hit i{background:#c3272c;border-color:#c3272c}
+.ln.wr{flex:1;min-width:0}
+.ln.wr .ans-t{font-size:11px;white-space:nowrap}
+.row sup.n{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800;flex:none}
+.opts{display:flex;gap:6px;flex-wrap:wrap}
+.opt2{display:inline-flex;gap:6px;align-items:center;border:1.5px solid var(--line);border-radius:999px;padding:1px 11px;font-weight:700;font-size:11.5px;background:var(--sheet-2)}
+.opt2 i{width:11px;height:11px;border:1.5px solid var(--accent-ink);border-radius:3px;background:#fff;display:inline-block;position:relative;flex:none}.opt2.hit i::after{content:"";position:absolute;left:2.5px;top:-0.5px;width:3px;height:6px;border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
+.bpbar{display:grid;grid-template-columns:2fr 3.2fr 1.5fr;gap:7px;margin:0}
+.seg{border:1.5px solid;border-radius:12px;padding:7px 10px;font-size:11.5px;line-height:1.7}
+.seg.s0{background:var(--accent-soft);border-color:var(--accent)}.seg.s1{background:var(--amber-soft);border-color:var(--amber)}.seg.s2{background:var(--teal-soft);border-color:var(--teal)}
+.seg h4{margin:0 0 2px;font-size:13px;font-family:var(--font-display);font-weight:800;display:flex;justify-content:space-between;white-space:nowrap}
+.seg h4 span{font-size:11px;font-weight:600;color:var(--muted)}
+.ln{border-bottom:1.2px solid var(--line);height:25px;display:flex;align-items:flex-end;padding-bottom:1px}
+.ln.f{flex:1;min-height:18px}
+.hint{font-size:11px;color:var(--muted);font-weight:600}
+.k{font-weight:800}
+.sv{display:grid;grid-template-columns:1fr 1fr 1.6fr;gap:12px;margin-top:2px}
+.sv div{border-bottom:1.2px solid var(--line);height:26px;display:flex;align-items:flex-end;padding-bottom:1px;font-size:11px;color:var(--muted);font-weight:700}
+.gc{display:grid;grid-template-columns:1fr;gap:6px}
+.gc sup{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800;vertical-align:2px;margin-right:4px}
+.gc>div{background:var(--sheet-2);border:1px solid var(--line);border-radius:12px;padding:4px 10px}
+.gc .r{display:flex;align-items:flex-end;padding-bottom:1px;font-size:11px;color:var(--muted);font-weight:600;border-bottom:1.2px solid var(--line);height:18px;margin-top:2px}
+.wb{display:flex;gap:8px;align-items:center;margin-bottom:5px}
+.wb b{background:var(--accent-soft);color:var(--accent-ink);border-radius:999px;padding:1px 11px;font-size:11.5px}
+.vg{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.vg div{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--line);padding:2px 0;height:28px}
+.vg div i{font-style:normal;font-size:10px;color:var(--accent-ink);background:var(--accent-soft);border-radius:6px;padding:0 5px;margin-left:5px;font-weight:700}
+.vg div span:last-child{width:48%}
+.sec .label{margin-bottom:3px}
+@media print{.card{padding:11px 14px!important}.wrap{gap:7px}}</style></head><body><main class="wrap"><div class="pg"><section class="card hd"><span class="kicker">05번 · 샘플 · 1/2</span><h1>Why Handwriting Helps You Learn</h1><span class="sp"></span><span class="who"><span class="f">이름<u></u></span><span class="f">번호<u></u></span></span></section>
+<section class="card"><h2><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29 13C29 18.5228 24.5228 23 19 23C13.4772 23 9 18.5228 9 13C9 7.47715 13.4772 3 19 3C24.5228 3 29 7.47715 29 13Z" fill="#00A6ED"/>
+<path d="M24.3481 7.73205C24.9004 8.68864 24.7665 9.79989 24.049 10.2141C23.3316 10.6283 22.3023 10.1886 21.75 9.23205C21.1977 8.27547 21.3316 7.16421 22.049 6.75C22.7665 6.33579 23.7958 6.77547 24.3481 7.73205Z" fill="white"/>
+<path d="M30 13C30 19.0751 25.0752 24 19 24C16.7048 24 14.5738 23.2971 12.8106 22.0947C13.0854 23.3086 12.7502 24.6327 11.8051 25.5779L8.62309 28.7599C7.15862 30.2243 4.78425 30.2243 3.31979 28.7599C1.85532 27.2954 1.85532 24.921 3.31979 23.4566L6.50177 20.2746C7.43928 19.3371 8.7497 18.9997 9.95558 19.2626C8.72259 17.4852 8.00003 15.327 8.00003 13C8.00003 6.92487 12.9249 2 19 2C25.0752 2 30 6.92487 30 13ZM28 13C28 8.02944 23.9706 4 19 4C14.0295 4 10 8.02944 10 13C10 17.9706 14.0295 22 19 22C23.9706 22 28 17.9706 28 13Z" fill="#533566"/>
+</svg>
+</span>준비 · 책 지문에 문장 번호 매기기</h2>
+<div class="starts"><span class="st"><sup>1</sup>Taking notes by hand…</span><span class="st"><sup>2</sup>Because you cannot write…</span><span class="st"><sup>3</sup>This quiet act of…</span><span class="st"><sup>4</sup>Studies comparing students who…</span><span class="st"><sup>5</sup>Typing tends to encourage…</span><span class="st"><sup>6</sup>Modern laptops have longer…</span><span class="st"><sup>7</sup>In other words, the…</span></div></section>
+<section class="card"><h2><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5 28C21.8513 28 27 22.8513 27 16.5C27 10.1487 21.8513 5 15.5 5C9.14873 5 4 10.1487 4 16.5C4 22.8513 9.14873 28 15.5 28Z" fill="#F4F4F4"/>
+<path d="M25.7663 7.73298C26.1431 7.9044 26.5609 8 27 8C28.65 8 30 6.65 30 5C30 3.35 28.65 2 27 2C25.35 2 24 3.35 24 5C24 5.43909 24.0956 5.85693 24.267 6.23373C21.9083 4.21752 18.8463 3 15.5 3C8.04416 3 2 9.04416 2 16.5C2 23.9558 8.04416 30 15.5 30C22.9558 30 29 23.9558 29 16.5C29 13.1537 27.7825 10.0917 25.7663 7.73298ZM25.39 4.99C25.39 4.1 26.11 3.38 27 3.38C27.88 3.38 28.61 4.1 28.61 4.99C28.61 5.88 27.89 6.6 27 6.6C26.11 6.6 25.39 5.88 25.39 4.99ZM26 16.5C26 22.299 21.299 27 15.5 27C9.70101 27 5 22.299 5 16.5C5 10.701 9.70101 6 15.5 6C21.299 6 26 10.701 26 16.5Z" fill="#F9C23C"/>
+<path d="M25.35 7.99994L23.99 6.63994L25.35 5.27994C25.72 4.90994 26.33 4.90994 26.71 5.27994C27.08 5.64994 27.08 6.25994 26.71 6.63994L25.35 7.99994Z" fill="#FFB02E"/>
+<path d="M13.2234 17.724L11.4099 20.21C11.2299 20.45 11.5299 20.75 11.7799 20.58L14.2735 18.7609L15.2099 24.7499C15.2599 25.0799 15.7399 25.0799 15.7899 24.7499L16.8663 17.8663L23.7499 16.7899C24.0799 16.7399 24.0799 16.2599 23.7499 16.2099L17.7609 15.2735L19.5799 12.78C19.7599 12.54 19.4599 12.24 19.2099 12.41L16.724 14.2234L15.7899 8.24994C15.7399 7.91994 15.2599 7.91994 15.2099 8.24994L14.1336 15.1336L7.24994 16.2099C6.91994 16.2599 6.91994 16.7399 7.24994 16.7899L13.2234 17.724Z" fill="#9B9B9B"/>
+<path d="M17.3382 15L20.9393 21.3271C21.1631 21.7255 20.7252 22.1629 20.3261 21.9394L14 18.3336L17.3382 15Z" fill="#9B9B9B"/>
+<path d="M13.6756 18L10.0605 11.672C9.83756 11.2741 10.2737 10.8373 10.6711 11.0606L17 14.671L13.6756 18Z" fill="#E5336D"/>
+<path d="M15.5 19C16.8807 19 18 17.8807 18 16.5C18 15.1193 16.8807 14 15.5 14C14.1193 14 13 15.1193 13 16.5C13 17.8807 14.1193 19 15.5 19Z" fill="#D3D3D3"/>
+</svg>
+</span>STEP 1 · 글의 유형과 단서</h2>
+<div class="row"><span class="label">유형</span><div class="opts"><span class="opt2 "><i></i>역설 주장 → 이유 → 재진술</span><span class="opt2 "><i></i>통념 → 반박 → 사례</span><span class="opt2 "><i></i>문제 → 해결</span><span class="opt2 "><i></i>원인 → 결과</span></div></div>
+<div class="row"><span class="label">단서</span><p>글의 주제를 밝히는 <b class="k">첫 주장 문장</b> 번호 <span class="bl s"></span>번</p></div></section>
+<section class="card"><h2><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 27.6667V4.12132C2 2.94975 2.94975 2 4.12132 2C4.68393 2 5.2235 2.2235 5.62132 2.62132L29.3787 26.3787C29.7765 26.7765 30 27.3161 30 27.8787C30 29.0503 29.0503 30 27.8787 30H4.33333C3.04467 30 2 28.9553 2 27.6667ZM9 24H16.2618C16.9032 24 17.2245 23.2245 16.7709 22.7709L9.22912 15.2291C8.77554 14.7755 8 15.0968 8 15.7382V23C8 23.5523 8.44772 24 9 24Z" fill="#BEBEBE"/>
+<path d="M28.3906 25.3906L29.1094 26.1095L27.3594 27.8595C27.1609 28.058 26.8391 28.058 26.6406 27.8595C26.4421 27.661 26.4421 27.3391 26.6406 27.1406L28.3906 25.3906Z" fill="#8D65C5"/>
+<path d="M22.8906 19.8906L23.6094 20.6095L21.8594 22.3595C21.6609 22.558 21.3391 22.558 21.1406 22.3595C20.9421 22.161 20.9421 21.8391 21.1406 21.6406L22.8906 19.8906Z" fill="#8D65C5"/>
+<path d="M17.3906 14.3906L18.1094 15.1095L16.3594 16.8595C16.1609 17.058 15.8391 17.058 15.6406 16.8595C15.4421 16.661 15.4421 16.3391 15.6406 16.1406L17.3906 14.3906Z" fill="#8D65C5"/>
+<path d="M11.8906 8.89062L12.6094 9.60947L10.8594 11.3595C10.6609 11.558 10.3391 11.558 10.1406 11.3595C9.94207 11.161 9.94207 10.8391 10.1406 10.6406L11.8906 8.89062Z" fill="#8D65C5"/>
+<path d="M7.10942 4.10947L5.35942 5.85947C5.16092 6.05797 4.83908 6.05797 4.64058 5.85947C4.44207 5.66097 4.44207 5.33913 4.64058 5.14062L6.39058 3.39062L7.10942 4.10947Z" fill="#8D65C5"/>
+<path d="M9.35942 7.35947C9.55793 7.16097 9.55793 6.83913 9.35942 6.64062C9.16092 6.44212 8.83908 6.44212 8.64058 6.64062L7.64058 7.64062C7.44207 7.83913 7.44207 8.16097 7.64058 8.35947C7.83908 8.55797 8.16092 8.55797 8.35942 8.35947L9.35942 7.35947Z" fill="#8D65C5"/>
+<path d="M14.8594 12.8595C15.0579 12.661 15.0579 12.3391 14.8594 12.1406C14.6609 11.9421 14.3391 11.9421 14.1406 12.1406L13.1406 13.1406C12.9421 13.3391 12.9421 13.661 13.1406 13.8595C13.3391 14.058 13.6609 14.058 13.8594 13.8595L14.8594 12.8595Z" fill="#8D65C5"/>
+<path d="M20.3594 18.3595C20.5579 18.161 20.5579 17.8391 20.3594 17.6406C20.1609 17.4421 19.8391 17.4421 19.6406 17.6406L18.6406 18.6406C18.4421 18.8391 18.4421 19.161 18.6406 19.3595C18.8391 19.558 19.1609 19.558 19.3594 19.3595L20.3594 18.3595Z" fill="#8D65C5"/>
+<path d="M25.8594 23.8595C26.0579 23.661 26.0579 23.3391 25.8594 23.1406C25.6609 22.9421 25.3391 22.9421 25.1406 23.1406L24.1406 24.1406C23.9421 24.3391 23.9421 24.661 24.1406 24.8595C24.3391 25.058 24.6609 25.058 24.8594 24.8595L25.8594 23.8595Z" fill="#8D65C5"/>
+</svg>
+</span>STEP 2 · 글의 설계도 완성<small>번호는 위 준비 활동 기준</small></h2>
+<div class="bpbar">
+<div class="seg s0"><h4>서론<span><span class="bl n"></span>~<span class="bl n"></span>번</span></h4>손필기는 <span class="bl s"></span> 때문에 효과가 있다</div>
+<div class="seg s1"><h4>본론<span><span class="bl n"></span>~<span class="bl n"></span>번</span></h4><span class="bl s"></span> 사고 → 연구 근거 → 타이핑은 <span class="bl s"></span> 없이 지나감</div>
+<div class="seg s2"><h4>결론<span><span class="bl n"></span>번</span></h4>느림은 결함이 아닌 <span class="bl s"></span></div></div></section>
+<section class="card"><h2><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.93 29.92C15.37 29.92 14.92 29.47 14.92 28.91V15.94H16.95V28.9C16.94 29.47 16.49 29.92 15.93 29.92Z" fill="#D3D3D3"/>
+<path d="M15.93 17.86C20.3096 17.86 23.86 14.3096 23.86 9.93C23.86 5.55038 20.3096 2 15.93 2C11.5504 2 8 5.55038 8 9.93C8 14.3096 11.5504 17.86 15.93 17.86Z" fill="#F70A8D"/>
+<path d="M16.5 5.41001C15.46 6.45001 15.41 8.07001 16.38 9.04001C17.35 10.01 18.98 9.96001 20.01 8.92001C21.05 7.88001 21.1 6.26001 20.13 5.29001C19.16 4.32001 17.53 4.37001 16.5 5.41001Z" fill="white"/>
+</svg>
+</span>STEP 3 · 핵심 문장 찾기와 손해석<small>책의 지문에 밑줄 긋기</small></h2>
+<div class="row"><span class="label">주제문</span><p><span class="bl n"></span>번   <span class="hint">밑줄 그은 주제문을 옮겨 쓰고 해석한 뒤, 재진술문 번호와 문장을 쓰세요.</span></p></div>
+<div class="row s3"><span class="hint">영문</span><div class="ln" style="flex:1"></div></div>
+<div class="row s3"><span class="hint">해석</span><div class="ln" style="flex:1"></div></div>
+<div class="row" style="margin-top:4px"><span class="label">재진술문</span><p><span class="bl n"></span>번</p><div class="ln" style="flex:1;height:23px"></div></div></section>
+<section class="card"><h2><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 6C2 3.79086 3.79086 2 6 2H26C28.2091 2 30 3.79086 30 6V26C30 28.2091 28.2091 30 26 30H6C3.79086 30 2 28.2091 2 26V6Z" fill="#00A6ED"/>
+<path d="M6.16724 16.6934C5.79468 16.3062 5.79468 15.6938 6.16724 15.3067L11.2795 9.99388C11.9036 9.34521 13 9.78704 13 10.6873L13 13.75C13 13.8881 13.112 14 13.25 14L18.75 14C18.8881 14 19 13.8881 19 13.75L19 10.6873C19 9.78704 20.0964 9.34521 20.7206 9.99388L25.8328 15.3067C26.2054 15.6938 26.2054 16.3062 25.8328 16.6934L20.7206 22.0062C20.0964 22.6549 19 22.213 19 21.3128V18.25C19 18.112 18.8881 18 18.75 18H13.25C13.112 18 13 18.112 13 18.25L13 21.3128C13 22.213 11.9036 22.6549 11.2795 22.0062L6.16724 16.6934Z" fill="white"/>
+</svg>
+</span>STEP 4 · 연결어와 지칭 단서<small>책의 지문에서 찾아 쓰기</small></h2>
+<div class="row"><sup class="n">2</sup><p>이유를 이끄는 접속사: <span class="bl "></span></p></div>
+<div class="row"><sup class="n">3</sup><p><b class="k">This quiet act</b>가 가리키는 앞 내용: <span class="bl l"></span></p></div>
+<div class="row"><sup class="n">4</sup><p>양보를 나타내는 표현: <span class="bl "></span>   더 긴 필기를 쓴 쪽: <span class="bl m"></span></p></div>
+<div class="row"><sup class="n">7</sup><p>앞 내용을 다시 정리하는 표지: <span class="bl m"></span></p></div></section>
+<section class="card fill" style="display:flex;flex-direction:column"><h2><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.9125 29.37L2.6525 10.11C1.7825 9.23997 1.7825 7.83997 2.6525 6.97997L6.9625 2.67997C7.73082 1.91164 8.9125 1.82185 9.77055 2.41058L9.6602 3.16424L10.4643 3.05179L12.1359 4.72332V5.41499H12.8275L14.574 7.16146L14.4615 7.97711L15.2599 7.84737L16.9487 9.5362L16.8219 10.3374L17.6058 10.1933L19.358 11.9455L19.2398 12.7554L20.0324 12.6199L21.6924 14.2799L21.6117 15.0235L22.3553 14.9428L24.1306 16.718L24.0585 17.4703L24.8107 17.3982L26.488 19.0755L26.4015 19.8133L27.1393 19.7268L28.9723 21.5597V22.238H29.6002C30.2018 23.1043 30.1159 24.2955 29.3425 25.06L25.0425 29.36C24.1825 30.23 22.7725 30.23 21.9125 29.37Z" fill="#BEBEBE"/>
+<path d="M28.9291 21.5165L29.3426 21.9301C29.443 22.0305 29.5318 22.1379 29.609 22.2508L27.7062 24.1536C27.5109 24.3489 27.1943 24.3489 26.9991 24.1536C26.8038 23.9584 26.8038 23.6418 26.9991 23.4465L28.9291 21.5165Z" fill="#8D65C5"/>
+<path d="M26.4494 19.0368L27.1566 19.744L25.9819 20.9578C25.7899 21.1562 25.4734 21.1614 25.2749 20.9694C25.0765 20.7773 25.0713 20.4608 25.2633 20.2624L26.4494 19.0368Z" fill="#8D65C5"/>
+<path d="M24.1091 16.6965L24.8162 17.4036L22.8862 19.3336C22.6909 19.5289 22.3743 19.5289 22.1791 19.3336C21.9838 19.1384 21.9838 18.8218 22.1791 18.6265L24.1091 16.6965Z" fill="#8D65C5"/>
+<path d="M21.6694 14.2568L22.3766 14.964L21.2019 16.1778C21.0099 16.3762 20.6934 16.3814 20.4949 16.1894C20.2965 15.9973 20.2913 15.6808 20.4833 15.4824L21.6694 14.2568Z" fill="#8D65C5"/>
+<path d="M19.3291 11.9165L20.0362 12.6236L18.1062 14.5536C17.9109 14.7489 17.5943 14.7489 17.3991 14.5536C17.2038 14.3584 17.2038 14.0418 17.3991 13.8465L19.3291 11.9165Z" fill="#8D65C5"/>
+<path d="M16.9092 9.49667L17.6164 10.2038L16.4291 11.4107C16.2354 11.6076 15.9188 11.6102 15.722 11.4165C15.5251 11.2229 15.5225 10.9063 15.7162 10.7094L16.9092 9.49667Z" fill="#8D65C5"/>
+<path d="M14.5591 7.14652L15.2662 7.85363L13.3362 9.78362C13.1409 9.97889 12.8243 9.97889 12.6291 9.78362C12.4338 9.58836 12.4338 9.27178 12.6291 9.07652L14.5591 7.14652Z" fill="#8D65C5"/>
+<path d="M12.1293 4.71674L12.8365 5.4239L11.6605 6.62923C11.4677 6.82689 11.1511 6.8308 10.9535 6.63796C10.7558 6.44512 10.7519 6.12857 10.9447 5.93091L12.1293 4.71674Z" fill="#8D65C5"/>
+<path d="M10.4862 3.07363L8.55619 5.00362C8.36093 5.19888 8.04435 5.19888 7.84908 5.00362C7.65382 4.80836 7.65382 4.49178 7.84908 4.29652L9.74936 2.39624C9.87074 2.47744 9.98584 2.57205 10.0926 2.68007L10.4862 3.07363Z" fill="#8D65C5"/>
+</svg>
+</span>STEP 5 · 무관한 문장 찾기<small>주제: 필기 방식과 이해 · ✓ 체크</small></h2>
+<div class="row"><sup class="n">3</sup><p>① This quiet act of…</p><span style="flex:1"></span><span class="opt2 "><i></i>흐름에 맞음</span> <span class="opt2 "><i></i>무관</span></div><div class="row"><sup class="n">4</sup><p>② Studies comparing…</p><span style="flex:1"></span><span class="opt2 "><i></i>흐름에 맞음</span> <span class="opt2 "><i></i>무관</span></div><div class="row"><sup class="n">5</sup><p>③ Typing tends to…</p><span style="flex:1"></span><span class="opt2 "><i></i>흐름에 맞음</span> <span class="opt2 "><i></i>무관</span></div><div class="row"><sup class="n">6</sup><p>④ Modern laptops have…</p><span style="flex:1"></span><span class="opt2 "><i></i>흐름에 맞음</span> <span class="opt2 "><i></i>무관</span></div><div class="row"><sup class="n">7</sup><p>⑤ In other words…</p><span style="flex:1"></span><span class="opt2 "><i></i>흐름에 맞음</span> <span class="opt2 "><i></i>무관</span></div>
+<div class="row" style="margin-top:2px"><span class="label">무관한 문장</span><p><span class="bl n"></span>번 (책의 <span class="bl n"></span>번 선택지)</p></div></section></div><div class="pg"><section class="card hd"><span class="kicker">05번 · 샘플 · 2/2</span><h1>Why Handwriting Helps You Learn</h1><span class="sp"></span><span class="who"><span class="f">이름<u></u></span><span class="f">번호<u></u></span></span></section>
+<section class="card"><h2><span class="chip c-teal"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.8472 3.83391C12.9336 2.79732 13.8001 2 14.8403 2H17.1597C18.1999 2 19.0664 2.79732 19.1528 3.83391L19.3882 6.6587C19.422 7.06373 19.8992 7.2614 20.2095 6.99887L22.3734 5.16789C23.1674 4.49599 24.3439 4.54493 25.0795 5.28045L26.7196 6.92056C27.4551 7.65608 27.504 8.8326 26.8321 9.62666L25.0012 11.7905C24.7386 12.1008 24.9363 12.578 25.3413 12.6118L28.1661 12.8472C29.2027 12.9336 30 13.8001 30 14.8403V17.1597C30 18.1999 29.2027 19.0664 28.1661 19.1528L25.3413 19.3882C24.9363 19.422 24.7386 19.8992 25.0012 20.2095L26.8321 22.3733C27.504 23.1674 27.4551 24.3439 26.7196 25.0794L25.0795 26.7196C24.3439 27.4551 23.1674 27.504 22.3734 26.8321L20.2095 25.0011C19.8992 24.7386 19.422 24.9363 19.3882 25.3413L19.1528 28.1661C19.0664 29.2027 18.1999 30 17.1597 30H14.8403C13.8001 30 12.9336 29.2027 12.8472 28.1661L12.6118 25.3413C12.578 24.9363 12.1008 24.7386 11.7905 25.0012L9.62666 26.8321C8.8326 27.504 7.65608 27.4551 6.92056 26.7196L5.28045 25.0795C4.54493 24.3439 4.496 23.1674 5.16789 22.3734L6.99888 20.2095C7.26141 19.8992 7.06373 19.422 6.65871 19.3882L3.83391 19.1528C2.79732 19.0664 2 18.1999 2 17.1597V14.8403C2 13.8001 2.79732 12.9336 3.83391 12.8472L6.65871 12.6118C7.06373 12.578 7.2614 12.1008 6.99888 11.7905L5.16789 9.62664C4.496 8.83258 4.54493 7.65606 5.28045 6.92054L6.92056 5.28043C7.65608 4.54491 8.8326 4.49597 9.62666 5.16787L11.7905 6.99884C12.1008 7.26137 12.578 7.06369 12.6118 6.65867L12.8472 3.83391ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#B4ACBC"/>
+<path d="M24 16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16C8 11.5817 11.5817 8 16 8C20.4183 8 24 11.5817 24 16ZM20.5 16C20.5 13.5147 18.4853 11.5 16 11.5C13.5147 11.5 11.5 13.5147 11.5 16C11.5 18.4853 13.5147 20.5 16 20.5C18.4853 20.5 20.5 18.4853 20.5 16Z" fill="#998EA4"/>
+<path d="M10.5 16C10.5 12.9624 12.9624 10.5 16 10.5C19.0376 10.5 21.5 12.9624 21.5 16C21.5 19.0376 19.0376 21.5 16 21.5C12.9624 21.5 10.5 19.0376 10.5 16ZM21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21C18.7614 21 21 18.7614 21 16Z" fill="#CDC4D6"/>
+</svg>
+</span>STEP 6 · 수능 필수 Grammar Check<small>번호 = 책 지문의 문장 번호(첫 문장이 1번)</small></h2>
+<div class="gc"><div><sup>2</sup>…you are forced ( to decide / deciding ) which ideas matter…<span class="r">이유:</span></div><div><sup>4</sup>…the handwriters often did ( good / better ) on conceptual questions…<span class="r">이유:</span></div><div><sup>5</sup>…which lets information ( pass / to pass ) from the ears to the fingers…<span class="r">이유:</span></div><div><sup>6</sup>…making them ( easier / easily ) to carry between classes.<span class="r">이유:</span></div><div><sup>7</sup>…are not a flaw ( but / and ) a built-in filter…<span class="r">이유:</span></div></div></section>
+<section class="card"><h2><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.9125 29.37L2.6525 10.11C1.7825 9.23997 1.7825 7.83997 2.6525 6.97997L6.9625 2.67997C7.73082 1.91164 8.9125 1.82185 9.77055 2.41058L9.6602 3.16424L10.4643 3.05179L12.1359 4.72332V5.41499H12.8275L14.574 7.16146L14.4615 7.97711L15.2599 7.84737L16.9487 9.5362L16.8219 10.3374L17.6058 10.1933L19.358 11.9455L19.2398 12.7554L20.0324 12.6199L21.6924 14.2799L21.6117 15.0235L22.3553 14.9428L24.1306 16.718L24.0585 17.4703L24.8107 17.3982L26.488 19.0755L26.4015 19.8133L27.1393 19.7268L28.9723 21.5597V22.238H29.6002C30.2018 23.1043 30.1159 24.2955 29.3425 25.06L25.0425 29.36C24.1825 30.23 22.7725 30.23 21.9125 29.37Z" fill="#BEBEBE"/>
+<path d="M28.9291 21.5165L29.3426 21.9301C29.443 22.0305 29.5318 22.1379 29.609 22.2508L27.7062 24.1536C27.5109 24.3489 27.1943 24.3489 26.9991 24.1536C26.8038 23.9584 26.8038 23.6418 26.9991 23.4465L28.9291 21.5165Z" fill="#8D65C5"/>
+<path d="M26.4494 19.0368L27.1566 19.744L25.9819 20.9578C25.7899 21.1562 25.4734 21.1614 25.2749 20.9694C25.0765 20.7773 25.0713 20.4608 25.2633 20.2624L26.4494 19.0368Z" fill="#8D65C5"/>
+<path d="M24.1091 16.6965L24.8162 17.4036L22.8862 19.3336C22.6909 19.5289 22.3743 19.5289 22.1791 19.3336C21.9838 19.1384 21.9838 18.8218 22.1791 18.6265L24.1091 16.6965Z" fill="#8D65C5"/>
+<path d="M21.6694 14.2568L22.3766 14.964L21.2019 16.1778C21.0099 16.3762 20.6934 16.3814 20.4949 16.1894C20.2965 15.9973 20.2913 15.6808 20.4833 15.4824L21.6694 14.2568Z" fill="#8D65C5"/>
+<path d="M19.3291 11.9165L20.0362 12.6236L18.1062 14.5536C17.9109 14.7489 17.5943 14.7489 17.3991 14.5536C17.2038 14.3584 17.2038 14.0418 17.3991 13.8465L19.3291 11.9165Z" fill="#8D65C5"/>
+<path d="M16.9092 9.49667L17.6164 10.2038L16.4291 11.4107C16.2354 11.6076 15.9188 11.6102 15.722 11.4165C15.5251 11.2229 15.5225 10.9063 15.7162 10.7094L16.9092 9.49667Z" fill="#8D65C5"/>
+<path d="M14.5591 7.14652L15.2662 7.85363L13.3362 9.78362C13.1409 9.97889 12.8243 9.97889 12.6291 9.78362C12.4338 9.58836 12.4338 9.27178 12.6291 9.07652L14.5591 7.14652Z" fill="#8D65C5"/>
+<path d="M12.1293 4.71674L12.8365 5.4239L11.6605 6.62923C11.4677 6.82689 11.1511 6.8308 10.9535 6.63796C10.7558 6.44512 10.7519 6.12857 10.9447 5.93091L12.1293 4.71674Z" fill="#8D65C5"/>
+<path d="M10.4862 3.07363L8.55619 5.00362C8.36093 5.19888 8.04435 5.19888 7.84908 5.00362C7.65382 4.80836 7.65382 4.49178 7.84908 4.29652L9.74936 2.39624C9.87074 2.47744 9.98584 2.57205 10.0926 2.68007L10.4862 3.07363Z" fill="#8D65C5"/>
+</svg>
+</span>STEP 7 · 무관한 이유 쓰기<small>책의 선택지 ①~⑤를 보고 쓰기</small></h2>
+<div class="row"><span class="label">정답</span><p><span class="bl n"></span>번   앞뒤 문장과 어긋나는 문장 번호: <span class="bl n"></span>번</p></div>
+<div class="row" style="margin-bottom:3px"><span class="label">이유 유형</span><div class="chips"><span class="opt2 "><i></i>소재만 같음</span><span class="opt2 "><i></i>논점 이탈</span><span class="opt2 "><i></i>정반대</span><span class="opt2 "><i></i>일부만</span></div></div>
+<div class="row s3"><span class="hint">이유</span><div class="ln" style="flex:1"></div></div></section>
+<section class="card"><h2><span class="chip c-violet"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5194 7.0517C10.2265 6.93064 9.99626 6.69861 9.88117 6.41614L8.929 4.25725C8.75112 3.91425 8.23842 3.91425 8.071 4.25725L7.11883 6.41614C6.99327 6.69861 6.76308 6.92055 6.48057 7.0517L5.26682 7.57629C4.91106 7.74779 4.91106 8.24212 5.26682 8.41362L6.48057 8.93821C6.77354 9.05927 7.00374 9.2913 7.11883 9.57377L8.071 11.7427C8.24888 12.0858 8.76158 12.0858 8.929 11.7427L9.88117 9.57377C10.0067 9.2913 10.2369 9.06936 10.5194 8.93821L11.7332 8.41362C12.0889 8.24212 12.0889 7.74779 11.7332 7.57629L10.5194 7.0517Z" fill="#F9C23C"/>
+<path d="M25.5744 13.5546C24.7045 13.1673 24.0166 12.4539 23.6525 11.5775L20.7897 4.81023C20.2637 3.72992 18.7363 3.72992 18.2103 4.81023L15.3475 11.5775C14.9733 12.4539 14.2854 13.1673 13.4256 13.5546L9.80419 15.1955C8.73194 15.7254 8.73194 17.2746 9.80419 17.8045L13.4256 19.4454C14.2955 19.8327 14.9834 20.5461 15.3475 21.4225L18.2103 28.1898C18.7363 29.2701 20.2637 29.2701 20.7897 28.1898L23.6525 21.4225C24.0267 20.5461 24.7146 19.8327 25.5744 19.4454L29.1958 17.8045C30.2681 17.2746 30.2681 15.7254 29.1958 15.1955L25.5744 13.5546Z" fill="#F9C23C"/>
+<path d="M8.2811 20.3304C8.44173 20.7222 8.73465 21.0258 9.10315 21.2021L10.6528 21.927C11.1157 22.1621 11.1157 22.8379 10.6528 23.073L9.10315 23.7979C8.73465 23.9742 8.44173 24.2876 8.2811 24.6696L7.05276 27.6474C6.82598 28.1175 6.17402 28.1175 5.94724 27.6474L4.7189 24.6696C4.55827 24.2778 4.26535 23.9742 3.89685 23.7979L2.34724 23.073C1.88425 22.8379 1.88425 22.1621 2.34724 21.927L3.89685 21.2021C4.26535 21.0258 4.55827 20.7124 4.7189 20.3304L5.94724 17.3526C6.17402 16.8825 6.82598 16.8825 7.05276 17.3526L8.2811 20.3304Z" fill="#F9C23C"/>
+</svg>
+</span>STEP 8 · 한 줄 요약</h2>
+<div class="wb"><span class="label">보기</span><b>고르게</b><b>느림</b><b>그대로</b><b>이해</b></div>
+<p style="margin:0;line-height:2">손필기는 <span class="bl s"></span> 때문에 핵심을 <span class="bl s"></span> 만들어 <span class="bl s"></span>를 깊게 하지만, 타이핑은 <span class="bl s"></span> 받아쓰기를 부추긴다.</p></section>
+<section class="card"><h2><span class="chip c-accent"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 8.05051C16.6353 7.40223 17.5207 7 18.5 7H26.5C27.2428 7 27.8892 7.40449 28.234 8.00326C28.3036 8.12402 28.3296 8.26363 28.3296 8.40297V10.6972L29 25.5C29 26.8807 27.8807 28 26.5 28H5.5C4.11929 28 3 26.8807 3 25.5L3.67038 10.6972V8.40298C3.67038 8.26363 3.69643 8.12402 3.76597 8.00327C4.11082 7.40451 4.75724 7 5.5 7H13.5C14.4793 7 15.3647 7.40223 16 8.05051Z" fill="#B4ACBC"/>
+<path d="M17.7324 30H28.4989C29.3295 30 30 29.3221 30 28.4948V27.4414C30 26.614 29.3295 25 28.4989 25H3.50107C2.67048 25 2 26.614 2 27.4414V28.5047C2 29.3321 2.67048 30 3.50107 30H14.2676C14.6134 30.5978 15.2597 31 16 31C16.7403 31 17.3866 30.5978 17.7324 30Z" fill="#0074BA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.50107 10H14V11H18V10H28.4989C29.3295 10 30 10.6679 30 11.4953V27.4948C30 28.3221 29.3295 29 28.4989 29H17.7324C17.3866 29.5978 16.7403 30 16 30C15.2597 30 14.6134 29.5978 14.2676 29H3.50107C2.67048 29 2 28.3321 2 27.5047V11.4953C2 10.6679 2.67048 10 3.50107 10ZM17.5 27.5C17.5 28.3284 16.8284 29 16 29C15.1716 29 14.5 28.3284 14.5 27.5C14.5 26.6716 15.1716 26 16 26C16.8284 26 17.5 26.6716 17.5 27.5Z" fill="#00A6ED"/>
+<path d="M13 8H5.80278C5.30125 8 4.8329 8.25065 4.5547 8.66795L3 11V25.5C3 26.3284 3.67157 27 4.5 27H27.5C28.3284 27 29 26.3284 29 25.5V11L27.4453 8.66795C27.1671 8.25065 26.6988 8 26.1972 8H19V11H13V8Z" fill="#B4ACBC"/>
+<path d="M5.5 8H13.5C14.8807 8 16 9.11929 16 10.5V27L15.5528 26.1056C15.214 25.428 14.5215 25 13.7639 25H5.5C4.94772 25 4.5 24.5523 4.5 24V9C4.5 8.44772 4.94772 8 5.5 8Z" fill="#F3EEF8"/>
+<path d="M18.5 8H26.5C27.0523 8 27.5 8.44772 27.5 9V24C27.5 24.5523 27.0523 25 26.5 25H18.2361C17.516 25 16.8546 25.3867 16.5 26.007V8.99976C16.9561 8.39267 17.6822 8 18.5 8Z" fill="#F3EEF8"/>
+</svg>
+</span>Vocabulary Check</h2><div class="vg"><div><span><b>1. conceptual</b><i>adj.</i></span><span class="bl" style="min-width:0;margin:0;width:48%"></span></div><div><span><b>2. transcription</b><i>n.</i></span><span class="bl" style="min-width:0;margin:0;width:48%"></span></div><div><span><b>3. rephrase</b><i>v.</i></span><span class="bl" style="min-width:0;margin:0;width:48%"></span></div><div><span><b>4. passive</b><i>adj.</i></span><span class="bl" style="min-width:0;margin:0;width:48%"></span></div><div><span><b>5. filter</b><i>n.</i></span><span class="bl" style="min-width:0;margin:0;width:48%"></span></div><div><span><b>6. lecturer</b><i>n.</i></span><span class="bl" style="min-width:0;margin:0;width:48%"></span></div></div></section>
+<section class="card fill" style="display:flex;flex-direction:column"><h2><span class="chip c-rose"><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5103 2.01H8.60027V2H4.45026V5H6.95026V27.07C6.95026 28.69 8.27026 30.01 9.89026 30.01H25.5603C26.3303 30.01 26.9503 29.39 26.9503 28.62V5.45C26.9503 3.55 25.4103 2.01 23.5103 2.01Z" fill="#FFDEA7"/>
+<path d="M10.8603 29.99C10.8603 29.99 13.1003 29.66 13.5903 27.49C13.6603 27.19 14.0003 26.97 14.4003 26.97H29.1303C29.6503 26.97 30.0403 27.33 29.9503 27.71C29.7203 28.6 29.3503 30 25.5803 30C20.0103 30 10.8603 29.99 10.8603 29.99Z" fill="#E19747"/>
+<path d="M6.95026 5C6.95026 3.34 5.83027 2 4.45026 2C3.26026 2 2.27028 3 2.01028 4.33C1.95028 4.67 2.16026 5 2.45026 5H6.95026Z" fill="#D3883E"/>
+<path d="M10.4203 11.87C10.1441 11.87 9.92029 12.0939 9.92029 12.37C9.92029 12.6461 10.1441 12.87 10.4203 12.87H23.5003C23.7764 12.87 24.0003 12.6461 24.0003 12.37C24.0003 12.0939 23.7764 11.87 23.5003 11.87H10.4203ZM9.98029 15.33C9.98029 15.0539 10.2041 14.83 10.4803 14.83H23.5003C23.7764 14.83 24.0003 15.0539 24.0003 15.33C24.0003 15.6062 23.7764 15.83 23.5003 15.83H10.4803C10.2041 15.83 9.98029 15.6062 9.98029 15.33ZM10.4803 17.85C10.2041 17.85 9.98029 18.0738 9.98029 18.35C9.98029 18.6261 10.2041 18.85 10.4803 18.85H23.5003C23.7764 18.85 24.0003 18.6261 24.0003 18.35C24.0003 18.0738 23.7764 17.85 23.5003 17.85H10.4803ZM10.5103 20.83C10.2341 20.83 10.0103 21.0539 10.0103 21.33C10.0103 21.6062 10.2341 21.83 10.5103 21.83H18.4703C18.7464 21.83 18.9703 21.6062 18.9703 21.33C18.9703 21.0539 18.7464 20.83 18.4703 20.83H10.5103Z" fill="#D3883E"/>
+</svg>
+</span>STEP 9 · 서술형 영작<small>8~12단어 · be forced to, own words 포함</small></h2>
+<p style="margin:0 0 3px">“학생은 핵심만 골라 자기 말로 바꿔 쓰게 된다”를 영어로 쓰시오.</p>
+<div class="ln f"></div><div class="ln f"></div><div class="row" style="margin:4px 0 0"><span class="hint">셀프 체크</span><span class="opt2 "><i></i>be forced to</span><span class="opt2 "><i></i>own words</span><span class="opt2 "><i></i>8~12단어</span><span class="opt2 "><i></i>수 일치</span><span class="opt2 "><i></i>의미 일치</span></div></section></div></main></body></html>

@@ -15,6 +15,60 @@ crash).
 
 Usage:
     python3 generate_html.py <input.json> <output.html>
+
+Schema (see references/schema.md):
+  title, source_ref, topic, main_idea,
+  concept_sketch?: {title?, svg, caption?}  # hand-authored inline SVG illustrating
+                                             # the passage's core concept or analogy
+  order_flow?: [                            # 순서배열/문장삽입: macro block-order diagram
+    {badge, text, given?: bool, link?: str}, ...
+  ]                                          # link = connecting-clue label shown on the
+                                             # arrow ABOVE this node (omit on first node)
+  phrase_trace?: [                          # reference-tracing diagram (word-level clues)
+    {source: str, text: str}, ...
+  ]                                          # text supports **bold**, `code`, and
+                                             # {{a|...}}/{{b|...}}/{{c|...}}/{{d|...}}
+                                             # colored highlight spans (pair matching
+                                             # referents with the same letter)
+  blueprint?: {                              # 글의 설계도 (card near the top)
+    text_type: {label, tip},                 # e.g. "통념 제시 → 반박 → 사례 논증" + where the answer clue sits
+    signals?: [{word, no}],                  # discourse markers: but / For example / although ...
+    structure: [{part, role, range:[a,b], desc}],  # 서론/본론/결론 over sentence numbers
+    key_sentences: [{no, label, why}],       # 주제문 / 재진술 ... shown as ★ tag on that sentence card
+    tricky: [{no, reason}]                   # 해석 주의 sentences, shown as ! tag + reason on that sentence card
+  }
+  given_sentence?: {english, translation}
+  sentences: [
+    {
+      no?: int,                 # numbered badge (fallback "?") — ALWAYS the true
+                                 # sequential position; never overridden by block_label
+      block_label?: str,        # e.g. "①" — a circled-choice marker (grammar-error
+                                 # question types), rendered inline in the English text
+                                 # right before the first **bold** span, NOT as the badge
+      english: str,              # supports **bold** and `code`
+      translation: str,          # supports **bold** and `code`
+      easy_explanation?: str,
+      content_note?: str,
+      grammar_points?: [str] | str,
+      mini_analogy?: str,
+      culture_note?: str,
+      blank_marker_after?: str,  # e.g. "④" — renders a blank-slot marker after this card
+      blank_is_target?: bool     # true = highlight as the correct blank slot
+    }, ...
+  ]
+  summary: {
+    logic_stages: [{stage, description}, ...],
+    analogy?: {title, setup, misconception?, truth?, conclusion?},
+    distractors: [{choice, reason}, ...],
+    correct_answer: {choice, reason},
+    vocabulary: [{word, meaning, pos?, synonym?}, ...],
+    tips: [str, ...]
+  }
+  variant_questions?: {                     # 수능형 변형문제 추천 (지문 특성에 맞게 유연하게
+                                             # 2~3개씩 선정 — 정해진 유형 목록에 얽매이지 말 것)
+    multiple_choice?: [{type, stem, note?}, ...],
+    written?: [{type, stem, note?}, ...]
+  }
 """
 
 import sys
@@ -65,6 +119,22 @@ def trace_markup(text):
 
 FLOW_COLORS = ["c-accent", "c-amber", "c-teal"]
 
+# Microsoft Fluent Emoji, "Flat" style (MIT license) —
+# https://github.com/microsoft/fluentui-emoji. Each chip/heading uses one of
+# these icons instead of a letter initial or line-icon.
+#
+# NOTE on style choice: an earlier version of this script used the "3D"
+# style (glossy, gradient-shaded PNGs). Even though those PNGs have
+# perfectly clean alpha transparency (verified pixel-by-pixel — no halo,
+# no baked-in shadow blob), the soft ambient shading/gradient that's part
+# of the 3D art style itself reads as "fuzzy" / "not properly cut out" at
+# the ~22-28px chip size this card uses — a real visual complaint, just not
+# a transparency bug. The "Flat" style (solid-color SVGs, no gradient
+# shading) reads as a crisp, unambiguous cutout at any size, so that's
+# what's used now. SVGs are fetched as raw text (not PNG/base64) and
+# inlined directly into the HTML — vector-sharp at every size, cached to
+# disk after the first download so later renders this session don't
+# re-fetch.
 ICON_URLS = {
     'compass': 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Compass/Flat/compass_flat.svg',
     'map_pin': 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Round%20pushpin/Flat/round_pushpin_flat.svg',
@@ -86,6 +156,7 @@ ICON_URLS = {
     'x': 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Cross%20mark/Flat/cross_mark_flat.svg',
     'check': 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Check%20mark/Flat/check_mark_flat.svg',
     'globe': 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Globe%20with%20meridians/Flat/globe_with_meridians_flat.svg',
+    'blueprint': 'https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Triangular%20ruler/Flat/triangular_ruler_flat.svg',
 }
 
 _ICON_SVG_CACHE = {}
@@ -100,8 +171,11 @@ def _icon_cache_dir():
 def icon_b64(name):
     """Fetch a Fluent Emoji Flat SVG's raw markup (cached on disk after the
     first download this session), with its own width/height attributes
-    stripped so the .ico CSS class controls final size. Returns "" on any
-    failure so a card still renders."""
+    stripped so the .ico CSS class controls final size while the viewBox
+    keeps it scaling correctly. Returns "" on any failure (offline, blocked
+    host, unknown name) so a card still renders — just with an empty icon
+    chip — instead of crashing. (Named icon_b64 for historical reasons —
+    it now returns inline SVG markup, not base64.)"""
     if name in _ICON_SVG_CACHE:
         return _ICON_SVG_CACHE[name]
     url = ICON_URLS.get(name)
@@ -126,6 +200,9 @@ def icon_b64(name):
 
 
 def icon_svg(name, size=22):
+    """Returns the inline <svg> markup for a Fluent Emoji Flat icon, sized
+    via the .ico CSS class (the size param is kept for call-site
+    compatibility but actual sizing is CSS-driven)."""
     return icon_b64(name)
 
 
@@ -155,6 +232,14 @@ def grammar_list(points):
 def sentence_card(sent):
     no = sent.get("no", "?")
     block_label = sent.get("block_label")
+    # The badge always shows the TRUE sequential sentence number — it must
+    # never be replaced by block_label, or two different sentences (e.g.
+    # no=1 with no block_label, and no=2 with block_label="①") end up
+    # showing visually-similar badges ("1" vs "①") that read as duplicate
+    # "sentence 1"s. block_label (the circled-choice marker for grammar-
+    # error question types) is instead woven into the English text itself,
+    # right before the first **bold** underlined phrase — matching how it
+    # actually appears on a real CSAT answer sheet.
     badge_text = str(no)
     if isinstance(no, int):
         no_cls = FLOW_COLORS[(no - 1) % len(FLOW_COLORS)]
@@ -187,10 +272,20 @@ def sentence_card(sent):
     ]
     fields_html = "".join(f for f in fields if f)
 
+    tags = []
+    if sent.get("_key"):
+        tags.append(f'<span class="stag key">★ {esc(sent["_key"][0])}</span>')
+        if sent["_key"][1]:
+            tags.append(f'<span class="stag-note">{inline_markup(sent["_key"][1])}</span>')
+    if sent.get("_tricky"):
+        tags.append(f'<span class="stag warn">! 해석 주의</span><span class="stag-note">{inline_markup(sent["_tricky"])}</span>')
+    tags_html = f'<div class="stags">{"".join(tags)}</div>' if tags else ""
+
     card = f'''<section class="{card_cls}">
   <div class="sent">
     <div class="sent-top"><span class="no {no_cls}">{esc(badge_text)}</span>
       <p class="en">{en_html}</p></div>
+    {tags_html}
     <div class="fields">{fields_html}</div>
   </div>
 </section>'''
@@ -214,6 +309,59 @@ def render_given_sentence(gs):
   {h2("quote", "c-amber", "주어진 문장")}
   <p class="given-en">"{inline_markup(gs.get("english", ""))}"</p>
   <p class="tr">{inline_markup(gs.get("translation", ""))}</p>
+</section>'''
+
+
+def render_blueprint(bp, n_sent=0):
+    """글의 설계도: text-type tag + intro/body/conclusion bar (with sentence-number rail,
+    key-sentence star, tricky-sentence warning) + key / tricky lists."""
+    if not bp:
+        return ""
+    tt = bp.get("text_type") or {}
+    structure = bp.get("structure") or []
+    keys = {k.get("no"): k for k in (bp.get("key_sentences") or [])}
+    tricky = {k.get("no"): k for k in (bp.get("tricky") or [])}
+
+    type_html = ""
+    if tt:
+        sig = "".join(f'<span class="bp-sig"><b>{esc(x.get("word",""))}</b>{esc(x.get("no",""))}번</span>' for x in (bp.get("signals") or []))
+        sig_html = f'<div class="bp-sigs"><span class="bp-sig-title">단서 표현</span>{sig}</div>' if sig else ""
+        type_html = f'''<div class="bp-type"><span class="bp-pill">{esc(tt.get("label",""))}</span><p class="bp-tip">{inline_markup(tt.get("tip",""))}</p></div>{sig_html}'''
+
+    segs = []
+    for i, st in enumerate(structure):
+        a, b = (st.get("range") or [0, 0])[0], (st.get("range") or [0, 0])[-1]
+        nums = []
+        for n in range(a, b + 1):
+            cls = "bp-no" + (" key" if n in keys else "") + (" warn" if n in tricky else "")
+            nums.append(f'<span class="{cls}">{n}</span>')
+        rng = f"{a}번" if a == b else f"{a}–{b}번"
+        segs.append(f'''<div class="bp-seg seg{i % 3}" style="flex:{max(b - a + 1, 1.8)} 1 0">
+  <div class="bp-seg-top"><b>{esc(st.get("part",""))}</b><span class="rng">{rng}</span></div>
+  <div class="bp-role">{esc(st.get("role",""))}</div>
+  <div class="bp-nums">{"".join(nums)}</div>
+  <p>{inline_markup(st.get("desc",""))}</p>
+</div>''')
+    bar_html = f'<div class="bp-bar">{"".join(segs)}</div><div class="bp-legend"><span><i class="bp-no key">★</i> 핵심 문장</span><span><i class="bp-no warn">!</i> 해석 주의</span></div>' if segs else ""
+
+    def lst(items, kind):
+        out = []
+        for it in items:
+            label = it.get("label") or ("해석 주의" if kind == "warn" else "")
+            txt = it.get("why") or it.get("reason") or ""
+            out.append(f'<div class="bp-item"><span class="bp-no {kind}">{esc(it.get("no",""))}</span><div><b>{esc(label)}</b><p>{inline_markup(txt)}</p></div></div>')
+        return "".join(out)
+    cols = []
+    if keys:
+        cols.append(f'<div class="bp-col"><span class="label">핵심 문장</span>{lst(bp.get("key_sentences") or [], "key")}</div>')
+    if tricky:
+        cols.append(f'<div class="bp-col"><span class="label">해석 주의 문장</span>{lst(bp.get("tricky") or [], "warn")}</div>')
+    cols_html = f'<div class="bp-cols">{"".join(cols)}</div>' if cols else ""
+
+    return f'''<section class="card bp">
+  {h2("blueprint", "c-accent", "글의 설계도")}
+  {type_html}
+  {bar_html}
 </section>'''
 
 
@@ -459,6 +607,11 @@ h1 em{font-style:normal;color:var(--accent)}
 .c-rose{background:var(--rose-soft);color:var(--rose)}
 .c-green{background:var(--green-soft);color:var(--green)}
 .c-violet{background:var(--violet-soft);color:var(--violet)}
+/* Icon chips render the bare Flat-style icon with no colored square/backdrop
+   behind it (no "chip"), per explicit user request — the color classes above
+   still supply background+color for non-icon uses (.pill tags, .no badges),
+   so this override (two classes beats one on specificity) strips just the
+   chip's own background/radius while leaving those other uses untouched. */
 .chip.c-accent,.chip.c-amber,.chip.c-teal,.chip.c-rose,.chip.c-green,.chip.c-violet{background:transparent;border-radius:0}
 .label{font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}
@@ -541,18 +694,96 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 
 .vgroup{display:grid;gap:10px;margin-bottom:14px}
 .vgroup:last-child{margin-bottom:0}
-.vgroup-title{font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
+.vgroup-title{justify-self:start;width:fit-content;font-family:var(--font-display);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--fg);display:inline-block;padding:0 2px 2px;margin-left:-2px;background-image:linear-gradient(var(--accent-soft),var(--accent-soft));background-repeat:no-repeat;background-size:100% 42%;background-position:0 92%}
 .vitem{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
 .vitem p.stem{margin:0;font-weight:600;font-style:italic}
 .vitem p.note{margin:4px 0 0;color:var(--muted);font-size:12.5px}
+
+.bp-type{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.bp-pill{font-family:var(--font-display);font-weight:800;font-size:15px;padding:7px 16px;border-radius:999px;background:var(--accent);color:var(--sheet)}
+.bp-tip{margin:0;flex:1 1 260px;color:var(--muted);min-width:0}
+.bp-sigs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.bp-sig-title{font-size:12px;font-weight:800;color:var(--muted);margin-right:2px}
+.bp-sig{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--sheet-2);border:1px solid var(--line)}
+.bp-sig b{font-family:var(--font-display);margin-right:5px;color:var(--accent-ink)}
+.bp-bar{display:flex;gap:8px;margin-top:16px;align-items:stretch}
+.bp-seg{border-radius:16px;padding:12px 14px;border:1.5px solid;min-width:0}
+.bp-seg.seg0{background:var(--accent-soft);border-color:var(--accent)}
+.bp-seg.seg1{background:var(--amber-soft);border-color:var(--amber)}
+.bp-seg.seg2{background:var(--teal-soft);border-color:var(--teal)}
+.bp-seg-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.bp-seg-top b{font-family:var(--font-display);font-size:16px;font-weight:800}
+.bp-seg .rng{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap}
+.bp-role{font-weight:700;font-size:13px;margin-top:2px}
+.bp-nums{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.bp-seg p{margin:0;font-size:12.5px;color:var(--fg);line-height:1.5}
+.bp-no{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-family:var(--font-display);font-weight:800;font-size:12.5px;background:var(--sheet);border:1.5px solid var(--line);color:var(--fg);font-style:normal;position:relative}
+.bp-no.key{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
+.bp-no.warn{border-color:var(--rose);color:var(--fg);background:var(--rose-soft)}
+.bp-no.key.warn{background:var(--accent);color:var(--sheet);box-shadow:0 0 0 2.5px var(--rose)}
+.bp-nums .bp-no.key::after{content:"★";position:absolute;top:-9px;right:-7px;font-size:12px;color:var(--amber)}
+.bp-nums .bp-no.warn::before{content:"!";position:absolute;bottom:-7px;right:-6px;width:14px;height:14px;border-radius:50%;background:var(--rose);color:var(--sheet);font-size:10px;line-height:14px;text-align:center}
+.bp-legend{display:flex;gap:16px;margin-top:10px;font-size:12px;color:var(--muted)}
+.bp-legend span{display:inline-flex;gap:6px;align-items:center}
+.bp-legend .bp-no{width:20px;height:20px;font-size:11px}
+.bp-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:16px}
+.bp-col{display:grid;gap:8px;align-content:start}
+.bp-col .label{justify-self:start;width:fit-content}
+.bp-item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:14px;background:var(--sheet-2);border:1px solid var(--line)}
+.bp-item b{font-size:13px}
+.bp-item p{margin:2px 0 0;font-size:13px;color:var(--muted);line-height:1.55}
+.stags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-4px 0 0 42px}
+.stag{font-family:var(--font-display);font-weight:800;font-size:12px;padding:3px 11px;border-radius:999px}
+.stag.key{background:var(--accent);color:var(--sheet)}
+.stag.warn{background:var(--rose-soft);color:var(--fg);border:1.5px solid var(--rose)}
+.stag-note{font-size:12.5px;color:var(--muted)}
+.print-btn{font:inherit;font-weight:700;font-size:12.5px;border:1px solid var(--line);background:var(--sheet);color:var(--accent-ink);padding:6px 14px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow)}
+.print-btn:hover{background:var(--accent-soft)}
+"""
+
+# Print-specific overrides, appended as its OWN <style> tag after the main
+# CSS so it wins the cascade (same selector specificity, later source order)
+# even when the OS is in dark mode while printing. Goals: force the light
+# palette (dark-on-paper and glow gradients waste ink / print illegibly on
+# some printers), drop the on-screen toolbar and shadows, and keep each
+# card/field/sentence block from splitting across a page break. This CSS
+# backs BOTH the user's own browser print-to-PDF (File > Print > Save as
+# PDF / the in-page "인쇄 / PDF" button) and the Playwright page.pdf() step
+# in the pipeline, since Chromium applies @media print rules for both.
+PRINT_CSS = """
+@media print{
+  :root{
+    --bg:#FFFFFF;--bg-glow:#FFFFFF;--sheet:#FFFFFF;--sheet-2:#F6F7FA;
+    --fg:#131A2B;--muted:#5F6B85;--line:#D9DEE8;
+    --accent:#1F6BFF;--accent-soft:#E6EFFF;--accent-ink:#0B4FCC;
+    --amber:#B45309;--amber-soft:#FFF5DC;
+    --teal:#0B7A79;--teal-soft:#DFF6F5;
+    --rose:#C3272C;--rose-soft:#FFE9EA;
+    --green:#0F7A3D;--green-soft:#DFF7E8;
+    --violet:#5B3FD6;--violet-soft:#EEE9FF;
+    --code-bg:#E6EFFF;--code-fg:#0B4FCC;
+    --shadow:none;color-scheme:light}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
+  body{background:#fff!important;background-image:none!important}
+  .bar{display:none!important}
+  .wrap{max-width:100%;padding:0;gap:8px}
+  .card{box-shadow:none!important;padding:16px}
+  .card,.step,.field,.opt,.vitem,.trace-item,.word,.given-en,.blank-marker,.bp-seg,.bp-item{break-inside:avoid}
+  .card:has(.sent),.card.bp{break-inside:auto}
+  .sent-top{break-inside:avoid;break-after:avoid}
+  h1,h2{break-after:avoid}
+  .sketch-svg svg{max-height:92vh}
+}
+@page{size:A4;margin:8mm 8mm}
 """
 
 TOGGLE_SCRIPT = """<script>
 (function(){
-  var root=document.documentElement, L=document.getElementById('t-light'), D=document.getElementById('t-dark');
+  var root=document.documentElement, L=document.getElementById('t-light'), D=document.getElementById('t-dark'), P=document.getElementById('t-print');
   function set(t){root.setAttribute('data-theme',t);L.setAttribute('aria-pressed',t==='light');D.setAttribute('aria-pressed',t==='dark');}
   L.addEventListener('click',function(){set('light')});
   D.addEventListener('click',function(){set('dark')});
+  if(P){P.addEventListener('click',function(){window.print()});}
 })();
 </script>"""
 
@@ -578,6 +809,15 @@ def build_html(data):
     if eli5:
         eli5_html = f'<section class="card mini wide">{chip("smile","c-green")}<div><span class="label">쉬운 설명</span><p>{inline_markup(eli5)}</p></div></section>'
 
+    bp = data.get("blueprint")
+    blueprint_html = render_blueprint(bp)
+    _keys = {k.get("no"): (k.get("label", "핵심 문장"), k.get("why", "")) for k in ((bp or {}).get("key_sentences") or [])}
+    _tricky = {k.get("no"): k.get("reason", "") for k in ((bp or {}).get("tricky") or [])}
+    for _s in data.get("sentences", []):
+        if _s.get("no") in _keys:
+            _s["_key"] = _keys[_s["no"]]
+        if _s.get("no") in _tricky:
+            _s["_tricky"] = _tricky[_s["no"]]
     sketch_html = render_concept_sketch(data.get("concept_sketch"))
     vocab_html = render_vocabulary(vocabulary)
     given_html = render_given_sentence(data.get("given_sentence"))
@@ -600,6 +840,7 @@ def build_html(data):
       <button type="button" id="t-light" aria-pressed="true">Light</button>
       <button type="button" id="t-dark" aria-pressed="false">Dark</button>
     </div>
+    <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
 
   <section class="card head">
@@ -609,6 +850,7 @@ def build_html(data):
 
   {two_html}
   {eli5_html}
+  {blueprint_html}
   {sketch_html}
   {vocab_html}
   {given_html}
@@ -637,6 +879,7 @@ def build_html(data):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
 <style>{BASE_CSS}</style>
 <style>{CSS}</style>
+<style>{PRINT_CSS}</style>
 </head>
 <body>
 {full_body}
