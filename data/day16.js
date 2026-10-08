@@ -16,7 +16,7 @@ window.EXAMS[16] = {
                                                             "② (규정의) 개정",
                                                             "③ (사실에 대한) 은폐",
                                                             "④ (요구에 대한) 협상",
-                                                            "⑤ (규정에 대한) 준수"
+                                                            "⑤ (규정의) 준수"
                                                         ],
                                                "ans":  5,
                                                "kr":  "불시 점검을 받자 그 공장은 신속히 규정을 준수했고, 덕분에 경쟁사들이 부과받은 무거운 벌금을 면했다.",
@@ -34,7 +34,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  3,
                                                "kr":  "그 장군은 그 명령이 불필요하게 민간인들을 위험에 빠뜨릴 것이라 생각하여 명령을 이행하기를 거부했다.",
-                                               "why":  "execute an order = 명령을 이행/집행하다. 장군이 \u0027명령을 따르기\u0027를 거부한 것이므로 ①."
+                                               "why":  "execute an order = 명령을 이행/집행하다. 장군이 \u0027명령을 따르기\u0027를 거부한 것이므로 \u0027이행하다\u0027가 맞다. 은폐·재작성·무효화·지연은 명령을 따른다는 뜻이 아니다."
                                            },
                                            {
                                                "n":  3,
@@ -48,17 +48,17 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  2,
                                                "kr":  "규제 당국은 환자들에게 특정 처방약을 의사에게 요청하라고 부추기는 광고를 포함한 제약 마케팅에 대한 감독을 강화하고 있다.",
-                                               "why":  "pharmaceutical = 제약의, 의약품 관련의. \u0027prescriptions\u0027(처방약)를 요청하도록 부추기는 광고라는 설명이 약품 마케팅임을 보여줌. ②의료기기·⑤병원 운영은 같은 의료 분야지만 \u0027처방약\u0027과는 무관."
+                                               "why":  "pharmaceutical = 제약의, 의약품 관련의. \u0027prescriptions\u0027(처방약)를 요청하도록 부추기는 광고라는 설명이 약품 마케팅임을 보여줌. 병원 운영·의료기기는 같은 의료 분야지만 \u0027처방약\u0027과는 무관."
                                            },
                                            {
                                                "n":  4,
                                                "q":  "Rather than correcting him privately, she chose to \u003c\u003chumiliate\u003e\u003e him in front of the whole staff.",
                                                "opts":  [
-                                                            "① 격려하다",
-                                                            "② 감독하다",
+                                                            "① 용기를 북돋우다",
+                                                            "② 일을 감독하다",
                                                             "③ 망신을 주다",
-                                                            "④ 조언하다",
-                                                            "⑤ 대체하다"
+                                                            "④ 넌지시 조언하다",
+                                                            "⑤ 자리를 대체하다"
                                                         ],
                                                "ans":  3,
                                                "kr":  "그녀는 그를 사적으로 바로잡아주기보다, 전 직원 앞에서 그에게 망신을 주는 쪽을 택했다.",
@@ -68,10 +68,10 @@ window.EXAMS[16] = {
                                                "n":  5,
                                                "q":  "Before the reform, barely a third of the rural adults were \u003c\u003cliterate\u003e\u003e, and most signed contracts with a thumbprint.",
                                                "opts":  [
-                                                            "① 글을 읽고 쓸 줄 아는",
-                                                            "② 숙련된",
-                                                            "③ 세금을 내는",
-                                                            "④ 교양 있는",
+                                                            "① 읽고 쓸 줄 아는",
+                                                            "② 숙련된 기술을 가진",
+                                                            "③ 세금을 성실히 내는",
+                                                            "④ 교양이 풍부한",
                                                             "⑤ 투표권이 있는"
                                                         ],
                                                "ans":  1,
@@ -85,21 +85,21 @@ window.EXAMS[16] = {
                                                             "① 왜곡하다",
                                                             "② 폐기하다",
                                                             "③ 비밀에 부치다",
-                                                            "④ 수집해 정리하다",
+                                                            "④ 모아서 정리하다",
                                                             "⑤ 요약해 발표하다"
                                                         ],
                                                "ans":  4,
-                                               "kr":  "그 사무원은 지난 10년간 접수된 모든 불만사항을 하나의 기록 보관소(자료집)로 수집·정리하는 임무를 맡았다.",
-                                               "why":  "compile = 여러 자료를 모아 정리하다. \u0027into a single archive\u0027(하나의 자료로)가 \u0027수집 정리\u0027를 가리킴. ④\u0027요약해 발표\u0027는 모으는 것이 아니라 결과를 알리는 행위."
+                                               "kr":  "그 사무원은 지난 10년간 접수된 모든 불만사항을 하나의 자료 보관소로 모아 정리하는 임무를 맡았다.",
+                                               "why":  "compile = 여러 자료를 모아 정리하다. \u0027into a single archive\u0027(하나의 보관소로)가 \u0027수집·정리\u0027를 가리킴. \u0027요약해 발표하다\u0027는 모으는 것이 아니라 결과를 알리는 행위."
                                            },
                                            {
                                                "n":  7,
                                                "q":  "With no return date announced, employees were left on \u003c\u003cindefinite\u003e\u003e unpaid leave.",
                                                "opts":  [
                                                             "① 기한이 정해지지 않은",
-                                                            "② 은밀하게 진행되는",
-                                                            "③ 임시로 대체된",
-                                                            "④ 법적으로 보호되는",
+                                                            "② 은밀하게 진행되고 있는",
+                                                            "③ 임시로 대체되어 있는",
+                                                            "④ 법적으로 보호받고 있는",
                                                             "⑤ 정기적으로 반복되는"
                                                         ],
                                                "ans":  1,
@@ -118,7 +118,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  4,
                                                "kr":  "해외 진출을 결정한 이사회의 결정은 창업 가문의 거부권 행사로 조용히 무효화되었다.",
-                                               "why":  "override = (상위 권한으로) 무효화하다. veto(거부권)에 의해 결정이 뒤집혔으므로 ①."
+                                               "why":  "override = (상위 권한으로) 무효화하다. veto(거부권)에 의해 결정이 뒤집혔으므로 \u0027무효화되다\u0027가 맞다."
                                            },
                                            {
                                                "n":  9,
@@ -138,11 +138,11 @@ window.EXAMS[16] = {
                                                "n":  10,
                                                "q":  "Rather than waiting for the crisis to worsen, the mayor decided to \u003c\u003ctackle\u003e\u003e the housing shortage immediately.",
                                                "opts":  [
-                                                            "① 방치하다",
+                                                            "① 문제를 그냥 방치하다",
                                                             "② 정면으로 다루다",
-                                                            "③ 외주를 주다",
-                                                            "④ 은폐하다",
-                                                            "⑤ 축소 발표하다"
+                                                            "③ 다른 곳에 외주를 주다",
+                                                            "④ 사실을 은폐하다",
+                                                            "⑤ 규모를 축소 발표하다"
                                                         ],
                                                "ans":  2,
                                                "kr":  "시장은 위기가 악화되기를 기다리는 대신, 즉시 주택 부족 문제를 정면으로 다루기로 결정했다.",
@@ -155,7 +155,7 @@ window.EXAMS[16] = {
                                                             "① ~을 뒤늦게 알아차리다",
                                                             "② ~와 전혀 무관하다",
                                                             "③ ~을 과장하다",
-                                                            "④ ~의 근본 원인이 되다",
+                                                            "④ ~의 밑바탕이 되다",
                                                             "⑤ ~을 완전히 지우다"
                                                         ],
                                                "ans":  4,
@@ -168,7 +168,7 @@ window.EXAMS[16] = {
                                                "opts":  [
                                                             "① 이전에는",
                                                             "② 실제로는",
-                                                            "③ 조금도, 전혀",
+                                                            "③ 조금도",
                                                             "④ 아무튼",
                                                             "⑤ 적어도"
                                                         ],
@@ -180,11 +180,11 @@ window.EXAMS[16] = {
                                                "n":  13,
                                                "q":  "The museum exhibit deliberately complicates the tidy national \u003c\u003cnarrative\u003e\u003e most students grew up with.",
                                                "opts":  [
-                                                            "① 공식 성명",
-                                                            "② 논거",
-                                                            "③ 사건 연표",
-                                                            "④ 통계적 요약",
-                                                            "⑤ (특정 관점의) 서사, 이야기"
+                                                            "① 정부의 공식 성명",
+                                                            "② 주장을 뒷받침하는 논거",
+                                                            "③ 연도별 사건 연표",
+                                                            "④ 통계로 만든 요약",
+                                                            "⑤ 관점이 담긴 서사"
                                                         ],
                                                "ans":  5,
                                                "kr":  "그 박물관 전시는 대부분의 학생들이 자라며 접했던 깔끔하게 정리된 국가적 서사를 의도적으로 복잡하게 만든다.",
@@ -210,8 +210,8 @@ window.EXAMS[16] = {
                                                "opts":  [
                                                             "① 임시로",
                                                             "② 억지로",
-                                                            "③ 예전과 똑같이",
-                                                            "④ 처음부터 새로이",
+                                                            "③ 예전과 똑같은 모습으로",
+                                                            "④ 처음부터 다시",
                                                             "⑤ 은밀하게"
                                                         ],
                                                "ans":  4,
@@ -222,11 +222,11 @@ window.EXAMS[16] = {
                                                "n":  16,
                                                "q":  "Rather than skimming the material, she \u003c\u003cimmersed\u003e\u003e herself in it for six straight hours.",
                                                "opts":  [
-                                                            "① 남에게 떠넘기다",
-                                                            "② 잠깐 훑어보다",
+                                                            "① 일을 남에게 떠넘기다",
+                                                            "② 잠깐 대충 훑어보다",
                                                             "③ 완전히 몰두하다",
-                                                            "④ 완전히 회피하다",
-                                                            "⑤ 억지로 암기하다"
+                                                            "④ 자료를 아예 회피하다",
+                                                            "⑤ 억지로 외워 버리다"
                                                         ],
                                                "ans":  3,
                                                "kr":  "그녀는 자료를 대충 훑어보는 대신, 여섯 시간 내내 그것에 완전히 몰두했다.",
@@ -236,10 +236,10 @@ window.EXAMS[16] = {
                                                "n":  17,
                                                "q":  "Frustrated with existing tools, the team \u003c\u003cdevised\u003e\u003e a scheduling system from scratch.",
                                                "opts":  [
-                                                            "① 채택하다",
+                                                            "① 그대로 채택하다",
                                                             "② 인수하다",
                                                             "③ 고안해내다",
-                                                            "④ 구매하다",
+                                                            "④ 상품을 구매하다",
                                                             "⑤ 폐기하다"
                                                         ],
                                                "ans":  3,
@@ -250,11 +250,11 @@ window.EXAMS[16] = {
                                                "n":  18,
                                                "q":  "Once shipping delays are factored into the \u003c\u003cequation\u003e\u003e, the discount barely covers the extra cost.",
                                                "opts":  [
-                                                            "① 고려해야 할 요소들 전체",
-                                                            "② 협상 결과",
-                                                            "③ 가정(전제)",
-                                                            "④ 위험 요인",
-                                                            "⑤ 전체 예산"
+                                                            "① 고려 요소 전체",
+                                                            "② 협상이 낳은 결과",
+                                                            "③ 숨은 가정과 전제",
+                                                            "④ 가장 큰 위험 요인",
+                                                            "⑤ 추가로 드는 전체 예산"
                                                         ],
                                                "ans":  1,
                                                "kr":  "배송 지연이 고려 요소에 포함되면, 할인 혜택은 추가 비용을 겨우 메꿀 정도밖에 안 된다.",
@@ -278,7 +278,7 @@ window.EXAMS[16] = {
                                                "n":  20,
                                                "q":  "The siblings grew up in the same household yet developed strikingly \u003c\u003cdivergent\u003e\u003e political beliefs.",
                                                "opts":  [
-                                                            "① 서로 다른 방향으로 갈라지는",
+                                                            "① 서로 갈라져 달라지는",
                                                             "② 완전히 일치하는",
                                                             "③ 아무도 알지 못하는",
                                                             "④ 겉으로만 다른 척하는",
@@ -320,10 +320,10 @@ window.EXAMS[16] = {
                                                "n":  23,
                                                "q":  "Doctors advised her to cut back on \u003c\u003cstarchy\u003e\u003e foods such as potatoes and white rice after the diagnosis.",
                                                "opts":  [
-                                                            "① 염분이 높은",
+                                                            "① 염분이 지나치게 높은",
                                                             "② 자극적인",
                                                             "③ 전분질이 많은",
-                                                            "④ 당분이 없는",
+                                                            "④ 당분이 거의 없는",
                                                             "⑤ 기름기가 많은"
                                                         ],
                                                "ans":  3,
@@ -342,7 +342,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  5,
                                                "kr":  "새 교육과정은 학습 속도가 다른 학생들을 훨씬 더 잘 포용한다.",
-                                               "why":  "inclusive of = ~을 포용/포함하는. 학습 속도가 다른 학생도 배제하지 않는다는 의미. ③획일적·④선별적은 정반대 성격이고, ②경쟁 유도·⑤진도 단축은 배제 여부와 무관."
+                                               "why":  "inclusive of = ~을 포용/포함하는. 학습 속도가 다른 학생도 배제하지 않는다는 의미. \u0027획일적인\u0027과 \u0027선별해서 받아들이는\u0027은 정반대 성격이고, \u0027경쟁을 부추기는\u0027과 \u0027진도를 앞당기는\u0027은 배제 여부와 무관."
                                            },
                                            {
                                                "n":  25,
@@ -411,7 +411,7 @@ window.EXAMS[16] = {
                                                "n":  29,
                                                "q":  "Every Monday morning the whole school met in the gym for a(n) ________, where announcements were made.",
                                                "opts":  [
-                                                            "① ledger",
+                                                            "① compensation",
                                                             "② narrative",
                                                             "③ assembly",
                                                             "④ drill",
@@ -419,7 +419,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  3,
                                                "kr":  "매주 월요일 아침 전교생이 체육관에 모여 조회를 했고, 그 자리에서 공지가 전달되었다.",
-                                               "why":  "assembly = (학교의) 조회, 전체 집회. 전교생이 체육관에 모여 공지를 듣는 행사를 가리킴. equation(방정식)·narrative(서사)·drill(훈련)·ledger(장부)는 \u0027모여서 공지를 전달하는 행사\u0027라는 뜻이 아님."
+                                               "why":  "assembly = (학교의) 조회, 전체 집회. 전교생이 체육관에 모여 공지를 듣는 행사를 가리킴. equation(방정식)·narrative(서사)·drill(훈련)·compensation(보상)는 \u0027모여서 공지를 전달하는 행사\u0027라는 뜻이 아님."
                                            },
                                            {
                                                "n":  30,
@@ -649,43 +649,43 @@ window.EXAMS[16] = {
                                                "n":  46,
                                                "q":  "There was no evidence ________ that the rumor was true.",
                                                "opts":  [
-                                                            "① respectively",
+                                                            "① nearly",
                                                             "② whatsoever",
-                                                            "③ anew",
-                                                            "④ abruptly",
-                                                            "⑤ readily"
+                                                            "③ abruptly",
+                                                            "④ readily",
+                                                            "⑤ subsequently"
                                                         ],
                                                "ans":  2,
                                                "kr":  "그 소문이 사실이라는 증거는 조금도 없었다.",
-                                               "why":  "no + 명사 + whatsoever = 조금도 ~없는. 부정어 no와 함께 쓰여 \u0027전혀 없다\u0027는 뜻을 강조함. anew(새로)·respectively(각각)·abruptly(갑자기)·readily(선뜻)는 이 자리에서 \u0027증거가 전혀 없다\u0027는 강조 기능을 하지 못함."
+                                               "why":  "no + 명사 + whatsoever = 조금도 ~없는. 부정어 no와 함께 쓰여 \u0027전혀 없다\u0027는 뜻을 강조함. nearly(거의)·abruptly(갑자기)·readily(선뜻)·subsequently(그 후에)는 이 자리에서 \u0027증거가 전혀 없다\u0027는 강조 기능을 하지 못함."
                                            },
                                            {
                                                "n":  47,
                                                "q":  "Ann and Ben scored 90 and 85 points, ________.",
                                                "opts":  [
                                                             "① respectively",
-                                                            "② whatsoever",
-                                                            "③ moreover",
-                                                            "④ therefore",
-                                                            "⑤ anew"
+                                                            "② therefore",
+                                                            "③ eventually",
+                                                            "④ frequently",
+                                                            "⑤ virtually"
                                                         ],
                                                "ans":  1,
                                                "kr":  "앤과 벤은 각각 90점과 85점을 받았다.",
-                                               "why":  "respectively = 각각, 순서대로. 앞에 나열된 두 사람(Ann, Ben)과 뒤의 두 수치(90, 85)를 순서대로 짝지을 때 문장 끝에 씀. anew(새로)·whatsoever(조금도)·moreover(게다가)·therefore(그러므로)는 이런 \u0027짝짓기\u0027 기능이 없고, moreover·therefore는 문장 끝에서 이렇게 쓰이지도 않음."
+                                               "why":  "respectively = 각각, 순서대로. 앞에 나열된 두 사람(Ann, Ben)과 뒤의 두 수치(90, 85)를 순서대로 짝지을 때 문장 끝에 씀. therefore(그러므로)·eventually(결국)·frequently(자주)·virtually(사실상)는 이런 \u0027짝짓기\u0027 기능이 없음."
                                            },
                                            {
                                                "n":  48,
-                                               "q":  "After the fire, the town chose to tear down what was left and rebuild ________, this time with stronger walls.",
+                                               "q":  "After the fire, the town chose to tear down everything that was left and rebuild ________, this time with stronger walls.",
                                                "opts":  [
                                                             "① anew",
-                                                            "② whatsoever",
-                                                            "③ partially",
-                                                            "④ abruptly",
-                                                            "⑤ respectively"
+                                                            "② partially",
+                                                            "③ barely",
+                                                            "④ merely",
+                                                            "⑤ scarcely"
                                                         ],
                                                "ans":  1,
                                                "kr":  "화재 이후 그 마을은 남은 것을 헐어내고, 이번에는 더 튼튼한 벽으로 처음부터 다시 짓기로 했다.",
-                                               "why":  "anew = 처음부터 새로이 다시. \u0027tear down what was left\u0027(남은 것을 헐어낸다)와 \u0027this time\u0027(이번에는)이 \u0027기존 것을 없애고 처음부터 다시\u0027라는 뜻을 요구함. respectively(각각)·whatsoever(조금도)·abruptly(갑자기)는 다른 뜻의 부사이고, partially(부분적으로)는 남은 것을 모두 헐어낸다는 앞부분과 어긋남."
+                                               "why":  "anew = 처음부터 새로이 다시. \u0027tear down everything that was left\u0027(남은 것을 전부 헐어낸다)와 \u0027this time\u0027(이번에는)이 \u0027기존 것을 없애고 처음부터 다시\u0027라는 뜻을 요구함. partially(부분적으로)는 남은 것을 전부 헐어내고 다시 짓는다는 전면 재건의 흐름과 어긋나고, barely(간신히)·merely(단지)·scarcely(거의 ~않게)는 \u0027다시 짓는 방식\u0027을 설명하지 못함."
                                            },
                                            {
                                                "n":  49,
@@ -747,7 +747,7 @@ window.EXAMS[16] = {
                                                             "⑤ definitive"
                                                         ],
                                                "ans":  3,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "reluctant(내키지 않는)의 반의어는 keen(몹시 하고 싶어하는). self-righteous(독선적인)·obstinate(고집 센)는 성격을 나타낼 뿐 \u0027하고 싶은 마음\u0027의 반대가 아니고, definitive(최종적인)·punctual(시간을 지키는)은 무관."
                                            },
                                            {
@@ -761,7 +761,7 @@ window.EXAMS[16] = {
                                                             "⑤ indefinite"
                                                         ],
                                                "ans":  4,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "simultaneous(동시에 일어나는)의 반의어는 asynchronous(비동기의, 동시가 아닌). divergent(갈라지는)·indefinite(기한이 정해지지 않은)·spontaneous(자발적인)·static(정지된)은 \u0027동시성\u0027과 무관."
                                            },
                                            {
@@ -775,7 +775,7 @@ window.EXAMS[16] = {
                                                             "⑤ assembly"
                                                         ],
                                                "ans":  2,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "account(사건에 대한 이야기·서술)의 유의어는 narrative(서사, 이야기). equation(방정식·고려 요소)·assembly(집회)·premise(전제)·verdict(평결)는 이야기·서술과는 다른 뜻."
                                            },
                                            {
@@ -789,7 +789,7 @@ window.EXAMS[16] = {
                                                             "⑤ competition"
                                                         ],
                                                "ans":  2,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "adherence(규칙·원칙의 고수, 준수)의 유의어는 compliance(준수). contraction(수축)·stakeholder(이해관계자)·compromise(타협)·competition(경쟁)은 다른 뜻의 단어들."
                                            },
                                            {
@@ -803,7 +803,7 @@ window.EXAMS[16] = {
                                                             "⑤ narrow"
                                                         ],
                                                "ans":  4,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "comprehensive(모든 것을 아우르는, 포괄적인)의 유의어는 inclusive(포함하는, 포괄적인). partial(부분적인)·narrow(좁은)는 정반대 방향이고, pharmaceutical(제약의)·divergent(갈라지는)는 무관한 형용사."
                                            },
                                            {
@@ -817,7 +817,7 @@ window.EXAMS[16] = {
                                                             "⑤ equation"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "decline(수량·규모의 감소)의 유의어는 contraction(수축, 위축). surge(급증)는 반대 방향이고, compliance(준수)·equation(방정식)·tariff(관세)는 \u0027감소\u0027라는 뜻이 아님."
                                            },
                                            {
@@ -831,7 +831,7 @@ window.EXAMS[16] = {
                                                             "⑤ set apart"
                                                         ],
                                                "ans":  5,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "differentiate A from B(A를 B와 구별하다)의 유의 표현은 set A apart from B. set aside(따로 떼어 두다)·let out(소리를 내다)·take off(벗다·이륙하다)·look down on(얕보다)은 모두 다른 뜻."
                                            },
                                            {
@@ -845,7 +845,7 @@ window.EXAMS[16] = {
                                                             "⑤ in charge of"
                                                         ],
                                                "ans":  3,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "in terms of ~(~의 측면에서, ~에 관해서)의 유의 표현은 when it comes to(~에 관해서라면). in charge of(~을 책임지는)·of note(주목할 만한)·get rid of(없애다)·strive for(~을 얻으려 애쓰다)는 주제 제시 기능이 없음."
                                            }
                                        ]
@@ -866,7 +866,7 @@ window.EXAMS[16] = {
                                                             "⑤ equation"
                                                         ],
                                                "ans":  4,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "compliance = 규칙·기준·요구에 부합하게 행동하는 상태(준수). narrative(서사)·equation(고려 요소 전체)·conviction(확신)·consensus(합의)는 다른 뜻."
                                            },
                                            {
@@ -880,7 +880,7 @@ window.EXAMS[16] = {
                                                             "⑤ starchy"
                                                         ],
                                                "ans":  3,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "pharmaceutical = 의약품 제조·판매와 관련된. starchy(전분질의)·literate(글을 아는)·agricultural(농업의)·industrial(산업의)은 \u0027의약품\u0027과 무관."
                                            },
                                            {
@@ -894,7 +894,7 @@ window.EXAMS[16] = {
                                                             "⑤ deport"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "humiliate = 공개적으로 창피를 주어 체면·존엄을 깎아내리다. torment(고통을 주다)는 수치심이 아니라 괴로움을 주는 것이고, console(위로하다)·deploy(배치하다)·deport(추방하다)는 다른 뜻."
                                            },
                                            {
@@ -908,7 +908,7 @@ window.EXAMS[16] = {
                                                             "⑤ devise"
                                                         ],
                                                "ans":  2,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "compile = 여러 곳의 자료를 모아 목록·책을 만들다. devise(고안하다)·execute(실행하다)·comprise(~로 구성되다)·complement(보완하다)는 다른 뜻."
                                            },
                                            {
@@ -922,7 +922,7 @@ window.EXAMS[16] = {
                                                             "⑤ index"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "narrative = 특정 관점에서 연결된 사건들을 이야기로 서술한 것. equation(고려 요소 전체)·assembly(집회)·manual(설명서)·index(색인)는 모두 다른 뜻."
                                            },
                                            {
@@ -936,7 +936,7 @@ window.EXAMS[16] = {
                                                             "⑤ equation"
                                                         ],
                                                "ans":  5,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "equation = 결과를 좌우하는 요소들 전체(예: factor X into the equation). narrative(서사)·contraction(수축)·ratio(비율)·magnitude(크기)는 \u0027요소 전체\u0027를 뜻하지 않음."
                                            },
                                            {
@@ -950,7 +950,7 @@ window.EXAMS[16] = {
                                                             "⑤ offspring"
                                                         ],
                                                "ans":  2,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "stakeholder = 사업·결정의 결과에 영향을 받아 정당한 이해관계를 갖는 사람. assembly(집회)·narrative(서사)는 사람이 아니고, ally(동맹)·offspring(자손)은 다른 뜻."
                                            },
                                            {
@@ -964,7 +964,7 @@ window.EXAMS[16] = {
                                                             "⑤ intrinsic"
                                                         ],
                                                "ans":  2,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "interdisciplinary = 여러 학문 분야의 방법을 끌어와 하나의 문제를 다루는. inclusive(포용하는)·divergent(갈라지는)·intricate(복잡한)·intrinsic(본질적인)은 다른 뜻의 형용사."
                                            },
                                            {
@@ -978,7 +978,7 @@ window.EXAMS[16] = {
                                                             "⑤ pharmaceutical"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "starchy = 감자·곡물에 든 탄수화물(전분)이 풍부한. crisp(바삭한)는 식감이고, pharmaceutical(제약의)·fatty(기름진)·bitter(쓴)는 다른 성질."
                                            },
                                            {
@@ -992,7 +992,7 @@ window.EXAMS[16] = {
                                                             "⑤ inclusive"
                                                         ],
                                                "ans":  5,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "inclusive = 모든 배경·능력의 사람을 동등하게 환영하고 수용하는. indefinite(기한이 정해지지 않은)·interdisciplinary(학제간의)·incomplete(불완전한)·invalid(무효한)는 다른 뜻."
                                            },
                                            {
@@ -1006,7 +1006,7 @@ window.EXAMS[16] = {
                                                             "⑤ deploy"
                                                         ],
                                                "ans":  5,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "deploy = 병력·자원을 쓸 수 있도록 배치하다. deport(추방하다)·devise(고안하다)·derive(유래하다)·deplete(고갈시키다)는 d-로 시작하는 다른 동사들."
                                            },
                                            {
@@ -1020,7 +1020,7 @@ window.EXAMS[16] = {
                                                             "⑤ be in charge of"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "be subjected to = 가혹하거나 불쾌한 일을 강제로 겪다. be in charge of(~을 책임지다)·be adept at(~에 능숙하다)·be eligible for(~할 자격이 있다)·be endowed with(~을 타고나다)는 모두 다른 뜻."
                                            },
                                            {
@@ -1034,7 +1034,7 @@ window.EXAMS[16] = {
                                                             "⑤ keep watch over"
                                                         ],
                                                "ans":  4,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "run the risk of = 나쁜 결과가 생길 가능성을 높이는 행동을 하다. keep watch over(감시하다)·reach out to(손을 내밀다)·make up for(만회하다)·get away with(벌을 면하다)는 다른 뜻."
                                            },
                                            {
@@ -1048,7 +1048,7 @@ window.EXAMS[16] = {
                                                             "⑤ let out"
                                                         ],
                                                "ans":  2,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "put ~ into perspective = 다른 것들과 비교해 그 진짜 중요도를 가늠하다. set apart(구별짓다)·let out(소리를 내다)·look back on(회고하다)·cast a glance at(흘끗 보다)은 모두 다른 뜻."
                                            },
                                            {
@@ -1062,7 +1062,7 @@ window.EXAMS[16] = {
                                                             "⑤ set aside"
                                                         ],
                                                "ans":  4,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "set apart = 같은 부류의 다른 것들과 뚜렷이 구별되게 만들다. set aside(따로 떼어 두다)·let out(소리를 내다)·wear out(닳다)·break up(헤어지다)은 다른 뜻."
                                            },
                                            {
@@ -1076,7 +1076,7 @@ window.EXAMS[16] = {
                                                             "⑤ literate"
                                                         ],
                                                "ans":  5,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "literate = 글을 읽고 쓸 줄 아는. indefinite(기한 없는)·definitive(최종적인)·lucid(명료한)·candid(솔직한)는 모두 다른 뜻."
                                            },
                                            {
@@ -1090,7 +1090,7 @@ window.EXAMS[16] = {
                                                             "⑤ divergent"
                                                         ],
                                                "ans":  3,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "indefinite = 기한이 정해지지 않은, 끝이 정해져 있지 않은. definitive(최종적인)·divergent(갈라지는)·precarious(위태로운)·obsolete(구식의)는 기간의 성격을 나타내지 않음."
                                            },
                                            {
@@ -1104,7 +1104,7 @@ window.EXAMS[16] = {
                                                             "⑤ altogether"
                                                         ],
                                                "ans":  4,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "anew = 처음부터 새롭게 다시. respectively(각각)·whatsoever(조금도)·subsequently(그 후에)·altogether(완전히)는 다른 뜻의 부사."
                                            },
                                            {
@@ -1118,7 +1118,7 @@ window.EXAMS[16] = {
                                                             "⑤ whatsoever"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "respectively = 각각, 언급된 순서대로. anew(새로)·whatsoever(조금도)·simultaneously(동시에)·nearly(거의)는 \u0027순서대로 하나씩 짝짓는\u0027 뜻이 없음."
                                            },
                                            {
@@ -1132,7 +1132,7 @@ window.EXAMS[16] = {
                                                             "⑤ self-righteous"
                                                         ],
                                                "ans":  5,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "self-righteous = 자신의 도덕적 우월성을 확신하고 남에게 관대하지 않은, 독선적인. divergent(갈라지는)·definitive(최종적인)는 다른 뜻이고, contemptuous(경멸하는)·obstinate(고집 센)는 비슷한 태도처럼 보여도 \u0027도덕적 우월감\u0027을 뜻하지 않음."
                                            },
                                            {
@@ -1146,7 +1146,7 @@ window.EXAMS[16] = {
                                                             "⑤ outsource"
                                                         ],
                                                "ans":  1,
-                                               "kr":  null,
+                                               "kr":  "",
                                                "why":  "override = 자신의 권한으로 남의 결정을 기각·무효화하다. deport(추방하다)·tackle(다루다)·offset(상쇄하다)·outsource(외주를 주다)는 다른 뜻."
                                            }
                                        ]
@@ -1161,14 +1161,14 @@ window.EXAMS[16] = {
                                                "q":  "The gymnast managed to \u003c\u003cexecute\u003e\u003e a flawless triple twist despite the injury.",
                                                "opts":  [
                                                             "① (프로그램을) 실행하다",
-                                                            "② (동작을) 정확히 해내다",
+                                                            "② (동작을) 해내다",
                                                             "③ 사형에 처하다",
                                                             "④ (유언장을) 집행하다",
                                                             "⑤ (계획을) 이행하다"
                                                         ],
                                                "ans":  2,
                                                "kr":  "그 체조 선수는 부상에도 불구하고 흠잡을 데 없는 3회전 비틀기 동작을 해냈다.",
-                                               "why":  "여기서 execute는 \u0027(정교한 동작을) 정확히 해내다\u0027. 같은 단어가 ③계획 이행(Type I 2번), ④프로그램 실행, ⑤유언장 집행, ②사형 집행 등으로 쓰이지만, 체조 동작을 목적어로 할 때는 \u0027수행하다\u0027가 됨."
+                                               "why":  "여기서 execute는 \u0027(정교한 동작을) 해내다, 정확히 수행하다\u0027. 같은 단어가 \u0027계획 이행\u0027(Ⅰ유형 2번과 같은 뜻), \u0027프로그램 실행\u0027, \u0027유언장 집행\u0027, \u0027사형 집행\u0027 등으로 쓰이지만, 체조 동작을 목적어로 할 때는 \u0027해내다\u0027가 됨."
                                            },
                                            {
                                                "n":  82,
@@ -1182,7 +1182,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  4,
                                                "kr":  "주 의회는 일주일간의 토론 끝에 근소한 차이로 그 법안을 통과시켰다.",
-                                               "why":  "여기서 assembly는 법안을 통과시키는 \u0027(입법) 의회\u0027. \u0027passed the bill\u0027이 결정적 단서. ③집회는 사람들이 모이는 행위 자체를 가리키므로 법안을 통과시키는 주체가 될 수 없음."
+                                               "why":  "여기서 assembly는 법안을 통과시키는 \u0027(입법) 의회\u0027. \u0027passed the bill\u0027이 결정적 단서. \u0027(사람들의) 집회\u0027는 사람들이 모이는 행위 자체를 가리키므로 법안을 통과시키는 주체가 될 수 없음."
                                            },
                                            {
                                                "n":  83,
@@ -1196,21 +1196,21 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  5,
                                                "kr":  "그녀는 숟가락 뒷면으로 마늘을 빻아 걸쭉한 페이스트로 만들었다.",
-                                               "why":  "여기서 pound는 \u0027(잘게) 빻다\u0027. \u0027into a paste\u0027가 결정적 단서. 같은 pound가 ②심장이 쿵쾅거리다, ③세게 두드리다, ④맹공하다, ⑤쿵쿵거리며 걷다 등으로도 쓰이지만 \u0027~을 걸쭉한 반죽처럼 만들다\u0027라는 결과 표현과 호응하는 것은 빻는 동작."
+                                               "why":  "여기서 pound는 \u0027(잘게) 빻다\u0027. \u0027into a paste\u0027(가루·반죽 상태로 만든다는 결과)가 결정적 단서. 같은 pound가 \u0027(심장이) 쿵쾅거리다\u0027, \u0027(문을) 세게 두드리다\u0027, \u0027(폭격 등으로) 맹공하다\u0027, \u0027(길을) 쿵쿵거리며 걷다\u0027 등으로도 쓰이지만 \u0027~을 걸쭉한 반죽처럼 만들다\u0027라는 결과 표현과 호응하는 것은 빻는 동작."
                                            },
                                            {
                                                "n":  84,
                                                "q":  "The professor circled every \u003c\u003ccontraction\u003e\u003e in the essay, such as don\u0027t and can\u0027t, and asked the student to write out both words.",
                                                "opts":  [
-                                                            "① (병에) 걸림",
+                                                            "① (병에) 걸리는 일",
                                                             "② (경기의) 위축",
-                                                            "③ (빚을) 짐",
+                                                            "③ (빚을) 지는 일",
                                                             "④ (근육의) 수축",
-                                                            "⑤ (두 단어를 줄인) 축약형"
+                                                            "⑤ (문법의) 축약형"
                                                         ],
                                                "ans":  5,
                                                "kr":  "교수는 에세이에서 don\u0027t나 can\u0027t 같은 축약형을 모두 동그라미 치고, 학생에게 두 단어를 풀어 쓰라고 요구했다.",
-                                               "why":  "여기서 contraction은 문법 용어로 \u0027두 단어를 줄인 축약형\u0027. 예시(don\u0027t, can\u0027t)와 \u0027write out both words\u0027가 결정적 단서. ①근육 수축·⑤경기 위축, 그리고 ③병에 걸림·④빚을 짐(contract a disease/debt에서 온 의미)은 모두 다른 문맥의 뜻."
+                                               "why":  "여기서 contraction은 문법 용어로 \u0027(문법의) 축약형\u0027. 예시(don\u0027t, can\u0027t)와 \u0027write out both words\u0027가 결정적 단서. \u0027(근육의) 수축\u0027·\u0027(경기의) 위축\u0027, 그리고 \u0027(병에) 걸리는 일\u0027·\u0027(빚을) 지는 일\u0027(contract a disease/debt에서 온 의미)은 모두 다른 문맥의 뜻."
                                            },
                                            {
                                                "n":  85,
@@ -1224,7 +1224,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  4,
                                                "kr":  "구름 한 점 없이, 산속 공기는 그녀가 밖으로 나섰을 때 얼굴에 쌀쌀하고 상쾌하게 느껴졌다.",
-                                               "why":  "여기서 crisp는 \u0027(날씨·공기가) 쌀쌀하고 상쾌한\u0027. 같은 crisp가 ①바삭한(음식), ④빳빳한(종이·지폐), ⑤간결하고 단호한(말투) 등으로도 쓰이지만, 공기가 얼굴에 닿는 느낌을 나타내는 문맥에서는 쌀쌀하고 상쾌한 뜻이 됨."
+                                               "why":  "여기서 crisp는 \u0027(날씨·공기가) 쌀쌀하고 상쾌한\u0027. 같은 crisp가 \u0027바삭한\u0027(음식), \u0027(종이·지폐가) 빳빳한\u0027, \u0027(말투·문체가) 간결하고 단호한\u0027 등으로도 쓰이지만, 공기가 얼굴에 닿는 느낌을 나타내는 문맥에서는 쌀쌀하고 상쾌한 뜻이 됨."
                                            },
                                            {
                                                "n":  86,
@@ -1232,13 +1232,13 @@ window.EXAMS[16] = {
                                                "opts":  [
                                                             "① (칼날이) 날카로운",
                                                             "② (가격이) 경쟁력 있는",
-                                                            "③ 몹시 하고 싶어하는",
+                                                            "③ (~을) 열망하는",
                                                             "④ (바람이) 살을 에는",
                                                             "⑤ (감각이) 예민한"
                                                         ],
                                                "ans":  3,
                                                "kr":  "두 번이나 논쟁에서 졌음에도 불구하고, 그는 세 번째로 그 주제에 대해 토론하기를 몹시 하고 싶어했다.",
-                                               "why":  "여기서 keen (to)는 \u0027몹시 ~하고 싶어하는\u0027. ①\u0027예리한\u0027은 감각·통찰을 묘사할 때(keen eye 등) 쓰이는 다른 의미."
+                                               "why":  "여기서 keen (to)는 \u0027(~을) 열망하는, 몹시 하고 싶어하는\u0027. \u0027(칼날이) 날카로운\u0027과 \u0027(감각이) 예민한\u0027은 감각·통찰을 묘사할 때(keen eye 등) 쓰이는 다른 의미."
                                            },
                                            {
                                                "n":  87,
@@ -1252,7 +1252,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  3,
                                                "kr":  "정오 직전, 그 발표 이후 수백 명의 기자들이 그 작은 마을로 들이닥쳤다.",
-                                               "why":  "여기서 descend on/upon은 \u0027(갑자기 많은 수가) 들이닥치다, 몰려들다\u0027. \u0027hundreds of reporters\u0027와 \u0027on the small town\u0027이 결정적 단서. ②는 물리적 하강, ③은 혈통을 뜻하는 descend from, ④는 descend into(전락하다), ⑤는 어둠·안개가 내려앉는 뜻으로 쓰이는 다른 의미."
+                                               "why":  "여기서 descend on/upon은 \u0027(갑자기 많은 수가) 들이닥치다, 몰려들다\u0027. \u0027hundreds of reporters\u0027와 \u0027on the small town\u0027이 결정적 단서. \u0027아래로 내려가다\u0027는 물리적 하강, \u0027(혈통이) 전해지다\u0027는 descend from, \u0027(나쁜 상태로) 전락하다\u0027는 descend into, \u0027(어둠·안개가) 내려앉다\u0027는 다른 의미."
                                            },
                                            {
                                                "n":  88,
@@ -1266,7 +1266,7 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  3,
                                                "kr":  "유약을 바르기 전에 도예가는 각 컵을 혼합물에 정확히 10초 동안 담갔다.",
-                                               "why":  "여기서 immerse는 \u0027(액체에) 담그다\u0027. \u0027each cup ... in the mixture for exactly ten seconds\u0027가 컵을 액체에 물리적으로 담그는 동작임을 보여줌. immerse에는 ②몰두하다(Type I 16번), ④낯선 환경에 던져 넣다, ⑤빚·곤경에 빠지다 같은 비유적 뜻도 있지만 액체와 시간이 언급된 이 문맥에서는 물리적 침지."
+                                               "why":  "여기서 immerse는 \u0027(액체에) 담그다\u0027. \u0027each cup ... in the mixture for exactly ten seconds\u0027가 컵을 액체에 물리적으로 담그는 동작임을 보여줌. immerse에는 \u0027(활동에) 몰두하다\u0027(Ⅰ유형 16번), \u0027(낯선 환경에) 던져 넣다\u0027, \u0027(빚·곤경에) 깊이 빠져 있다\u0027 같은 비유적 뜻도 있지만 액체와 시간이 언급된 이 문맥에서는 물리적 침지."
                                            },
                                            {
                                                "n":  89,
@@ -1280,21 +1280,21 @@ window.EXAMS[16] = {
                                                         ],
                                                "ans":  4,
                                                "kr":  "재단사는 그가 살이 쪘기 때문에 바지의 허리를 늘려야 했다.",
-                                               "why":  "여기서 let out은 \u0027(옷의 품·허리를) 늘리다\u0027. \u0027waist of the trousers\u0027와 \u0027put on weight\u0027가 결정적 단서. 같은 구동사가 ②소리를 내다, ③비밀을 누설하다, ④풀어주다, ⑤집·방을 세놓다 등으로도 쓰임."
+                                               "why":  "여기서 let out은 \u0027(옷의 품·허리를) 늘리다\u0027. \u0027waist of the trousers\u0027와 \u0027put on weight\u0027가 결정적 단서. 같은 구동사가 \u0027(소리를) 내다\u0027, \u0027(비밀을) 누설하다\u0027, \u0027풀어주다\u0027, \u0027(집·방을) 세놓다\u0027 등으로도 쓰임."
                                            },
                                            {
                                                "n":  90,
                                                "q":  "Nobody expected the shy new hire to \u003c\u003cturn out\u003e\u003e to be the company\u0027s best negotiator.",
                                                "opts":  [
-                                                            "① 결국 ~인 것으로 드러나다",
-                                                            "② (행사에) 참석하다",
+                                                            "① 결국 ~로 드러나다",
+                                                            "② (행사에) 직접 참석하다",
                                                             "③ (제품을) 생산하다",
                                                             "④ 뒤집다",
                                                             "⑤ (불을) 끄다"
                                                         ],
                                                "ans":  1,
                                                "kr":  "아무도 그 수줍은 신입 사원이 회사 최고의 협상가로 드러나리라고는 예상하지 못했다.",
-                                               "why":  "여기서 turn out to be는 \u0027결국 ~인 것으로 드러나다\u0027. \u0027Nobody expected\u0027가 의외의 결과를 함의. 같은 turn out이 ②참석하다, ③생산하다, ④끄다로도 쓰임."
+                                               "why":  "여기서 turn out to be는 \u0027결국 ~로 드러나다\u0027. \u0027Nobody expected\u0027가 의외의 결과를 함의. 같은 turn out이 \u0027(행사에) 참석하다\u0027, \u0027(제품을) 생산하다\u0027, \u0027(불을) 끄다\u0027로도 쓰임."
                                            }
                                        ]
                      },
@@ -1307,43 +1307,43 @@ window.EXAMS[16] = {
                                                "n":  91,
                                                "q":  "The board decided to \u003c\u003cexecute\u003e\u003e the new safety plan at the start of next month.",
                                                "opts":  [
-                                                            "① ponder",
-                                                            "② deport",
-                                                            "③ devise",
-                                                            "④ implement",
+                                                            "① implement",
+                                                            "② ponder",
+                                                            "③ deport",
+                                                            "④ deplete",
                                                             "⑤ withdraw"
                                                         ],
-                                               "ans":  4,
+                                               "ans":  1,
                                                "kr":  "이사회는 다음 달 초에 새 안전 계획을 시행하기로 결정했다.",
-                                               "why":  "execute (계획을) 실행하다 ≈ implement(시행하다). devise(고안하다)는 계획을 \u0027만드는\u0027 것이라 시행과 다르고, deport(추방하다)·withdraw(철회하다)·ponder(숙고하다)도 계획을 실행하는 뜻이 아님."
+                                               "why":  "execute (계획을) 실행하다 ≈ implement(시행하다). ponder(숙고하다)는 계획을 실행하는 것이 아니라 생각만 하는 것이고, deplete(고갈시키다)·deport(추방하다)·withdraw(철회하다)는 계획을 실행하는 뜻이 아니다."
                                            },
                                            {
                                                "n":  92,
                                                "q":  "The new task force will \u003c\u003ctackle\u003e\u003e the backlog of unpaid claims.",
                                                "opts":  [
-                                                            "① dismiss",
-                                                            "② deploy",
-                                                            "③ address",
+                                                            "① hamper",
+                                                            "② address",
+                                                            "③ dismiss",
                                                             "④ override",
                                                             "⑤ postpone"
                                                         ],
-                                               "ans":  3,
+                                               "ans":  2,
                                                "kr":  "새 태스크포스는 밀려 있는 미지급 청구 건들을 정면으로 처리할 것이다.",
-                                               "why":  "tackle (문제를) 정면으로 다루다 ≈ address(문제를 다루다). override(무효화하다)·deploy(배치하다)는 다른 뜻이고, postpone(연기하다)·dismiss(묵살하다)는 오히려 처리를 미루거나 피하는 쪽."
+                                               "why":  "tackle (문제를) 정면으로 다루다 ≈ address(문제를 다루다). override(무효화하다)·hamper(방해하다)는 다른 뜻이고, postpone(연기하다)·dismiss(묵살하다)는 오히려 처리를 미루거나 피하는 쪽이다."
                                            },
                                            {
                                                "n":  93,
-                                               "q":  "The airline plans to \u003c\u003cdeploy\u003e\u003e larger aircraft to its busiest routes this spring.",
+                                               "q":  "The two economists reached \u003c\u003cdivergent\u003e\u003e conclusions from the same set of data.",
                                                "opts":  [
-                                                            "① override",
-                                                            "② withdraw",
-                                                            "③ dismiss",
-                                                            "④ assign",
-                                                            "⑤ deport"
+                                                            "① differing",
+                                                            "② matching",
+                                                            "③ peripheral",
+                                                            "④ bureaucratic",
+                                                            "⑤ obsolete"
                                                         ],
-                                               "ans":  4,
-                                               "kr":  "그 항공사는 올봄 가장 붐비는 노선에 더 큰 항공기를 투입할 계획이다.",
-                                               "why":  "deploy (자원을) 배치·투입하다 ≈ assign(배정하다). deport(추방하다)·override(무효화하다)는 항공기에 쓸 수 없는 다른 뜻이고, withdraw(철수시키다)는 정반대 방향, dismiss(묵살하다)는 무관."
+                                               "ans":  1,
+                                               "kr":  "그 두 경제학자는 같은 자료에서 서로 다른 결론에 도달했다.",
+                                               "why":  "divergent(서로 다른 방향으로 갈라지는) ≈ differing(서로 다른). matching(일치하는)은 정반대이고, peripheral(주변적인)·bureaucratic(관료적인)·obsolete(구식의)는 결론의 성격을 나타내지 않는다."
                                            },
                                            {
                                                "n":  94,
@@ -1352,96 +1352,96 @@ window.EXAMS[16] = {
                                                             "① validate",
                                                             "② tackle",
                                                             "③ sustain",
-                                                            "④ devise",
+                                                            "④ exhaust",
                                                             "⑤ reverse"
                                                         ],
                                                "ans":  5,
                                                "kr":  "법원은 이전 판결을 뒤집을 권한이 있다.",
-                                               "why":  "override (결정을) 무효화하다, 뒤집다 ≈ reverse(뒤집다). tackle(다루다)·devise(고안하다)는 판결을 \u0027뒤집는\u0027 뜻이 아니고, sustain(유지하다)·validate(확인하다)는 정반대 방향."
+                                               "why":  "override (결정을) 무효화하다, 뒤집다 ≈ reverse(뒤집다). tackle(다루다)·exhaust(소진시키다)는 판결을 \u0027뒤집는\u0027 뜻이 아니고, sustain(유지하다)·validate(확인하다)는 정반대 방향이다."
                                            },
                                            {
                                                "n":  95,
-                                               "q":  "The council decided to \u003c\u003cset aside\u003e\u003e two million dollars for flood repairs.",
+                                               "q":  "Scientists have found no \u003c\u003cdefinitive\u003e\u003e proof that the drug prevents infection.",
                                                "opts":  [
-                                                            "① let out",
-                                                            "② keep watch over",
-                                                            "③ levy",
-                                                            "④ deplete",
-                                                            "⑤ reserve"
+                                                            "① partial",
+                                                            "② marginal",
+                                                            "③ seasonal",
+                                                            "④ selective",
+                                                            "⑤ decisive"
                                                         ],
                                                "ans":  5,
-                                               "kr":  "의회는 홍수 복구를 위해 200만 달러를 따로 떼어 두기로 결정했다.",
-                                               "why":  "set aside (돈)을 따로 떼어 두다 ≈ reserve(따로 확보해 두다). let out(내보내다)·keep watch over(지켜보다)는 \u0027복구용으로 확보\u0027한다는 뜻이 아니고, deplete(고갈시키다)는 정반대 방향, levy(세금을 부과하다)는 다른 뜻."
+                                               "kr":  "과학자들은 그 약이 감염을 막는다는 결정적인 증거를 찾지 못했다.",
+                                               "why":  "definitive(최종적이고 확정적인) ≈ decisive(결정적인). partial(부분적인)·marginal(미미한)·seasonal(계절적인)·selective(선별적인)는 증거의 확정성을 나타내지 않는다."
                                            },
                                            {
                                                "n":  96,
-                                               "q":  "The prisoners were \u003c\u003csubjected to\u003e\u003e months of harsh interrogation.",
+                                               "q":  "Three \u003c\u003cpharmaceutical\u003e\u003e companies announced a joint research project on rare diseases.",
                                                "opts":  [
-                                                            "① eligible for",
-                                                            "② made to undergo",
-                                                            "③ set apart",
-                                                            "④ endowed with",
-                                                            "⑤ in charge of"
+                                                            "① industrial",
+                                                            "② drug",
+                                                            "③ bureaucratic",
+                                                            "④ fatty",
+                                                            "⑤ bitter"
                                                         ],
                                                "ans":  2,
-                                               "kr":  "수감자들은 몇 달간 가혹한 심문을 당했다.",
-                                               "why":  "be subjected to = (불쾌한 일을) 강제로 겪다 ≈ be made to undergo. in charge of(~을 책임지는)·set apart(구별된)·eligible for(~할 자격이 있는)·endowed with(~을 타고난)는 모두 다른 뜻."
+                                               "kr":  "제약 회사 세 곳이 희귀 질환에 관한 공동 연구 프로젝트를 발표했다.",
+                                               "why":  "pharmaceutical(제약의) ≈ drug(약품의, 약품 관련). industrial(산업의)은 회사의 분야가 달라 뜻이 바뀌고, bureaucratic(관료적인)은 회사의 성격을 말할 뿐 약품과 무관하며, fatty(기름진)·bitter(쓴)는 회사를 꾸미지 못한다."
                                            },
                                            {
                                                "n":  97,
                                                "q":  "She is \u003c\u003cadept at\u003e\u003e handling difficult customers.",
                                                "opts":  [
-                                                            "① in charge of",
-                                                            "② weary of",
-                                                            "③ proficient in",
-                                                            "④ eligible for",
-                                                            "⑤ subjected to"
+                                                            "① weary of",
+                                                            "② proficient in",
+                                                            "③ eligible for",
+                                                            "④ in need of",
+                                                            "⑤ in view of"
                                                         ],
-                                               "ans":  3,
+                                               "ans":  2,
                                                "kr":  "그녀는 까다로운 고객을 다루는 데 능숙하다.",
-                                               "why":  "be adept at = ~에 능숙하다 ≈ be proficient in. in charge of(~을 책임지는)는 능숙함이 아니라 책임을, subjected to(~을 겪는)·weary of(~에 싫증난)·eligible for(~할 자격이 있는)는 무관한 뜻."
+                                               "why":  "be adept at = ~에 능숙하다 ≈ be proficient in. weary of(~에 싫증난)·eligible for(~할 자격이 있는)·in need of(~이 필요한)·in view of(~을 고려해)는 능숙함을 뜻하지 않는다."
                                            },
                                            {
                                                "n":  98,
-                                               "q":  "The archive holds several letters \u003c\u003cof note\u003e\u003e from that period.",
+                                               "q":  "The bakery\u0027s ovens ran \u003c\u003caround the clock\u003e\u003e during the holiday rush.",
                                                "opts":  [
-                                                            "① of no account",
-                                                            "② in charge of",
-                                                            "③ out of date",
-                                                            "④ of importance",
-                                                            "⑤ set apart"
+                                                            "① occasionally",
+                                                            "② day and night",
+                                                            "③ only on weekends",
+                                                            "④ only in the evening",
+                                                            "⑤ reluctantly"
                                                         ],
-                                               "ans":  4,
-                                               "kr":  "그 기록 보관소에는 그 시기의 주목할 만한 편지가 몇 통 소장되어 있다.",
-                                               "why":  "of note = 주목할 만한, 중요한 ≈ of importance(중요한). 명사 뒤에서 수식하는 자리이므로 형용사 한 단어가 아니라 같은 형태의 구가 바꿔 쓰기에 맞음. of no account(하찮은)는 반대 방향이고, in charge of(~을 책임지는)·set apart(구별된)·out of date(구식의)는 무관."
+                                               "ans":  2,
+                                               "kr":  "그 빵집의 오븐은 연휴 대목 동안 24시간 내내 쉬지 않고 돌아갔다.",
+                                               "why":  "around the clock = 24시간 내내 ≈ day and night(밤낮없이). occasionally(가끔)·only on weekends(주말에만)·only in the evening(저녁에만)은 시간이 한정되거나 간헐적이라 뜻이 바뀌고, reluctantly(마지못해)는 방식이 달라 뜻이 맞지 않는다."
                                            },
                                            {
                                                "n":  99,
                                                "q":  "The intern spent weeks \u003c\u003ccompiling\u003e\u003e statistics from dozens of regional offices.",
                                                "opts":  [
                                                             "① rejecting",
-                                                            "② devising",
-                                                            "③ deploying",
+                                                            "② depleting",
+                                                            "③ displacing",
                                                             "④ accumulating",
                                                             "⑤ dismissing"
                                                         ],
                                                "ans":  4,
                                                "kr":  "그 인턴은 수십 개 지역 사무소의 통계를 취합·정리하느라 몇 주를 보냈다.",
-                                               "why":  "compile = 여러 곳의 자료를 모으다 ≈ accumulate(모으다, 쌓다). devising(고안하는)은 통계를 새로 만들어낸다는 뜻이라 다르고, deploying(배치하는)은 무관, dismissing(묵살하는)·rejecting(거부하는)은 자료를 버리는 쪽."
+                                               "why":  "compile = 여러 곳의 자료를 모으다 ≈ accumulate(모으다, 쌓다). depleting(고갈시키는)·displacing(몰아내는)은 통계와 맞지 않고, dismissing(묵살하는)·rejecting(거부하는)은 자료를 버리는 쪽이다."
                                            },
                                            {
                                                "n":  100,
                                                "q":  "The workshop \u003c\u003cimmersed\u003e\u003e the students in real-world problems.",
                                                "opts":  [
                                                             "① dismissed",
-                                                            "② deported",
-                                                            "③ engaged",
+                                                            "② engaged",
+                                                            "③ deported",
                                                             "④ rejected",
-                                                            "⑤ humiliated"
+                                                            "⑤ displaced"
                                                         ],
-                                               "ans":  3,
+                                               "ans":  2,
                                                "kr":  "그 워크숍은 학생들을 현실 세계의 문제 속에 깊이 몰입시켰다.",
-                                               "why":  "immerse A in B = A를 B에 깊이 몰입시키다 ≈ engage A in B(A를 B에 참여시키다). deported(추방했다)·humiliated(망신을 줬다)·dismissed(내보냈다)·rejected(거부했다)는 \u0027몰입시킨다\u0027는 뜻과 반대이거나 무관."
+                                               "why":  "immerse A in B = A를 B에 깊이 몰입시키다 ≈ engage A in B(A를 B에 참여시키다). deported(추방했다)·displaced(쫓아냈다)·dismissed(내보냈다)·rejected(거부했다)는 \u0027몰입시킨다\u0027는 뜻과 반대이거나 무관."
                                            }
                                        ]
                      }
