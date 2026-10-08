@@ -1,7 +1,8 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { Sequence, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { OutlinedText, Sparks, Starburst } from "../components/Caption";
-import { useTheme } from "../theme";
+import { ThemeProvider, useTheme } from "../theme";
+import { FX, type FxName } from "./CaptionLab";
 
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 
@@ -56,3 +57,29 @@ export const FlashCaption: React.FC<{ lines: string[]; start: number; end: numbe
   );
 };
 
+
+// 장면마다 다른 모션 스타일 + 띠 색 + 위치/크기 변화를 주는 자막
+export const StyledCaption: React.FC<{
+  lines: string[];
+  start: number;
+  end: number;
+  fx: FxName;
+  band: string;
+  cy?: number;
+  size?: number;
+}> = ({ lines, start, end, fx, band, cy = 910, size = 108 }) => {
+  const theme = useTheme();
+  const f = useCurrentFrame();
+  if (f < start || f > end) return null;
+  const out = interpolate(f, [end - 8, end], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const C = FX[fx];
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: cy, transform: `translateY(-50%) scale(${1 + (1 - out) * 0.08})`, opacity: out, display: "grid", placeItems: "center", pointerEvents: "none", filter: "drop-shadow(0 12px 16px rgba(0,0,0,.28))" }}>
+      <Sequence from={start} layout="none">
+        <ThemeProvider value={{ ...theme, primary: band, accent: band }}>
+          <C lines={lines} size={size} />
+        </ThemeProvider>
+      </Sequence>
+    </div>
+  );
+};

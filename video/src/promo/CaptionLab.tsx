@@ -119,6 +119,9 @@ const Shine: React.FC<P> = ({ lines, size }) => {
   );
 };
 
+export const FX = { drop: Drop, marker: Marker, wipe: Wipe, stamp: Stamp, type: Type, underline: Underline, stack: Stack, shine: Shine };
+export type FxName = keyof typeof FX;
+
 const STYLES: { name: string; use: string; C: React.FC<P> }[] = [
   { name: "① 글자 쪼개 튀기기", use: "주제·요지, 해석", C: Drop },
   { name: "② 형광펜 긋기", use: "어휘, 핵심 문장", C: Marker },

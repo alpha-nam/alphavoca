@@ -1,7 +1,8 @@
 import React from "react";
 import { Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Frame } from "../components/Frame";
-import { FlashCaption } from "./FlashCaption";
+import { StyledCaption } from "./FlashCaption";
+import type { FxName } from "./CaptionLab";
 import { SAFE, useTheme } from "../theme";
 import manifest from "../data/promo-manifest.json";
 
@@ -21,23 +22,24 @@ const heights = ORDER.map((n) => (W * M_[n].h) / M_[n].w);
 const tops = heights.reduce<number[]>((acc, h, i) => [...acc, i === 0 ? 0 : acc[i - 1] + heights[i - 1] + GAP], []);
 const TOTAL_H = tops[tops.length - 1] + heights[heights.length - 1];
 
-type Stop = { name: string; hold: number; speed: number; lines: string[]; mark?: boolean };
+type Stop = { name: string; hold: number; speed: number; lines: string[]; mark?: boolean; fx: FxName; cy?: number; size?: number };
+const BANDS = ["#1F6BFF", "#12A150", "#7C5CFC", "#E5484D"];
 // 쭉쭉 내리다가 핵심에서 멈춘다 (speed: px/frame). 자막은 [[강조]]에 형광 띠가 깔린다.
 const SENT: string[] = ["문장마다", "[[해석 · 문법]]"];
 const STOPS: Stop[] = [
-  { name: "header", hold: 26, speed: 0, lines: ["주제 · 요지", "[[쉬운 설명]]까지"] },
-  { name: "blueprint", hold: 46, speed: 53, lines: ["글의 설계도", "[[한눈에]]"], mark: true },
-  { name: "sketch", hold: 30, speed: 56, lines: ["개념 스케치도", "[[자동]]으로!"] },
-  { name: "vocab", hold: 20, speed: 56, lines: ["핵심 어휘", "[[정리]]까지"] },
-  { name: "s1", hold: 40, speed: 62, lines: ["★ 핵심 문장", "[[! 해석 주의]] 표시"], mark: true },
-  { name: "s3", hold: 4, speed: 64, lines: SENT },
-  { name: "s5", hold: 0, speed: 115, lines: SENT },
-  { name: "s6", hold: 48, speed: 92, lines: ["무관한 문장,", "[[왜]] 아닌지까지"], mark: true },
-  { name: "logic", hold: 28, speed: 78, lines: ["논리 흐름", "[[한눈에]]"] },
-  { name: "analogy", hold: 28, speed: 64, lines: ["설명용", "[[비유]]까지"] },
-  { name: "answer", hold: 48, speed: 64, lines: ["정답 근거와", "[[오답 분석]]"], mark: true },
-  { name: "tips", hold: 20, speed: 64, lines: ["수업 [[팁]]도", "[[덤]]!"] },
-  { name: "variants", hold: 44, speed: 64, lines: ["변형문제까지", "[[자동 추천]]"] },
+  { name: "header", hold: 26, speed: 0, lines: ["주제 · 요지", "[[쉬운 설명]]까지"] , fx: "drop", cy: 910, size: 108 },
+  { name: "blueprint", hold: 46, speed: 53, lines: ["글의 설계도", "[[한눈에]]"], mark: true , fx: "wipe", cy: 760, size: 112 },
+  { name: "sketch", hold: 30, speed: 56, lines: ["개념 스케치도", "[[자동]]으로!"] , fx: "stack", cy: 980, size: 104 },
+  { name: "vocab", hold: 20, speed: 56, lines: ["핵심 어휘", "[[정리]]까지"] , fx: "marker", cy: 910, size: 112 },
+  { name: "s1", hold: 40, speed: 62, lines: ["★ 핵심 문장", "[[! 해석 주의]] 표시"], mark: true , fx: "shine", cy: 780, size: 108 },
+  { name: "s3", hold: 4, speed: 64, lines: SENT , fx: "underline", cy: 910, size: 108 },
+  { name: "s5", hold: 0, speed: 115, lines: SENT , fx: "underline", cy: 910, size: 108 },
+  { name: "s6", hold: 48, speed: 92, lines: ["무관한 문장,", "[[왜]] 아닌지까지"], mark: true , fx: "stamp", cy: 960, size: 116 },
+  { name: "logic", hold: 28, speed: 78, lines: ["논리 흐름", "[[한눈에]]"] , fx: "type", cy: 820, size: 108 },
+  { name: "analogy", hold: 28, speed: 64, lines: ["설명용", "[[비유]]까지"] , fx: "stack", cy: 1010, size: 104 },
+  { name: "answer", hold: 48, speed: 64, lines: ["정답 근거와", "[[오답 분석]]"], mark: true , fx: "stamp", cy: 900, size: 116 },
+  { name: "tips", hold: 20, speed: 64, lines: ["수업 [[팁]]도", "[[덤]]!"] , fx: "marker", cy: 1000, size: 112 },
+  { name: "variants", hold: 44, speed: 64, lines: ["변형문제까지", "[[자동 추천]]"] , fx: "type", cy: 880, size: 108 },
 ];
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 const targetY = (name: string) => {
@@ -66,14 +68,14 @@ export const SCROLL_FRAMES = timeline[timeline.length - 1].leave + 14;
 // 같은 문구가 이어지는 정거장은 자막 하나로 묶는다
 const CAP_LIFE = 30; // 도착 후 자막이 화면 중앙에 머무는 프레임
 const captions = (() => {
-  const out: { lines: string[]; start: number; end: number }[] = [];
+  const out: { lines: string[]; start: number; end: number; fx: FxName; cy?: number; size?: number; band: string }[] = [];
   for (const s of timeline) {
     const key = s.lines.join("|");
     const last = out[out.length - 1];
     if (last && last.lines.join("|") === key) {
       last.end = s.arrive + CAP_LIFE;
     } else {
-      out.push({ lines: s.lines, start: Math.max(0, s.arrive - 8), end: s.arrive + CAP_LIFE });
+      out.push({ lines: s.lines, start: Math.max(0, s.arrive - 8), end: s.arrive + CAP_LIFE, fx: s.fx, cy: s.cy, size: s.size, band: BANDS[out.length % BANDS.length] });
     }
   }
   for (let i = 0; i < out.length - 1; i++) out[i].end = Math.min(out[i].end, out[i + 1].start - 2);
@@ -155,7 +157,7 @@ export const PromoScroll: React.FC = () => {
         </>
       ) : null}
       {captions.map((c, i) => (
-        <FlashCaption key={i} lines={c.lines} start={c.start} end={c.end} />
+        <StyledCaption key={i} lines={c.lines} start={c.start} end={c.end} fx={c.fx} band={c.band} cy={fb ? 960 : c.cy} size={c.size} />
       ))}
     </Frame>
   );
