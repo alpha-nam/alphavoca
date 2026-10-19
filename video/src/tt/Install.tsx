@@ -2,7 +2,7 @@ import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../components/Frame";
 import { StyledCaption } from "../promo/FlashCaption";
-import { Bar, Btn, Checklist, Monitor, Txt, Wallpaper, Win } from "./Desk";
+import { Bar, Btn, Checklist, PlainSteps, usePlain, Monitor, Txt, Wallpaper, Win } from "./Desk";
 
 export const INSTALL_FRAMES = 470;
 
@@ -21,6 +21,7 @@ const Item: React.FC<{ y: number; name: string; kind: string; size?: string; col
 
 export const Install: React.FC = () => {
   const f = useCurrentFrame();
+  const plain = usePlain();
   const dl = interpolate(f, [4, 40], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const ext = interpolate(f, [144, 190], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const dots = Math.floor(interpolate(f, [276, 300], [0, 6], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
@@ -109,8 +110,12 @@ export const Install: React.FC = () => {
           ) : null}
         </Wallpaper>
       </Monitor>
-      <Checklist title="TimeTable+ 설치 방법" items={[{ from: 0, text: "zip 파일 받기" }, { from: 92, text: "우클릭 → 모두 압축 풀기" }, { from: 216, text: "폴더 열고 TimeTable.exe 실행" }, { from: 276, text: "비밀번호 입력" }, { from: 322, text: "바로가기 · 구글 연동 켜기" }]} top={930} />
-      <StyledCaption lines={["설치는", "[[이렇게]] 해요"]} start={0} end={40} fx="drop" band="#1F6BFF" cy={560} size={96} />
+      {plain ? <PlainSteps title="TimeTable+ 설치" items={[{ from: 0, text: "zip 파일 받기" }, { from: 92, text: "우클릭 → 모두 압축 풀기" }, { from: 216, text: "폴더 열고 TimeTable.exe 실행" }, { from: 276, text: "비밀번호 입력" }, { from: 322, text: "바로가기 · 구글 연동 켜기" }]} total={470} /> : (
+        <>
+        <Checklist title="TimeTable+ 설치 방법" items={[{ from: 0, text: "zip 파일 받기" }, { from: 92, text: "우클릭 → 모두 압축 풀기" }, { from: 216, text: "폴더 열고 TimeTable.exe 실행" }, { from: 276, text: "비밀번호 입력" }, { from: 322, text: "바로가기 · 구글 연동 켜기" }]} top={930} />
+        <StyledCaption lines={["설치는", "[[이렇게]] 해요"]} start={0} end={40} fx="drop" band="#1F6BFF" cy={560} size={96} />
+        </>
+      )}
     </Frame>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { Frame } from "../components/Frame";
 import { StyledCaption } from "../promo/FlashCaption";
-import { Bar, Btn, Checklist, Monitor, Txt, VH, VW, Wallpaper, Win } from "./Desk";
+import { Bar, Btn, Checklist, PlainSteps, usePlain, Monitor, Txt, VH, VW, Wallpaper, Win } from "./Desk";
 
 export const UNINSTALL_FRAMES = 345;
 
@@ -24,6 +24,7 @@ const Row: React.FC<{ i: number; name: string; sel: boolean; gone: number }> = (
 
 export const Uninstall: React.FC = () => {
   const f = useCurrentFrame();
+  const plain = usePlain();
   const typed = Math.floor(interpolate(f, [46, 62], [0, 3], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
   const stage2 = f >= 131;
   const selected = f >= 172 && f < 282;
@@ -80,8 +81,12 @@ export const Uninstall: React.FC = () => {
           </Win>
         </Wallpaper>
       </Monitor>
-      <Checklist title="기존 Lively 삭제하기" items={[{ from: 24, text: "제어판 열기" }, { from: 100, text: "프로그램 제거 선택" }, { from: 160, text: "Lively Wallpaper → 제거/변경" }, { from: 232, text: "삭제 완료!" }]} top={960} />
-      <StyledCaption lines={["예전 Lively는", "[[먼저 삭제]]하세요"]} start={0} end={42} fx="stamp" band="#E5484D" cy={560} size={92} />
+      {plain ? <PlainSteps title="기존 Lively 삭제" items={[{ from: 24, text: "제어판 열기" }, { from: 100, text: "프로그램 제거 선택" }, { from: 160, text: "Lively Wallpaper → 제거/변경" }, { from: 232, text: "삭제 완료!" }]} total={345} /> : (
+        <>
+        <Checklist title="기존 Lively 삭제하기" items={[{ from: 24, text: "제어판 열기" }, { from: 100, text: "프로그램 제거 선택" }, { from: 160, text: "Lively Wallpaper → 제거/변경" }, { from: 232, text: "삭제 완료!" }]} top={960} />
+        <StyledCaption lines={["예전 Lively는", "[[먼저 삭제]]하세요"]} start={0} end={42} fx="stamp" band="#E5484D" cy={560} size={92} />
+        </>
+      )}
     </Frame>
   );
 };

@@ -4,6 +4,9 @@ import { Tap } from "../components/Caption";
 import { Pop } from "../components/Card";
 import { useTheme } from "../theme";
 
+export const PlainCtx = React.createContext(false);
+export const usePlain = () => React.useContext(PlainCtx);
+
 export const VW = 1600;
 export const VH = 1000;
 const E = Easing.inOut(Easing.cubic);
@@ -32,12 +35,18 @@ const Arrow: React.FC<{ press: boolean }> = ({ press }) => (
 // 가상 데스크톱(1600x1000)을 카메라로 확대·이동하며 보여주는 모니터 + 마우스 커서
 export const Monitor: React.FC<{ cam: number[][]; cursor: number[][]; clicks: number[]; children: React.ReactNode }> = ({ cam, cursor, clicks, children }) => {
   const f = useCurrentFrame();
-  const [cx, cy, s] = track(f, cam);
+  const plain = usePlain();
+  const [cx0, cy0, s0] = track(f, cam);
+  const s = plain ? 1 + (s0 - 1) * 0.5 : s0;
+  // 카메라가 가상 데스크톱 밖(검은 영역)을 비추지 않도록 중심을 제한
+  const hw = VW / (2 * s), hh = VH / (2 * s);
+  const cx = Math.min(VW - hw, Math.max(hw, cx0));
+  const cy = Math.min(VH - hh, Math.max(hh, cy0));
   const k = K0 * s;
   const [mx, my] = track(f, cursor);
   const press = clicks.some((c) => f >= c && f < c + 5);
   return (
-    <div style={{ position: "absolute", left: 26, top: 250, width: MON_W + 28, height: MON_H + 28, borderRadius: 30, background: "#0F1624", padding: 14, boxShadow: "0 28px 60px rgba(10,26,63,.35)" }}>
+    <div style={{ position: "absolute", left: 26, top: plain ? 470 : 250, width: MON_W + 28, height: MON_H + 28, borderRadius: 30, background: "#0F1624", padding: 14, boxShadow: "0 28px 60px rgba(10,26,63,.35)" }}>
       <div style={{ position: "relative", width: MON_W, height: MON_H, borderRadius: 14, overflow: "hidden", background: "#000" }}>
         <div style={{ position: "absolute", left: 0, top: 0, width: VW, height: VH, transformOrigin: "0 0", transform: `translate(${MON_W / 2 - cx * k}px, ${MON_H / 2 - cy * k}px) scale(${k})` }}>
           {children}
@@ -138,5 +147,24 @@ export const Checklist: React.FC<{ title: string; items: { from: number; text: s
         })}
       </div>
     </div>
+  );
+};
+
+// 담백한 시안: 단계 제목 + 현재 단계 한 줄 + 얇은 진행 막대
+export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number }> = ({ title, items, total }) => {
+  const f = useCurrentFrame();
+  const theme = useTheme();
+  const cur = Math.max(0, items.reduce((a, it, i) => (f >= it.from ? i : a), 0));
+  return (
+    <>
+      <div style={{ position: "absolute", left: 60, right: 60, top: 330, textAlign: "center", fontSize: 58, fontWeight: 900, color: "#14203A", fontFamily: theme.font }}>{title}</div>
+      <div style={{ position: "absolute", left: 60, right: 60, top: 1210, textAlign: "center", fontFamily: theme.font }}>
+        <div style={{ fontSize: 28, fontWeight: 700, color: theme.muted, marginBottom: 10 }}>{cur + 1} / {items.length}</div>
+        <div style={{ fontSize: 50, fontWeight: 800, color: "#14203A" }}>{items[cur].text}</div>
+        <div style={{ margin: "34px auto 0", width: 640, height: 8, borderRadius: 4, background: "#DCE5F4", overflow: "hidden" }}>
+          <div style={{ width: `${Math.min(1, f / total) * 100}%`, height: "100%", background: theme.primary }} />
+        </div>
+      </div>
+    </>
   );
 };
