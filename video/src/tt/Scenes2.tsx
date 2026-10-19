@@ -10,7 +10,7 @@ import { useTheme } from "../theme";
 const ck = (f: number, a: number, b: number) => interpolate(f, [a, b], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
 // ─────────── 구글 · 휴대폰 연동 ───────────
-export const CONNECT_FRAMES = 340;
+export const CONNECT_FRAMES = 400;
 const QR = Array.from({ length: 81 }, (_, i) => ((i * 7 + Math.floor(i / 9) * 5) % 3 === 0 ? 1 : 0));
 
 const PhoneFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -24,12 +24,12 @@ export const Connect: React.FC = () => {
   const panel = ck(f, 26, 38);
   const login = f >= 66 && f < 106;
   const done = f >= 108;
-  const qr = f >= 146 && f < 222;
-  const phone = f >= 224;
+  const qr = f >= 146 && f < 282;
+  const phone = f >= 284;
   return (
     <Frame>
       {!phone ? (
-        <AppFrame active="시간표" cursor={[[0, 330, 300], [20, 592, 19], [56, 540, 223], [84, 350, 317], [120, 400, 300], [132, 470, 346], [222, 470, 346]]} clicks={[24, 64, 104, 144]}>
+        <AppFrame active="시간표" cursor={[[0, 330, 300], [20, 592, 19], [56, 540, 223], [84, 350, 317], [120, 400, 300], [132, 470, 346], [282, 470, 346]]} clicks={[24, 64, 104, 144]}>
           <div style={{ position: "absolute", left: 16, top: 52, fontSize: 13, color: C.mute, fontWeight: 700 }}>시간표 · 설정을 열어요</div>
           {panel > 0 ? (
             <Card x={326} y={46} w={284} h={410} style={{ opacity: panel, transform: `translateX(${(1 - panel) * 30}px)`, padding: 12, boxSizing: "border-box" }}>
@@ -89,8 +89,9 @@ export const Connect: React.FC = () => {
         </PhoneFrame>
       )}
       <PlainSteps title="구글 · 휴대폰 연동" total={CONNECT_FRAMES}
-        items={[{ from: 0, text: "1단계  PC를 구글 드라이브에 연결" }, { from: 108, text: "2단계  QR로 휴대폰에서 열기" }, { from: 224, text: "PC와 휴대폰이 같은 화면 · 동기화" }]}
-        note={{ from: 232, text: "각자 자기 구글 계정에 저장돼요 · 교사끼리 데이터는 공유되지 않아요" }} />
+        items={[{ from: 0, text: "1단계  PC를 구글 드라이브에 연결" }, { from: 108, text: "2단계  QR로 휴대폰에서 열기" }, { from: 284, text: "PC와 휴대폰이 같은 화면 · 동기화" }]}
+        note2={{ from: 170, to: 282, text: "안드로이드는 보안 메시지가 떠도 “무시하고 설치하기”를 눌러 주세요" }}
+        note={{ from: 292, text: "각자 자기 구글 계정에 저장돼요 · 교사끼리 데이터는 공유되지 않아요" }} />
     </Frame>
   );
 };

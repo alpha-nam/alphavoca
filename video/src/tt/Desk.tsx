@@ -151,7 +151,7 @@ export const Checklist: React.FC<{ title: string; items: { from: number; text: s
 };
 
 // 담백한 시안: 단계 제목 + 현재 단계 한 줄 + 얇은 진행 막대
-export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number; note?: { from: number; text: string }; titleTop?: number; lineTop?: number }> = ({ title, items, total, note, titleTop = 330, lineTop = 1210 }) => {
+export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number; note?: { from: number; text: string }; note2?: { from: number; to: number; text: string }; titleTop?: number; lineTop?: number }> = ({ title, items, total, note, note2, titleTop = 330, lineTop = 1210 }) => {
   const f = useCurrentFrame();
   const theme = useTheme();
   const cur = Math.max(0, items.reduce((a, it, i) => (f >= it.from ? i : a), 0));
@@ -165,6 +165,9 @@ export const PlainSteps: React.FC<{ title: string; items: { from: number; text: 
           <div style={{ width: `${Math.min(1, f / total) * 100}%`, height: "100%", background: theme.primary }} />
         </div>
       </div>
+      {note2 && f >= note2.from && f < note2.to ? (
+        <div style={{ position: "absolute", left: 60, right: 60, top: 1420, textAlign: "center", fontSize: 32, fontWeight: 800, color: theme.text, fontFamily: theme.font, opacity: Math.min(1, (f - note2.from) / 12) }}>{note2.text}</div>
+      ) : null}
       {note && f >= note.from ? (
         <div style={{ position: "absolute", left: 60, right: 60, top: 1420, textAlign: "center", fontSize: 30, fontWeight: 700, color: theme.muted, fontFamily: theme.font, opacity: Math.min(1, (f - note.from) / 12) }}>{note.text}</div>
       ) : null}
