@@ -1,0 +1,320 @@
+{
+  "tt": [
+    {
+      "img": "tt_0.png",
+      "label": "처음",
+      "target": null
+    },
+    {
+      "img": "tt_1.png",
+      "label": "보기 종류 열기",
+      "target": {
+        "x": 456,
+        "y": 84
+      }
+    },
+    {
+      "img": "tt_2.png",
+      "label": "학급 선택",
+      "target": {
+        "x": 471,
+        "y": 174
+      }
+    },
+    {
+      "img": "tt_3.png",
+      "label": "이름 목록",
+      "target": {
+        "x": 567,
+        "y": 84
+      }
+    },
+    {
+      "img": "tt_4.png",
+      "label": "2-3반",
+      "target": {
+        "x": 490,
+        "y": 207
+      }
+    }
+  ],
+  "swap": [
+    {
+      "img": "swap_0.png",
+      "label": "탭",
+      "target": {
+        "x": 135,
+        "y": 33
+      }
+    },
+    {
+      "img": "swap_1.png",
+      "label": "칸 누르기",
+      "target": {
+        "x": 220,
+        "y": 300
+      }
+    },
+    {
+      "img": "swap_2.png",
+      "label": "후보 누르기",
+      "target": {
+        "x": 308,
+        "y": 220
+      }
+    }
+  ],
+  "today": [
+    {
+      "img": "today_0.png",
+      "label": "탭",
+      "target": {
+        "x": 310,
+        "y": 33
+      }
+    },
+    {
+      "img": "today_1.png",
+      "label": "석식",
+      "target": {
+        "x": 575,
+        "y": 412
+      }
+    },
+    {
+      "img": "today_2.png",
+      "label": "스크롤",
+      "target": null
+    }
+  ],
+  "att": [
+    {
+      "img": "att_0.png",
+      "label": "탭",
+      "target": {
+        "x": 397,
+        "y": 33
+      }
+    },
+    {
+      "img": "att_1.png",
+      "label": "학년",
+      "target": {
+        "x": 154,
+        "y": 129
+      }
+    },
+    {
+      "img": "att_2.png",
+      "label": "반",
+      "target": {
+        "x": 336,
+        "y": 129
+      }
+    },
+    {
+      "img": "att_3.png",
+      "label": "번호",
+      "target": {
+        "x": 518,
+        "y": 129
+      }
+    },
+    {
+      "img": "att_4.png",
+      "label": "조퇴",
+      "target": {
+        "x": 268,
+        "y": 174
+      }
+    },
+    {
+      "img": "att_5.png",
+      "label": "구분 질병",
+      "target": {
+        "x": 131,
+        "y": 215
+      }
+    },
+    {
+      "img": "att_6.png",
+      "label": "비고",
+      "target": {
+        "x": 336,
+        "y": 260
+      }
+    },
+    {
+      "img": "att_7.png",
+      "label": "추가",
+      "target": {
+        "x": 579,
+        "y": 306
+      }
+    }
+  ],
+  "subj": [
+    {
+      "img": "subj_0.png",
+      "label": "탭",
+      "target": {
+        "x": 485,
+        "y": 33
+      }
+    },
+    {
+      "img": "subj_1.png",
+      "label": "체크",
+      "target": {
+        "x": 460,
+        "y": 265
+      }
+    },
+    {
+      "img": "subj_2.png",
+      "label": "사유",
+      "target": null
+    }
+  ],
+  "memo": [
+    {
+      "img": "memo_0.png",
+      "label": "탭",
+      "target": {
+        "x": 572,
+        "y": 33
+      }
+    },
+    {
+      "img": "memo_1.png",
+      "label": "메모 추가",
+      "target": {
+        "x": 308,
+        "y": 126
+      }
+    },
+    {
+      "img": "memo_2.png",
+      "label": "글 입력",
+      "target": {
+        "x": 308,
+        "y": 141
+      }
+    },
+    {
+      "img": "memo_3.png",
+      "label": "추가",
+      "target": {
+        "x": 34,
+        "y": 194
+      }
+    },
+    {
+      "img": "memo_4.png",
+      "label": "날짜 열기",
+      "target": {
+        "x": 88,
+        "y": 257
+      }
+    },
+    {
+      "img": "memo_5.png",
+      "label": "시작일",
+      "target": {
+        "x": 117,
+        "y": 321
+      }
+    },
+    {
+      "img": "memo_6.png",
+      "label": "종료일",
+      "target": {
+        "x": 178,
+        "y": 321
+      }
+    },
+    {
+      "img": "memo_7.png",
+      "label": "메모 하나 더",
+      "target": {
+        "x": 34,
+        "y": 194
+      }
+    },
+    {
+      "img": "memo_8.png",
+      "label": "체크",
+      "target": {
+        "x": 45,
+        "y": 312
+      }
+    }
+  ],
+  "cal": [
+    {
+      "img": "cal_0.png",
+      "label": "탭",
+      "target": {
+        "x": 223,
+        "y": 33
+      }
+    },
+    {
+      "img": "cal_1.png",
+      "label": "날짜 누르기",
+      "target": {
+        "x": 137,
+        "y": 501
+      }
+    },
+    {
+      "img": "cal_2.png",
+      "label": "스크롤",
+      "target": null
+    },
+    {
+      "img": "cal_3.png",
+      "label": "스크롤 위로",
+      "target": null
+    },
+    {
+      "img": "cal_4.png",
+      "label": "학사일정",
+      "target": {
+        "x": 310,
+        "y": 126
+      }
+    }
+  ],
+  "phone": [
+    {
+      "img": "phone_0.png",
+      "label": "캘린더",
+      "target": {
+        "x": 140,
+        "y": 33
+      }
+    },
+    {
+      "img": "phone_1.png",
+      "label": "교과출결",
+      "target": {
+        "x": 304,
+        "y": 33
+      }
+    },
+    {
+      "img": "phone_2.png",
+      "label": "체크",
+      "target": {
+        "x": 230,
+        "y": 406
+      }
+    },
+    {
+      "img": "phone_3.png",
+      "label": "동기화됨",
+      "target": null
+    }
+  ]
+}

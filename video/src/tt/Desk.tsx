@@ -151,14 +151,14 @@ export const Checklist: React.FC<{ title: string; items: { from: number; text: s
 };
 
 // 담백한 시안: 단계 제목 + 현재 단계 한 줄 + 얇은 진행 막대
-export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number; note?: { from: number; text: string } }> = ({ title, items, total, note }) => {
+export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number; note?: { from: number; text: string }; titleTop?: number; lineTop?: number }> = ({ title, items, total, note, titleTop = 330, lineTop = 1210 }) => {
   const f = useCurrentFrame();
   const theme = useTheme();
   const cur = Math.max(0, items.reduce((a, it, i) => (f >= it.from ? i : a), 0));
   return (
     <>
-      <div style={{ position: "absolute", left: 60, right: 60, top: 330, textAlign: "center", fontSize: 58, fontWeight: 900, color: "#14203A", fontFamily: theme.font }}>{title}</div>
-      <div style={{ position: "absolute", left: 60, right: 60, top: 1210, textAlign: "center", fontFamily: theme.font }}>
+      <div style={{ position: "absolute", left: 60, right: 60, top: titleTop, textAlign: "center", fontSize: 58, fontWeight: 900, color: "#14203A", fontFamily: theme.font }}>{title}</div>
+      <div style={{ position: "absolute", left: 60, right: 60, top: lineTop, textAlign: "center", fontFamily: theme.font }}>
         <div style={{ fontSize: 28, fontWeight: 700, color: theme.muted, marginBottom: 10 }}>{cur + 1} / {items.length}</div>
         <div style={{ fontSize: 50, fontWeight: 800, color: "#14203A" }}>{items[cur].text}</div>
         <div style={{ margin: "34px auto 0", width: 640, height: 8, borderRadius: 4, background: "#DCE5F4", overflow: "hidden" }}>
