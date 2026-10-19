@@ -7,6 +7,7 @@ import type { ReelProps } from "./types";
 import { PromoReel, PROMO_TOTAL } from "./promo/PromoReel";
 import { CaptionLab } from "./promo/CaptionLab";
 import { TTReel, TT_TOTAL } from "./tt/TTReel";
+import { TTFull, FULL_TOTAL } from "./tt/TTFull";
 import type { Variant } from "./theme";
 
 const make = (variant: Variant): ReelProps => ({ data: passage, variant, bgm: "" });
@@ -15,6 +16,7 @@ const make = (variant: Variant): ReelProps => ({ data: passage, variant, bgm: ""
 export const Root: React.FC = () => (
   <>
     <Composition id="TTAd" component={TTReel} durationInFrames={TT_TOTAL} fps={FPS} width={1080} height={1920} defaultProps={{ plain: false }} />
+    <Composition id="TTFull" component={TTFull} durationInFrames={FULL_TOTAL} fps={FPS} width={1080} height={1920} />
     <Composition id="TTAdPlain" component={TTReel} durationInFrames={TT_TOTAL} fps={FPS} width={1080} height={1920} defaultProps={{ plain: true }} />
     <Composition id="CaptionLab" component={CaptionLab} durationInFrames={60} fps={FPS} width={1080} height={1920} />
     <Composition id="PromoBlue" component={PromoReel} durationInFrames={PROMO_TOTAL} fps={FPS} width={1080} height={1920} defaultProps={{ bgm: "", bg: "light" as const }} />

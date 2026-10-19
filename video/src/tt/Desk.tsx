@@ -26,8 +26,8 @@ export const track = (f: number, keys: number[][]): number[] => {
 
 const MON_W = 1000, MON_H = 625, K0 = MON_W / VW;
 
-const Arrow: React.FC<{ press: boolean }> = ({ press }) => (
-  <svg width="40" height="40" viewBox="0 0 24 24" style={{ filter: "drop-shadow(0 3px 4px rgba(0,0,0,.4))", transform: press ? "scale(.82)" : "none", transformOrigin: "3px 2px" }}>
+export const Arrow: React.FC<{ press: boolean; size?: number }> = ({ press, size = 40 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" style={{ filter: "drop-shadow(0 3px 4px rgba(0,0,0,.4))", transform: press ? "scale(.82)" : "none", transformOrigin: "3px 2px" }}>
     <path d="M3 2 L3 19 L8 14.5 L11.5 21 L14 19.8 L10.6 13.4 L17 13 Z" fill="#fff" stroke="#111" strokeWidth="1.4" strokeLinejoin="round" />
   </svg>
 );
@@ -151,7 +151,7 @@ export const Checklist: React.FC<{ title: string; items: { from: number; text: s
 };
 
 // 담백한 시안: 단계 제목 + 현재 단계 한 줄 + 얇은 진행 막대
-export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number }> = ({ title, items, total }) => {
+export const PlainSteps: React.FC<{ title: string; items: { from: number; text: string }[]; total: number; note?: { from: number; text: string } }> = ({ title, items, total, note }) => {
   const f = useCurrentFrame();
   const theme = useTheme();
   const cur = Math.max(0, items.reduce((a, it, i) => (f >= it.from ? i : a), 0));
@@ -165,6 +165,9 @@ export const PlainSteps: React.FC<{ title: string; items: { from: number; text: 
           <div style={{ width: `${Math.min(1, f / total) * 100}%`, height: "100%", background: theme.primary }} />
         </div>
       </div>
+      {note && f >= note.from ? (
+        <div style={{ position: "absolute", left: 60, right: 60, top: 1420, textAlign: "center", fontSize: 30, fontWeight: 700, color: theme.muted, fontFamily: theme.font, opacity: Math.min(1, (f - note.from) / 12) }}>{note.text}</div>
+      ) : null}
     </>
   );
 };
