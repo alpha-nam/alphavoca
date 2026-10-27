@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Alpha-male Voca Day 24 정답·해설</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#F2F6FD;--glow:#D9E6FF;--sheet:#fff;--sheet2:#F8FAFF;--fg:#131A2B;--muted:#5F6B85;--line:#E1E8F5;--accent:#1F6BFF;--soft:#E6EFFF;--ink:#0B4FCC;--green:#12A150;--gsoft:#DFF7E8;--amber:#F59E0B;--asoft:#FFF5DC;--shadow:0 1px 2px rgba(20,60,160,.06),0 8px 24px rgba(20,60,160,.07);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0B1222;--glow:#14336E;--sheet:#131B33;--sheet2:#19233F;--fg:#EEF3FF;--muted:#9AA8C7;--line:#25325A;--accent:#6FA2FF;--soft:#182E5C;--ink:#B8D0FF;--green:#4ADE80;--gsoft:#16391F;--amber:#FBBF24;--asoft:#3A2F14;--shadow:0 8px 28px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0B1222;--glow:#14336E;--sheet:#131B33;--sheet2:#19233F;--fg:#EEF3FF;--muted:#9AA8C7;--line:#25325A;--accent:#6FA2FF;--soft:#182E5C;--ink:#B8D0FF;--green:#4ADE80;--gsoft:#16391F;--amber:#FBBF24;--asoft:#3A2F14;--shadow:0 8px 28px rgba(0,0,0,.35);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.7 "Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;background-image:radial-gradient(900px 420px at 15% -10%,var(--glow),transparent 70%);background-repeat:no-repeat;word-break:keep-all;overflow-wrap:break-word;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.wrap{max-width:850px;margin:0 auto;padding:20px 16px 40px;display:flex;flex-direction:column;gap:16px}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.toggle{display:inline-flex;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.toggle button,.pbtn{font:inherit;font-weight:700;font-size:12.5px;border:0;background:none;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed=true]{background:var(--accent);color:#fff}
+.pbtn{background:var(--sheet);border:1px solid var(--line)}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.kicker{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.04em;color:var(--ink);background:var(--soft);padding:5px 12px;border-radius:999px}
+h1{font-size:clamp(24px,5vw,32px);line-height:1.25;margin:10px 0 4px;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--accent)}
+.sub{margin:0;color:var(--muted)}
+h2{font-size:18px;margin:0 0 12px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
+.cell{background:var(--sheet2);border:1px solid var(--line);border-radius:10px;padding:5px 4px;text-align:center;font-size:13px;text-decoration:none;color:var(--fg)}
+.cell b{color:var(--accent);margin-right:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0}
+.tabs a{flex:none;font-weight:700;font-size:13px;text-decoration:none;color:var(--muted);background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.tabs a:focus-visible,.cell:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.q{display:flex;flex-direction:column;gap:12px;scroll-margin-top:60px}
+.top{display:flex;gap:12px;align-items:flex-start}
+.no{flex:none;min-width:30px;height:30px;padding:0 5px;border-radius:999px;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:800;font-size:13px;margin-top:2px}
+.stem{margin:0;font-weight:500;font-size:16px;line-height:1.6}
+.stem u{text-decoration-thickness:2px;text-underline-offset:3px;font-weight:700}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:8px;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--sheet2)}
+.opt.ok{background:var(--gsoft);border-color:var(--green);font-weight:700}
+.opt.ok::after{content:"정답";margin-left:auto;flex:none;color:var(--green);font-size:12px;font-weight:800}
+.exp{display:grid;gap:8px}
+.f{padding:10px 14px;border-radius:12px;background:var(--sheet2);border:1px solid var(--line)}
+.f b{display:inline-block;font-size:12px;color:var(--ink);background:var(--soft);padding:0 8px;border-radius:6px;margin-right:6px}
+.f.tr{background:var(--asoft);border-color:transparent}
+.sec-note{margin:0 0 12px;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:12px}
+@media print{.bar,.tabs{display:none}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style></head><body><main class="wrap">
+<div class="bar"><span></span><div class="toggle" role="group" aria-label="테마"><button id="tl" type="button" aria-pressed="true">Light</button><button id="td" type="button" aria-pressed="false">Dark</button></div><button id="pr" class="pbtn" type="button">인쇄 / PDF</button></div>
+<section class="card"><span class="kicker">ALPHA-MALE VOCA</span><h1>Day <em>24</em> 정답·해설</h1><p class="sub">100문항 · 번호를 누르면 해당 문항으로 이동합니다.</p></section>
+
+    <section class="card"><h2>Ⅰ. 문맥 속 의미추론</h2>
+    <div class="grid"><a class="cell" href="#q1"><b>1</b>②</a><a class="cell" href="#q2"><b>2</b>①</a><a class="cell" href="#q3"><b>3</b>③</a><a class="cell" href="#q4"><b>4</b>⑤</a><a class="cell" href="#q5"><b>5</b>④</a><a class="cell" href="#q6"><b>6</b>⑤</a><a class="cell" href="#q7"><b>7</b>③</a><a class="cell" href="#q8"><b>8</b>④</a><a class="cell" href="#q9"><b>9</b>①</a><a class="cell" href="#q10"><b>10</b>②</a><a class="cell" href="#q11"><b>11</b>③</a><a class="cell" href="#q12"><b>12</b>①</a><a class="cell" href="#q13"><b>13</b>④</a><a class="cell" href="#q14"><b>14</b>⑤</a><a class="cell" href="#q15"><b>15</b>②</a><a class="cell" href="#q16"><b>16</b>④</a><a class="cell" href="#q17"><b>17</b>②</a><a class="cell" href="#q18"><b>18</b>①</a><a class="cell" href="#q19"><b>19</b>③</a><a class="cell" href="#q20"><b>20</b>⑤</a><a class="cell" href="#q21"><b>21</b>②</a><a class="cell" href="#q22"><b>22</b>④</a><a class="cell" href="#q23"><b>23</b>⑤</a><a class="cell" href="#q24"><b>24</b>①</a><a class="cell" href="#q25"><b>25</b>③</a></div></section>
+    <section class="card"><h2>Ⅱ. 연어ㆍ구동사 완성</h2>
+    <div class="grid"><a class="cell" href="#q26"><b>26</b>⑤</a><a class="cell" href="#q27"><b>27</b>③</a><a class="cell" href="#q28"><b>28</b>④</a><a class="cell" href="#q29"><b>29</b>①</a><a class="cell" href="#q30"><b>30</b>②</a><a class="cell" href="#q31"><b>31</b>③</a><a class="cell" href="#q32"><b>32</b>②</a><a class="cell" href="#q33"><b>33</b>①</a><a class="cell" href="#q34"><b>34</b>④</a><a class="cell" href="#q35"><b>35</b>⑤</a><a class="cell" href="#q36"><b>36</b>②</a><a class="cell" href="#q37"><b>37</b>③</a><a class="cell" href="#q38"><b>38</b>①</a><a class="cell" href="#q39"><b>39</b>⑤</a><a class="cell" href="#q40"><b>40</b>④</a><a class="cell" href="#q41"><b>41</b>①</a><a class="cell" href="#q42"><b>42</b>②</a><a class="cell" href="#q43"><b>43</b>③</a><a class="cell" href="#q44"><b>44</b>④</a><a class="cell" href="#q45"><b>45</b>⑤</a><a class="cell" href="#q46"><b>46</b>①</a><a class="cell" href="#q47"><b>47</b>③</a><a class="cell" href="#q48"><b>48</b>④</a><a class="cell" href="#q49"><b>49</b>②</a><a class="cell" href="#q50"><b>50</b>⑤</a><a class="cell" href="#q51"><b>51</b>③</a></div></section>
+    <section class="card"><h2>Ⅲ. 유의어ㆍ반의어</h2>
+    <div class="grid"><a class="cell" href="#q52"><b>52</b>②</a><a class="cell" href="#q53"><b>53</b>⑤</a><a class="cell" href="#q54"><b>54</b>①</a><a class="cell" href="#q55"><b>55</b>④</a><a class="cell" href="#q56"><b>56</b>③</a><a class="cell" href="#q57"><b>57</b>②</a><a class="cell" href="#q58"><b>58</b>①</a><a class="cell" href="#q59"><b>59</b>⑤</a></div></section>
+    <section class="card"><h2>Ⅳ. 영영 정의</h2>
+    <div class="grid"><a class="cell" href="#q60"><b>60</b>④</a><a class="cell" href="#q61"><b>61</b>⑤</a><a class="cell" href="#q62"><b>62</b>④</a><a class="cell" href="#q63"><b>63</b>①</a><a class="cell" href="#q64"><b>64</b>②</a><a class="cell" href="#q65"><b>65</b>③</a><a class="cell" href="#q66"><b>66</b>④</a><a class="cell" href="#q67"><b>67</b>⑤</a><a class="cell" href="#q68"><b>68</b>②</a><a class="cell" href="#q69"><b>69</b>③</a><a class="cell" href="#q70"><b>70</b>①</a><a class="cell" href="#q71"><b>71</b>④</a><a class="cell" href="#q72"><b>72</b>①</a><a class="cell" href="#q73"><b>73</b>⑤</a><a class="cell" href="#q74"><b>74</b>②</a><a class="cell" href="#q75"><b>75</b>③</a><a class="cell" href="#q76"><b>76</b>②</a><a class="cell" href="#q77"><b>77</b>③</a><a class="cell" href="#q78"><b>78</b>⑤</a><a class="cell" href="#q79"><b>79</b>④</a><a class="cell" href="#q80"><b>80</b>①</a></div></section>
+    <section class="card"><h2>Ⅴ. 다의어 문맥 구분</h2>
+    <div class="grid"><a class="cell" href="#q81"><b>81</b>⑤</a><a class="cell" href="#q82"><b>82</b>①</a><a class="cell" href="#q83"><b>83</b>④</a><a class="cell" href="#q84"><b>84</b>②</a><a class="cell" href="#q85"><b>85</b>③</a><a class="cell" href="#q86"><b>86</b>④</a><a class="cell" href="#q87"><b>87</b>③</a><a class="cell" href="#q88"><b>88</b>②</a><a class="cell" href="#q89"><b>89</b>⑤</a><a class="cell" href="#q90"><b>90</b>①</a></div></section>
+    <section class="card"><h2>Ⅵ. 문맥상 바꿔 쓸 수 있는 말</h2>
+    <div class="grid"><a class="cell" href="#q91"><b>91</b>③</a><a class="cell" href="#q92"><b>92</b>②</a><a class="cell" href="#q93"><b>93</b>⑤</a><a class="cell" href="#q94"><b>94</b>①</a><a class="cell" href="#q95"><b>95</b>④</a><a class="cell" href="#q96"><b>96</b>①</a><a class="cell" href="#q97"><b>97</b>②</a><a class="cell" href="#q98"><b>98</b>④</a><a class="cell" href="#q99"><b>99</b>⑤</a><a class="cell" href="#q100"><b>100</b>③</a></div></section>
+<nav class="tabs" aria-label="유형 바로가기"><a href="#sI">Ⅰ. 문맥 속 의미추론</a><a href="#sII">Ⅱ. 연어ㆍ구동사 완성</a><a href="#sIII">Ⅲ. 유의어ㆍ반의어</a><a href="#sIV">Ⅳ. 영영 정의</a><a href="#sV">Ⅴ. 다의어 문맥 구분</a><a href="#sVI">Ⅵ. 문맥상 바꿔 쓸 수 있는 말</a></nav>
+
+    <section id="sI" class="sec">
+    <div class="card"><h2>Ⅰ. 문맥 속 의미추론</h2><p class="sec-note">다음 지문의 밑줄 친 부분의 의미로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q1">
+      <div class="top"><span class="no">1</span><p class="stem">The project was delayed by a tight budget and strict legal <u>constraints</u> on how the money could be used.</p></div>
+      <div class="opts"><div class="opt"><span>① 성과</span></div><div class="opt ok"><span>② 제약</span></div><div class="opt"><span>③ 보상</span></div><div class="opt"><span>④ 기회</span></div><div class="opt"><span>⑤ 지원</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 프로젝트는 빠듯한 예산과 자금 사용에 대한 엄격한 법적 제약 때문에 지연되었다.</div><div class="f"><b>해설</b>constraint = 제약, 제한. 'a tight budget and strict legal ___ on how the money could be used'가 자유를 가로막는 한계를 가리킨다. 보상·기회·지원·성과는 돈 사용 방식을 묶어 두는 제한이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q2">
+      <div class="top"><span class="no">2</span><p class="stem">She <u>sneaked</u> a glance at her phone during the lesson.</p></div>
+      <div class="opts"><div class="opt ok"><span>① 몰래 훔쳐보다</span></div><div class="opt"><span>② 천천히 닦다</span></div><div class="opt"><span>③ 오래 응시하다</span></div><div class="opt"><span>④ 크게 비웃다</span></div><div class="opt"><span>⑤ 자랑스레 보여 주다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그녀는 수업 중에 휴대폰을 몰래 흘끗 보았다.</div><div class="f"><b>해설</b>sneak a glance at = ~을 몰래 훔쳐보다. 'during the lesson'이 들키지 않으려는 상황이다. 오래 응시·비웃음·자랑·닦기는 수업 중 슬쩍 보는 행동이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q3">
+      <div class="top"><span class="no">3</span><p class="stem">The rescue team was <u>ill-equipped</u> for the freezing weather and had no warm coats.</p></div>
+      <div class="opts"><div class="opt"><span>① 사기가 높은</span></div><div class="opt"><span>② 경험이 풍부한</span></div><div class="opt ok"><span>③ 준비가 부족한</span></div><div class="opt"><span>④ 규모가 큰</span></div><div class="opt"><span>⑤ 잘 알려진</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>구조대는 혹한에 대한 준비가 부족해서 따뜻한 외투도 없었다.</div><div class="f"><b>해설</b>ill-equipped = 준비·장비가 부족한. 'had no warm coats'가 장비 부족의 구체적 사례다. 경험·사기·규모·유명세는 따뜻한 외투가 없었다는 설명과 이어지지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q4">
+      <div class="top"><span class="no">4</span><p class="stem">The boss handled the mistake <u>heavy-handedly</u>, shouting at everyone in the office.</p></div>
+      <div class="opts"><div class="opt"><span>① 몹시 조용히</span></div><div class="opt"><span>② 아주 재빨리</span></div><div class="opt"><span>③ 철저히 공정하게</span></div><div class="opt"><span>④ 매우 침착하게</span></div><div class="opt ok"><span>⑤ 고압적으로</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>상사는 사무실의 모두에게 고함을 치며 그 실수를 고압적으로 처리했다.</div><div class="f"><b>해설</b>heavy-handedly = 지나치게 강압적으로, 고압적으로. 'shouting at everyone'이 지나치게 윽박지르는 모습이다. 침착·신속·조용·공정은 고함치는 행동과 정반대이거나 무관하다.</div></div>
+    </article>
+    <article class="card q" id="q5">
+      <div class="top"><span class="no">5</span><p class="stem">Since everyone agreed, we decided to <u>proceed</u> with the plan as scheduled.</p></div>
+      <div class="opts"><div class="opt"><span>① 연기하다</span></div><div class="opt"><span>② 수정하다</span></div><div class="opt"><span>③ 공개하다</span></div><div class="opt ok"><span>④ 진행하다</span></div><div class="opt"><span>⑤ 취소하다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>모두가 동의했으므로 우리는 계획을 예정대로 진행하기로 했다.</div><div class="f"><b>해설</b>proceed with = ~을 진행하다. 'Since everyone agreed ... as scheduled'가 멈추지 않고 이어 간다는 단서다. 취소·수정·연기는 예정대로라는 말과 모순되고, 공개는 진행 여부와 무관하다.</div></div>
+    </article>
+    <article class="card q" id="q6">
+      <div class="top"><span class="no">6</span><p class="stem">Her kindness <u>exemplifies</u> the spirit of our school.</p></div>
+      <div class="opts"><div class="opt"><span>① 직접 시험하다</span></div><div class="opt"><span>② 강하게 비판하다</span></div><div class="opt"><span>③ 일부러 숨기다</span></div><div class="opt"><span>④ 몰래 해치다</span></div><div class="opt ok"><span>⑤ 잘 보여 주다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그녀의 친절은 우리 학교의 정신을 전형적으로 보여 준다.</div><div class="f"><b>해설</b>exemplify = 전형적인 예가 되어 보여 주다. 'Her kindness ... the spirit of our school'이 좋은 사례임을 나타낸다. 해침·숨김·시험·비판은 학교 정신을 보여 주는 방식이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q7">
+      <div class="top"><span class="no">7</span><p class="stem">The sound of church bells <u>evoked</u> memories of her hometown.</p></div>
+      <div class="opts"><div class="opt"><span>① 숨기다</span></div><div class="opt"><span>② 비웃다</span></div><div class="opt ok"><span>③ 불러일으키다</span></div><div class="opt"><span>④ 지워 버리다</span></div><div class="opt"><span>⑤ 방해하다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>교회 종소리가 그녀의 고향에 대한 기억을 불러일으켰다.</div><div class="f"><b>해설</b>evoke = (감정·기억을) 불러일으키다. 'The sound of church bells ... memories of her hometown'이 자극으로 기억이 되살아나는 장면이다. 지움·방해·숨김·비웃음은 기억을 떠올리게 하는 작용이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q8">
+      <div class="top"><span class="no">8</span><p class="stem">The singer's <u>phenomenal</u> voice amazed everyone in the hall.</p></div>
+      <div class="opts"><div class="opt"><span>① 매우 거친</span></div><div class="opt"><span>② 몹시 낯선</span></div><div class="opt"><span>③ 아주 작은</span></div><div class="opt ok"><span>④ 경이적인</span></div><div class="opt"><span>⑤ 지극히 평범한</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 가수의 경이적인 목소리는 홀에 있는 모두를 놀라게 했다.</div><div class="f"><b>해설</b>phenomenal = 경이적인, 놀라운. 'amazed everyone in the hall'이 뛰어난 목소리의 효과다. 평범함은 정반대이고, 낯섦·거침·작음은 모두를 놀라게 한 이유로 맞지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q9">
+      <div class="top"><span class="no">9</span><p class="stem">The basement was <u>damp</u>, with water stains on the walls and a smell of mold.</p></div>
+      <div class="opts"><div class="opt ok"><span>① 축축한</span></div><div class="opt"><span>② 좁은</span></div><div class="opt"><span>③ 어두운</span></div><div class="opt"><span>④ 건조한</span></div><div class="opt"><span>⑤ 시끄러운</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>지하실은 벽에 물얼룩이 있고 곰팡이 냄새가 날 만큼 축축했다.</div><div class="f"><b>해설</b>damp = 축축한, 눅눅한. 'water stains on the walls and a smell of mold'가 습기가 많다는 단서다. 건조함은 정반대이고, 어두움·좁음·시끄러움은 곰팡이 냄새와 이어지는 성질이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q10">
+      <div class="top"><span class="no">10</span><p class="stem">She worked hard to <u>fulfill</u> her promise to her parents.</p></div>
+      <div class="opts"><div class="opt"><span>① 깨뜨리다</span></div><div class="opt ok"><span>② 이행하다</span></div><div class="opt"><span>③ 알리다</span></div><div class="opt"><span>④ 미루다</span></div><div class="opt"><span>⑤ 잊어버리다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그녀는 부모님과의 약속을 지키려고 열심히 노력했다.</div><div class="f"><b>해설</b>fulfill a promise = 약속을 이행하다. 'worked hard to ___ her promise'가 지키려는 노력이다. 깨뜨림·망각·미룸은 열심히 노력하는 목적과 반대이고, 알림은 약속을 지키는 행위가 아니다.</div></div>
+    </article>
+    <article class="card q" id="q11">
+      <div class="top"><span class="no">11</span><p class="stem">Archaeologists <u>unearthed</u> an ancient tomb that had been buried under the sand for centuries.</p></div>
+      <div class="opts"><div class="opt"><span>① 판매하다</span></div><div class="opt"><span>② 훼손하다</span></div><div class="opt ok"><span>③ 발굴하다</span></div><div class="opt"><span>④ 복원하다</span></div><div class="opt"><span>⑤ 지도로 그리다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>고고학자들은 수 세기 동안 모래 밑에 묻혀 있던 고대 무덤을 발굴했다.</div><div class="f"><b>해설</b>unearth = 땅속에서 파내다, 발굴하다. 'an ancient tomb that had been buried under the sand for centuries'가 묻혀 있던 것을 파내는 장면이다. 복원·판매·훼손·지도 제작은 묻힌 무덤을 처음 찾아내는 행위가 아니다.</div></div>
+    </article>
+    <article class="card q" id="q12">
+      <div class="top"><span class="no">12</span><p class="stem">The <u>inverse</u> of a fraction is found by turning it upside down.</p></div>
+      <div class="opts"><div class="opt ok"><span>① 역수</span></div><div class="opt"><span>② 차</span></div><div class="opt"><span>③ 곱</span></div><div class="opt"><span>④ 평균</span></div><div class="opt"><span>⑤ 합</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>분수의 역수는 분수를 뒤집어서 구한다.</div><div class="f"><b>해설</b>inverse = (수학) 역수, 반대의 것. 'turning it upside down'이 분자와 분모를 뒤집는 계산이다. 합·곱·평균·차는 뒤집어서 구하는 값이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q13">
+      <div class="top"><span class="no">13</span><p class="stem">Doctors said the early test results were <u>promising</u>.</p></div>
+      <div class="opts"><div class="opt"><span>① 의심스러운</span></div><div class="opt"><span>② 불확실한</span></div><div class="opt"><span>③ 위험한</span></div><div class="opt ok"><span>④ 유망한</span></div><div class="opt"><span>⑤ 실망스러운</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>의사들은 초기 검사 결과가 유망하다고 말했다.</div><div class="f"><b>해설</b>promising = 유망한, 좋은 결과가 기대되는. 'early test results'를 좋게 평가하는 말이다. 불확실·실망·의심·위험은 기대감을 주는 평가가 아니다.</div></div>
+    </article>
+    <article class="card q" id="q14">
+      <div class="top"><span class="no">14</span><p class="stem">Poverty is the <u>prime</u> cause of the problem.</p></div>
+      <div class="opts"><div class="opt"><span>① 숨은</span></div><div class="opt"><span>② 우연한</span></div><div class="opt"><span>③ 사소한</span></div><div class="opt"><span>④ 최근의</span></div><div class="opt ok"><span>⑤ 주된</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>가난이 그 문제의 주된 원인이다.</div><div class="f"><b>해설</b>prime(형용사) = 주된, 가장 중요한. 'Poverty is the ___ cause'가 가장 큰 원인을 가리킨다. 우연·사소·최근·숨은은 원인의 중요도를 나타내지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q15">
+      <div class="top"><span class="no">15</span><p class="stem">Sales <u>projections</u> for next year look very optimistic.</p></div>
+      <div class="opts"><div class="opt"><span>① 손실</span></div><div class="opt ok"><span>② 예상</span></div><div class="opt"><span>③ 기록</span></div><div class="opt"><span>④ 광고</span></div><div class="opt"><span>⑤ 비용</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>내년 매출 예상은 매우 낙관적으로 보인다.</div><div class="f"><b>해설</b>projection = (미래 수치의) 예상, 추정치. 'for next year ... look very optimistic'이 앞날을 내다본 수치임을 보여 준다. 기록·손실·광고·비용은 '내년 ___이 낙관적'이라는 말로 미래를 내다본 수치를 뜻하지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q16">
+      <div class="top"><span class="no">16</span><p class="stem">The room was <u>bare</u>: apart from one chair, there was nothing in it at all.</p></div>
+      <div class="opts"><div class="opt"><span>① 어두운</span></div><div class="opt"><span>② 좁은</span></div><div class="opt"><span>③ 깨끗한</span></div><div class="opt ok"><span>④ 텅 빈</span></div><div class="opt"><span>⑤ 따뜻한</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 방은 의자 하나를 빼면 아무것도 없이 텅 비어 있었다.</div><div class="f"><b>해설</b>bare = 아무것도 없는, 텅 빈. 'apart from one chair, there was nothing in it at all'이 비어 있음을 설명한다. 어두움·따뜻함·깨끗함·좁음은 가구와 그림이 없다는 설명과 맞지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q17">
+      <div class="top"><span class="no">17</span><p class="stem">The long commute is the only <u>minus</u> of the job.</p></div>
+      <div class="opts"><div class="opt"><span>① 목표</span></div><div class="opt ok"><span>② 단점</span></div><div class="opt"><span>③ 장점</span></div><div class="opt"><span>④ 보너스</span></div><div class="opt"><span>⑤ 조건</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>긴 통근 시간이 그 일의 유일한 단점이다.</div><div class="f"><b>해설</b>minus(명사) = 단점, 부정적인 면. 'The long commute is the only ___ of the job'이 불리한 점을 가리킨다. 장점·보너스는 정반대이고, 목표·조건은 긴 통근 시간을 뜻하지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q18">
+      <div class="top"><span class="no">18</span><p class="stem">She <u>sailed</u> through the exam without any trouble.</p></div>
+      <div class="opts"><div class="opt ok"><span>① 쉽게 통과하다</span></div><div class="opt"><span>② 힘들게 치르다</span></div><div class="opt"><span>③ 일부러 건너뛰다</span></div><div class="opt"><span>④ 시험 삼아 보다</span></div><div class="opt"><span>⑤ 몰래 베끼다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그녀는 아무 어려움 없이 시험을 순조롭게 통과했다.</div><div class="f"><b>해설</b>sail through = 어려움 없이 순조롭게 통과하다. 'without any trouble'이 수월함을 보여 준다. 힘들게 치름은 정반대이고, 건너뜀·시험 삼아 봄·베낌은 trouble 없이 통과했다는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q19">
+      <div class="top"><span class="no">19</span><p class="stem">The manager gave her team considerable <u>latitude</u> in how to do the work.</p></div>
+      <div class="opts"><div class="opt"><span>① 보상</span></div><div class="opt"><span>② 압박</span></div><div class="opt ok"><span>③ 재량</span></div><div class="opt"><span>④ 일정</span></div><div class="opt"><span>⑤ 감시</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>관리자는 일하는 방식에 대해 팀에 상당한 재량을 주었다.</div><div class="f"><b>해설</b>latitude = (행동의) 허용 범위, 재량. 'in how to do the work'가 자유롭게 정할 폭을 말한다. 압박·보상·일정·감시는 일하는 방식을 선택할 자유가 아니다.</div></div>
+    </article>
+    <article class="card q" id="q20">
+      <div class="top"><span class="no">20</span><p class="stem">Leaves were <u>floating</u> on the surface of the lake.</p></div>
+      <div class="opts"><div class="opt"><span>① 얼어붙은</span></div><div class="opt"><span>② 가라앉은</span></div><div class="opt"><span>③ 뿌리내린</span></div><div class="opt"><span>④ 말라붙은</span></div><div class="opt ok"><span>⑤ 떠 있는</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>나뭇잎들이 호수 표면에 떠 있었다.</div><div class="f"><b>해설</b>floating = 물 위에 떠 있는. 'on the surface of the lake'가 위치를 보여 준다. 가라앉음은 정반대이고, 얼어붙음·말라붙음·뿌리내림은 표면에 뜬 상태를 뜻하지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q21">
+      <div class="top"><span class="no">21</span><p class="stem">Cotton clothes may <u>shrink</u> and no longer fit if you wash them in hot water.</p></div>
+      <div class="opts"><div class="opt"><span>① 색이 바래다</span></div><div class="opt ok"><span>② 줄어들다</span></div><div class="opt"><span>③ 뻣뻣해지다</span></div><div class="opt"><span>④ 찢어지다</span></div><div class="opt"><span>⑤ 늘어나다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>면 옷은 뜨거운 물에 빨면 줄어들어 더 이상 맞지 않을 수 있다.</div><div class="f"><b>해설</b>shrink = 크기가 줄어들다. 'no longer fit ... hot water'가 옷이 작아지는 상황이다. 늘어남은 정반대이고, 탈색·찢어짐·뻣뻣해짐은 크기 변화를 뜻하지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q22">
+      <div class="top"><span class="no">22</span><p class="stem">Please keep your seat in an <u>upright</u> position during landing.</p></div>
+      <div class="opts"><div class="opt"><span>① 앞뒤로 흔드는</span></div><div class="opt"><span>② 접어 놓은</span></div><div class="opt"><span>③ 잠가 둔</span></div><div class="opt ok"><span>④ 똑바로 세운</span></div><div class="opt"><span>⑤ 완전히 눕힌</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>착륙하는 동안에는 좌석을 똑바로 세워 두십시오.</div><div class="f"><b>해설</b>upright = 똑바로 선, 수직의. 'keep your seat in an ___ position during landing'이 등받이를 세우라는 안내다. 눕힘은 정반대이고, 접음·잠금·흔듦은 좌석의 각도를 나타내지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q23">
+      <div class="top"><span class="no">23</span><p class="stem">The festival is expected to <u>draw in</u> thousands of tourists.</p></div>
+      <div class="opts"><div class="opt"><span>① 길을 가로막다</span></div><div class="opt"><span>② 감쪽같이 속이다</span></div><div class="opt"><span>③ 멀리 쫓아내다</span></div><div class="opt"><span>④ 열심히 가르치다</span></div><div class="opt ok"><span>⑤ 끌어들이다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 축제는 수천 명의 관광객을 끌어들일 것으로 예상된다.</div><div class="f"><b>해설</b>draw in = (사람을) 끌어들이다. 'thousands of tourists'를 모으는 효과다. 쫓아냄은 정반대이고, 가로막음·속임·가르침은 관광객이 많이 온다는 기대와 맞지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q24">
+      <div class="top"><span class="no">24</span><p class="stem">Many companies are trying to <u>tap into</u> the growing market for electric cars.</p></div>
+      <div class="opts"><div class="opt ok"><span>① 활용하다</span></div><div class="opt"><span>② 무시하다</span></div><div class="opt"><span>③ 모방하다</span></div><div class="opt"><span>④ 규제하다</span></div><div class="opt"><span>⑤ 포기하다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>많은 기업이 커지는 전기차 시장을 활용하려고 애쓰고 있다.</div><div class="f"><b>해설</b>tap into = (자원·시장을) 개발하여 활용하다. 'the growing market'이 이익을 얻을 대상이다. 무시·포기는 시장이 커지는 상황과 반대이고, 규제·모방은 시장에 접근해 이익을 얻는다는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q25">
+      <div class="top"><span class="no">25</span><p class="stem">Fear can <u>constrain</u> a person's choices and keep them from trying new things.</p></div>
+      <div class="opts"><div class="opt"><span>① 바로잡다</span></div><div class="opt"><span>② 가르치다</span></div><div class="opt ok"><span>③ 제한하다</span></div><div class="opt"><span>④ 넓혀 주다</span></div><div class="opt"><span>⑤ 기록하다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>두려움은 사람의 선택을 제한하고 새로운 것을 시도하지 못하게 할 수 있다.</div><div class="f"><b>해설</b>constrain = 제약하다, 제한하다. 'keep them from trying new things'가 선택의 폭을 좁히는 결과다. 넓혀 줌은 정반대이고, 바로잡음·기록·가르침은 시도를 막는 작용이 아니다.</div></div>
+    </article>
+    </section>
+    <section id="sII" class="sec">
+    <div class="card"><h2>Ⅱ. 연어ㆍ구동사 완성</h2><p class="sec-note">다음 빈칸에 들어갈 말로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q26">
+      <div class="top"><span class="no">26</span><p class="stem">To give regional offices more freedom, the company decided to ________ decision-making.</p></div>
+      <div class="opts"><div class="opt"><span>① sneak</span></div><div class="opt"><span>② proceed</span></div><div class="opt"><span>③ sail</span></div><div class="opt"><span>④ fulfill</span></div><div class="opt ok"><span>⑤ decentralize</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>지역 사무소에 더 많은 자유를 주려고 회사는 의사결정을 분산시키기로 했다.</div><div class="f"><b>해설</b>decentralize decision-making = 의사결정을 분산시키다. decentralize가 'To give regional offices more freedom'의 방법이다. fulfill(이행하다)·sneak(몰래 가다)·sail(항해하다)·proceed(진행하다)는 decision-making을 목적어로 받아 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q27">
+      <div class="top"><span class="no">27</span><p class="stem">The court reporter prepared a word-for-word ________ of the trial.</p></div>
+      <div class="opts"><div class="opt"><span>① constraint</span></div><div class="opt"><span>② census</span></div><div class="opt ok"><span>③ transcription</span></div><div class="opt"><span>④ latitude</span></div><div class="opt"><span>⑤ minus</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>법정 속기사는 재판의 한 마디 한 마디를 옮긴 기록을 작성했다.</div><div class="f"><b>해설</b>a transcription of ~ = ~을 글로 옮긴 기록. transcription이 'word-for-word'와 어울리는 명사다. constraint(제약)·latitude(재량)·census(인구조사)·minus(단점)는 'a word-for-word ___ of the trial'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q28">
+      <div class="top"><span class="no">28</span><p class="stem">When two rules conflict, the stricter one takes ________ over the other.</p></div>
+      <div class="opts"><div class="opt"><span>① latitude</span></div><div class="opt"><span>② projection</span></div><div class="opt"><span>③ constraint</span></div><div class="opt ok"><span>④ precedence</span></div><div class="opt"><span>⑤ damp</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>두 규칙이 충돌하면 더 엄격한 규칙이 다른 규칙보다 우선한다.</div><div class="f"><b>해설</b>take precedence over = ~보다 우선하다. precedence가 take와 over 사이의 핵심 명사다. latitude(재량)·constraint(제약)·projection(예상)·damp(습기)는 'takes ___ over the other'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q29">
+      <div class="top"><span class="no">29</span><p class="stem">Officials used the latest ________, which counted every household, to decide how many schools each district needs.</p></div>
+      <div class="opts"><div class="opt ok"><span>① census</span></div><div class="opt"><span>② heir</span></div><div class="opt"><span>③ transcription</span></div><div class="opt"><span>④ projection</span></div><div class="opt"><span>⑤ precedence</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>관계자들은 모든 가구를 센 최신 인구조사를 이용해 각 지역에 학교가 몇 개 필요한지 정했다.</div><div class="f"><b>해설</b>the census = 인구조사. census가 'counted every household'로 가구를 센 자료이며 학교 수를 정할 근거다. transcription(기록)·precedence(우선)·projection(예상)·heir(상속인)는 'used the latest ___ to decide'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q30">
+      <div class="top"><span class="no">30</span><p class="stem">As the only child, she was the sole ________ to her uncle's fortune.</p></div>
+      <div class="opts"><div class="opt"><span>① latitude</span></div><div class="opt ok"><span>② heir</span></div><div class="opt"><span>③ minus</span></div><div class="opt"><span>④ precedence</span></div><div class="opt"><span>⑤ census</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>외동이었던 그녀는 삼촌 재산의 유일한 상속인이었다.</div><div class="f"><b>해설</b>the sole heir to ~ = ~의 유일한 상속인. heir가 to와 이어져 재산을 물려받는 사람을 뜻한다. census(인구조사)·precedence(우선)·latitude(재량)·minus(단점)는 'the sole ___ to her uncle's fortune'으로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q31">
+      <div class="top"><span class="no">31</span><p class="stem">Bats and owls are ________ animals that hunt after dark.</p></div>
+      <div class="opts"><div class="opt"><span>① floating</span></div><div class="opt"><span>② bare</span></div><div class="opt ok"><span>③ nocturnal</span></div><div class="opt"><span>④ inverse</span></div><div class="opt"><span>⑤ promising</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>박쥐와 올빼미는 어두워진 뒤에 사냥하는 야행성 동물이다.</div><div class="f"><b>해설</b>nocturnal animals = 야행성 동물. 'that hunt after dark'가 밤에 활동한다는 설명이다. inverse(반대의)·floating(떠 있는)·promising(유망한)·bare(벌거벗은)는 animals를 꾸며 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q32">
+      <div class="top"><span class="no">32</span><p class="stem">He tried to ________ the test results so that no one would learn the truth.</p></div>
+      <div class="opts"><div class="opt"><span>① shrink</span></div><div class="opt ok"><span>② falsify</span></div><div class="opt"><span>③ sail</span></div><div class="opt"><span>④ evoke</span></div><div class="opt"><span>⑤ fulfill</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그는 아무도 진실을 알지 못하도록 시험 결과를 조작하려 했다.</div><div class="f"><b>해설</b>falsify records/results = 기록·결과를 조작하다. 'so that no one would learn the truth'가 거짓으로 꾸미는 목적이다. fulfill(이행하다)·evoke(불러일으키다)·shrink(줄어들다)·sail(항해하다)은 the test results를 목적어로 받아 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q33">
+      <div class="top"><span class="no">33</span><p class="stem">The little theater was ________ with people on the night of the big show.</p></div>
+      <div class="opts"><div class="opt ok"><span>① bursting</span></div><div class="opt"><span>② inverse</span></div><div class="opt"><span>③ damp</span></div><div class="opt"><span>④ upright</span></div><div class="opt"><span>⑤ floating</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 작은 극장은 큰 공연이 있던 밤에 사람들로 터질 듯이 가득 찼다.</div><div class="f"><b>해설</b>be bursting with ~ = ~로 가득 차 터질 듯하다. bursting이 with people과 이어지는 표현이다. damp(축축한)·floating(떠 있는)·inverse(반대의)·upright(똑바로 선)는 'was ___ with people'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q34">
+      <div class="top"><span class="no">34</span><p class="stem">Reports from ________ journalists showed that the situation was worse than officials said.</p></div>
+      <div class="opts"><div class="opt"><span>① inverse</span></div><div class="opt"><span>② nocturnal</span></div><div class="opt"><span>③ damp</span></div><div class="opt ok"><span>④ on-the-ground</span></div><div class="opt"><span>⑤ bare</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>현장 기자들의 보도는 상황이 관계자들의 말보다 더 나쁘다는 것을 보여 주었다.</div><div class="f"><b>해설</b>on-the-ground journalists = 현장에 있는 기자들. on-the-ground가 실제 현장에서 보고 쓴다는 뜻이다. nocturnal(야행성의)·inverse(반대의)·bare(벌거벗은)·damp(축축한)는 journalists를 꾸며 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q35">
+      <div class="top"><span class="no">35</span><p class="stem">Leaving a child alone near the river was ________; nothing could justify it.</p></div>
+      <div class="opts"><div class="opt"><span>① promising</span></div><div class="opt"><span>② damp</span></div><div class="opt"><span>③ floating</span></div><div class="opt"><span>④ phenomenal</span></div><div class="opt ok"><span>⑤ inexcusable</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>아이를 강 근처에 혼자 두는 것은 변명의 여지가 없었고 어떤 이유로도 정당화될 수 없었다.</div><div class="f"><b>해설</b>inexcusable = 변명의 여지가 없는. 세미콜론 뒤의 'nothing could justify it'이 뜻풀이다. promising(유망한)·phenomenal(경이적인)·damp(축축한)·floating(떠 있는)은 그 설명과 맞지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q36">
+      <div class="top"><span class="no">36</span><p class="stem">Many scientists remain ________ about the claim until more evidence appears.</p></div>
+      <div class="opts"><div class="opt"><span>① nocturnal</span></div><div class="opt ok"><span>② sceptical</span></div><div class="opt"><span>③ phenomenal</span></div><div class="opt"><span>④ bursting</span></div><div class="opt"><span>⑤ floating</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>많은 과학자는 더 많은 증거가 나올 때까지 그 주장에 회의적인 태도를 유지한다.</div><div class="f"><b>해설</b>be sceptical about = ~에 대해 회의적이다. 'until more evidence appears'가 믿기를 보류하는 이유다. phenomenal(경이적인)·bursting(터질 듯한)·nocturnal(야행성의)·floating(떠 있는)은 'remain ___ about the claim'으로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q37">
+      <div class="top"><span class="no">37</span><p class="stem">Some students only do the bare ________ to pass and never try to learn more.</p></div>
+      <div class="opts"><div class="opt"><span>① distance</span></div><div class="opt"><span>② goal</span></div><div class="opt ok"><span>③ minimum</span></div><div class="opt"><span>④ risk</span></div><div class="opt"><span>⑤ fact</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>어떤 학생들은 통과할 만큼의 최소한만 하고 더 배우려 하지 않는다.</div><div class="f"><b>해설</b>do the bare minimum = 딱 최소한만 하다. minimum이 do the bare와 이루는 표현이다. distance(거리)·fact(사실)·goal(목표)·risk(위험)는 'do the bare ___ to pass'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q38">
+      <div class="top"><span class="no">38</span><p class="stem">Experts say the problem can be ________ back to a mistake made years ago.</p></div>
+      <div class="opts"><div class="opt ok"><span>① traced</span></div><div class="opt"><span>② drawn</span></div><div class="opt"><span>③ driven</span></div><div class="opt"><span>④ settled</span></div><div class="opt"><span>⑤ pulled</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>전문가들은 그 문제가 몇 해 전에 저지른 실수에서 비롯되었다고 말한다.</div><div class="f"><b>해설</b>be traced back to = ~로 거슬러 올라가다. traced가 back to와 이루는 표현이다. drawn·settled·driven·pulled는 'back to a mistake made years ago'와 결합해 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q39">
+      <div class="top"><span class="no">39</span><p class="stem">I'll send the file tonight. ________, did you finish the report?</p></div>
+      <div class="opts"><div class="opt"><span>① In effect</span></div><div class="opt"><span>② At last</span></div><div class="opt"><span>③ In turn</span></div><div class="opt"><span>④ In essence</span></div><div class="opt ok"><span>⑤ By the way</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>파일은 오늘 밤에 보낼게요. 그런데 보고서는 끝냈나요?</div><div class="f"><b>해설</b>by the way = 그런데. 화제를 가볍게 전환하는 표현이다. In turn(차례로)·At last(마침내)·In effect(사실상)·In essence(본질적으로)는 다른 질문을 꺼내는 연결어로 맞지 않는다.</div></div>
+    </article>
+    <article class="card q" id="q40">
+      <div class="top"><span class="no">40</span><p class="stem">The city is working hard to ________ itself of its old, unsafe buses.</p></div>
+      <div class="opts"><div class="opt"><span>① unearth</span></div><div class="opt"><span>② shrink</span></div><div class="opt"><span>③ sneak</span></div><div class="opt ok"><span>④ rid</span></div><div class="opt"><span>⑤ fulfill</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 도시는 낡고 위험한 버스를 없애려고 열심히 노력하고 있다.</div><div class="f"><b>해설</b>rid oneself of ~ = ~을 없애다. rid가 itself of와 이루는 구조다. sneak·fulfill·unearth·shrink는 'itself of its old, unsafe buses'와 결합해 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q41">
+      <div class="top"><span class="no">41</span><p class="stem">The company only added safety rules ________, when the accident had already happened.</p></div>
+      <div class="opts"><div class="opt ok"><span>① after the fact</span></div><div class="opt"><span>② in vain</span></div><div class="opt"><span>③ in effect</span></div><div class="opt"><span>④ at random</span></div><div class="opt"><span>⑤ in bulk</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 회사는 사고가 이미 일어난 뒤인 사후에야 안전 규칙을 추가했다.</div><div class="f"><b>해설</b>after the fact = 사후에. 'when the accident had already happened'가 일이 벌어진 뒤라는 단서다. in vain(헛되이)·in bulk(대량으로)·at random(무작위로)·in effect(사실상)은 사고 뒤라는 시점을 나타내지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q42">
+      <div class="top"><span class="no">42</span><p class="stem">She knows she should stop, but she cannot ________ herself when she sees cake.</p></div>
+      <div class="opts"><div class="opt"><span>① unearth</span></div><div class="opt ok"><span>② help</span></div><div class="opt"><span>③ shrink</span></div><div class="opt"><span>④ evoke</span></div><div class="opt"><span>⑤ sail</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그만두어야 한다는 것을 알지만 그녀는 케이크를 보면 자신을 억누를 수 없다.</div><div class="f"><b>해설</b>cannot help oneself = 도저히 자신을 억제할 수 없다. help가 cannot과 herself 사이에 들어가는 동사다. evoke·unearth·shrink·sail은 'cannot ___ herself when she sees cake'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q43">
+      <div class="top"><span class="no">43</span><p class="stem">The document ________ was leaked by a former employee.</p></div>
+      <div class="opts"><div class="opt"><span>① in vain</span></div><div class="opt"><span>② in essence</span></div><div class="opt ok"><span>③ in question</span></div><div class="opt"><span>④ in the meantime</span></div><div class="opt"><span>⑤ at random</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>문제가 되고 있는 그 문서는 전직 직원이 유출했다.</div><div class="f"><b>해설</b>the document in question = 문제가 되고 있는 그 문서. in question이 명사 뒤에서 대상을 특정한다. in vain(헛되이)·at random(무작위로)·in the meantime(그동안에)·in essence(본질적으로)은 'The document ___ was leaked'로 대상을 지목하지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q44">
+      <div class="top"><span class="no">44</span><p class="stem">Freedom and responsibility often ________ hand in hand.</p></div>
+      <div class="opts"><div class="opt"><span>① evoke</span></div><div class="opt"><span>② sneak</span></div><div class="opt"><span>③ fulfill</span></div><div class="opt ok"><span>④ go</span></div><div class="opt"><span>⑤ sail</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>자유와 책임은 흔히 밀접하게 함께 간다.</div><div class="f"><b>해설</b>go hand in hand = 밀접하게 함께 가다. go가 hand in hand와 이루는 관용구다. sneak·sail·fulfill·evoke는 'hand in hand'와 결합해 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q45">
+      <div class="top"><span class="no">45</span><p class="stem">The workers' complaints about safety fell on ________ ears at the head office.</p></div>
+      <div class="opts"><div class="opt"><span>① damp</span></div><div class="opt"><span>② floating</span></div><div class="opt"><span>③ upright</span></div><div class="opt"><span>④ bare</span></div><div class="opt ok"><span>⑤ deaf</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>안전에 대한 노동자들의 불만은 본사에서 귀담아듣는 사람이 없었다.</div><div class="f"><b>해설</b>fall on deaf ears = 귀담아듣지 않다, 무시당하다. deaf가 on ___ ears의 핵심이다. bare·damp·floating·upright는 'fell on ___ ears'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q46">
+      <div class="top"><span class="no">46</span><p class="stem">Each number on the chart ________ to a different year.</p></div>
+      <div class="opts"><div class="opt ok"><span>① corresponds</span></div><div class="opt"><span>② evokes</span></div><div class="opt"><span>③ falsifies</span></div><div class="opt"><span>④ exemplifies</span></div><div class="opt"><span>⑤ unearths</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>도표의 각 숫자는 서로 다른 해에 대응한다.</div><div class="f"><b>해설</b>correspond to = ~에 상응하다. corresponds가 to a different year와 이어지는 구동사다. evokes·exemplifies·unearths·falsifies는 'to a different year'와 결합해 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q47">
+      <div class="top"><span class="no">47</span><p class="stem">By and ________, the new rules have worked well, although a few problems remain.</p></div>
+      <div class="opts"><div class="opt"><span>① place</span></div><div class="opt"><span>② value</span></div><div class="opt ok"><span>③ large</span></div><div class="opt"><span>④ price</span></div><div class="opt"><span>⑤ goal</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>몇 가지 문제는 남아 있지만 대체로 새 규칙은 잘 작동해 왔다.</div><div class="f"><b>해설</b>by and large = 대체로, 전반적으로. large가 by and와 이루는 관용구다. value·place·goal·price는 'By and ___'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q48">
+      <div class="top"><span class="no">48</span><p class="stem">It took the family a few months to ________ into their new home.</p></div>
+      <div class="opts"><div class="opt"><span>① sneak</span></div><div class="opt"><span>② unearth</span></div><div class="opt"><span>③ sail</span></div><div class="opt ok"><span>④ settle</span></div><div class="opt"><span>⑤ evoke</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 가족이 새 집에 적응해 자리 잡는 데는 몇 달이 걸렸다.</div><div class="f"><b>해설</b>settle into = ~에 적응하여 자리 잡다. settle이 into와 이루는 구동사다. sneak·sail·evoke·unearth는 'into their new home'과 결합해 '적응하다'라는 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q49">
+      <div class="top"><span class="no">49</span><p class="stem">Sales fell by half; put another ________, we lost every second customer.</p></div>
+      <div class="opts"><div class="opt"><span>① price</span></div><div class="opt ok"><span>② way</span></div><div class="opt"><span>③ side</span></div><div class="opt"><span>④ ears</span></div><div class="opt"><span>⑤ fact</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>매출이 절반으로 줄었다. 다시 말해 손님 두 명 중 한 명을 잃었다.</div><div class="f"><b>해설</b>put another way = 다시 말해서. way가 put another와 이루는 표현이다. fact·ears·side·price는 'put another ___'로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q50">
+      <div class="top"><span class="no">50</span><p class="stem">Rude waiters can ________ away even loyal customers.</p></div>
+      <div class="opts"><div class="opt"><span>① fulfill</span></div><div class="opt"><span>② exemplify</span></div><div class="opt"><span>③ evoke</span></div><div class="opt"><span>④ unearth</span></div><div class="opt ok"><span>⑤ drive</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>무례한 종업원은 단골 손님마저 쫓아낼 수 있다.</div><div class="f"><b>해설</b>drive ~ away = ~을 쫓아내다, 떠나게 만들다. drive가 away와 이루는 구동사다. fulfill·unearth·evoke·exemplify는 'away even loyal customers'와 결합해 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    <article class="card q" id="q51">
+      <div class="top"><span class="no">51</span><p class="stem">Scientists watched the animals from a(n) ________ so as not to disturb them.</p></div>
+      <div class="opts"><div class="opt"><span>① goal</span></div><div class="opt"><span>② question</span></div><div class="opt ok"><span>③ distance</span></div><div class="opt"><span>④ price</span></div><div class="opt"><span>⑤ hand</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>과학자들은 동물들을 방해하지 않으려고 멀찍이서 지켜보았다.</div><div class="f"><b>해설</b>at/from a distance = 멀찍이서. distance가 a(n) ___의 핵심 명사다. question·hand·price·goal은 'from a(n) ___ so as not to disturb them'으로 이 뜻을 만들지 못한다.</div></div>
+    </article>
+    </section>
+    <section id="sIII" class="sec">
+    <div class="card"><h2>Ⅲ. 유의어ㆍ반의어</h2><p class="sec-note">다음 단어(구)의 유의어 또는 반의어로 가장 적절한 것은? (지시에 따라 [유의어]/[반의어]를 고를 것)</p></div>
+    
+    <article class="card q" id="q52">
+      <div class="top"><span class="no">52</span><p class="stem">successor [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① treaty</span></div><div class="opt ok"><span>② heir</span></div><div class="opt"><span>③ remedy</span></div><div class="opt"><span>④ projection</span></div><div class="opt"><span>⑤ constraint</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>successor(후계자) ≈ heir(상속인, 계승자). constraint(제약)·projection(예상)·remedy(해결책)·treaty(조약)는 '후계자'라는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q53">
+      <div class="top"><span class="no">53</span><p class="stem">prove [반의어]</p></div>
+      <div class="opts"><div class="opt"><span>① unearth</span></div><div class="opt"><span>② sneak</span></div><div class="opt"><span>③ exemplify</span></div><div class="opt"><span>④ constrain</span></div><div class="opt ok"><span>⑤ falsify</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>prove(입증하다)의 반의어는 falsify(반증하다). exemplify(전형적으로 보여 주다)·constrain(제한하다)·unearth(발굴하다)·sneak(몰래 가다)은 입증의 반대 개념이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q54">
+      <div class="top"><span class="no">54</span><p class="stem">priority [유의어]</p></div>
+      <div class="opts"><div class="opt ok"><span>① precedence</span></div><div class="opt"><span>② minus</span></div><div class="opt"><span>③ transcription</span></div><div class="opt"><span>④ remedy</span></div><div class="opt"><span>⑤ verdict</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>priority(우선순위) ≈ precedence(우선함, 우선순위). transcription(기록)·minus(단점)·remedy(해결책)·verdict(평결)는 '우선순위'라는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q55">
+      <div class="top"><span class="no">55</span><p class="stem">full [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① bare</span></div><div class="opt"><span>② ill-equipped</span></div><div class="opt"><span>③ promising</span></div><div class="opt ok"><span>④ bursting</span></div><div class="opt"><span>⑤ phenomenal</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>full(가득 찬) ≈ bursting(터질 듯이 가득 찬). bare(텅 빈)·promising(유망한)·phenomenal(경이적인)·ill-equipped(준비가 부족한)는 '가득 찬'이라는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q56">
+      <div class="top"><span class="no">56</span><p class="stem">match [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① rid ~ of</span></div><div class="opt"><span>② settle into</span></div><div class="opt ok"><span>③ correspond to</span></div><div class="opt"><span>④ tap into</span></div><div class="opt"><span>⑤ drive ~ away</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>match(일치하다) ≈ correspond to(~에 상응하다, 부합하다). settle into(~에 적응하다)·rid ~ of(~을 없애다)·drive ~ away(쫓아내다)·tap into(활용하다)는 '일치하다'라는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q57">
+      <div class="top"><span class="no">57</span><p class="stem">adapt to [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① be traced to</span></div><div class="opt ok"><span>② settle into</span></div><div class="opt"><span>③ drive ~ away</span></div><div class="opt"><span>④ go hand in hand</span></div><div class="opt"><span>⑤ draw in</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>adapt to(~에 적응하다) ≈ settle into(~에 적응하여 자리 잡다). drive ~ away(쫓아내다)·draw in(끌어들이다)·be traced to(~로 거슬러 올라가다)·go hand in hand(밀접하게 함께 가다)는 '적응하다'라는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q58">
+      <div class="top"><span class="no">58</span><p class="stem">be ignored [유의어]</p></div>
+      <div class="opts"><div class="opt ok"><span>① fall on deaf ears</span></div><div class="opt"><span>② do the bare minimum</span></div><div class="opt"><span>③ go hand in hand</span></div><div class="opt"><span>④ cannot help oneself</span></div><div class="opt"><span>⑤ rid ~ of</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>be ignored(무시당하다) ≈ fall on deaf ears(귀담아듣는 사람이 없다). go hand in hand(밀접하게 함께 가다)·cannot help oneself(어쩔 수 없이 하다)·do the bare minimum(최소한만 하다)·rid ~ of(~을 없애다)는 '무시당하다'라는 뜻이 아니다.</div></div>
+    </article>
+    <article class="card q" id="q59">
+      <div class="top"><span class="no">59</span><p class="stem">mostly [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① put another way</span></div><div class="opt"><span>② after the fact</span></div><div class="opt"><span>③ at a distance</span></div><div class="opt"><span>④ by the way</span></div><div class="opt ok"><span>⑤ by and large</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>mostly(대체로) ≈ by and large(대체로, 전반적으로). after the fact(사후에)·at a distance(멀찍이서)·by the way(그런데)·put another way(다시 말해)는 '대체로'라는 뜻이 아니다.</div></div>
+    </article>
+    </section>
+    <section id="sIV" class="sec">
+    <div class="card"><h2>Ⅳ. 영영 정의</h2><p class="sec-note">다음 영어 정의에 해당하는 단어(구)로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q60">
+      <div class="top"><span class="no">60</span><p class="stem">to spread power and decisions among many local groups instead of one top group</p></div>
+      <div class="opts"><div class="opt"><span>① exemplify</span></div><div class="opt"><span>② shrink</span></div><div class="opt"><span>③ evoke</span></div><div class="opt ok"><span>④ decentralize</span></div><div class="opt"><span>⑤ sail</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>decentralize = 하나의 중앙 집단 대신 여러 지역 집단에 권력과 결정권을 나누다, 분권화하다. sail(항해하다)·evoke(불러일으키다)·shrink(줄어들다)·exemplify(전형적으로 보여 주다)는 다른 뜻의 동사다.</div></div>
+    </article>
+    <article class="card q" id="q61">
+      <div class="top"><span class="no">61</span><p class="stem">a written copy of spoken words</p></div>
+      <div class="opts"><div class="opt"><span>① verdict</span></div><div class="opt"><span>② projection</span></div><div class="opt"><span>③ tariff</span></div><div class="opt"><span>④ latitude</span></div><div class="opt ok"><span>⑤ transcription</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>transcription = 말을 글로 옮긴 기록. projection(예상)·latitude(재량)·tariff(관세)·verdict(평결)는 다른 뜻의 명사다.</div></div>
+    </article>
+    <article class="card q" id="q62">
+      <div class="top"><span class="no">62</span><p class="stem">an official count of the people living in a country</p></div>
+      <div class="opts"><div class="opt"><span>① remedy</span></div><div class="opt"><span>② minus</span></div><div class="opt"><span>③ constraint</span></div><div class="opt ok"><span>④ census</span></div><div class="opt"><span>⑤ treaty</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>census = 한 나라에 사는 사람들의 공식적인 수 조사, 인구조사. constraint(제약)·minus(단점)·remedy(해결책)·treaty(조약)는 다른 뜻의 명사다.</div></div>
+    </article>
+    <article class="card q" id="q63">
+      <div class="top"><span class="no">63</span><p class="stem">active during the night rather than the day</p></div>
+      <div class="opts"><div class="opt ok"><span>① nocturnal</span></div><div class="opt"><span>② ill-equipped</span></div><div class="opt"><span>③ upright</span></div><div class="opt"><span>④ damp</span></div><div class="opt"><span>⑤ phenomenal</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>nocturnal = 낮이 아니라 밤에 활동하는, 야행성의. phenomenal(경이적인)·ill-equipped(준비가 부족한)·upright(똑바로 선)·damp(축축한)는 다른 뜻의 형용사다.</div></div>
+    </article>
+    <article class="card q" id="q64">
+      <div class="top"><span class="no">64</span><p class="stem">based on what is really happening at the place itself, not on reports</p></div>
+      <div class="opts"><div class="opt"><span>① upright</span></div><div class="opt ok"><span>② on-the-ground</span></div><div class="opt"><span>③ promising</span></div><div class="opt"><span>④ floating</span></div><div class="opt"><span>⑤ ill-equipped</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>on-the-ground = 보고서가 아니라 그 장소에서 실제로 벌어지는 일에 바탕을 둔, 현장의. upright(똑바로 선)·floating(떠 있는)·ill-equipped(준비가 부족한)·promising(유망한)은 다른 뜻의 형용사다.</div></div>
+    </article>
+    <article class="card q" id="q65">
+      <div class="top"><span class="no">65</span><p class="stem">so bad that nothing can make it acceptable</p></div>
+      <div class="opts"><div class="opt"><span>① bare</span></div><div class="opt"><span>② damp</span></div><div class="opt ok"><span>③ inexcusable</span></div><div class="opt"><span>④ inverse</span></div><div class="opt"><span>⑤ bursting</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>inexcusable = 어떤 이유로도 받아들일 수 없을 만큼 나쁜, 변명의 여지가 없는. inverse(반대의)·bare(벌거벗은)·damp(축축한)·bursting(터질 듯한)은 다른 뜻의 형용사다.</div></div>
+    </article>
+    <article class="card q" id="q66">
+      <div class="top"><span class="no">66</span><p class="stem">not easily believing what other people say</p></div>
+      <div class="opts"><div class="opt"><span>① promising</span></div><div class="opt"><span>② upright</span></div><div class="opt"><span>③ phenomenal</span></div><div class="opt ok"><span>④ sceptical</span></div><div class="opt"><span>⑤ ill-equipped</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>sceptical = 다른 사람들의 말을 쉽게 믿지 않는, 회의적인. phenomenal(경이적인)·promising(유망한)·ill-equipped(준비가 부족한)·upright(똑바로 선)는 다른 뜻의 형용사다.</div></div>
+    </article>
+    <article class="card q" id="q67">
+      <div class="top"><span class="no">67</span><p class="stem">to make only the smallest effort that is absolutely necessary</p></div>
+      <div class="opts"><div class="opt"><span>① draw in</span></div><div class="opt"><span>② rid ~ of</span></div><div class="opt"><span>③ tap into</span></div><div class="opt"><span>④ settle into</span></div><div class="opt ok"><span>⑤ do the bare minimum</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>do the bare minimum = 꼭 필요한 것만 하고 그 이상은 하지 않다. tap into(활용하다)·draw in(끌어들이다)·settle into(~에 적응하다)·rid ~ of(~을 없애다)는 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q68">
+      <div class="top"><span class="no">68</span><p class="stem">to be found to come from a particular cause or source</p></div>
+      <div class="opts"><div class="opt"><span>① correspond to</span></div><div class="opt ok"><span>② be traced to</span></div><div class="opt"><span>③ cannot help oneself</span></div><div class="opt"><span>④ go hand in hand</span></div><div class="opt"><span>⑤ fall on deaf ears</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>be traced to = 특정한 원인이나 출처에서 비롯된 것으로 밝혀지다. go hand in hand(밀접하게 함께 가다)·correspond to(~에 상응하다)·fall on deaf ears(무시당하다)·cannot help oneself(어쩔 수 없이 하다)는 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q69">
+      <div class="top"><span class="no">69</span><p class="stem">used to add a related remark that is not the main topic</p></div>
+      <div class="opts"><div class="opt"><span>① in question</span></div><div class="opt"><span>② put another way</span></div><div class="opt ok"><span>③ by the way</span></div><div class="opt"><span>④ after the fact</span></div><div class="opt"><span>⑤ in turn</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>by the way = 주된 화제가 아닌 관련 말을 덧붙일 때 쓰는 말, 그런데. put another way(다시 말해)·after the fact(사후에)·in question(문제가 되는)·in turn(차례로)은 다른 뜻의 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q70">
+      <div class="top"><span class="no">70</span><p class="stem">to free a place or person from something unwanted</p></div>
+      <div class="opts"><div class="opt ok"><span>① rid ~ of</span></div><div class="opt"><span>② brush off</span></div><div class="opt"><span>③ drive ~ away</span></div><div class="opt"><span>④ draw in</span></div><div class="opt"><span>⑤ cast away</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>rid ~ of = 장소나 사람에게서 원하지 않는 것을 없애다. drive ~ away(쫓아내다)·brush off(무시하다)·cast away(내던지다)·draw in(끌어들이다)은 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q71">
+      <div class="top"><span class="no">71</span><p class="stem">once something has already happened</p></div>
+      <div class="opts"><div class="opt"><span>① in the meantime</span></div><div class="opt"><span>② in bulk</span></div><div class="opt"><span>③ in question</span></div><div class="opt ok"><span>④ after the fact</span></div><div class="opt"><span>⑤ by the way</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>after the fact = 어떤 일이 이미 일어난 뒤에, 사후에. by the way(그런데)·in question(문제가 되는)·in the meantime(그동안에)·in bulk(대량으로)는 다른 뜻의 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q72">
+      <div class="top"><span class="no">72</span><p class="stem">to be unable to hold back from doing something</p></div>
+      <div class="opts"><div class="opt ok"><span>① cannot help oneself</span></div><div class="opt"><span>② go hand in hand</span></div><div class="opt"><span>③ resort to</span></div><div class="opt"><span>④ fall on deaf ears</span></div><div class="opt"><span>⑤ brace oneself for</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>cannot help oneself = 스스로를 멈출 수 없다, 어쩔 수 없이 하다. go hand in hand(밀접하게 함께 가다)·fall on deaf ears(무시당하다)·brace oneself for(~에 대비하다)·resort to(~에 의존하다)는 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q73">
+      <div class="top"><span class="no">73</span><p class="stem">being talked about or considered</p></div>
+      <div class="opts"><div class="opt"><span>① at a distance</span></div><div class="opt"><span>② by and large</span></div><div class="opt"><span>③ in essence</span></div><div class="opt"><span>④ from scratch</span></div><div class="opt ok"><span>⑤ in question</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>in question = 지금 논의되거나 다루어지고 있는, 문제가 되고 있는. by and large(대체로)·at a distance(멀찍이서)·from scratch(처음부터)·in essence(본질적으로)는 다른 뜻의 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q74">
+      <div class="top"><span class="no">74</span><p class="stem">to be closely connected and happen together</p></div>
+      <div class="opts"><div class="opt"><span>① spring up</span></div><div class="opt ok"><span>② go hand in hand</span></div><div class="opt"><span>③ correspond to</span></div><div class="opt"><span>④ settle into</span></div><div class="opt"><span>⑤ be traced to</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>go hand in hand = 밀접하게 연결되어 함께 일어나다. correspond to(~에 상응하다)·be traced to(~로 거슬러 올라가다)·settle into(~에 적응하다)·spring up(갑자기 생겨나다)은 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q75">
+      <div class="top"><span class="no">75</span><p class="stem">to match or be equal to something else</p></div>
+      <div class="opts"><div class="opt"><span>① draw in</span></div><div class="opt"><span>② fall on deaf ears</span></div><div class="opt ok"><span>③ correspond to</span></div><div class="opt"><span>④ give way to</span></div><div class="opt"><span>⑤ be traced to</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>correspond to = 다른 것과 일치하거나 같다, 상응하다. be traced to(~로 거슬러 올라가다)·draw in(끌어들이다)·fall on deaf ears(무시당하다)·give way to(~로 바뀌다)는 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q76">
+      <div class="top"><span class="no">76</span><p class="stem">in most cases, or on the whole</p></div>
+      <div class="opts"><div class="opt"><span>① in the long run</span></div><div class="opt ok"><span>② by and large</span></div><div class="opt"><span>③ in question</span></div><div class="opt"><span>④ at a distance</span></div><div class="opt"><span>⑤ as it were</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>by and large = 대부분의 경우, 전체적으로 보아, 대체로. at a distance(멀찍이서)·in question(문제가 되는)·in the long run(장기적으로)·as it were(말하자면)는 다른 뜻의 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q77">
+      <div class="top"><span class="no">77</span><p class="stem">to become comfortable in a new place or situation</p></div>
+      <div class="opts"><div class="opt"><span>① give way to</span></div><div class="opt"><span>② cast away</span></div><div class="opt ok"><span>③ settle into</span></div><div class="opt"><span>④ go hand in hand</span></div><div class="opt"><span>⑤ draw in</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>settle into = 새로운 장소나 상황에서 편안해지다, 적응하여 자리 잡다. give way to(~로 바뀌다)·go hand in hand(밀접하게 함께 가다)·draw in(끌어들이다)·cast away(내던지다)는 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q78">
+      <div class="top"><span class="no">78</span><p class="stem">used to say the same thing again in different words</p></div>
+      <div class="opts"><div class="opt"><span>① in effect</span></div><div class="opt"><span>② after the fact</span></div><div class="opt"><span>③ by the way</span></div><div class="opt"><span>④ in essence</span></div><div class="opt ok"><span>⑤ put another way</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>put another way = 같은 말을 다른 표현으로 다시 말할 때 쓰는 말, 다시 말해서. by the way(그런데)·after the fact(사후에)·in essence(본질적으로)·in effect(사실상)는 다른 뜻의 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q79">
+      <div class="top"><span class="no">79</span><p class="stem">to make people or animals leave, often by bad treatment</p></div>
+      <div class="opts"><div class="opt"><span>① be traced to</span></div><div class="opt"><span>② rid ~ of</span></div><div class="opt"><span>③ tap into</span></div><div class="opt ok"><span>④ drive ~ away</span></div><div class="opt"><span>⑤ brush off</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>drive ~ away = 흔히 나쁜 대우로 사람이나 동물을 떠나게 만들다, 쫓아내다. rid ~ of(~을 없애다)·tap into(활용하다)·be traced to(~로 거슬러 올라가다)·brush off(무시하다)는 다른 뜻의 동사구다.</div></div>
+    </article>
+    <article class="card q" id="q80">
+      <div class="top"><span class="no">80</span><p class="stem">far away, not close</p></div>
+      <div class="opts"><div class="opt ok"><span>① at a distance</span></div><div class="opt"><span>② in bulk</span></div><div class="opt"><span>③ in question</span></div><div class="opt"><span>④ in turn</span></div><div class="opt"><span>⑤ by the way</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>at a distance = 가까이가 아니라 멀리 떨어져, 멀찍이서. in question(문제가 되는)·by the way(그런데)·in turn(차례로)·in bulk(대량으로)는 다른 뜻의 표현이다.</div></div>
+    </article>
+    </section>
+    <section id="sV" class="sec">
+    <div class="card"><h2>Ⅴ. 다의어 문맥 구분</h2><p class="sec-note">다음 지문에서 밑줄 친 단어가 이 문맥에서 의미하는 바로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q81">
+      <div class="top"><span class="no">81</span><p class="stem">Seven is a <u>prime</u> number because only one and itself divide it evenly.</p></div>
+      <div class="opts"><div class="opt"><span>① (원인이) 주된</span></div><div class="opt"><span>② (품질이) 최상급의</span></div><div class="opt"><span>③ (방송 시간대가) 황금의</span></div><div class="opt"><span>④ (용의자가) 가장 유력한</span></div><div class="opt ok"><span>⑤ (수가) 소수의</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>7은 1과 자기 자신으로만 나누어떨어지므로 소수이다.</div><div class="f"><b>해설</b>여기서 prime은 '(수가) 소수의'. 'a ... number because only one and itself divide it evenly'가 결정적 단서다. prime은 '(원인이) 주된', '(품질이) 최상급의', '(용의자가) 가장 유력한', '(방송 시간대가) 황금의' 등으로도 쓰이지만 수의 성질을 설명하는 문맥에서는 소수의.</div></div>
+    </article>
+    <article class="card q" id="q82">
+      <div class="top"><span class="no">82</span><p class="stem">Psychologists call it <u>projection</u> when we blame others for our own faults.</p></div>
+      <div class="opts"><div class="opt ok"><span>① (심리적) 투사</span></div><div class="opt"><span>② (영상의) 투영</span></div><div class="opt"><span>③ (미래의) 예상</span></div><div class="opt"><span>④ (지도의) 도법</span></div><div class="opt"><span>⑤ (표면의) 돌출부</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>심리학자들은 자기 잘못을 남 탓으로 돌리는 것을 투사라고 부른다.</div><div class="f"><b>해설</b>여기서 projection은 '(심리적) 투사'. 'Psychologists call it ... when we blame others for our own faults'가 결정적 단서다. projection은 '(미래의) 예상', '(표면의) 돌출부', '(영상의) 투영', '(지도의) 도법' 등으로도 쓰이지만 자기 잘못을 남에게 돌리는 심리 현상을 가리키는 문맥에서는 투사.</div></div>
+    </article>
+    <article class="card q" id="q83">
+      <div class="top"><span class="no">83</span><p class="stem">Never touch a <u>bare</u> wire; it could give you a shock.</p></div>
+      <div class="opts"><div class="opt"><span>① (몸이) 벌거벗은</span></div><div class="opt"><span>② (말이) 꾸밈없는</span></div><div class="opt"><span>③ (한도가) 최소한의</span></div><div class="opt ok"><span>④ (전선이) 노출된</span></div><div class="opt"><span>⑤ (방이) 텅 빈</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>피복이 벗겨진 전선은 절대 만지지 마라. 감전될 수 있다.</div><div class="f"><b>해설</b>여기서 bare는 '(전선이) 노출된'. 'a ... wire; it could give you a shock'이 결정적 단서다. bare는 '(몸이) 벌거벗은', '(방이) 텅 빈', '(한도가) 최소한의', '(말이) 꾸밈없는' 등으로도 쓰이지만 감전 위험이 있는 전선을 말하는 문맥에서는 피복이 벗겨진.</div></div>
+    </article>
+    <article class="card q" id="q84">
+      <div class="top"><span class="no">84</span><p class="stem">The pianist <u>sailed</u> into the room as if she owned it.</p></div>
+      <div class="opts"><div class="opt"><span>① (배를) 조종하다</span></div><div class="opt ok"><span>② 당당하게 걸어 들어오다</span></div><div class="opt"><span>③ (공중을) 미끄러지듯 날다</span></div><div class="opt"><span>④ 항해하다</span></div><div class="opt"><span>⑤ 순조롭게 통과하다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 피아니스트는 방이 자기 것이라도 되는 듯 당당하게 걸어 들어왔다.</div><div class="f"><b>해설</b>여기서 sail은 '당당하게 걸어 들어오다'. 'into the room as if she owned it'이 결정적 단서다. sail은 '항해하다', '(배를) 조종하다', '순조롭게 통과하다', '(공중을) 미끄러지듯 날다' 등으로도 쓰이지만 사람이 자신만만하게 방으로 들어서는 문맥에서는 당당하게 걸어 들어오다.</div></div>
+    </article>
+    <article class="card q" id="q85">
+      <div class="top"><span class="no">85</span><p class="stem">The company uses <u>floating</u> staff who move between stores as needed.</p></div>
+      <div class="opts"><div class="opt"><span>① 떠 있는</span></div><div class="opt"><span>② (환율이) 변동하는</span></div><div class="opt ok"><span>③ (소속 없이) 이동 배치되는</span></div><div class="opt"><span>④ (장기가) 제자리에 고정되지 않은</span></div><div class="opt"><span>⑤ (지지 정당을) 정하지 못한</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 회사는 필요에 따라 매장 사이를 옮겨 다니는 유동 인력을 쓴다.</div><div class="f"><b>해설</b>여기서 floating은 '(소속 없이) 이동 배치되는'. 'staff who move between stores as needed'가 결정적 단서다. floating은 '떠 있는', '(환율이) 변동하는', '(지지 정당을) 정하지 못한', '(장기가) 제자리에 고정되지 않은' 등으로도 쓰이지만 매장 사이를 옮겨 다니는 인력을 설명하는 문맥에서는 이동 배치되는.</div></div>
+    </article>
+    <article class="card q" id="q86">
+      <div class="top"><span class="no">86</span><p class="stem">After the break, she <u>proceeded</u> to explain the second rule.</p></div>
+      <div class="opts"><div class="opt"><span>① (계획을) 진행하다</span></div><div class="opt"><span>② (소송을) 제기하다</span></div><div class="opt"><span>③ 앞으로 나아가다</span></div><div class="opt ok"><span>④ (이어서) ~하다</span></div><div class="opt"><span>⑤ ~에서 비롯되다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>쉬는 시간 뒤에 그녀는 이어서 두 번째 규칙을 설명했다.</div><div class="f"><b>해설</b>여기서 proceed는 '(이어서) ~하다'. 'proceeded to explain the second rule'이 결정적 단서다. proceed는 '(계획을) 진행하다', '앞으로 나아가다', '(소송을) 제기하다', '~에서 비롯되다' 등으로도 쓰이지만 proceed to do 구조에서는 이어서 ~하기 시작하다.</div></div>
+    </article>
+    <article class="card q" id="q87">
+      <div class="top"><span class="no">87</span><p class="stem">Polar bears live in the cold northern <u>latitudes</u>.</p></div>
+      <div class="opts"><div class="opt"><span>① (필름의) 노출 허용 범위</span></div><div class="opt"><span>② (지구의) 위선</span></div><div class="opt ok"><span>③ (고위도) 지방</span></div><div class="opt"><span>④ (천체의) 황위</span></div><div class="opt"><span>⑤ 재량의 폭</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>북극곰은 추운 북쪽 고위도 지방에 산다.</div><div class="f"><b>해설</b>여기서 latitude는 '(고위도) 지방'. 'Polar bears live in the cold northern ...'이 결정적 단서다. latitude는 '(지구의) 위선', '재량의 폭', '(필름의) 노출 허용 범위', '(천체의) 황위' 등으로도 쓰이지만 어떤 위도대의 지역을 가리키는 문맥에서는 (고위도) 지방.</div></div>
+    </article>
+    <article class="card q" id="q88">
+      <div class="top"><span class="no">88</span><p class="stem">He did not <u>shrink</u> from telling the truth, even when it was hard.</p></div>
+      <div class="opts"><div class="opt"><span>① (예산을) 삭감하다</span></div><div class="opt ok"><span>② (~을) 꺼리다</span></div><div class="opt"><span>③ (가치가) 떨어지다</span></div><div class="opt"><span>④ (수가) 감소하다</span></div><div class="opt"><span>⑤ (옷감이) 오그라들다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그는 어려운 때에도 진실을 말하기를 꺼리지 않았다.</div><div class="f"><b>해설</b>여기서 shrink는 '(~을) 꺼리다'. 'did not ... from telling the truth, even when it was hard'가 결정적 단서다. shrink는 '(수가) 감소하다', '(옷감이) 오그라들다', '(가치가) 떨어지다', '(예산을) 삭감하다' 등으로도 쓰이지만 shrink from 구조에서는 꺼리다.</div></div>
+    </article>
+    <article class="card q" id="q89">
+      <div class="top"><span class="no">89</span><p class="stem">In autumn, the days <u>draw in</u> and the evenings feel long.</p></div>
+      <div class="opts"><div class="opt"><span>① (기차가) 역에 들어오다</span></div><div class="opt"><span>② (고삐를) 당겨 멈추다</span></div><div class="opt"><span>③ (숨을) 들이마시다</span></div><div class="opt"><span>④ (고객을) 끌어들이다</span></div><div class="opt ok"><span>⑤ (낮이) 짧아지다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>가을이면 낮이 짧아져 저녁이 길게 느껴진다.</div><div class="f"><b>해설</b>여기서 draw in은 '(낮이) 짧아지다'. 'In autumn, the days ... and the evenings feel long'이 결정적 단서다. draw in은 '(고객을) 끌어들이다', '(숨을) 들이마시다', '(기차가) 역에 들어오다', '(고삐를) 당겨 멈추다' 등으로도 쓰이지만 계절에 따른 낮의 길이를 말하는 문맥에서는 해가 짧아지다.</div></div>
+    </article>
+    <article class="card q" id="q90">
+      <div class="top"><span class="no">90</span><p class="stem">Police <u>tapped</u> his phone for weeks.</p></div>
+      <div class="opts"><div class="opt ok"><span>① (전화를) 도청하다</span></div><div class="opt"><span>② (구멍에) 나사산을 내다</span></div><div class="opt"><span>③ (나무에서 수액을) 채취하다</span></div><div class="opt"><span>④ (가볍게) 두드리다</span></div><div class="opt"><span>⑤ (자원을) 개발해 쓰다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>경찰은 몇 주 동안 그의 전화를 도청했다.</div><div class="f"><b>해설</b>여기서 tap은 '(전화를) 도청하다'. 'Police ... his phone for weeks'가 결정적 단서다. tap은 '(가볍게) 두드리다', '(자원을) 개발해 쓰다', '(나무에서 수액을) 채취하다', '(구멍에) 나사산을 내다' 등으로도 쓰이지만 경찰이 전화를 몰래 듣는 문맥에서는 도청하다.</div></div>
+    </article>
+    </section>
+    <section id="sVI" class="sec">
+    <div class="card"><h2>Ⅵ. 문맥상 바꿔 쓸 수 있는 말</h2><p class="sec-note">다음 밑줄 친 부분과 문맥상 의미가 가장 가까워, 바꿔 써도 문장의 뜻이 변하지 않는 것은?</p></div>
+    
+    <article class="card q" id="q91">
+      <div class="top"><span class="no">91</span><p class="stem">He tried to <u>sneak</u> into the theater without a ticket.</p></div>
+      <div class="opts"><div class="opt"><span>① run</span></div><div class="opt"><span>② walk</span></div><div class="opt ok"><span>③ slip</span></div><div class="opt"><span>④ rush</span></div><div class="opt"><span>⑤ march</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그는 표 없이 극장으로 몰래 들어가려 했다.</div><div class="f"><b>해설</b>sneak(몰래 가다) ≈ slip(슬그머니 들어가다). walk(걷다)·run(달리다)·rush(서두르다)·march(행진하다)는 몰래 움직인다는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q92">
+      <div class="top"><span class="no">92</span><p class="stem">The small town was <u>ill-equipped</u> to deal with such a huge storm.</p></div>
+      <div class="opts"><div class="opt"><span>① fully ready</span></div><div class="opt ok"><span>② poorly prepared</span></div><div class="opt"><span>③ quite safe</span></div><div class="opt"><span>④ well prepared</span></div><div class="opt"><span>⑤ very careful</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 작은 마을은 그렇게 큰 폭풍에 대처할 준비가 부족했다.</div><div class="f"><b>해설</b>ill-equipped(준비가 부족한) ≈ poorly prepared(준비가 미흡한). well prepared(잘 준비된)·fully ready(완전히 준비된)는 정반대이고, quite safe(꽤 안전한)·very careful(매우 조심하는)은 준비 정도를 뜻하지 않아 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q93">
+      <div class="top"><span class="no">93</span><p class="stem">The teacher handled the argument <u>heavy-handedly</u>, which only made the students angrier.</p></div>
+      <div class="opts"><div class="opt"><span>① kindly</span></div><div class="opt"><span>② quickly</span></div><div class="opt"><span>③ calmly</span></div><div class="opt"><span>④ quietly</span></div><div class="opt ok"><span>⑤ harshly</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>교사는 그 다툼을 고압적으로 처리했고 그것은 학생들을 더 화나게 했을 뿐이었다.</div><div class="f"><b>해설</b>heavy-handedly(고압적으로) ≈ harshly(가혹하게). calmly(침착하게)·kindly(친절하게)는 정반대이고, quickly(빠르게)·quietly(조용히)는 강압적이라는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q94">
+      <div class="top"><span class="no">94</span><p class="stem">Her career <u>exemplifies</u> the value of hard work.</p></div>
+      <div class="opts"><div class="opt ok"><span>① shows</span></div><div class="opt"><span>② forgets</span></div><div class="opt"><span>③ hides</span></div><div class="opt"><span>④ ignores</span></div><div class="opt"><span>⑤ doubts</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그녀의 경력은 노력의 가치를 잘 보여 준다.</div><div class="f"><b>해설</b>exemplify(전형적으로 보여 주다) ≈ show(보여 주다). hides(숨기다)·ignores(무시하다)·doubts(의심하다)·forgets(잊다)는 노력의 가치를 드러낸다는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q95">
+      <div class="top"><span class="no">95</span><p class="stem">The old song <u>evokes</u> memories of her childhood.</p></div>
+      <div class="opts"><div class="opt"><span>① takes away</span></div><div class="opt"><span>② puts off</span></div><div class="opt"><span>③ gives up</span></div><div class="opt ok"><span>④ brings back</span></div><div class="opt"><span>⑤ shuts out</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 오래된 노래는 그녀의 어린 시절 기억을 불러일으킨다.</div><div class="f"><b>해설</b>evoke(불러일으키다) ≈ bring back(되살려 내다). takes away(앗아 가다)·puts off(미루다)·shuts out(차단하다)·gives up(포기하다)은 기억을 되살린다는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q96">
+      <div class="top"><span class="no">96</span><p class="stem">The band had <u>phenomenal</u> success with its first album.</p></div>
+      <div class="opts"><div class="opt ok"><span>① great</span></div><div class="opt"><span>② quiet</span></div><div class="opt"><span>③ slow</span></div><div class="opt"><span>④ little</span></div><div class="opt"><span>⑤ brief</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 밴드는 첫 앨범으로 경이적인 성공을 거뒀다.</div><div class="f"><b>해설</b>phenomenal(경이적인) ≈ great(대단한). little(거의 없는)·slow(더딘)·brief(짧은)·quiet(조용한)는 큰 성공이라는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q97">
+      <div class="top"><span class="no">97</span><p class="stem">Reporters <u>unearthed</u> evidence of illegal payments.</p></div>
+      <div class="opts"><div class="opt"><span>① ignored</span></div><div class="opt ok"><span>② discovered</span></div><div class="opt"><span>③ destroyed</span></div><div class="opt"><span>④ kept</span></div><div class="opt"><span>⑤ forgot</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>기자들은 불법 지급의 증거를 밝혀냈다.</div><div class="f"><b>해설</b>unearth(밝혀내다) ≈ discover(발견하다). kept(간직했다)·destroyed(파괴했다)·forgot(잊었다)·ignored(무시했다)는 증거를 찾아냈다는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q98">
+      <div class="top"><span class="no">98</span><p class="stem">There is an <u>inverse</u> relationship between price and demand.</p></div>
+      <div class="opts"><div class="opt"><span>① old</span></div><div class="opt"><span>② equal</span></div><div class="opt"><span>③ open</span></div><div class="opt ok"><span>④ opposite</span></div><div class="opt"><span>⑤ easy</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>가격과 수요 사이에는 반대의 관계가 있다.</div><div class="f"><b>해설</b>inverse(역의, 반대의) ≈ opposite(반대의). open(열린)·equal(동등한)·easy(쉬운)·old(오래된)는 한쪽이 늘면 다른 쪽이 준다는 뜻이 아니라서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q99">
+      <div class="top"><span class="no">99</span><p class="stem">The young pianist is considered a <u>promising</u> talent.</p></div>
+      <div class="opts"><div class="opt"><span>① weak</span></div><div class="opt"><span>② cheap</span></div><div class="opt"><span>③ small</span></div><div class="opt"><span>④ slow</span></div><div class="opt ok"><span>⑤ bright</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 젊은 피아니스트는 촉망받는 인재로 여겨진다.</div><div class="f"><b>해설</b>promising(유망한) ≈ bright(전도유망한, 총명한). small(작은)·cheap(값싼)·weak(약한)은 재능을 낮게 평가하고, slow(느린)는 재능의 전망과 무관해서 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    <article class="card q" id="q100">
+      <div class="top"><span class="no">100</span><p class="stem">Budget <u>constraints</u> made it impossible to hire more staff.</p></div>
+      <div class="opts"><div class="opt"><span>① rewards</span></div><div class="opt"><span>② hopes</span></div><div class="opt ok"><span>③ limits</span></div><div class="opt"><span>④ goals</span></div><div class="opt"><span>⑤ ideas</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>예산 제약 때문에 직원을 더 뽑는 것이 불가능했다.</div><div class="f"><b>해설</b>constraint(제약) ≈ limit(한계, 제한). goals(목표)·rewards(보상)·ideas(아이디어)·hopes(희망)는 'made it impossible to hire more staff'의 원인으로 맞지 않아 문장의 뜻이 바뀐다.</div></div>
+    </article>
+    </section>
+<footer>2026학년도 Alpha-male Voca · Day 24</footer>
+</main><script>
+(function(){var r=document.documentElement,b=document.getElementById("tl"),d=document.getElementById("td");
+function set(m){r.setAttribute("data-theme",m);b.setAttribute("aria-pressed",m==="light");d.setAttribute("aria-pressed",m==="dark");try{localStorage.setItem("voca-theme",m)}catch(e){}}
+var m=null;try{m=localStorage.getItem("voca-theme")}catch(e){}
+if(!m)m=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";set(m);
+b.onclick=function(){set("light")};d.onclick=function(){set("dark")};
+document.getElementById("pr").onclick=function(){print()};})();</script></body></html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Alpha-male Voca Day 7 정답·해설</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#F2F6FD;--glow:#D9E6FF;--sheet:#fff;--sheet2:#F8FAFF;--fg:#131A2B;--muted:#5F6B85;--line:#E1E8F5;--accent:#1F6BFF;--soft:#E6EFFF;--ink:#0B4FCC;--green:#12A150;--gsoft:#DFF7E8;--amber:#F59E0B;--asoft:#FFF5DC;--shadow:0 1px 2px rgba(20,60,160,.06),0 8px 24px rgba(20,60,160,.07);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0B1222;--glow:#14336E;--sheet:#131B33;--sheet2:#19233F;--fg:#EEF3FF;--muted:#9AA8C7;--line:#25325A;--accent:#6FA2FF;--soft:#182E5C;--ink:#B8D0FF;--green:#4ADE80;--gsoft:#16391F;--amber:#FBBF24;--asoft:#3A2F14;--shadow:0 8px 28px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0B1222;--glow:#14336E;--sheet:#131B33;--sheet2:#19233F;--fg:#EEF3FF;--muted:#9AA8C7;--line:#25325A;--accent:#6FA2FF;--soft:#182E5C;--ink:#B8D0FF;--green:#4ADE80;--gsoft:#16391F;--amber:#FBBF24;--asoft:#3A2F14;--shadow:0 8px 28px rgba(0,0,0,.35);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.7 "Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;background-image:radial-gradient(900px 420px at 15% -10%,var(--glow),transparent 70%);background-repeat:no-repeat;word-break:keep-all;overflow-wrap:break-word;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.wrap{max-width:850px;margin:0 auto;padding:20px 16px 40px;display:flex;flex-direction:column;gap:16px}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.toggle{display:inline-flex;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.toggle button,.pbtn{font:inherit;font-weight:700;font-size:12.5px;border:0;background:none;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed=true]{background:var(--accent);color:#fff}
+.pbtn{background:var(--sheet);border:1px solid var(--line)}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.kicker{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.04em;color:var(--ink);background:var(--soft);padding:5px 12px;border-radius:999px}
+h1{font-size:clamp(24px,5vw,32px);line-height:1.25;margin:10px 0 4px;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--accent)}
+.sub{margin:0;color:var(--muted)}
+h2{font-size:18px;margin:0 0 12px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
+.cell{background:var(--sheet2);border:1px solid var(--line);border-radius:10px;padding:5px 4px;text-align:center;font-size:13px;text-decoration:none;color:var(--fg)}
+.cell b{color:var(--accent);margin-right:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0}
+.tabs a{flex:none;font-weight:700;font-size:13px;text-decoration:none;color:var(--muted);background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.tabs a:focus-visible,.cell:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.q{display:flex;flex-direction:column;gap:12px;scroll-margin-top:60px}
+.top{display:flex;gap:12px;align-items:flex-start}
+.no{flex:none;min-width:30px;height:30px;padding:0 5px;border-radius:999px;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:800;font-size:13px;margin-top:2px}
+.stem{margin:0;font-weight:500;font-size:16px;line-height:1.6}
+.stem u{text-decoration-thickness:2px;text-underline-offset:3px;font-weight:700}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:8px;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--sheet2)}
+.opt.ok{background:var(--gsoft);border-color:var(--green);font-weight:700}
+.opt.ok::after{content:"정답";margin-left:auto;flex:none;color:var(--green);font-size:12px;font-weight:800}
+.exp{display:grid;gap:8px}
+.f{padding:10px 14px;border-radius:12px;background:var(--sheet2);border:1px solid var(--line)}
+.f b{display:inline-block;font-size:12px;color:var(--ink);background:var(--soft);padding:0 8px;border-radius:6px;margin-right:6px}
+.f.tr{background:var(--asoft);border-color:transparent}
+.sec-note{margin:0 0 12px;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:12px}
+@media print{.bar,.tabs{display:none}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+</style></head><body><main class="wrap">
+<div class="bar"><span></span><div class="toggle" role="group" aria-label="테마"><button id="tl" type="button" aria-pressed="true">Light</button><button id="td" type="button" aria-pressed="false">Dark</button></div><button id="pr" class="pbtn" type="button">인쇄 / PDF</button></div>
+<section class="card"><span class="kicker">ALPHA-MALE VOCA</span><h1>Day <em>7</em> 정답·해설</h1><p class="sub">100문항 · 번호를 누르면 해당 문항으로 이동합니다.</p></section>
+
+    <section class="card"><h2>Ⅰ. 어휘 뜻 매칭</h2>
+    <div class="grid"><a class="cell" href="#q1"><b>1</b>①</a><a class="cell" href="#q2"><b>2</b>②</a><a class="cell" href="#q3"><b>3</b>⑤</a><a class="cell" href="#q4"><b>4</b>④</a><a class="cell" href="#q5"><b>5</b>②</a><a class="cell" href="#q6"><b>6</b>⑤</a><a class="cell" href="#q7"><b>7</b>④</a><a class="cell" href="#q8"><b>8</b>①</a><a class="cell" href="#q9"><b>9</b>⑤</a><a class="cell" href="#q10"><b>10</b>④</a><a class="cell" href="#q11"><b>11</b>④</a><a class="cell" href="#q12"><b>12</b>①</a><a class="cell" href="#q13"><b>13</b>⑤</a><a class="cell" href="#q14"><b>14</b>②</a><a class="cell" href="#q15"><b>15</b>③</a><a class="cell" href="#q16"><b>16</b>②</a><a class="cell" href="#q17"><b>17</b>③</a><a class="cell" href="#q18"><b>18</b>⑤</a><a class="cell" href="#q19"><b>19</b>⑤</a><a class="cell" href="#q20"><b>20</b>③</a><a class="cell" href="#q21"><b>21</b>②</a><a class="cell" href="#q22"><b>22</b>③</a><a class="cell" href="#q23"><b>23</b>②</a><a class="cell" href="#q24"><b>24</b>②</a><a class="cell" href="#q25"><b>25</b>③</a><a class="cell" href="#q26"><b>26</b>①</a><a class="cell" href="#q27"><b>27</b>④</a><a class="cell" href="#q28"><b>28</b>③</a><a class="cell" href="#q29"><b>29</b>⑤</a><a class="cell" href="#q30"><b>30</b>②</a></div></section>
+    <section class="card"><h2>Ⅱ. 문맥 속 의미 추론</h2>
+    <div class="grid"><a class="cell" href="#q31"><b>31</b>④</a><a class="cell" href="#q32"><b>32</b>⑤</a><a class="cell" href="#q33"><b>33</b>④</a><a class="cell" href="#q34"><b>34</b>③</a><a class="cell" href="#q35"><b>35</b>②</a><a class="cell" href="#q36"><b>36</b>③</a><a class="cell" href="#q37"><b>37</b>②</a><a class="cell" href="#q38"><b>38</b>⑤</a><a class="cell" href="#q39"><b>39</b>③</a><a class="cell" href="#q40"><b>40</b>⑤</a><a class="cell" href="#q41"><b>41</b>①</a><a class="cell" href="#q42"><b>42</b>①</a><a class="cell" href="#q43"><b>43</b>①</a><a class="cell" href="#q44"><b>44</b>③</a><a class="cell" href="#q45"><b>45</b>①</a><a class="cell" href="#q46"><b>46</b>②</a><a class="cell" href="#q47"><b>47</b>⑤</a><a class="cell" href="#q48"><b>48</b>①</a><a class="cell" href="#q49"><b>49</b>③</a><a class="cell" href="#q50"><b>50</b>①</a><a class="cell" href="#q51"><b>51</b>⑤</a><a class="cell" href="#q52"><b>52</b>⑤</a><a class="cell" href="#q53"><b>53</b>①</a><a class="cell" href="#q54"><b>54</b>③</a><a class="cell" href="#q55"><b>55</b>⑤</a></div></section>
+    <section class="card"><h2>Ⅲ. 연어ㆍ구동사 완성</h2>
+    <div class="grid"><a class="cell" href="#q56"><b>56</b>②</a><a class="cell" href="#q57"><b>57</b>①</a><a class="cell" href="#q58"><b>58</b>⑤</a><a class="cell" href="#q59"><b>59</b>④</a><a class="cell" href="#q60"><b>60</b>①</a><a class="cell" href="#q61"><b>61</b>③</a><a class="cell" href="#q62"><b>62</b>④</a><a class="cell" href="#q63"><b>63</b>②</a><a class="cell" href="#q64"><b>64</b>⑤</a><a class="cell" href="#q65"><b>65</b>①</a><a class="cell" href="#q66"><b>66</b>④</a><a class="cell" href="#q67"><b>67</b>④</a><a class="cell" href="#q68"><b>68</b>①</a><a class="cell" href="#q69"><b>69</b>④</a><a class="cell" href="#q70"><b>70</b>③</a></div></section>
+    <section class="card"><h2>Ⅳ. 유의어ㆍ반의어</h2>
+    <div class="grid"><a class="cell" href="#q71"><b>71</b>④</a><a class="cell" href="#q72"><b>72</b>④</a><a class="cell" href="#q73"><b>73</b>④</a><a class="cell" href="#q74"><b>74</b>⑤</a><a class="cell" href="#q75"><b>75</b>②</a><a class="cell" href="#q76"><b>76</b>④</a><a class="cell" href="#q77"><b>77</b>③</a><a class="cell" href="#q78"><b>78</b>③</a><a class="cell" href="#q79"><b>79</b>①</a><a class="cell" href="#q80"><b>80</b>①</a><a class="cell" href="#q81"><b>81</b>⑤</a><a class="cell" href="#q82"><b>82</b>②</a><a class="cell" href="#q83"><b>83</b>④</a><a class="cell" href="#q84"><b>84</b>③</a><a class="cell" href="#q85"><b>85</b>①</a></div></section>
+    <section class="card"><h2>Ⅴ. 영영 정의</h2>
+    <div class="grid"><a class="cell" href="#q86"><b>86</b>④</a><a class="cell" href="#q87"><b>87</b>⑤</a><a class="cell" href="#q88"><b>88</b>②</a><a class="cell" href="#q89"><b>89</b>③</a><a class="cell" href="#q90"><b>90</b>①</a><a class="cell" href="#q91"><b>91</b>③</a><a class="cell" href="#q92"><b>92</b>②</a><a class="cell" href="#q93"><b>93</b>③</a><a class="cell" href="#q94"><b>94</b>⑤</a><a class="cell" href="#q95"><b>95</b>④</a></div></section>
+    <section class="card"><h2>Ⅵ. 다의어 문맥 구분</h2>
+    <div class="grid"><a class="cell" href="#q96"><b>96</b>④</a><a class="cell" href="#q97"><b>97</b>③</a><a class="cell" href="#q98"><b>98</b>②</a><a class="cell" href="#q99"><b>99</b>②</a><a class="cell" href="#q100"><b>100</b>⑤</a></div></section>
+<nav class="tabs" aria-label="유형 바로가기"><a href="#sI">Ⅰ. 어휘 뜻 매칭</a><a href="#sII">Ⅱ. 문맥 속 의미 추론</a><a href="#sIII">Ⅲ. 연어ㆍ구동사 완성</a><a href="#sIV">Ⅳ. 유의어ㆍ반의어</a><a href="#sV">Ⅴ. 영영 정의</a><a href="#sVI">Ⅵ. 다의어 문맥 구분</a></nav>
+
+    <section id="sI" class="sec">
+    <div class="card"><h2>Ⅰ. 어휘 뜻 매칭</h2><p class="sec-note">다음 영어 단어의 뜻으로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q1">
+      <div class="top"><span class="no">1</span><p class="stem">dispose</p></div>
+      <div class="opts"><div class="opt ok"><span>① 처리하다, 폐기하다</span></div><div class="opt"><span>② 위임하다</span></div><div class="opt"><span>③ 의심하다</span></div><div class="opt"><span>④ 촉진하다</span></div><div class="opt"><span>⑤ 은폐하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>dispose = 처리하다, 폐기하다. dispose of(~을 처리하다)로 자주 쓰이며, 명사는 disposition(기질, 성향)이다.</div></div>
+    </article>
+    <article class="card q" id="q2">
+      <div class="top"><span class="no">2</span><p class="stem">speculate</p></div>
+      <div class="opts"><div class="opt"><span>① 은폐하다</span></div><div class="opt ok"><span>② 추측하다, 투기하다</span></div><div class="opt"><span>③ 위임하다</span></div><div class="opt"><span>④ 의심하다</span></div><div class="opt"><span>⑤ 촉진하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>speculate = 추측하다, 투기하다. 명사는 speculation이다.</div></div>
+    </article>
+    <article class="card q" id="q3">
+      <div class="top"><span class="no">3</span><p class="stem">sustain</p></div>
+      <div class="opts"><div class="opt"><span>① 은폐하다</span></div><div class="opt"><span>② 위임하다</span></div><div class="opt"><span>③ 의심하다</span></div><div class="opt"><span>④ 촉진하다</span></div><div class="opt ok"><span>⑤ 지속시키다, 부양하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>sustain = 지속시키다, 부양하다. 명사는 sustenance(자양물, 생계 수단)다.</div></div>
+    </article>
+    <article class="card q" id="q4">
+      <div class="top"><span class="no">4</span><p class="stem">effective</p></div>
+      <div class="opts"><div class="opt"><span>① 열정적인</span></div><div class="opt"><span>② 의도적인</span></div><div class="opt"><span>③ 단호한</span></div><div class="opt ok"><span>④ 효과적인</span></div><div class="opt"><span>⑤ 타협적인</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>effective = 효과적인. 명사는 efficacy(효능, 효험)다.</div></div>
+    </article>
+    <article class="card q" id="q5">
+      <div class="top"><span class="no">5</span><p class="stem">readily</p></div>
+      <div class="opts"><div class="opt"><span>① 단호하게</span></div><div class="opt ok"><span>② 선뜻, 순순히</span></div><div class="opt"><span>③ 막연하게</span></div><div class="opt"><span>④ 확고하게</span></div><div class="opt"><span>⑤ 냉소적으로</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>readily = 선뜻, 순순히. 형용사 ready(준비된, 기꺼이 하는)의 부사형이다.</div></div>
+    </article>
+    <article class="card q" id="q6">
+      <div class="top"><span class="no">6</span><p class="stem">disposition</p></div>
+      <div class="opts"><div class="opt"><span>① 의무</span></div><div class="opt"><span>② 묵인</span></div><div class="opt"><span>③ 쇠퇴</span></div><div class="opt"><span>④ 폭로</span></div><div class="opt ok"><span>⑤ 기질, 성향</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>disposition = 기질, 성향. 동사는 dispose(처리하다)이지만, 명사는 '타고난 기질'을 뜻하기도 한다.</div></div>
+    </article>
+    <article class="card q" id="q7">
+      <div class="top"><span class="no">7</span><p class="stem">qualify</p></div>
+      <div class="opts"><div class="opt"><span>① 칭찬하다</span></div><div class="opt"><span>② 폭로하다</span></div><div class="opt"><span>③ 포기하다</span></div><div class="opt ok"><span>④ 자격을 얻다</span></div><div class="opt"><span>⑤ 강요하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>qualify = 자격을 얻다. 명사는 qualification(자격)이며, 문맥에 따라 '조건을 덧붙이다'라는 뜻도 있다.</div></div>
+    </article>
+    <article class="card q" id="q8">
+      <div class="top"><span class="no">8</span><p class="stem">lucidity</p></div>
+      <div class="opts"><div class="opt ok"><span>① 명료함</span></div><div class="opt"><span>② 묵인</span></div><div class="opt"><span>③ 의무</span></div><div class="opt"><span>④ 폭로</span></div><div class="opt"><span>⑤ 쇠퇴</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>lucidity = 명료함. 형용사는 lucid(명료한)다.</div></div>
+    </article>
+    <article class="card q" id="q9">
+      <div class="top"><span class="no">9</span><p class="stem">retain</p></div>
+      <div class="opts"><div class="opt"><span>① 강요하다</span></div><div class="opt"><span>② 폭로하다</span></div><div class="opt"><span>③ 칭찬하다</span></div><div class="opt"><span>④ 포기하다</span></div><div class="opt ok"><span>⑤ 유지하다, 보유하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>retain = 유지하다, 보유하다. 명사는 retention이다.</div></div>
+    </article>
+    <article class="card q" id="q10">
+      <div class="top"><span class="no">10</span><p class="stem">ready</p></div>
+      <div class="opts"><div class="opt"><span>① 열정적인</span></div><div class="opt"><span>② 의도적인</span></div><div class="opt"><span>③ 단호한</span></div><div class="opt ok"><span>④ 준비된, 기꺼이 하는</span></div><div class="opt"><span>⑤ 타협적인</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>ready = 준비된, 기꺼이 하는. 부사는 readily(선뜻)다.</div></div>
+    </article>
+    <article class="card q" id="q11">
+      <div class="top"><span class="no">11</span><p class="stem">commit</p></div>
+      <div class="opts"><div class="opt"><span>① 폭로하다</span></div><div class="opt"><span>② 포기하다</span></div><div class="opt"><span>③ 강요하다</span></div><div class="opt ok"><span>④ 저지르다, 전념하다</span></div><div class="opt"><span>⑤ 칭찬하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>commit = 저지르다, 전념하다. 명사는 commitment(헌신, 책무)다.</div></div>
+    </article>
+    <article class="card q" id="q12">
+      <div class="top"><span class="no">12</span><p class="stem">norm</p></div>
+      <div class="opts"><div class="opt ok"><span>① 규범</span></div><div class="opt"><span>② 폭로</span></div><div class="opt"><span>③ 의무</span></div><div class="opt"><span>④ 묵인</span></div><div class="opt"><span>⑤ 쇠퇴</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>norm = 규범. 형용사는 normative(규범적인)다.</div></div>
+    </article>
+    <article class="card q" id="q13">
+      <div class="top"><span class="no">13</span><p class="stem">lucid</p></div>
+      <div class="opts"><div class="opt"><span>① 열정적인</span></div><div class="opt"><span>② 의도적인</span></div><div class="opt"><span>③ 타협적인</span></div><div class="opt"><span>④ 단호한</span></div><div class="opt ok"><span>⑤ 명료한, 명쾌한</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>lucid = 명료한, 명쾌한. 명사는 lucidity다.</div></div>
+    </article>
+    <article class="card q" id="q14">
+      <div class="top"><span class="no">14</span><p class="stem">retention</p></div>
+      <div class="opts"><div class="opt"><span>① 은폐</span></div><div class="opt ok"><span>② 유지, 보유</span></div><div class="opt"><span>③ 보류</span></div><div class="opt"><span>④ 강요</span></div><div class="opt"><span>⑤ 촉진</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>retention = 유지, 보유. 동사는 retain(유지하다)이다.</div></div>
+    </article>
+    <article class="card q" id="q15">
+      <div class="top"><span class="no">15</span><p class="stem">composite</p></div>
+      <div class="opts"><div class="opt"><span>① 낙관적인</span></div><div class="opt"><span>② 일관된</span></div><div class="opt ok"><span>③ 복합의, 합성의</span></div><div class="opt"><span>④ 냉소적인</span></div><div class="opt"><span>⑤ 보수적인</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>composite = 복합의, 합성의. 동사 compose(구성하다)와 어원이 같다.</div></div>
+    </article>
+    <article class="card q" id="q16">
+      <div class="top"><span class="no">16</span><p class="stem">vocational</p></div>
+      <div class="opts"><div class="opt"><span>① 일관된</span></div><div class="opt ok"><span>② 직업의</span></div><div class="opt"><span>③ 낙관적인</span></div><div class="opt"><span>④ 냉소적인</span></div><div class="opt"><span>⑤ 보수적인</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>vocational = 직업의. 명사는 vocation(천직, 소명)이다.</div></div>
+    </article>
+    <article class="card q" id="q17">
+      <div class="top"><span class="no">17</span><p class="stem">correspond</p></div>
+      <div class="opts"><div class="opt"><span>① 단념시키다</span></div><div class="opt"><span>② 묵인하다</span></div><div class="opt ok"><span>③ 상응하다, 일치하다</span></div><div class="opt"><span>④ 비난하다</span></div><div class="opt"><span>⑤ 보류하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>correspond = 상응하다, 일치하다. 명사는 correspondence(서신; 일치)다.</div></div>
+    </article>
+    <article class="card q" id="q18">
+      <div class="top"><span class="no">18</span><p class="stem">sovereignty</p></div>
+      <div class="opts"><div class="opt"><span>① 촉진</span></div><div class="opt"><span>② 강요</span></div><div class="opt"><span>③ 은폐</span></div><div class="opt"><span>④ 보류</span></div><div class="opt ok"><span>⑤ 주권</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>sovereignty = 주권. 형용사는 sovereign(주권을 가진)이다.</div></div>
+    </article>
+    <article class="card q" id="q19">
+      <div class="top"><span class="no">19</span><p class="stem">speculation</p></div>
+      <div class="opts"><div class="opt"><span>① 은폐</span></div><div class="opt"><span>② 촉진</span></div><div class="opt"><span>③ 보류</span></div><div class="opt"><span>④ 강요</span></div><div class="opt ok"><span>⑤ 추측, 투기</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>speculation = 추측, 투기. 동사는 speculate(추측하다)다.</div></div>
+    </article>
+    <article class="card q" id="q20">
+      <div class="top"><span class="no">20</span><p class="stem">sustenance</p></div>
+      <div class="opts"><div class="opt"><span>① 자부심</span></div><div class="opt"><span>② 보완</span></div><div class="opt ok"><span>③ 자양물, 생계 수단</span></div><div class="opt"><span>④ 혼란</span></div><div class="opt"><span>⑤ 번영</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>sustenance = 자양물, 생계 수단. 동사는 sustain(지속시키다, 부양하다)이다.</div></div>
+    </article>
+    <article class="card q" id="q21">
+      <div class="top"><span class="no">21</span><p class="stem">efficacy</p></div>
+      <div class="opts"><div class="opt"><span>① 번영</span></div><div class="opt ok"><span>② 효능, 효험</span></div><div class="opt"><span>③ 보완</span></div><div class="opt"><span>④ 자부심</span></div><div class="opt"><span>⑤ 혼란</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>efficacy = 효능, 효험. 형용사는 effective(효과적인)다.</div></div>
+    </article>
+    <article class="card q" id="q22">
+      <div class="top"><span class="no">22</span><p class="stem">compose</p></div>
+      <div class="opts"><div class="opt"><span>① 비난하다</span></div><div class="opt"><span>② 묵인하다</span></div><div class="opt ok"><span>③ 구성하다</span></div><div class="opt"><span>④ 단념시키다</span></div><div class="opt"><span>⑤ 보류하다</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>compose = 구성하다. 형용사는 composite(복합의)다.</div></div>
+    </article>
+    <article class="card q" id="q23">
+      <div class="top"><span class="no">23</span><p class="stem">persistent</p></div>
+      <div class="opts"><div class="opt"><span>① 낙관적인</span></div><div class="opt ok"><span>② 끈질긴, 지속적인</span></div><div class="opt"><span>③ 보수적인</span></div><div class="opt"><span>④ 냉소적인</span></div><div class="opt"><span>⑤ 일관된</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>persistent = 끈질긴, 지속적인. 명사는 persistence(끈기)다.</div></div>
+    </article>
+    <article class="card q" id="q24">
+      <div class="top"><span class="no">24</span><p class="stem">correspondence</p></div>
+      <div class="opts"><div class="opt"><span>① 번영</span></div><div class="opt ok"><span>② 서신; 일치, 대응</span></div><div class="opt"><span>③ 혼란</span></div><div class="opt"><span>④ 자부심</span></div><div class="opt"><span>⑤ 보완</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>correspondence = 서신; 일치, 대응. 동사는 correspond(상응하다)다.</div></div>
+    </article>
+    <article class="card q" id="q25">
+      <div class="top"><span class="no">25</span><p class="stem">sovereign</p></div>
+      <div class="opts"><div class="opt"><span>① 확고한</span></div><div class="opt"><span>② 진보적인</span></div><div class="opt ok"><span>③ 주권을 가진, 독립된</span></div><div class="opt"><span>④ 산만한</span></div><div class="opt"><span>⑤ 무관심한</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>sovereign = 주권을 가진, 독립된. 명사는 sovereignty(주권)다.</div></div>
+    </article>
+    <article class="card q" id="q26">
+      <div class="top"><span class="no">26</span><p class="stem">qualification</p></div>
+      <div class="opts"><div class="opt ok"><span>① 자격, 자격증</span></div><div class="opt"><span>② 격려</span></div><div class="opt"><span>③ 위임</span></div><div class="opt"><span>④ 포기</span></div><div class="opt"><span>⑤ 실망</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>qualification = 자격, 자격증. 동사는 qualify(자격을 얻다)다.</div></div>
+    </article>
+    <article class="card q" id="q27">
+      <div class="top"><span class="no">27</span><p class="stem">normative</p></div>
+      <div class="opts"><div class="opt"><span>① 산만한</span></div><div class="opt"><span>② 무관심한</span></div><div class="opt"><span>③ 확고한</span></div><div class="opt ok"><span>④ 규범적인</span></div><div class="opt"><span>⑤ 진보적인</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>normative = 규범적인. 명사는 norm(규범)이다.</div></div>
+    </article>
+    <article class="card q" id="q28">
+      <div class="top"><span class="no">28</span><p class="stem">persistence</p></div>
+      <div class="opts"><div class="opt"><span>① 위임</span></div><div class="opt"><span>② 격려</span></div><div class="opt ok"><span>③ 끈기</span></div><div class="opt"><span>④ 실망</span></div><div class="opt"><span>⑤ 포기</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>persistence = 끈기. 형용사는 persistent(끈질긴)다.</div></div>
+    </article>
+    <article class="card q" id="q29">
+      <div class="top"><span class="no">29</span><p class="stem">vocation</p></div>
+      <div class="opts"><div class="opt"><span>① 격려</span></div><div class="opt"><span>② 실망</span></div><div class="opt"><span>③ 위임</span></div><div class="opt"><span>④ 포기</span></div><div class="opt ok"><span>⑤ 천직, 소명</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>vocation = 천직, 소명. 형용사는 vocational(직업의)이다.</div></div>
+    </article>
+    <article class="card q" id="q30">
+      <div class="top"><span class="no">30</span><p class="stem">commitment</p></div>
+      <div class="opts"><div class="opt"><span>① 불신</span></div><div class="opt ok"><span>② 헌신, 책무</span></div><div class="opt"><span>③ 안정</span></div><div class="opt"><span>④ 타협</span></div><div class="opt"><span>⑤ 권리</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>commitment = 헌신, 책무. 동사는 commit(전념하다)이다.</div></div>
+    </article>
+    </section>
+    <section id="sII" class="sec">
+    <div class="card"><h2>Ⅱ. 문맥 속 의미 추론</h2><p class="sec-note">다음 문장의 밑줄 친 부분의 의미로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q31">
+      <div class="top"><span class="no">31</span><p class="stem">Using ropes and crampons, the team of climbers spent three days trying to ________ the icy cliff face.</p></div>
+      <div class="opts"><div class="opt"><span>① confirm</span></div><div class="opt"><span>② perpetuate</span></div><div class="opt"><span>③ suspect</span></div><div class="opt ok"><span>④ scale</span></div><div class="opt"><span>⑤ cultivate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>밧줄과 아이젠을 사용해서, 등반가 팀은 얼어붙은 절벽을 오르는 데 사흘을 보냈다.</div><div class="f"><b>해설</b>scale = (산·절벽을) 오르다. Using ropes and crampons(밧줄과 아이젠을 사용해서)가 등반 장비임을 보여준다.</div></div>
+    </article>
+    <article class="card q" id="q32">
+      <div class="top"><span class="no">32</span><p class="stem">It took the interns several days to fully ________ and internalize the dense 200-page policy report.</p></div>
+      <div class="opts"><div class="opt"><span>① perpetuate</span></div><div class="opt"><span>② cultivate</span></div><div class="opt"><span>③ stipulate</span></div><div class="opt"><span>④ confirm</span></div><div class="opt ok"><span>⑤ digest</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>인턴들이 200쪽 분량의 촘촘한 정책 보고서를 완전히 소화하고 내면화하는 데 며칠이 걸렸다.</div><div class="f"><b>해설</b>digest = 소화하다, 이해하다. internalize(내면화하다)와 나란히 쓰여 내용을 완전히 이해한다는 뜻을 강조한다.</div></div>
+    </article>
+    <article class="card q" id="q33">
+      <div class="top"><span class="no">33</span><p class="stem">Economists closely watch the country's monthly price ________ to track inflation trends.</p></div>
+      <div class="opts"><div class="opt"><span>① allusion</span></div><div class="opt"><span>② vocation</span></div><div class="opt"><span>③ sentence</span></div><div class="opt ok"><span>④ index</span></div><div class="opt"><span>⑤ consensus</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>경제학자들은 인플레이션 추세를 추적하기 위해 그 나라의 월간 물가 지수를 면밀히 살핀다.</div><div class="f"><b>해설</b>index = 지수. price ________(물가 ___)와 어울리는 명사다.</div></div>
+    </article>
+    <article class="card q" id="q34">
+      <div class="top"><span class="no">34</span><p class="stem">After the surprise product launch, the store's entire ________ of the new sneakers sold out within hours.</p></div>
+      <div class="opts"><div class="opt"><span>① allusion</span></div><div class="opt"><span>② consensus</span></div><div class="opt ok"><span>③ stock</span></div><div class="opt"><span>④ sentence</span></div><div class="opt"><span>⑤ index</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>깜짝 제품 출시 후, 그 매장의 새 운동화 재고 전체가 몇 시간 만에 매진됐다.</div><div class="f"><b>해설</b>stock = 재고. sold out(매진됐다)의 주어로 재고 전체를 가리킨다.</div></div>
+    </article>
+    <article class="card q" id="q35">
+      <div class="top"><span class="no">35</span><p class="stem">The company's quarterly sales ________ -- a single number released this morning -- exceeded every analyst's prediction.</p></div>
+      <div class="opts"><div class="opt"><span>① allusion</span></div><div class="opt ok"><span>② figure</span></div><div class="opt"><span>③ sentence</span></div><div class="opt"><span>④ index</span></div><div class="opt"><span>⑤ consensus</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 회사의 분기 매출 수치, 즉 오늘 아침 발표된 단일 숫자가 모든 애널리스트의 예측을 뛰어넘었다.</div><div class="f"><b>해설</b>figure = 수치. a single number released this morning(오늘 아침 발표된 단일 숫자)이 단서다.</div></div>
+    </article>
+    <article class="card q" id="q36">
+      <div class="top"><span class="no">36</span><p class="stem">The company's new code of ________ requires employees to disclose any conflicts of interest.</p></div>
+      <div class="opts"><div class="opt"><span>① incentive</span></div><div class="opt"><span>② synthesis</span></div><div class="opt ok"><span>③ conduct</span></div><div class="opt"><span>④ disclosure</span></div><div class="opt"><span>⑤ framework</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 회사의 새로운 행동 강령은 직원들에게 이해 상충을 공개하도록 요구한다.</div><div class="f"><b>해설</b>conduct = 행동, 품행. code of ________(___ 강령)와 어울리는 명사다.</div></div>
+    </article>
+    <article class="card q" id="q37">
+      <div class="top"><span class="no">37</span><p class="stem">The losing candidate vowed to ________ the election results in court.</p></div>
+      <div class="opts"><div class="opt"><span>① stipulate</span></div><div class="opt ok"><span>② contest</span></div><div class="opt"><span>③ perpetuate</span></div><div class="opt"><span>④ cultivate</span></div><div class="opt"><span>⑤ confirm</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>낙선한 후보는 선거 결과에 법적으로 이의를 제기하겠다고 다짐했다.</div><div class="f"><b>해설</b>contest = 이의를 제기하다, 다투다. the election results in court(법정에서 선거 결과에)를 목적어로 받는다.</div></div>
+    </article>
+    <article class="card q" id="q38">
+      <div class="top"><span class="no">38</span><p class="stem">Detectives began to ________ that the fire had been started deliberately, based on burn patterns inconsistent with an accident.</p></div>
+      <div class="opts"><div class="opt"><span>① stipulate</span></div><div class="opt"><span>② digest</span></div><div class="opt"><span>③ delegate</span></div><div class="opt"><span>④ dispose</span></div><div class="opt ok"><span>⑤ suspect</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>형사들은 화재 흔적이 사고와 맞지 않는다는 점에 근거해, 그 화재가 고의로 시작됐다고 의심하기 시작했다.</div><div class="f"><b>해설</b>suspect = 의심하다. based on burn patterns inconsistent with an accident(사고와 맞지 않는 화재 흔적에 근거해)가 근거다.</div></div>
+    </article>
+    <article class="card q" id="q39">
+      <div class="top"><span class="no">39</span><p class="stem">After the doping scandal, officials voted to ________ the athlete of his Olympic medal.</p></div>
+      <div class="opts"><div class="opt"><span>① validate</span></div><div class="opt"><span>② delegate</span></div><div class="opt ok"><span>③ strip</span></div><div class="opt"><span>④ digest</span></div><div class="opt"><span>⑤ dispose</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>도핑 스캔들 이후, 관계자들은 그 선수에게서 올림픽 메달을 박탈하기로 투표했다.</div><div class="f"><b>해설</b>strip A of B = A에게서 B를 박탈하다. of his Olympic medal(그의 올림픽 메달을)이 박탈 대상이다.</div></div>
+    </article>
+    <article class="card q" id="q40">
+      <div class="top"><span class="no">40</span><p class="stem">City planners hope the new waterfront park will ________ the town's declining economy and finally reverse years of decline.</p></div>
+      <div class="opts"><div class="opt"><span>① validate</span></div><div class="opt"><span>② provoke</span></div><div class="opt"><span>③ delegate</span></div><div class="opt"><span>④ sustain</span></div><div class="opt ok"><span>⑤ rejuvenate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>도시 계획가들은 새 해안 공원이 마을의 쇠퇴하는 경제에 활력을 불어넣어 수년간의 쇠퇴를 마침내 되돌리기를 바란다.</div><div class="f"><b>해설</b>rejuvenate = 활력을 불어넣다, 소생시키다. finally reverse years of decline(수년간의 쇠퇴를 마침내 되돌리다)가 단서다.</div></div>
+    </article>
+    <article class="card q" id="q41">
+      <div class="top"><span class="no">41</span><p class="stem">The unexpected scandal threatened to ________ decades of public trust in the institution.</p></div>
+      <div class="opts"><div class="opt ok"><span>① shatter</span></div><div class="opt"><span>② validate</span></div><div class="opt"><span>③ sustain</span></div><div class="opt"><span>④ contest</span></div><div class="opt"><span>⑤ provoke</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>예상치 못한 스캔들은 수십 년간 쌓인 기관에 대한 대중의 신뢰를 산산조각 낼 위험이 있었다.</div><div class="f"><b>해설</b>shatter = 산산조각 내다. decades of public trust(수십 년간의 대중 신뢰)를 목적어로 받는다.</div></div>
+    </article>
+    <article class="card q" id="q42">
+      <div class="top"><span class="no">42</span><p class="stem">Teachers are trained to ________ immediately whenever bullying is reported in the classroom.</p></div>
+      <div class="opts"><div class="opt ok"><span>① intervene</span></div><div class="opt"><span>② legitimize</span></div><div class="opt"><span>③ provoke</span></div><div class="opt"><span>④ circumvent</span></div><div class="opt"><span>⑤ contest</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>교사들은 교실에서 괴롭힘이 보고될 때마다 즉시 개입하도록 훈련받는다.</div><div class="f"><b>해설</b>intervene = 개입하다. immediately whenever bullying is reported(괴롭힘이 보고될 때마다 즉시)가 단서다.</div></div>
+    </article>
+    <article class="card q" id="q43">
+      <div class="top"><span class="no">43</span><p class="stem">Passengers are kindly asked to ________ from using their phones during takeoff.</p></div>
+      <div class="opts"><div class="opt ok"><span>① refrain</span></div><div class="opt"><span>② legitimize</span></div><div class="opt"><span>③ circumvent</span></div><div class="opt"><span>④ redirect</span></div><div class="opt"><span>⑤ nurture</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>승객들은 이륙 중 휴대폰 사용을 삼가 달라는 요청을 받는다.</div><div class="f"><b>해설</b>refrain from = ~을 삼가다. from using their phones(휴대폰 사용을)와 함께 쓰인다.</div></div>
+    </article>
+    <article class="card q" id="q44">
+      <div class="top"><span class="no">44</span><p class="stem">Modern factories use chemical solvents to ________ oil from soybeans efficiently.</p></div>
+      <div class="opts"><div class="opt"><span>① nurture</span></div><div class="opt"><span>② legitimize</span></div><div class="opt ok"><span>③ extract</span></div><div class="opt"><span>④ circumvent</span></div><div class="opt"><span>⑤ redirect</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>현대 공장들은 대두에서 기름을 효율적으로 추출하기 위해 화학 용매를 사용한다.</div><div class="f"><b>해설</b>extract = 추출하다. oil from soybeans(대두에서 기름을)가 추출 대상과 출처다.</div></div>
+    </article>
+    <article class="card q" id="q45">
+      <div class="top"><span class="no">45</span><p class="stem">The sudden disappearance of the entire crew continues to ________ investigators decades later, who still cannot explain what happened.</p></div>
+      <div class="opts"><div class="opt ok"><span>① baffle</span></div><div class="opt"><span>② undermine</span></div><div class="opt"><span>③ nurture</span></div><div class="opt"><span>④ presuppose</span></div><div class="opt"><span>⑤ redirect</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>승무원 전체가 갑자기 사라진 사건은 수십 년이 지난 지금도 조사관들을 어리둥절하게 만들고 있으며, 여전히 무슨 일이 있었는지 설명하지 못하고 있다.</div><div class="f"><b>해설</b>baffle = 어리둥절하게 하다, 당혹시키다. who still cannot explain what happened(여전히 무슨 일이 있었는지 설명 못하는)가 단서다.</div></div>
+    </article>
+    <article class="card q" id="q46">
+      <div class="top"><span class="no">46</span><p class="stem">Thick rubber gloves help ________ electricians from dangerous electrical shocks on the job.</p></div>
+      <div class="opts"><div class="opt"><span>① comply</span></div><div class="opt ok"><span>② insulate</span></div><div class="opt"><span>③ undermine</span></div><div class="opt"><span>④ reconcile</span></div><div class="opt"><span>⑤ scale</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>두꺼운 고무장갑은 전기 기사들을 위험한 감전으로부터 보호하는 데 도움이 된다.</div><div class="f"><b>해설</b>insulate A from B = A를 B로부터 보호하다, 절연하다. from dangerous electrical shocks(위험한 감전으로부터)가 단서다.</div></div>
+    </article>
+    <article class="card q" id="q47">
+      <div class="top"><span class="no">47</span><p class="stem">Editors grew suspicious that the journalist might ________ quotes to make his articles more dramatic.</p></div>
+      <div class="opts"><div class="opt"><span>① comply</span></div><div class="opt"><span>② reconcile</span></div><div class="opt"><span>③ scale</span></div><div class="opt"><span>④ undermine</span></div><div class="opt ok"><span>⑤ fabricate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>편집자들은 그 기자가 기사를 더 극적으로 만들기 위해 인용문을 조작했을지도 모른다고 의심하게 되었다.</div><div class="f"><b>해설</b>fabricate = 조작하다, 지어내다. to make his articles more dramatic(기사를 더 극적으로 만들기 위해)가 동기다.</div></div>
+    </article>
+    <article class="card q" id="q48">
+      <div class="top"><span class="no">48</span><p class="stem">Critics argued that the policy proposal seems to silently ________ that every citizen already owns a smartphone, without ever stating this outright.</p></div>
+      <div class="opts"><div class="opt ok"><span>① presuppose</span></div><div class="opt"><span>② reconcile</span></div><div class="opt"><span>③ disclose</span></div><div class="opt"><span>④ shatter</span></div><div class="opt"><span>⑤ comply</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>비평가들은 그 정책 제안이 이를 명시적으로 언급하지 않은 채 모든 시민이 이미 스마트폰을 가지고 있다고 은연중에 전제하는 것 같다고 주장했다.</div><div class="f"><b>해설</b>presuppose = (명시하지 않고) 전제하다. without ever stating this outright(명시적으로 언급하지 않은 채)가 단서다.</div></div>
+    </article>
+    <article class="card q" id="q49">
+      <div class="top"><span class="no">49</span><p class="stem">A balanced diet alone cannot always ________ an athlete through an entire marathon.</p></div>
+      <div class="opts"><div class="opt"><span>① disclose</span></div><div class="opt"><span>② extract</span></div><div class="opt ok"><span>③ sustain</span></div><div class="opt"><span>④ obscure</span></div><div class="opt"><span>⑤ fabricate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>균형 잡힌 식단만으로는 항상 선수가 마라톤 전체를 버티게 해줄 수는 없다.</div><div class="f"><b>해설</b>sustain = 부양하다, 지탱하다. through an entire marathon(마라톤 전체를 통해)이 지속되는 기간이다.</div></div>
+    </article>
+    <article class="card q" id="q50">
+      <div class="top"><span class="no">50</span><p class="stem">Homeowners must ________ of hazardous chemicals through the city's designated collection program.</p></div>
+      <div class="opts"><div class="opt ok"><span>① dispose</span></div><div class="opt"><span>② disclose</span></div><div class="opt"><span>③ ascertain</span></div><div class="opt"><span>④ obscure</span></div><div class="opt"><span>⑤ rejuvenate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>주택 소유자는 도시가 지정한 수거 프로그램을 통해 유해 화학물질을 처리해야 한다.</div><div class="f"><b>해설</b>dispose of = ~을 처리하다. of hazardous chemicals(유해 화학물질을)가 처리 대상이다.</div></div>
+    </article>
+    <article class="card q" id="q51">
+      <div class="top"><span class="no">51</span><p class="stem">Investigators still do not know who could ________ such a carefully planned crime and vanish without a single witness noticing.</p></div>
+      <div class="opts"><div class="opt"><span>① ascertain</span></div><div class="opt"><span>② facilitate</span></div><div class="opt"><span>③ qualify</span></div><div class="opt"><span>④ obscure</span></div><div class="opt ok"><span>⑤ commit</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>조사관들은 누가 그렇게 치밀하게 계획된 범죄를 저지르고 목격자 한 명도 알아채지 못하게 사라질 수 있었는지 여전히 모른다.</div><div class="f"><b>해설</b>commit = (범죄를) 저지르다. such a carefully planned crime(그렇게 치밀하게 계획된 범죄)을 목적어로 받는다.</div></div>
+    </article>
+    <article class="card q" id="q52">
+      <div class="top"><span class="no">52</span><p class="stem">Even after the merger, the founder managed to ________ full control over product decisions.</p></div>
+      <div class="opts"><div class="opt"><span>① facilitate</span></div><div class="opt"><span>② ascertain</span></div><div class="opt"><span>③ exploit</span></div><div class="opt"><span>④ justify</span></div><div class="opt ok"><span>⑤ retain</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>합병 이후에도, 창립자는 제품 결정에 대한 완전한 통제권을 계속 유지할 수 있었다.</div><div class="f"><b>해설</b>retain = 유지하다, 보유하다. full control over product decisions(제품 결정에 대한 완전한 통제권)를 목적어로 받는다.</div></div>
+    </article>
+    <article class="card q" id="q53">
+      <div class="top"><span class="no">53</span><p class="stem">On the diagram, each colored region is meant to ________ to a specific climate zone.</p></div>
+      <div class="opts"><div class="opt ok"><span>① correspond</span></div><div class="opt"><span>② exploit</span></div><div class="opt"><span>③ justify</span></div><div class="opt"><span>④ contradict</span></div><div class="opt"><span>⑤ facilitate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>다이어그램에서 각 색깔 영역은 특정 기후대에 상응하도록 되어 있다.</div><div class="f"><b>해설</b>correspond to = ~에 상응하다. a specific climate zone(특정 기후대)이 상응 대상이다.</div></div>
+    </article>
+    <article class="card q" id="q54">
+      <div class="top"><span class="no">54</span><p class="stem">The scientist chose to ________ her claim by noting the study's small sample size, though she still stood by the overall finding.</p></div>
+      <div class="opts"><div class="opt"><span>① mediate</span></div><div class="opt"><span>② justify</span></div><div class="opt ok"><span>③ qualify</span></div><div class="opt"><span>④ exploit</span></div><div class="opt"><span>⑤ contradict</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 과학자는 전체적인 결론은 유지하면서도, 표본 크기가 작다는 점을 언급함으로써 자신의 주장에 조건을 달기로 했다.</div><div class="f"><b>해설</b>qualify = (주장에) 단서를 달다, 조건을 붙이다. though she still stood by the overall finding(전체 결론은 유지하면서도)와 대비된다.</div></div>
+    </article>
+    <article class="card q" id="q55">
+      <div class="top"><span class="no">55</span><p class="stem">The CEO's sudden resignation fueled widespread ________ about the company's financial troubles.</p></div>
+      <div class="opts"><div class="opt"><span>① synthesis</span></div><div class="opt"><span>② conduct</span></div><div class="opt"><span>③ incentive</span></div><div class="opt"><span>④ disclosure</span></div><div class="opt ok"><span>⑤ speculation</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>CEO의 갑작스러운 사임은 회사의 재정 문제에 대한 광범위한 추측을 불러일으켰다.</div><div class="f"><b>해설</b>speculation = 추측. fueled widespread ________(광범위한 ___을 부추겼다)가 단서다.</div></div>
+    </article>
+    </section>
+    <section id="sIII" class="sec">
+    <div class="card"><h2>Ⅲ. 연어ㆍ구동사 완성</h2><p class="sec-note">다음 빈칸에 들어갈 말로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q56">
+      <div class="top"><span class="no">56</span><p class="stem">code of ________: 행동 강령</p></div>
+      <div class="opts"><div class="opt"><span>① incentive</span></div><div class="opt ok"><span>② conduct</span></div><div class="opt"><span>③ framework</span></div><div class="opt"><span>④ synthesis</span></div><div class="opt"><span>⑤ disclosure</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>code of conduct = 행동 강령. conduct(행동)와 잘 어울리는 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q57">
+      <div class="top"><span class="no">57</span><p class="stem">a hotly ________ election: 치열하게 다투어진 선거</p></div>
+      <div class="opts"><div class="opt ok"><span>① contested</span></div><div class="opt"><span>② absurd</span></div><div class="opt"><span>③ candid</span></div><div class="opt"><span>④ affluent</span></div><div class="opt"><span>⑤ baffled</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>a hotly contested election = 치열하게 다투어진 선거. contest(다투다)의 분사형이 election을 수식한다.</div></div>
+    </article>
+    <article class="card q" id="q58">
+      <div class="top"><span class="no">58</span><p class="stem">a prime ________: 유력한 용의자</p></div>
+      <div class="opts"><div class="opt"><span>① framework</span></div><div class="opt"><span>② wilderness</span></div><div class="opt"><span>③ efficacy</span></div><div class="opt"><span>④ garment</span></div><div class="opt ok"><span>⑤ suspect</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>a prime suspect = 유력한 용의자. suspect(용의자)와 잘 어울리는 형용사는 prime(주요한)이다.</div></div>
+    </article>
+    <article class="card q" id="q59">
+      <div class="top"><span class="no">59</span><p class="stem">________ A of B: A에게서 B를 박탈하다</p></div>
+      <div class="opts"><div class="opt"><span>① conjecture</span></div><div class="opt"><span>② mediate</span></div><div class="opt"><span>③ contradict</span></div><div class="opt ok"><span>④ strip</span></div><div class="opt"><span>⑤ baffle</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>strip A of B = A에게서 B를 박탈하다. strip 뒤에는 박탈 대상을 나타내는 전치사 of가 온다.</div></div>
+    </article>
+    <article class="card q" id="q60">
+      <div class="top"><span class="no">60</span><p class="stem">a(n) ________ image: 합성 이미지</p></div>
+      <div class="opts"><div class="opt ok"><span>① composite</span></div><div class="opt"><span>② absurd</span></div><div class="opt"><span>③ affluent</span></div><div class="opt"><span>④ baffled</span></div><div class="opt"><span>⑤ candid</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>a composite image = 합성 이미지. composite(합성의)와 잘 어울리는 명사는 image다.</div></div>
+    </article>
+    <article class="card q" id="q61">
+      <div class="top"><span class="no">61</span><p class="stem">the ________ of a drug: 약물의 효능</p></div>
+      <div class="opts"><div class="opt"><span>① prosecution</span></div><div class="opt"><span>② wilderness</span></div><div class="opt ok"><span>③ efficacy</span></div><div class="opt"><span>④ deterrent</span></div><div class="opt"><span>⑤ garment</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>the efficacy of a drug = 약물의 효능. efficacy(효능)와 잘 어울리는 명사는 drug다.</div></div>
+    </article>
+    <article class="card q" id="q62">
+      <div class="top"><span class="no">62</span><p class="stem">find one's ________: 천직을 찾다</p></div>
+      <div class="opts"><div class="opt"><span>① prosecution</span></div><div class="opt"><span>② garment</span></div><div class="opt"><span>③ deterrent</span></div><div class="opt ok"><span>④ vocation</span></div><div class="opt"><span>⑤ wilderness</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>find one's vocation = 천직을 찾다. vocation(천직)과 잘 어울리는 동사는 find다.</div></div>
+    </article>
+    <article class="card q" id="q63">
+      <div class="top"><span class="no">63</span><p class="stem">fuel ________: 추측을 부추기다</p></div>
+      <div class="opts"><div class="opt"><span>① prosecution</span></div><div class="opt ok"><span>② speculation</span></div><div class="opt"><span>③ stock</span></div><div class="opt"><span>④ deterrent</span></div><div class="opt"><span>⑤ catalyst</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>fuel speculation = 추측을 부추기다. fuel(부추기다)과 잘 어울리는 명사는 speculation이다.</div></div>
+    </article>
+    <article class="card q" id="q64">
+      <div class="top"><span class="no">64</span><p class="stem">________ the economy: 경제에 활력을 불어넣다</p></div>
+      <div class="opts"><div class="opt"><span>① baffle</span></div><div class="opt"><span>② mediate</span></div><div class="opt"><span>③ conjecture</span></div><div class="opt"><span>④ integrate</span></div><div class="opt ok"><span>⑤ rejuvenate</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>rejuvenate the economy = 경제에 활력을 불어넣다. rejuvenate(활력을 불어넣다)와 잘 어울리는 명사는 economy다.</div></div>
+    </article>
+    <article class="card q" id="q65">
+      <div class="top"><span class="no">65</span><p class="stem">________ one's dreams: 꿈을 산산조각 내다</p></div>
+      <div class="opts"><div class="opt ok"><span>① shatter</span></div><div class="opt"><span>② expedite</span></div><div class="opt"><span>③ allude</span></div><div class="opt"><span>④ conjecture</span></div><div class="opt"><span>⑤ integrate</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>shatter one's dreams = 꿈을 산산조각 내다. shatter(산산조각 내다)와 잘 어울리는 명사는 dreams다.</div></div>
+    </article>
+    <article class="card q" id="q66">
+      <div class="top"><span class="no">66</span><p class="stem">________ in a conflict: 분쟁에 개입하다</p></div>
+      <div class="opts"><div class="opt"><span>① expedite</span></div><div class="opt"><span>② puzzle</span></div><div class="opt"><span>③ allude</span></div><div class="opt ok"><span>④ intervene</span></div><div class="opt"><span>⑤ integrate</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>intervene in a conflict = 분쟁에 개입하다. intervene 뒤에는 개입 대상을 나타내는 전치사 in이 온다.</div></div>
+    </article>
+    <article class="card q" id="q67">
+      <div class="top"><span class="no">67</span><p class="stem">________ from comment: 언급을 삼가다</p></div>
+      <div class="opts"><div class="opt"><span>① allude</span></div><div class="opt"><span>② expedite</span></div><div class="opt"><span>③ deter</span></div><div class="opt ok"><span>④ refrain</span></div><div class="opt"><span>⑤ puzzle</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>refrain from comment = 언급을 삼가다. refrain 뒤에는 삼가는 대상을 나타내는 전치사 from이 온다.</div></div>
+    </article>
+    <article class="card q" id="q68">
+      <div class="top"><span class="no">68</span><p class="stem">________ information from: ~에서 정보를 추출하다</p></div>
+      <div class="opts"><div class="opt ok"><span>① extract</span></div><div class="opt"><span>② abstain</span></div><div class="opt"><span>③ deter</span></div><div class="opt"><span>④ postulate</span></div><div class="opt"><span>⑤ corroborate</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>extract information from = ~에서 정보를 추출하다. extract 뒤에는 출처를 나타내는 전치사 from이 온다.</div></div>
+    </article>
+    <article class="card q" id="q69">
+      <div class="top"><span class="no">69</span><p class="stem">be ________ by: ~에 어리둥절해하다</p></div>
+      <div class="opts"><div class="opt"><span>① absurd</span></div><div class="opt"><span>② affluent</span></div><div class="opt"><span>③ ambiguous</span></div><div class="opt ok"><span>④ baffled</span></div><div class="opt"><span>⑤ candid</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>be baffled by = ~에 어리둥절해하다. baffle(당혹시키다)의 수동태 표현이다.</div></div>
+    </article>
+    <article class="card q" id="q70">
+      <div class="top"><span class="no">70</span><p class="stem">________ the economy from shocks: 경제를 충격으로부터 보호하다</p></div>
+      <div class="opts"><div class="opt"><span>① postulate</span></div><div class="opt"><span>② deter</span></div><div class="opt ok"><span>③ insulate</span></div><div class="opt"><span>④ corroborate</span></div><div class="opt"><span>⑤ abstain</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>insulate the economy from shocks = 경제를 충격으로부터 보호하다. insulate 뒤에는 보호 대상을 나타내는 전치사 from이 온다.</div></div>
+    </article>
+    </section>
+    <section id="sIV" class="sec">
+    <div class="card"><h2>Ⅳ. 유의어ㆍ반의어</h2><p class="sec-note">다음 단어(구)의 유의어 또는 반의어로 가장 적절한 것은? ([유의어]/[반의어] 표시에 따를 것)</p></div>
+    
+    <article class="card q" id="q71">
+      <div class="top"><span class="no">71</span><p class="stem">pass out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① overturn</span></div><div class="opt"><span>② ignore</span></div><div class="opt"><span>③ diminish</span></div><div class="opt ok"><span>④ faint</span></div><div class="opt"><span>⑤ postpone</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>pass out = 기절하다. 의식을 잃는다는 뜻이라 faint와 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q72">
+      <div class="top"><span class="no">72</span><p class="stem">pick out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① postpone</span></div><div class="opt"><span>② overturn</span></div><div class="opt"><span>③ diminish</span></div><div class="opt ok"><span>④ select</span></div><div class="opt"><span>⑤ ignore</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>pick out = 골라내다, 선별하다. 여럿 중에서 고른다는 뜻이라 select와 같다.</div></div>
+    </article>
+    <article class="card q" id="q73">
+      <div class="top"><span class="no">73</span><p class="stem">point out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① ignore</span></div><div class="opt"><span>② overturn</span></div><div class="opt"><span>③ postpone</span></div><div class="opt ok"><span>④ indicate</span></div><div class="opt"><span>⑤ diminish</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>point out = 지적하다. 무언가를 가리켜 알린다는 뜻이라 indicate와 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q74">
+      <div class="top"><span class="no">74</span><p class="stem">put out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① release</span></div><div class="opt"><span>② trigger</span></div><div class="opt"><span>③ inherit</span></div><div class="opt"><span>④ restore</span></div><div class="opt ok"><span>⑤ extinguish</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>put out = (불을) 끄다. 불길을 없앤다는 뜻이라 extinguish와 같다.</div></div>
+    </article>
+    <article class="card q" id="q75">
+      <div class="top"><span class="no">75</span><p class="stem">rule out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① restore</span></div><div class="opt ok"><span>② exclude</span></div><div class="opt"><span>③ inherit</span></div><div class="opt"><span>④ release</span></div><div class="opt"><span>⑤ trigger</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>rule out = 배제하다. 가능성에서 제외한다는 뜻이라 exclude와 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q76">
+      <div class="top"><span class="no">76</span><p class="stem">set out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① inherit</span></div><div class="opt"><span>② release</span></div><div class="opt"><span>③ trigger</span></div><div class="opt ok"><span>④ embark</span></div><div class="opt"><span>⑤ restore</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>set out = 착수하다, 출발하다. 새로운 일을 시작한다는 뜻이라 embark(착수하다)와 같다.</div></div>
+    </article>
+    <article class="card q" id="q77">
+      <div class="top"><span class="no">77</span><p class="stem">stand out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① repay</span></div><div class="opt"><span>② confront</span></div><div class="opt ok"><span>③ excel</span></div><div class="opt"><span>④ launch</span></div><div class="opt"><span>⑤ depart</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>stand out = 두드러지다. 남보다 뛰어나 눈에 띈다는 뜻이라 excel과 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q78">
+      <div class="top"><span class="no">78</span><p class="stem">turn out [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① repay</span></div><div class="opt"><span>② launch</span></div><div class="opt ok"><span>③ prove</span></div><div class="opt"><span>④ depart</span></div><div class="opt"><span>⑤ confront</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>turn out = ~인 것으로 드러나다. 결과가 밝혀진다는 뜻이라 prove와 같다.</div></div>
+    </article>
+    <article class="card q" id="q79">
+      <div class="top"><span class="no">79</span><p class="stem">wear out [유의어]</p></div>
+      <div class="opts"><div class="opt ok"><span>① exhaust</span></div><div class="opt"><span>② launch</span></div><div class="opt"><span>③ confront</span></div><div class="opt"><span>④ repay</span></div><div class="opt"><span>⑤ depart</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>wear out = 지치게 하다, 닳게 하다. 기운을 다 써버린다는 뜻이라 exhaust와 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q80">
+      <div class="top"><span class="no">80</span><p class="stem">wipe out [유의어]</p></div>
+      <div class="opts"><div class="opt ok"><span>① eradicate</span></div><div class="opt"><span>② hinder</span></div><div class="opt"><span>③ terminate</span></div><div class="opt"><span>④ merge</span></div><div class="opt"><span>⑤ dismantle</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>wipe out = 완전히 없애다, 전멸시키다. 흔적도 없이 없앤다는 뜻이라 eradicate와 같다.</div></div>
+    </article>
+    <article class="card q" id="q81">
+      <div class="top"><span class="no">81</span><p class="stem">persistent [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① susceptible</span></div><div class="opt"><span>② obsolete</span></div><div class="opt"><span>③ ambiguous</span></div><div class="opt"><span>④ clear</span></div><div class="opt ok"><span>⑤ relentless</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>persistent = 끈질긴, 집요한. 계속 밀어붙인다는 뜻이라 relentless와 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q82">
+      <div class="top"><span class="no">82</span><p class="stem">lucid [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① susceptible</span></div><div class="opt ok"><span>② clear</span></div><div class="opt"><span>③ volatile</span></div><div class="opt"><span>④ obsolete</span></div><div class="opt"><span>⑤ ambiguous</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>lucid = 명료한, 명쾌한. 이해하기 쉽게 분명하다는 뜻이라 clear와 같다.</div></div>
+    </article>
+    <article class="card q" id="q83">
+      <div class="top"><span class="no">83</span><p class="stem">refrain [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① strip</span></div><div class="opt"><span>② enforce</span></div><div class="opt"><span>③ postulate</span></div><div class="opt ok"><span>④ abstain</span></div><div class="opt"><span>⑤ corroborate</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>refrain = 삼가다, 자제하다. 하지 않고 참는다는 뜻이라 abstain과 유의어다.</div></div>
+    </article>
+    <article class="card q" id="q84">
+      <div class="top"><span class="no">84</span><p class="stem">baffle [유의어]</p></div>
+      <div class="opts"><div class="opt"><span>① enforce</span></div><div class="opt"><span>② exacerbate</span></div><div class="opt ok"><span>③ puzzle</span></div><div class="opt"><span>④ segregate</span></div><div class="opt"><span>⑤ violate</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>baffle = 어리둥절하게 하다. 이해할 수 없게 만든다는 뜻이라 puzzle과 같다.</div></div>
+    </article>
+    <article class="card q" id="q85">
+      <div class="top"><span class="no">85</span><p class="stem">sovereign [유의어]</p></div>
+      <div class="opts"><div class="opt ok"><span>① independent</span></div><div class="opt"><span>② volatile</span></div><div class="opt"><span>③ clear</span></div><div class="opt"><span>④ susceptible</span></div><div class="opt"><span>⑤ obsolete</span></div></div>
+      <div class="exp"><div class="f"><b>해설</b>sovereign = 주권을 가진, 독립된. 다른 세력에 지배받지 않는다는 뜻이라 independent와 유의어다.</div></div>
+    </article>
+    </section>
+    <section id="sV" class="sec">
+    <div class="card"><h2>Ⅴ. 영영 정의</h2><p class="sec-note">다음 영어 정의에 해당하는 단어(구)로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q86">
+      <div class="top"><span class="no">86</span><p class="stem">relating to an ideal standard or how things should be, rather than how they actually are</p></div>
+      <div class="opts"><div class="opt"><span>① volatile</span></div><div class="opt"><span>② contested</span></div><div class="opt"><span>③ meticulous</span></div><div class="opt ok"><span>④ normative</span></div><div class="opt"><span>⑤ eligible</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>실제로 어떠한지가 아니라 이상적인 기준이나 마땅히 그래야 하는 방식과 관련된</div><div class="f"><b>해설</b>normative = 규범적인. relating to an ideal standard or how things should be, rather than how they actually are(실제 모습이 아니라 이상적 기준·마땅히 그래야 할 모습과 관련된)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q87">
+      <div class="top"><span class="no">87</span><p class="stem">to match or be equivalent to something else</p></div>
+      <div class="opts"><div class="opt"><span>① exacerbate</span></div><div class="opt"><span>② violate</span></div><div class="opt"><span>③ enforce</span></div><div class="opt"><span>④ segregate</span></div><div class="opt ok"><span>⑤ correspond</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>다른 무언가와 일치하거나 대응하다</div><div class="f"><b>해설</b>correspond = 상응하다. to match or be equivalent to something else(다른 무언가와 일치하거나 대응하다)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q88">
+      <div class="top"><span class="no">88</span><p class="stem">to add a limiting condition or explanation to a statement</p></div>
+      <div class="opts"><div class="opt"><span>① commit</span></div><div class="opt ok"><span>② qualify</span></div><div class="opt"><span>③ violate</span></div><div class="opt"><span>④ segregate</span></div><div class="opt"><span>⑤ exacerbate</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>진술에 제한 조건이나 설명을 덧붙이다</div><div class="f"><b>해설</b>qualify = (조건을) 덧붙이다. to add a limiting condition or explanation to a statement(진술에 제한 조건·설명을 덧붙이다)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q89">
+      <div class="top"><span class="no">89</span><p class="stem">made up of various parts or elements combined together</p></div>
+      <div class="opts"><div class="opt"><span>① sensible</span></div><div class="opt"><span>② contested</span></div><div class="opt ok"><span>③ composite</span></div><div class="opt"><span>④ eligible</span></div><div class="opt"><span>⑤ meticulous</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>여러 부분이나 요소가 결합되어 이루어진</div><div class="f"><b>해설</b>composite = 복합의, 합성의. made up of various parts or elements combined together(여러 부분·요소가 결합되어 이루어진)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q90">
+      <div class="top"><span class="no">90</span><p class="stem">to invent false information in order to deceive</p></div>
+      <div class="opts"><div class="opt ok"><span>① fabricate</span></div><div class="opt"><span>② alleviate</span></div><div class="opt"><span>③ discourage</span></div><div class="opt"><span>④ deplete</span></div><div class="opt"><span>⑤ commit</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>속이기 위해 거짓 정보를 만들어내다</div><div class="f"><b>해설</b>fabricate = 조작하다, 지어내다. to invent false information in order to deceive(속이기 위해 거짓 정보를 만들어내다)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q91">
+      <div class="top"><span class="no">91</span><p class="stem">to require a certain fact or condition to be true as a basis, without stating it directly</p></div>
+      <div class="opts"><div class="opt"><span>① deplete</span></div><div class="opt"><span>② alleviate</span></div><div class="opt ok"><span>③ presuppose</span></div><div class="opt"><span>④ retain</span></div><div class="opt"><span>⑤ discourage</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>직접 말하지 않은 채 어떤 사실·조건이 참임을 전제로 요구하다</div><div class="f"><b>해설</b>presuppose = 전제하다. to require a certain fact or condition to be true as a basis, without stating it directly(직접 말하지 않고 어떤 사실·조건을 전제로 요구하다)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q92">
+      <div class="top"><span class="no">92</span><p class="stem">a strong feeling of being particularly suited to a certain career or purpose</p></div>
+      <div class="opts"><div class="opt"><span>① stock</span></div><div class="opt ok"><span>② vocation</span></div><div class="opt"><span>③ figure</span></div><div class="opt"><span>④ speculation</span></div><div class="opt"><span>⑤ catalyst</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>특정 직업이나 목적에 특히 적합하다는 강한 느낌</div><div class="f"><b>해설</b>vocation = 천직, 소명. a strong feeling of being particularly suited to a certain career or purpose(특정 직업·목적에 특히 적합하다는 강한 느낌)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q93">
+      <div class="top"><span class="no">93</span><p class="stem">the ability of something, especially a treatment, to produce the intended result</p></div>
+      <div class="opts"><div class="opt"><span>① sequence</span></div><div class="opt"><span>② catalyst</span></div><div class="opt ok"><span>③ efficacy</span></div><div class="opt"><span>④ coincidence</span></div><div class="opt"><span>⑤ figure</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>어떤 것, 특히 치료법이 의도한 결과를 만들어내는 능력</div><div class="f"><b>해설</b>efficacy = 효능, 효험. the ability of something, especially a treatment, to produce the intended result(어떤 것, 특히 치료법이 의도한 결과를 내는 능력)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q94">
+      <div class="top"><span class="no">94</span><p class="stem">to become involved in a situation in order to change its outcome</p></div>
+      <div class="opts"><div class="opt"><span>① alleviate</span></div><div class="opt"><span>② deplete</span></div><div class="opt"><span>③ discourage</span></div><div class="opt"><span>④ retain</span></div><div class="opt ok"><span>⑤ intervene</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>결과를 바꾸기 위해 어떤 상황에 관여하게 되다</div><div class="f"><b>해설</b>intervene = 개입하다. to become involved in a situation in order to change its outcome(결과를 바꾸기 위해 상황에 관여하다)가 정의다.</div></div>
+    </article>
+    <article class="card q" id="q95">
+      <div class="top"><span class="no">95</span><p class="stem">to protect something from an outside influence or a harmful effect</p></div>
+      <div class="opts"><div class="opt"><span>① refrain</span></div><div class="opt"><span>② substantiate</span></div><div class="opt"><span>③ complicate</span></div><div class="opt ok"><span>④ insulate</span></div><div class="opt"><span>⑤ reinforce</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>외부 영향이나 해로운 효과로부터 무언가를 보호하다</div><div class="f"><b>해설</b>insulate = 보호하다, 절연하다. to protect something from an outside influence or a harmful effect(외부 영향·해로운 효과로부터 보호하다)가 정의다.</div></div>
+    </article>
+    </section>
+    <section id="sVI" class="sec">
+    <div class="card"><h2>Ⅵ. 다의어 문맥 구분</h2><p class="sec-note">다음 문장에서 밑줄 친 부분의 뜻으로 가장 적절한 것은?</p></div>
+    
+    <article class="card q" id="q96">
+      <div class="top"><span class="no">96</span><p class="stem">Even though the first few weeks felt chaotic, the new roommate arrangement eventually <u>worked out</u> surprisingly well for everyone involved.</p></div>
+      <div class="opts"><div class="opt"><span>① 갑자기 중단되었다</span></div><div class="opt"><span>② 즉시 취소되었다</span></div><div class="opt"><span>③ 결국 완전히 실패로 끝났다</span></div><div class="opt ok"><span>④ 모두에게 놀랍도록 잘 풀렸다</span></div><div class="opt"><span>⑤ 아무런 변화 없이 그대로였다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>처음 몇 주는 혼란스러웠지만, 새 룸메이트 배정은 결국 관련된 모두에게 놀랍도록 잘 풀렸다.</div><div class="f"><b>해설</b>work out = (일이) 잘 풀리다. eventually...surprisingly well(결국...놀랍도록 잘)이 단서다.</div></div>
+    </article>
+    <article class="card q" id="q97">
+      <div class="top"><span class="no">97</span><p class="stem">Midway through the marathon, several runners found that their energy had completely <u>run out</u>.</p></div>
+      <div class="opts"><div class="opt"><span>① 갑자기 두 배로 늘었다</span></div><div class="opt"><span>② 오히려 크게 늘어났다</span></div><div class="opt ok"><span>③ 완전히 바닥났다</span></div><div class="opt"><span>④ 전혀 줄어들지 않았다</span></div><div class="opt"><span>⑤ 예상보다 오래 지속되었다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>마라톤 중반에 이르러, 여러 주자들은 자신의 에너지가 완전히 바닥났음을 깨달았다.</div><div class="f"><b>해설</b>run out = 바닥나다, 다 떨어지다. completely(완전히)가 단서다.</div></div>
+    </article>
+    <article class="card q" id="q98">
+      <div class="top"><span class="no">98</span><p class="stem">The quirky slang term spread through social media so quickly that it <u>caught on</u> among teenagers nationwide within days.</p></div>
+      <div class="opts"><div class="opt"><span>① 전국 십대들에게 완전히 무시당했다</span></div><div class="opt ok"><span>② 전국 십대들 사이에서 빠르게 유행했다</span></div><div class="opt"><span>③ 강하게 비판받았다</span></div><div class="opt"><span>④ 곧바로 금지되었다</span></div><div class="opt"><span>⑤ 며칠 만에 자취를 감췄다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>그 독특한 은어는 소셜 미디어를 통해 매우 빠르게 퍼져서 며칠 만에 전국 십대들 사이에서 유행하게 되었다.</div><div class="f"><b>해설</b>catch on = 유행하다, 인기를 얻다. spread through social media so quickly(소셜 미디어를 통해 매우 빠르게 퍼짐)가 원인이다.</div></div>
+    </article>
+    <article class="card q" id="q99">
+      <div class="top"><span class="no">99</span><p class="stem">Whenever the small business faced a crisis, the owner knew she could always <u>count on</u> her loyal staff to step up.</p></div>
+      <div class="opts"><div class="opt"><span>① 의도적으로 배제했다</span></div><div class="opt ok"><span>② 항상 의지할 수 있었다</span></div><div class="opt"><span>③ 전혀 신뢰할 수 없었다</span></div><div class="opt"><span>④ 오해하고 있었다</span></div><div class="opt"><span>⑤ 거의 만나지 못했다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>작은 사업체가 위기에 처할 때마다, 사장은 충성스러운 직원들이 나서 줄 것을 항상 믿을 수 있다는 것을 알고 있었다.</div><div class="f"><b>해설</b>count on = ~을 믿다, 의지하다. to step up(나서 줄 것을)이 믿는 내용이다.</div></div>
+    </article>
+    <article class="card q" id="q100">
+      <div class="top"><span class="no">100</span><p class="stem">After making an embarrassing mistake during his presentation, the intern chose <u>not to dwell on it</u> and quickly moved on to the next task.</p></div>
+      <div class="opts"><div class="opt"><span>① 그것을 동료들과 공유하다</span></div><div class="opt"><span>② 그것에 연연하다</span></div><div class="opt"><span>③ 그것을 자랑스러워하다</span></div><div class="opt"><span>④ 그것에 대해 사과하다</span></div><div class="opt ok"><span>⑤ 그것에 연연하지 않다</span></div></div>
+      <div class="exp"><div class="f tr"><b>해석</b>발표 중 당혹스러운 실수를 저지른 후, 그 인턴은 그 일에 연연하지 않고 재빨리 다음 업무로 넘어가기로 했다.</div><div class="f"><b>해설</b>not dwell on it = 그것에 연연하지 않다. quickly moved on to the next task(재빨리 다음 업무로 넘어감)와 자연스럽게 이어진다.</div></div>
+    </article>
+    </section>
+<footer>2026학년도 Alpha-male Voca · Day 7</footer>
+</main><script>
+(function(){var r=document.documentElement,b=document.getElementById("tl"),d=document.getElementById("td");
+function set(m){r.setAttribute("data-theme",m);b.setAttribute("aria-pressed",m==="light");d.setAttribute("aria-pressed",m==="dark");try{localStorage.setItem("voca-theme",m)}catch(e){}}
+var m=null;try{m=localStorage.getItem("voca-theme")}catch(e){}
+if(!m)m=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";set(m);
+b.onclick=function(){set("light")};d.onclick=function(){set("dark")};
+document.getElementById("pr").onclick=function(){print()};})();</script></body></html>
